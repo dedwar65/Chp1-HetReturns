@@ -33,7 +33,7 @@ project:
     content: CC-BY-4.0
     code: MIT
   github: https://github.com/dedwar65/Chp1-HetReturns
-  bibliography: 
+  bibliography: Paper/references.bib
   settings:
     output_matplotlib_strings: remove
   exports: 
