@@ -8,6 +8,14 @@ from copy import deepcopy
 from HARK.core import AgentPopulation
 from HARK.ConsumptionSaving.ConsIndShockModel import IndShockConsumerType
 from HARK.distribution import Uniform, Lognormal
+import pandas as pd
+from HARK.Calibration.Income.IncomeTools import (
+    CGM_income,
+    parse_income_spec,
+    parse_time_params,
+)
+from HARK.datasets.life_tables.us_ssa.SSATools import parse_ssa_life_table
+from HARK.datasets.SCF.WealthIncomeDist.SCFDistTools import income_wealth_dists_from_scf
 
 SpecificationFilename = '.yaml'
 
@@ -15,11 +23,12 @@ SpecificationFilename = '.yaml'
 MyAgentType = IndShockConsumerType
 HetParam = 'Rfree'
 DstnType = Uniform
-InitCenter = 1.0105
+InitCenter = 1.0277277887072713
 InitSpread = 0.02
 TypeCount = 7
 TotalAgentCount = 70000
 ModelType = 'dist'
+LifeCycle = False
 
 # Define a baseline parameter dictionary; this content will be in a YAML file later
 BaseParamDict = {
@@ -63,6 +72,73 @@ BaseParamDict = {
     "pLvlInitStd": 0.0,
 }
 
+birth_age = 25
+death_age = 90
+adjust_infl_to = 2004 #same wave as the wave of SCF used for empirical targets
+income_calib = CGM_income
+
+# Define dictionaries for life cycle version of the model. Should also be in Yaml file
+# Note: missing survival probabilites conditional on education level.
+nohs_dict = deepcopy(BaseParamDict)
+income_params = parse_income_spec(
+    age_min=birth_age,
+    age_max=death_age,
+    adjust_infl_to=adjust_infl_to,
+    **income_calib["NoHS"],
+    SabelhausSong=True,
+)
+dist_params = income_wealth_dists_from_scf(
+    base_year=adjust_infl_to, age=birth_age, education="NoHS", wave=1995
+)
+liv_prb = parse_ssa_life_table(
+    female=True, cross_sec=True, year=2004, min_age=birth_age, max_age=death_age - 1
+)
+time_params = parse_time_params(age_birth=birth_age, age_death=death_age)
+nohs_dict.update(time_params)
+nohs_dict.update(dist_params)
+nohs_dict.update(income_params)
+nohs_dict.update({"LivPrb": liv_prb})
+
+hs_dict = deepcopy(BaseParamDict)
+income_params = parse_income_spec(
+    age_min=birth_age,
+    age_max=death_age,
+    adjust_infl_to=adjust_infl_to,
+    **income_calib["HS"],
+    SabelhausSong=True,
+)
+dist_params = income_wealth_dists_from_scf(
+    base_year=adjust_infl_to, age=birth_age, education="HS", wave=1995
+)
+liv_prb = parse_ssa_life_table(
+    female=True, cross_sec=True, year=2004, min_age=birth_age, max_age=death_age - 1
+)
+time_params = parse_time_params(age_birth=birth_age, age_death=death_age)
+hs_dict.update(time_params)
+hs_dict.update(dist_params)
+hs_dict.update(income_params)
+hs_dict.update({"LivPrb": liv_prb})
+
+college_dict = deepcopy(BaseParamDict)
+income_params = parse_income_spec(
+    age_min=birth_age,
+    age_max=death_age,
+    adjust_infl_to=adjust_infl_to,
+    **income_calib["College"],
+    SabelhausSong=True,
+)
+dist_params = income_wealth_dists_from_scf(
+    base_year=adjust_infl_to, age=birth_age, education="College", wave=1995
+)
+liv_prb = parse_ssa_life_table(
+    female=True, cross_sec=True, year=2004, min_age=birth_age, max_age=death_age - 1
+)
+time_params = parse_time_params(age_birth=birth_age, age_death=death_age)
+college_dict.update(time_params)
+college_dict.update(dist_params)
+college_dict.update(income_params)
+college_dict.update({"LivPrb": liv_prb})
+
 # Define a mapping from (center,spread) to the actual parameters of the distribution.
 # For each class of distributions you want to allow, there needs to be an entry for
 # DstnParam mapping that says what (center,spread) represents for that distribution.
@@ -84,10 +160,24 @@ income_col = 1
 # Main executions of the file happen from this point onward 
 # Make a population of agents with baseline parameters
 BaseParamDict[HetParam] = DstnType(*DstnParamMapping(InitCenter, InitSpread))
-MyPopulation = AgentPopulation(MyAgentType, BaseParamDict)
-MyPopulation.approx_distributions({HetParam : TypeCount})
-MyPopulation.create_distributed_agents()
-MyPopulation.AgentCount = TotalAgentCount
+BasePopulation = AgentPopulation(MyAgentType, BaseParamDict)
+BasePopulation.approx_distributions({HetParam : TypeCount})
+BasePopulation.create_distributed_agents()
+BasePopulation.AgentCount = TotalAgentCount/3
+
+# Make a population of life cycle agents with het returns
+population = []
+for i, subpop in enumerate([nohs_dict, hs_dict, college_dict]):
+    subpop[HetParam] = DstnType(*DstnParamMapping(InitCenter, InitSpread))
+    population.append(AgentPopulation(MyAgentType, subpop))
+    population[i].approx_distributions({HetParam : TypeCount})
+    population[i].create_distributed_agents()
+    population[i].AgentCount = TotalAgentCount/3
+
+agents = population[0].agents + population[1].agents + population[2].agents
+LifeCyclePopulation = AgentPopulation(MyAgentType, {})
+LifeCyclePopulation.agents = agents
+LifeCyclePopulation.AgentCount = TotalAgentCount
 
 # Import the wealth and income data to be matched in estimation
 f = open(data_location + "/" + wealth_data_file)
@@ -101,3 +191,6 @@ for j in range(len(wealth_data_raw)):
     wealth_data[j] = float(wealth_data_raw[j][wealth_col])
     weights_data[j] = float(wealth_data_raw[j][weight_col])
     income_data[j] = float(wealth_data_raw[j][income_col])
+
+
+MyPopulation = population[0]

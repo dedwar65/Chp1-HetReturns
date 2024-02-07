@@ -4,7 +4,7 @@ from HARK.utilities import plot_funcs
 from utilities import get_lorenz_shares
 from parameters import MyPopulation, DstnParamMapping, HetParam, DstnType, \
                             TypeCount, TargetPercentiles, wealth_data, weights_data, \
-                            income_data, InitCenter, InitSpread
+                            income_data, InitCenter, InitSpread, LifeCycle
 from scipy.optimize import minimize, minimize_scalar, root_scalar
 
 def updateHetParamValues(center, spread):
@@ -61,6 +61,7 @@ def getDistributionsFromHetParamValues(center, spread):
 # Functions to calculate simulated moments
 def calc_KY_Sim(WealthDstn, ProdDstn):
     WealthToIncRatioSim = np.mean(WealthDstn) / np.mean(ProdDstn)
+    print(WealthToIncRatioSim)
     return WealthToIncRatioSim
 
 def calc_Lorenz_Sim(WealthDstn, weights=None):
@@ -81,7 +82,9 @@ def calcEmpMoments(wealth, income, weights):
 def calc_KY_diff(center, spread):
     WealthDstn, ProdDstn = getDistributionsFromHetParamValues(center, spread)
     sim_target = calc_KY_Sim(WealthDstn, ProdDstn)
+    print(sim_target)
     emp_target = calcEmpMoments(wealth_data, income_data, weights_data)
+    print(emp_target)
     diff = sim_target - emp_target[0]
     return diff
 
@@ -92,8 +95,8 @@ def calc_Lorenz_dist(center, spread):
     dist = np.sum((sim_target - emp_target[1])**2)
     return dist
 
-center_range = [0.9, 1.05]
-spread_range = [0.001, 0.005]
+center_range = [0.9, 1.5]
+spread_range = [0.001, 0.25]
 
 def calc_Lorenz_dist_at_Target_KY(spread):
     '''
@@ -139,10 +142,18 @@ if __name__ == '__main__':
     from time import time
     
     t0 = time()
-    #x = get_Target_KY()
-    #print(x)
-    y = min_Lorenz_dist_at_Target_KY()
-    print(y)
+    WealthDstn, ProdDstn = getDistributionsFromHetParamValues(InitCenter, InitSpread)
+    sim_target = calc_KY_Sim(WealthDstn, ProdDstn)
+    print(sim_target)
+    emp_target = calcEmpMoments(wealth_data, income_data, weights_data)
+    diff = sim_target - emp_target[0]
+    print(emp_target)
+    print(diff)
+    opt_center = root_scalar(calc_KY_diff, args=InitSpread, method="brenth", bracket=center_range,
+                xtol=10 ** (-6)).root
+    print(opt_center)
+    #y = min_Lorenz_dist_at_Target_KY()
+    #print(y)
     t1 = time()
     
     print('That took ' + str(t1-t0) + ' seconds.')
