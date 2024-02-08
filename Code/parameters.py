@@ -4,190 +4,51 @@ This file specifies parameters for the agent types and empirical targets.
 import numpy as np
 import csv
 import matplotlib.pyplot as plt
+import yaml
 from copy import deepcopy
 from HARK.core import AgentPopulation
 from HARK.distribution import Uniform, Lognormal
 import pandas as pd
 from HARK.Calibration.Income.IncomeTools import (
     CGM_income,
+    Cagetti_income,
     parse_income_spec,
     parse_time_params,
 )
 from HARK.datasets.life_tables.us_ssa.SSATools import parse_ssa_life_table
 from HARK.datasets.SCF.WealthIncomeDist.SCFDistTools import income_wealth_dists_from_scf
 from utilities import get_lorenz_shares, calcEmpMoments, AltIndShockConsumerType
-
-
-SpecificationFilename = '.yaml'
-
-# Choose basic specification parameters; this content will be in a YAML file later
 MyAgentType = AltIndShockConsumerType
-HetParam = 'Rfree'
-DstnType = Uniform
-InitCenter = 1.0277277887072713
-InitSpread = 0.02
-TypeCount = 7
-TotalAgentCount = 70000
-ModelType = 'dist'
-LifeCycle = False
+
+data_location = '../Data/'
+specs_location = '../Specifications/'
+SpecificationFilename = 'LCbetaPointNetWorth.yaml'
+
+# Load in the specification from the yaml file
+with open(specs_location + SpecificationFilename, 'r') as f:
+    spec_raw = f.read()
+    f.close()
+yaml_params = yaml.safe_load(spec_raw)
+print('Loading a specification called ' + yaml_params['description'])
+tag = yaml_params['tag']
+
+# Choose basic specification parameters
+HetParam = yaml_params['HetParam']
+DstnTypeName = yaml_params['DstnType']
+HetTypeCount = yaml_params['HetTypeCount']
+TotalAgentCount = HetTypeCount*yaml_params['AgentsPerType']
+LifeCycle = yaml_params['LifeCycle']
 
 # Specify search parameters
-center_range = [0.95, 1.05]
-spread_range = [0.001, 0.05]
+center_range = yaml_params['center_range']
+spread_range = yaml_params['spread_range']
 
 # Setup basics for computing empirical targets from the SCF
-TargetPercentiles = [0.2, 0.4, 0.6, 0.8]
-data_location = '../Data'
-wealth_data_file = 'rscfp2004_reduced.txt'
-wealth_col = 4
-weight_col = 0
-income_col = 1
-
-# Define a baseline parameter dictionary; this content will be in a YAML file later
-BaseParamDict = {
-    "CRRA": 1.0,  # Coefficient of relative risk aversion
-    "Rfree": 1.01,  # Risk free interest factor,
-    # Permanent income growth factor (no perm growth),
-    "PermGroFac": [1.000**0.25],
-    "PermGroFacAgg": 1.0,
-    "BoroCnstArt": 0.0,
-    "CubicBool": False,
-    "vFuncBool": False,
-    "PermShkStd": [
-        (0.01 * 4 / 11) ** 0.5
-    ],  # Standard deviation of permanent shocks to income
-    "PermShkCount": 5,  # Number of points in permanent income shock grid
-    "TranShkStd": [
-        (0.01 * 4) ** 0.5
-    ],  # Standard deviation of transitory shocks to income,
-    "TranShkCount": 5,  # Number of points in transitory income shock grid
-    "UnempPrb": 0.07,  # Probability of unemployment while working
-    "IncUnemp": 0.15,  # Unemployment benefit replacement rate
-    "UnempPrbRet": 0.07,
-    "IncUnempRet": 0.15,
-    "aXtraMin": 0.00001,  # Minimum end-of-period assets in grid
-    "aXtraMax": 40,  # Maximum end-of-period assets in grid
-    "aXtraCount": 32,  # Number of points in assets grid
-    "aXtraExtra": [None],
-    "aXtraNestFac": 3,  # Number of times to 'exponentially nest' when constructing assets grid
-    "LivPrb": [1.0 - 1.0 / 160.0],  # Survival probability
-    "DiscFac": 0.99,  # Default intertemporal discount factor
-    "cycles": 0,
-    "T_cycle": 1,
-    "T_retire": 0,
-    # Number of periods to simulate (idiosyncratic shocks model, perpetual youth)
-    "T_sim": 300,
-    "T_age": 400,
-    "IndL": 10.0 / 9.0,  # Labor supply per individual (constant),
-    "aNrmInitMean": np.log(0.00001),
-    "aNrmInitStd": 0.0,
-    "pLvlInitMean": 0.0,
-    "pLvlInitStd": 0.0,
-    "PopGroFac": 1.0
-}
-
-birth_age = 25
-death_age = 90
-adjust_infl_to = 2004 #same wave as the wave of SCF used for empirical targets
-income_calib = CGM_income
-
-
-
-# Define dictionaries for life cycle version of the model. Should also be in Yaml file
-# Note: missing survival probabilites conditional on education level.
-nohs_dict = deepcopy(BaseParamDict)
-income_params = parse_income_spec(
-    age_min=birth_age,
-    age_max=death_age,
-    adjust_infl_to=adjust_infl_to,
-    **income_calib["NoHS"],
-    SabelhausSong=True,
-)
-dist_params = income_wealth_dists_from_scf(
-    base_year=adjust_infl_to, age=birth_age, education="NoHS", wave=1995
-)
-liv_prb = parse_ssa_life_table(
-    female=True, cross_sec=True, year=2004, min_age=birth_age, max_age=death_age - 1
-)
-time_params = parse_time_params(age_birth=birth_age, age_death=death_age)
-nohs_dict.update(time_params)
-nohs_dict.update(dist_params)
-nohs_dict.update(income_params)
-nohs_dict.update({"LivPrb": liv_prb})
-
-hs_dict = deepcopy(BaseParamDict)
-income_params = parse_income_spec(
-    age_min=birth_age,
-    age_max=death_age,
-    adjust_infl_to=adjust_infl_to,
-    **income_calib["HS"],
-    SabelhausSong=True,
-)
-dist_params = income_wealth_dists_from_scf(
-    base_year=adjust_infl_to, age=birth_age, education="HS", wave=1995
-)
-liv_prb = parse_ssa_life_table(
-    female=True, cross_sec=True, year=2004, min_age=birth_age, max_age=death_age - 1
-)
-time_params = parse_time_params(age_birth=birth_age, age_death=death_age)
-hs_dict.update(time_params)
-hs_dict.update(dist_params)
-hs_dict.update(income_params)
-hs_dict.update({"LivPrb": liv_prb})
-
-college_dict = deepcopy(BaseParamDict)
-income_params = parse_income_spec(
-    age_min=birth_age,
-    age_max=death_age,
-    adjust_infl_to=adjust_infl_to,
-    **income_calib["College"],
-    SabelhausSong=True,
-)
-dist_params = income_wealth_dists_from_scf(
-    base_year=adjust_infl_to, age=birth_age, education="College", wave=1995
-)
-liv_prb = parse_ssa_life_table(
-    female=True, cross_sec=True, year=2004, min_age=birth_age, max_age=death_age - 1
-)
-time_params = parse_time_params(age_birth=birth_age, age_death=death_age)
-college_dict.update(time_params)
-college_dict.update(dist_params)
-college_dict.update(income_params)
-college_dict.update({"LivPrb": liv_prb})
-
-# Define a mapping from (center,spread) to the actual parameters of the distribution.
-# For each class of distributions you want to allow, there needs to be an entry for
-# DstnParam mapping that says what (center,spread) represents for that distribution.
-if DstnType is Uniform:
-    DstnParamMapping = lambda center, spread : [center-spread, center+spread]
-elif DstnType is Lognormal:
-    DstnParamMapping = lambda center, spread : [np.log(center) - 0.5 * spread**2, spread]
-else:
-    print('Oh no! You picked an invalid distribution type!')
-
-
-
-# Main executions of the file happen from this point onward 
-# Make a population of agents with baseline parameters
-BaseParamDict[HetParam] = DstnType(*DstnParamMapping(InitCenter, InitSpread))
-BasePopulation = AgentPopulation(MyAgentType, BaseParamDict)
-BasePopulation.approx_distributions({HetParam : TypeCount})
-BasePopulation.create_distributed_agents()
-BasePopulation.AgentCount = TotalAgentCount
-
-# Make a population of life cycle agents with het returns
-population = []
-for i, subpop in enumerate([nohs_dict, hs_dict, college_dict]):
-    subpop[HetParam] = DstnType(*DstnParamMapping(InitCenter, InitSpread))
-    population.append(AgentPopulation(MyAgentType, subpop))
-    population[i].approx_distributions({HetParam : TypeCount})
-    population[i].create_distributed_agents()
-    population[i].AgentCount = TotalAgentCount/3
-
-agents = population[0].agents + population[1].agents + population[2].agents
-LifeCyclePopulation = AgentPopulation(MyAgentType, {})
-LifeCyclePopulation.agents = agents
-LifeCyclePopulation.AgentCount = TotalAgentCount
+TargetPercentiles = yaml_params['TargetPercentiles']
+wealth_data_file = yaml_params['wealth_data_file']
+wealth_col = yaml_params['wealth_col']
+weight_col = yaml_params['weight_col']
+income_col = yaml_params['income_col']
 
 # Import the wealth and income data to be matched in estimation
 f = open(data_location + "/" + wealth_data_file)
@@ -202,9 +63,128 @@ for j in range(len(wealth_data_raw)):
     weights_data[j] = float(wealth_data_raw[j][weight_col])
     income_data[j] = float(wealth_data_raw[j][income_col])
 
-
-MyPopulation = BasePopulation
-
+# Calculate empirical moments to be used as targets
 empirical_moments = calcEmpMoments(wealth_data, income_data, weights_data, TargetPercentiles)
 emp_KY_ratio = empirical_moments[0]
 emp_lorenz = empirical_moments[1]
+
+# Define a baseline parameter dictionary; this content will be in a YAML file later
+base_param_filename = yaml_params['base_param_filename']
+with open(specs_location + base_param_filename + '.yaml', 'r') as f:
+    init_raw = f.read()
+    f.close()
+BaseParamDict = {
+    "BaseAgentCount" : TotalAgentCount,
+    "track_vars": ['aLvl','pLvl','WeightFac']
+}
+BaseParamDict.update(yaml.safe_load(init_raw))
+
+# Define a mapping from (center,spread) to the actual parameters of the distribution.
+# For each class of distributions you want to allow, there needs to be an entry for
+# DstnParam mapping that says what (center,spread) represents for that distribution.
+if DstnTypeName == 'Uniform':
+    DstnType = Uniform
+    DstnParamMapping = lambda center, spread : [center-spread, center+spread]
+elif DstnTypeName == 'Lognormal':
+    DstnType = Lognormal
+    DstnParamMapping = lambda center, spread : [np.log(center) - 0.5 * spread**2, spread]
+else:
+    print('Oh no! You picked an invalid distribution type!')
+
+if LifeCycle:
+    birth_age = 25
+    death_age = 90
+    adjust_infl_to = 2004 #same wave as the wave of SCF used for empirical targets
+    income_calib = Cagetti_income
+    
+    # Define fractions of education types
+    nohs_frac = 0.11
+    hs_frac = 0.54
+    college_frac = 0.35
+    
+    # Define dictionaries for life cycle version of the model. Should also be in Yaml file
+    # Note: missing survival probabilites conditional on education level.
+    nohs_dict = deepcopy(BaseParamDict)
+    income_params = parse_income_spec(
+        age_min=birth_age,
+        age_max=death_age,
+        adjust_infl_to=adjust_infl_to,
+        **income_calib["NoHS"],
+        SabelhausSong=True,
+    )
+    dist_params = income_wealth_dists_from_scf(
+        base_year=adjust_infl_to, age=birth_age, education="NoHS", wave=1995
+    )
+    liv_prb = parse_ssa_life_table(
+        female=True, cross_sec=True, year=2004, min_age=birth_age, max_age=death_age - 1
+    )
+    time_params = parse_time_params(age_birth=birth_age, age_death=death_age)
+    nohs_dict.update(time_params)
+    nohs_dict.update(dist_params)
+    nohs_dict.update(income_params)
+    nohs_dict.update({"LivPrb": liv_prb})
+    nohs_dict['BaseAgentCount'] = TotalAgentCount*nohs_frac
+    
+    hs_dict = deepcopy(BaseParamDict)
+    income_params = parse_income_spec(
+        age_min=birth_age,
+        age_max=death_age,
+        adjust_infl_to=adjust_infl_to,
+        **income_calib["HS"],
+        SabelhausSong=True,
+    )
+    dist_params = income_wealth_dists_from_scf(
+        base_year=adjust_infl_to, age=birth_age, education="HS", wave=1995
+    )
+    liv_prb = parse_ssa_life_table(
+        female=True, cross_sec=True, year=2004, min_age=birth_age, max_age=death_age - 1
+    )
+    time_params = parse_time_params(age_birth=birth_age, age_death=death_age)
+    hs_dict.update(time_params)
+    hs_dict.update(dist_params)
+    hs_dict.update(income_params)
+    hs_dict.update({"LivPrb": liv_prb})
+    hs_dict['BaseAgentCount'] = TotalAgentCount*hs_frac
+    
+    college_dict = deepcopy(BaseParamDict)
+    income_params = parse_income_spec(
+        age_min=birth_age,
+        age_max=death_age,
+        adjust_infl_to=adjust_infl_to,
+        **income_calib["College"],
+        SabelhausSong=True,
+    )
+    dist_params = income_wealth_dists_from_scf(
+        base_year=adjust_infl_to, age=birth_age, education="College", wave=1995
+    )
+    liv_prb = parse_ssa_life_table(
+        female=True, cross_sec=True, year=2004, min_age=birth_age, max_age=death_age - 1
+    )
+    time_params = parse_time_params(age_birth=birth_age, age_death=death_age)
+    college_dict.update(time_params)
+    college_dict.update(dist_params)
+    college_dict.update(income_params)
+    college_dict.update({"LivPrb": liv_prb})
+    college_dict['BaseAgentCount'] = TotalAgentCount*college_frac
+    
+    # Make base agent types
+    DropoutType = MyAgentType(**nohs_dict)
+    HighschType = MyAgentType(**hs_dict)
+    CollegeType = MyAgentType(**college_dict)
+    BaseTypeCount = 3
+    BasePopulation = [DropoutType, HighschType, CollegeType]
+
+else:
+    IHbaseType = MyAgentType(**BaseParamDict)
+    BaseTypeCount = 1
+    BasePopulation = [IHbaseType]
+
+# Set the agent population
+MyPopulation = []
+for n in range(HetTypeCount):
+    MyPopulation += deepcopy(BasePopulation)
+    
+# Store optimal parameters here
+opt_center = None
+opt_spread = None
+
