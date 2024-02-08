@@ -1,4 +1,90 @@
 import numpy as np
+from HARK.ConsumptionSaving.ConsIndShockModel import IndShockConsumerType
+
+class AltIndShockConsumerType(IndShockConsumerType):
+    def __repr__(self):
+        return ('AltIndShockConsumerType with Rfree=' + str(self.Rfree) + ' and DiscFac=' + str(self.DiscFac))
+    
+    def sim_one_period(self):
+        """
+        Overwrite the core simulation routine with a simplified special one, but
+        only use it for lifecycle models.
+        """
+        if self.cycles == 0:  # Use core simulation method if infinite horizon
+            IndShockConsumerType.sim_one_period(self)
+            self.state_now["WeightFac"] = self.PopGroFac ** (-self.t_age)
+            return
+
+        # If lifecycle, first deal with moving from last period's values to this period
+        for var in self.state_now:
+            self.state_prev[var] = self.state_now[var]
+
+            if isinstance(self.state_now[var], np.ndarray):
+                self.state_now[var] = np.empty(self.AgentCount)
+            else:
+                # Probably an aggregate variable. It may be getting set by the Market.
+                pass
+
+        # First, get the age of all agents-- which is the same across all of them!
+        t = self.t_cycle[0]
+        N = self.AgentCount
+
+        # Now, generate income shocks for all of the agents
+        IncShkDstn = self.IncShkDstn[t - 1]
+        IncShkNow = IncShkDstn.draw(N)
+        PermShkNow = IncShkNow[0, :]
+        TranShkNow = IncShkNow[1, :]
+        PermGroFac = self.PermGroFac[t - 1]
+        RfreeEff = self.Rfree / (PermGroFac * PermShkNow)
+        pLvlNow = PermGroFac * PermShkNow * self.state_prev["pLvl"]
+
+        # Move from aNrmPrev to mNrmNow using our income shock draws
+        aNrmPrev = self.state_prev["aNrm"]
+        bNrmNow = RfreeEff * aNrmPrev
+        mNrmNow = bNrmNow + TranShkNow
+
+        # Find consumption and the MPC for all agents
+        cFuncNow = self.solution[t].cFunc
+        cNrmNow, MPCnow = cFuncNow.eval_with_derivative(mNrmNow)
+
+        # Calculate end-of-period assets in both level and normalized
+        aNrmNow = mNrmNow - cNrmNow
+        aLvlNow = aNrmNow * pLvlNow
+
+        # Compute cumulative survival probability to this age
+        LivPrb = np.concatenate([[1.0], self.LivPrb])
+        CumLivPrb = np.prod(LivPrb[: (t + 1)])
+        CohortWeight = self.PopGroFac ** (-t)
+        WeightFac = CumLivPrb * CohortWeight
+
+        # Write these results to state_now
+        self.state_now["mNrm"] = mNrmNow
+        self.state_now["bNrm"] = bNrmNow
+        self.state_now["aNrm"] = aNrmNow
+        self.state_now["pLvl"] = pLvlNow
+        self.state_now["aLvl"] = aLvlNow
+        self.state_now["cNrm"] = cNrmNow
+        self.state_now["TranShk"] = TranShkNow
+        self.state_now["MPC"] = MPCnow
+        self.state_now["WeightFac"] = WeightFac * np.ones(self.AgentCount)
+        self.EmpNow = np.logical_not(TranShkNow == self.IncUnemp)
+        self.state_now["t_age"] = self.t_age.astype(float)
+
+        # Advance time for all agents
+        self.t_age += 1  # Age all consumers by one period
+        self.t_cycle += 1  # Age all consumers within their cycle
+        # Reset to zero for those who have reached the end
+        self.t_cycle[self.t_cycle == self.T_cycle] = 0
+
+# Function to calculate empirical moments
+def calcEmpMoments(wealth, income, weights, pctiles):
+    """
+    Calculate the empirical targets using the wave of the SCF specified when
+    setting up the agent type.
+    """
+    WealthToIncRatioEmp = np.dot(wealth,weights) / np.dot(income,weights)
+    LorenzValuesEmp = get_lorenz_shares(wealth, weights, percentiles=pctiles)
+    return WealthToIncRatioEmp, LorenzValuesEmp
 
 def get_lorenz_shares(data, weights=None, percentiles=None, presorted=False):
     """

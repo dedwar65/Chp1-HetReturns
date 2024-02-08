@@ -6,7 +6,6 @@ import csv
 import matplotlib.pyplot as plt
 from copy import deepcopy
 from HARK.core import AgentPopulation
-from HARK.ConsumptionSaving.ConsIndShockModel import IndShockConsumerType
 from HARK.distribution import Uniform, Lognormal
 import pandas as pd
 from HARK.Calibration.Income.IncomeTools import (
@@ -16,11 +15,13 @@ from HARK.Calibration.Income.IncomeTools import (
 )
 from HARK.datasets.life_tables.us_ssa.SSATools import parse_ssa_life_table
 from HARK.datasets.SCF.WealthIncomeDist.SCFDistTools import income_wealth_dists_from_scf
+from utilities import get_lorenz_shares, calcEmpMoments, AltIndShockConsumerType
+
 
 SpecificationFilename = '.yaml'
 
 # Choose basic specification parameters; this content will be in a YAML file later
-MyAgentType = IndShockConsumerType
+MyAgentType = AltIndShockConsumerType
 HetParam = 'Rfree'
 DstnType = Uniform
 InitCenter = 1.0277277887072713
@@ -30,10 +31,22 @@ TotalAgentCount = 70000
 ModelType = 'dist'
 LifeCycle = False
 
+# Specify search parameters
+center_range = [0.95, 1.05]
+spread_range = [0.001, 0.05]
+
+# Setup basics for computing empirical targets from the SCF
+TargetPercentiles = [0.2, 0.4, 0.6, 0.8]
+data_location = '../Data'
+wealth_data_file = 'rscfp2004_reduced.txt'
+wealth_col = 4
+weight_col = 0
+income_col = 1
+
 # Define a baseline parameter dictionary; this content will be in a YAML file later
 BaseParamDict = {
     "CRRA": 1.0,  # Coefficient of relative risk aversion
-    "Rfree": 1.01 / (1.0 - 1.0 / 160.0),  # Survival probability,
+    "Rfree": 1.01,  # Risk free interest factor,
     # Permanent income growth factor (no perm growth),
     "PermGroFac": [1.000**0.25],
     "PermGroFacAgg": 1.0,
@@ -58,7 +71,7 @@ BaseParamDict = {
     "aXtraExtra": [None],
     "aXtraNestFac": 3,  # Number of times to 'exponentially nest' when constructing assets grid
     "LivPrb": [1.0 - 1.0 / 160.0],  # Survival probability
-    "DiscFac": 0.97,  # Default intertemporal discount factor; dummy value, will be overwritten
+    "DiscFac": 0.99,  # Default intertemporal discount factor
     "cycles": 0,
     "T_cycle": 1,
     "T_retire": 0,
@@ -70,12 +83,15 @@ BaseParamDict = {
     "aNrmInitStd": 0.0,
     "pLvlInitMean": 0.0,
     "pLvlInitStd": 0.0,
+    "PopGroFac": 1.0
 }
 
 birth_age = 25
 death_age = 90
 adjust_infl_to = 2004 #same wave as the wave of SCF used for empirical targets
 income_calib = CGM_income
+
+
 
 # Define dictionaries for life cycle version of the model. Should also be in Yaml file
 # Note: missing survival probabilites conditional on education level.
@@ -149,13 +165,7 @@ elif DstnType is Lognormal:
 else:
     print('Oh no! You picked an invalid distribution type!')
 
-# Setup basics for computing empirical targets from the SCF
-TargetPercentiles = [0.2, 0.4, 0.6, 0.8]
-data_location = '/Users/dc/Library/CloudStorage/OneDrive-JohnsHopkins/research/GitHub/dedwar65/Chp1-HetReturns/Code/Data'
-wealth_data_file = 'rscfp2004_reduced.txt'
-wealth_col = 4
-weight_col = 0
-income_col = 1
+
 
 # Main executions of the file happen from this point onward 
 # Make a population of agents with baseline parameters
@@ -163,7 +173,7 @@ BaseParamDict[HetParam] = DstnType(*DstnParamMapping(InitCenter, InitSpread))
 BasePopulation = AgentPopulation(MyAgentType, BaseParamDict)
 BasePopulation.approx_distributions({HetParam : TypeCount})
 BasePopulation.create_distributed_agents()
-BasePopulation.AgentCount = TotalAgentCount/3
+BasePopulation.AgentCount = TotalAgentCount
 
 # Make a population of life cycle agents with het returns
 population = []
@@ -193,4 +203,8 @@ for j in range(len(wealth_data_raw)):
     income_data[j] = float(wealth_data_raw[j][income_col])
 
 
-MyPopulation = population[0]
+MyPopulation = BasePopulation
+
+empirical_moments = calcEmpMoments(wealth_data, income_data, weights_data, TargetPercentiles)
+emp_KY_ratio = empirical_moments[0]
+emp_lorenz = empirical_moments[1]
