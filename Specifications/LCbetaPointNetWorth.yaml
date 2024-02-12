@@ -12,4 +12,5 @@ wealth_data_file: rscfp2004_reduced.txt
 wealth_col: 4
 weight_col: 0
 income_col: 1
-base_param_filename: LifecycleBase
+base_param_filename: LifecycleDict
+mort_data_file: EducMortAdj.txt

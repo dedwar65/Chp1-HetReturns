@@ -18,13 +18,15 @@ from HARK.Calibration.Income.IncomeTools import (
 from HARK.datasets.life_tables.us_ssa.SSATools import parse_ssa_life_table
 from HARK.datasets.SCF.WealthIncomeDist.SCFDistTools import income_wealth_dists_from_scf
 from utilities import get_lorenz_shares, calcEmpMoments, AltIndShockConsumerType
+import os
+
 MyAgentType = AltIndShockConsumerType
 
-data_location = '../Data/'
-specs_location = '../Specifications/'
+script_dir = os.path.dirname(os.path.abspath(__file__))
+data_location = os.path.join(script_dir, '../Data/')
+specs_location = os.path.join(script_dir, '../Specifications/')
 SpecificationFilename = 'LCbetaPointNetWorth.yaml'
 
-# Load in the specification from the yaml file
 with open(specs_location + SpecificationFilename, 'r') as f:
     spec_raw = f.read()
     f.close()
@@ -68,17 +70,6 @@ empirical_moments = calcEmpMoments(wealth_data, income_data, weights_data, Targe
 emp_KY_ratio = empirical_moments[0]
 emp_lorenz = empirical_moments[1]
 
-# Define a baseline parameter dictionary; this content will be in a YAML file later
-base_param_filename = yaml_params['base_param_filename']
-with open(specs_location + base_param_filename + '.yaml', 'r') as f:
-    init_raw = f.read()
-    f.close()
-BaseParamDict = {
-    "BaseAgentCount" : TotalAgentCount,
-    "track_vars": ['aLvl','pLvl','WeightFac']
-}
-BaseParamDict.update(yaml.safe_load(init_raw))
-
 # Define a mapping from (center,spread) to the actual parameters of the distribution.
 # For each class of distributions you want to allow, there needs to be an entry for
 # DstnParam mapping that says what (center,spread) represents for that distribution.
@@ -91,12 +82,51 @@ elif DstnTypeName == 'Lognormal':
 else:
     print('Oh no! You picked an invalid distribution type!')
 
+# Define a baseline parameter dictionary; this content will be in a YAML file later
+base_param_filename = yaml_params['base_param_filename']
+with open(specs_location + base_param_filename + '.yaml', 'r') as f:
+    init_raw = f.read()
+    f.close()
+BaseParamDict = {
+    "BaseAgentCount" : TotalAgentCount,
+    "track_vars": ['aLvl','pLvl','WeightFac']
+}
+BaseParamDict.update(yaml.safe_load(init_raw)) # Later, add conditions to include other agent types
+
+# Adjust survival probabilities from SSA tables using education cohort adjustments; 
+# method provided by Brown, Liebman, and Pollett (2002).
+mort_data_file = yaml_params['mort_data_file']
+
+birth_age = BaseParamDict['birth_age']
+death_age = BaseParamDict['death_age']
+
+# Compute base mortality rates for the specified age range
+base_liv_prb = parse_ssa_life_table(
+        female=True, cross_sec=True, year=2004, min_age=birth_age, max_age=death_age - 1
+    )
+
+# Import adjustments for education and apply them to the base mortality rates
+f = open(data_location + "/" + mort_data_file)
+adjustment_reader = csv.reader(f, delimiter=" ")
+raw_adjustments = list(adjustment_reader)
+nohs_death_probs = []
+hs_death_probs = []
+c_death_probs = []
+for j in range(death_age - birth_age):
+    if j < 76:
+        nohs_death_probs += [base_liv_prb[j] * float(raw_adjustments[j][1])]
+        hs_death_probs += [base_liv_prb[j] * float(raw_adjustments[j][2])]
+        c_death_probs += [base_liv_prb[j] * float(raw_adjustments[j][3])]
+    else:
+        nohs_death_probs += [base_liv_prb[j] * float(raw_adjustments[75][1])]
+        hs_death_probs += [base_liv_prb[j] * float(raw_adjustments[75][2])]
+        c_death_probs += [base_liv_prb[j] * float(raw_adjustments[75][3])]
+
+# Here define the population of agents for the simulation
 if LifeCycle:
-    birth_age = 25
-    death_age = 90
-    adjust_infl_to = 2004 #same wave as the wave of SCF used for empirical targets
+    adjust_infl_to = 2004
     income_calib = Cagetti_income
-    
+
     # Define fractions of education types
     nohs_frac = 0.11
     hs_frac = 0.54
@@ -115,14 +145,11 @@ if LifeCycle:
     dist_params = income_wealth_dists_from_scf(
         base_year=adjust_infl_to, age=birth_age, education="NoHS", wave=1995
     )
-    liv_prb = parse_ssa_life_table(
-        female=True, cross_sec=True, year=2004, min_age=birth_age, max_age=death_age - 1
-    )
     time_params = parse_time_params(age_birth=birth_age, age_death=death_age)
     nohs_dict.update(time_params)
     nohs_dict.update(dist_params)
     nohs_dict.update(income_params)
-    nohs_dict.update({"LivPrb": liv_prb})
+    nohs_dict.update({"LivPrb": nohs_death_probs})
     nohs_dict['BaseAgentCount'] = TotalAgentCount*nohs_frac
     
     hs_dict = deepcopy(BaseParamDict)
@@ -136,14 +163,11 @@ if LifeCycle:
     dist_params = income_wealth_dists_from_scf(
         base_year=adjust_infl_to, age=birth_age, education="HS", wave=1995
     )
-    liv_prb = parse_ssa_life_table(
-        female=True, cross_sec=True, year=2004, min_age=birth_age, max_age=death_age - 1
-    )
     time_params = parse_time_params(age_birth=birth_age, age_death=death_age)
     hs_dict.update(time_params)
     hs_dict.update(dist_params)
     hs_dict.update(income_params)
-    hs_dict.update({"LivPrb": liv_prb})
+    hs_dict.update({"LivPrb": hs_death_probs})
     hs_dict['BaseAgentCount'] = TotalAgentCount*hs_frac
     
     college_dict = deepcopy(BaseParamDict)
@@ -157,14 +181,11 @@ if LifeCycle:
     dist_params = income_wealth_dists_from_scf(
         base_year=adjust_infl_to, age=birth_age, education="College", wave=1995
     )
-    liv_prb = parse_ssa_life_table(
-        female=True, cross_sec=True, year=2004, min_age=birth_age, max_age=death_age - 1
-    )
     time_params = parse_time_params(age_birth=birth_age, age_death=death_age)
     college_dict.update(time_params)
     college_dict.update(dist_params)
     college_dict.update(income_params)
-    college_dict.update({"LivPrb": liv_prb})
+    college_dict.update({"LivPrb": c_death_probs})
     college_dict['BaseAgentCount'] = TotalAgentCount*college_frac
     
     # Make base agent types
