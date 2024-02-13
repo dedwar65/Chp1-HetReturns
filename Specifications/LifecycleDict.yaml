@@ -27,5 +27,3 @@ aNrmInitStd: 0.0
 PopGroFac: 1.01
 birth_age: 25
 death_age: 100
-adjust_infl_to: 2004 
-income_calib: Cagetti_income

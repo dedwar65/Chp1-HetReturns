@@ -1,4 +1,4 @@
-tag: IHbetaPointNetWorth
+tag: PYbetaDistNetWorth
 description: perpetual youth discount factor estimation with no heterogeneity
 HetParam: DiscFac
 DstnType: Uniform
@@ -14,3 +14,4 @@ weight_col: 0
 income_col: 1
 base_param_filename: PerpetualYouthDict
 mort_data_file: EducMortAdj.txt
+model: Dist

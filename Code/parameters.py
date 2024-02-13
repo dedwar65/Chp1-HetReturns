@@ -25,14 +25,16 @@ MyAgentType = AltIndShockConsumerType
 script_dir = os.path.dirname(os.path.abspath(__file__))
 data_location = os.path.join(script_dir, '../Data/')
 specs_location = os.path.join(script_dir, '../Specifications/')
-SpecificationFilename = 'LCbetaPointNetWorth.yaml'
+SpecificationFilename = 'LCbetaDistNetWorth.yaml'
 
 with open(specs_location + SpecificationFilename, 'r') as f:
     spec_raw = f.read()
     f.close()
 yaml_params = yaml.safe_load(spec_raw)
 print('Loading a specification called ' + yaml_params['description'])
+
 tag = yaml_params['tag']
+model = yaml_params["model"]
 
 # Choose basic specification parameters
 HetParam = yaml_params['HetParam']
@@ -208,4 +210,5 @@ for n in range(HetTypeCount):
 # Store optimal parameters here
 opt_center = None
 opt_spread = None
+lorenz_distance = None
 

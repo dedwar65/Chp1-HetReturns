@@ -1,5 +1,7 @@
 import numpy as np
 from HARK.ConsumptionSaving.ConsIndShockModel import IndShockConsumerType
+import os
+
 
 class AltIndShockConsumerType(IndShockConsumerType):
     def __repr__(self):
@@ -148,3 +150,35 @@ def get_lorenz_shares(data, weights=None, percentiles=None, presorted=False):
         lorenz_out[i] = (1.-alpha)*cum_data[j-1] + alpha*cum_data[j]
     
     return lorenz_out
+
+script_dir = os.path.dirname(os.path.abspath(__file__))
+results_location = os.path.join(script_dir, '../Results/')
+
+def show_statistics(tag, center, spread, dist):
+    """
+    Calculates statistics post estimation of interest to the end-user that can be used to 
+    quickly assess a given instance of the structural estimation. 
+    """
+    # Create a list of strings to concatenate
+    results_list = [
+        f"Estimate is center={center}, spread={spread}\n",
+        f"Lorenz distance is {dist}\n",
+        ##Add more summary stats here##
+    ]
+
+    # Concatenate the list into a single string
+    results_string = "".join(results_list)
+
+    print(results_string)
+
+    # Save results to disk
+    if tag is not None:
+        with open(
+            results_location + tag + "Results.txt",
+            "w",
+            encoding="utf-8",
+        ) as f:
+            f.write(results_string)
+            f.close()
+
+
