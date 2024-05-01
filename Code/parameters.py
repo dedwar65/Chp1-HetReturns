@@ -25,7 +25,7 @@ MyAgentType = AltIndShockConsumerType
 script_dir = os.path.dirname(os.path.abspath(__file__))
 data_location = os.path.join(script_dir, '../Data/')
 specs_location = os.path.join(script_dir, '../Specifications/')
-SpecificationFilename = 'LCbetaDistNetWorth.yaml'
+SpecificationFilename = 'LCbetaPointNetWorth.yaml'
 
 with open(specs_location + SpecificationFilename, 'r') as f:
     spec_raw = f.read()
@@ -115,14 +115,15 @@ nohs_death_probs = []
 hs_death_probs = []
 c_death_probs = []
 for j in range(death_age - birth_age):
+    this_prob = 1.0 - base_liv_prb[j]
     if j < 76:
-        nohs_death_probs += [base_liv_prb[j] * float(raw_adjustments[j][1])]
-        hs_death_probs += [base_liv_prb[j] * float(raw_adjustments[j][2])]
-        c_death_probs += [base_liv_prb[j] * float(raw_adjustments[j][3])]
+        nohs_death_probs += [1.0 - this_prob * float(raw_adjustments[j][1])]
+        hs_death_probs += [1.0 - this_prob * float(raw_adjustments[j][2])]
+        c_death_probs += [1.0 - this_prob * float(raw_adjustments[j][3])]
     else:
-        nohs_death_probs += [base_liv_prb[j] * float(raw_adjustments[75][1])]
-        hs_death_probs += [base_liv_prb[j] * float(raw_adjustments[75][2])]
-        c_death_probs += [base_liv_prb[j] * float(raw_adjustments[75][3])]
+        nohs_death_probs += [1.0 - this_prob * float(raw_adjustments[75][1])]
+        hs_death_probs += [1.0 - this_prob * float(raw_adjustments[75][2])]
+        c_death_probs += [1.0 - this_prob * float(raw_adjustments[75][3])]
 
 # Here define the population of agents for the simulation
 if LifeCycle:

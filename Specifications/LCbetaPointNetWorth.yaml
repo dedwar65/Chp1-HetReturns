@@ -2,7 +2,7 @@ tag: LCbetaPointNetWorth
 description: lifecycle discount factor estimation with no heterogeneity
 HetParam: DiscFac
 DstnType: Uniform
-HetTypeCount: 7
+HetTypeCount: 1
 LifeCycle: True
 AgentsPerType: 10000
 center_range: [0.70, 1.05]

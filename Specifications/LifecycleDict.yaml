@@ -15,7 +15,7 @@ aXtraMin: 0.00001
 aXtraMax: 40
 aXtraCount: 32
 aXtraExtra: []
-aXtraNestFac: 3
+aXtraNestFac: 1
 DiscFac: 0.96
 cycles: 1
 T_cycle: 65
