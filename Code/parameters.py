@@ -1,31 +1,31 @@
 '''
 This file specifies parameters for the agent types and empirical targets.
 '''
-import numpy as np
 import csv
-import matplotlib.pyplot as plt
-import yaml
-from copy import deepcopy
-from HARK.core import AgentPopulation
-from HARK.distribution import Uniform, Lognormal
-import pandas as pd
-from HARK.Calibration.Income.IncomeTools import (
-    CGM_income,
-    Cagetti_income,
-    parse_income_spec,
-    parse_time_params,
-)
-from HARK.datasets.life_tables.us_ssa.SSATools import parse_ssa_life_table
-from HARK.datasets.SCF.WealthIncomeDist.SCFDistTools import income_wealth_dists_from_scf
-from utilities import get_lorenz_shares, calcEmpMoments, AltIndShockConsumerType
 import os
+from copy import deepcopy
+
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import yaml
+from HARK.Calibration.Income.IncomeTools import (Cagetti_income, CGM_income,
+                                                 parse_income_spec,
+                                                 parse_time_params)
+from HARK.core import AgentPopulation
+from HARK.datasets.life_tables.us_ssa.SSATools import parse_ssa_life_table
+from HARK.datasets.SCF.WealthIncomeDist.SCFDistTools import \
+    income_wealth_dists_from_scf
+from HARK.distribution import Lognormal, Uniform
+from utilities import (AltIndShockConsumerType, calcEmpMoments,
+                       get_lorenz_shares)
 
 MyAgentType = AltIndShockConsumerType
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 data_location = os.path.join(script_dir, '../Data/')
 specs_location = os.path.join(script_dir, '../Specifications/')
-SpecificationFilename = 'LCbetaPointNetWorth.yaml'
+SpecificationFilename = 'PYrrDistNetWorth.yaml'
 
 with open(specs_location + SpecificationFilename, 'r') as f:
     spec_raw = f.read()
@@ -95,7 +95,7 @@ BaseParamDict = {
 }
 BaseParamDict.update(yaml.safe_load(init_raw)) # Later, add conditions to include other agent types
 
-# Adjust survival probabilities from SSA tables using education cohort adjustments; 
+# Adjust survival probabilities from SSA tables using education cohort adjustments;
 # method provided by Brown, Liebman, and Pollett (2002).
 mort_data_file = yaml_params['mort_data_file']
 
@@ -134,7 +134,7 @@ if LifeCycle:
     nohs_frac = 0.11
     hs_frac = 0.54
     college_frac = 0.35
-    
+
     # Define dictionaries for life cycle version of the model. Should also be in Yaml file
     # Note: missing survival probabilites conditional on education level.
     nohs_dict = deepcopy(BaseParamDict)
@@ -154,7 +154,7 @@ if LifeCycle:
     nohs_dict.update(income_params)
     nohs_dict.update({"LivPrb": nohs_death_probs})
     nohs_dict['BaseAgentCount'] = TotalAgentCount*nohs_frac
-    
+
     hs_dict = deepcopy(BaseParamDict)
     income_params = parse_income_spec(
         age_min=birth_age,
@@ -172,7 +172,7 @@ if LifeCycle:
     hs_dict.update(income_params)
     hs_dict.update({"LivPrb": hs_death_probs})
     hs_dict['BaseAgentCount'] = TotalAgentCount*hs_frac
-    
+
     college_dict = deepcopy(BaseParamDict)
     income_params = parse_income_spec(
         age_min=birth_age,
@@ -190,7 +190,7 @@ if LifeCycle:
     college_dict.update(income_params)
     college_dict.update({"LivPrb": c_death_probs})
     college_dict['BaseAgentCount'] = TotalAgentCount*college_frac
-    
+
     # Make base agent types
     DropoutType = MyAgentType(**nohs_dict)
     HighschType = MyAgentType(**hs_dict)
@@ -207,7 +207,7 @@ else:
 MyPopulation = []
 for n in range(HetTypeCount):
     MyPopulation += deepcopy(BasePopulation)
-    
+
 # Store optimal parameters here
 opt_center = None
 opt_spread = None
