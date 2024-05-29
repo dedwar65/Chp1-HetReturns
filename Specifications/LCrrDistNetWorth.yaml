@@ -1,17 +1,17 @@
-tag: PYrrDistNetWorth
-description: Perpetual youth rate of return estimation with heterogeneity
+tag: LCrrDistNetWorth
+description: Lifecycle rate of return estimation with heterogeneity
 HetParam: Rfree
 DstnType: Uniform
 HetTypeCount: 7
-LifeCycle: False
+LifeCycle: True
 AgentsPerType: 10000
-center_range: [0.95, 1.03]
+center_range: [0.95, 1.075]
 spread_range: [0.001, 0.03]
 TargetPercentiles: [0.2, 0.4, 0.6, 0.8]
 wealth_data_file: rscfp2004_reduced.txt
 wealth_col: 5
 weight_col: 0
 income_col: 1
-base_param_filename: PerpetualYouthDict
+base_param_filename: LifecycleDict
 mort_data_file: EducMortAdj.txt
 model: Dist

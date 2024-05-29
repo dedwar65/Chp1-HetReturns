@@ -25,7 +25,7 @@ MyAgentType = AltIndShockConsumerType
 script_dir = os.path.dirname(os.path.abspath(__file__))
 data_location = os.path.join(script_dir, '../Data/')
 specs_location = os.path.join(script_dir, '../Specifications/')
-SpecificationFilename = 'PYrrDistNetWorth.yaml'
+SpecificationFilename = 'LCrrDistNetWorth.yaml'
 
 with open(specs_location + SpecificationFilename, 'r') as f:
     spec_raw = f.read()
@@ -70,7 +70,9 @@ for j in range(len(wealth_data_raw)):
 # Calculate empirical moments to be used as targets
 empirical_moments = calcEmpMoments(wealth_data, income_data, weights_data, TargetPercentiles)
 emp_KY_ratio = empirical_moments[0]
+print(emp_KY_ratio)
 emp_lorenz = empirical_moments[1]
+print(emp_lorenz)
 
 # Define a mapping from (center,spread) to the actual parameters of the distribution.
 # For each class of distributions you want to allow, there needs to be an entry for
