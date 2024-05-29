@@ -1,0 +1,45 @@
+\documentclass{article}
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[backend=bibtex, style=authoryear]{biblatex} % You can change the style if you prefer a different citation style
+\addbibresource{../Chp1.bib}
+
+\usepackage{dirtytalk}
+\usepackage{cancel}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{booktabs}
+\usepackage{amsfonts}
+
+\usepackage{rotating}
+
+
+\begin{document}
+
+\begin{sidewaystable}[ht]
+    \centering
+    \begin{tabular}{cccc}
+        \toprule
+        Description & Parameter & Value & Source \\
+        \midrule
+        Time discount factor & $\beta$ & 0.99 & \cite{Den_Haan2010} \\
+        CRRA & $\rho$ & 1 & \cite{Den_Haan2010} \\
+        Capital share & $\alpha$ & 0.36 & \cite{Den_Haan2010} \\
+        Depreciation rate & $\delta$ & 0.025 & \cite{Den_Haan2010} \\
+        Time worked per employee & $\ell$ & 1/.09 & \cite{Den_Haan2010} \\
+        Capital/output ratio & $\frac{K}{Y}$ & 10.26 & \cite{Den_Haan2010} \\
+        Effective interest rate & $r - \delta$ & 0.01 & \cite{Den_Haan2010} \\
+        Wage rate & $W$ & 2.37 & \cite{Den_Haan2010} \\
+        Unempl. insurance payment & $\mu$ & 0.15 & \cite{Den_Haan2010} \\
+        Probability of death & $D$ & 0.00625 & Yields 40-year working life \\
+        Variance of $\log \theta_{t,i}$ & $\sigma^{2}_{\theta}$ & 0.010 x 4 & \begin{tabular}[t]{@{}p{5.5cm}@{}} \cite{Carroll1992}, \\ \cite{Carroll2015} \end{tabular} \\
+        Variance of $\log \psi_{t,i}$ & $\sigma^{2}_{\psi}$ & 0.010 x 4/11 & \begin{tabular}[t]{@{}p{5.5cm}@{}} \cite{Carroll1992}, \\  \cite{Debacker2013},  \\ \cite{Carroll2015} \end{tabular} \\
+        Unemployment rate & $\mho$ & 0.07 & Mean in \cite{Den_Haan2010} \\
+        \bottomrule
+    \end{tabular}
+    \caption{Parameter values (quarterly frequency) for the perpetual youth model with no aggregate uncertainty.}
+    \label{tab:calib1}
+\end{sidewaystable}
+
+\end{document}
