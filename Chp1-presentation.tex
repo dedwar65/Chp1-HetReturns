@@ -57,60 +57,13 @@ Representative agent models have a difficult time matching empirical estimates o
 
 %\cite{Ahn2017} note this two-way street between macroeconomics and inequality. Incorporating \textit{heterogeneity across households} can help with this second issue. 
 
-
 \end{frame}
 
-%\begin{frame}{Data on household wealth in the U.S.}
-    
-   % \begin{itemize}
-    %\item Institute for Policy Studies (2019)
-    %\begin{itemize}
-    %	\item \say{In 2018, the total wealth of the poorest half of Americans was eclipsed by the combined wealth of the three wealthiest men in the nation.}
-%	\item \say{The combined wealth of the top five richest men on this list skyrocketed by a staggering 123\% from March 2020 to October 2021.}
-  %  \end{itemize}
-    
-    
-  %  \item Trends in the composition of wealth holdings across households using Survey of Consumer Finances data \parencite{wolff2004}, \parencite{Wolff2021}
-  %  \item Estimated distribution of wealth using IRS tax data for 1913 to 2012 \parencite{sz16}  
-  %  \end{itemize}
-    
-%\vspace{2em}    
-  %  Motivating question: What explains inequality in the distribution of wealth?
-%\end{frame}
-%%%%%%%%%%%%%
-
 \subsection{Literature Review}
-%\begin{frame}{Explaining inequality in the distribution of wealth}
 
- %   \cite{jbab18} provide a survey of historical thought and models describing mechanisms which lead to stationary, skewed distributions of wealth with heavy tails.
-    
-   % \vspace{1mm}
- %   \begin{enumerate}
-   % \item Skewed distribution of earnings
-    
-%    \begin{itemize}
-   % \small
- %   \item Edgeworth (1917), F.P.Cantelli (1921, 1929), Frechet (1939), D'Addario (1943), Mincer (1958), Lydall (1959), Kremer (1993)
-  %  \vspace{1mm}
-   % \item Gabaix and Landier (2008), Geerolf (2016)
-  % \end{itemize}
-    
-  %  \item Stochastic returns to savings
-    
-  %  \begin{itemize}
-  %  \small
-   % \item Champernowne (1953), Kesten (1973)
-  %  \end{itemize}
-    
-  %  \item Optimal consumption-saving behavior of individuals
-  %  \end{enumerate}
- % \end{frame}
-%%%%%%%%%%%%%%%%
 
 \begin{frame}{Macro with heterogeneous agents}
-    %Aim: Understand movements in macroeconomic aggregates by studying the collection of microeconomic (household) behavior.
-    
-    %\small
+
     \begin{itemize}
     \item Uninsurable, idiosyncratic risk to income and movements in aggregate productivity \parencite{ks1998} 
     \item Ex-ante heterogeneity in the time preference of households \parencite{cstw2017}
@@ -133,27 +86,6 @@ Representative agent models have a difficult time matching empirical estimates o
    
   
 \end{frame}
-%%%%%%%%%%%%%%%%%%
-
-
-%\begin{frame}{Possible explanations for differences in returns}
-
- %  \small
-   %\begin{itemize}
-    %\item Entrepreneurial talent  
-    
-    %\parencite{Cagetti2008}
-    
-    %\item Financial knowledge/sophistication
-    
-    %\parencite{mkjnls19}, \parencite{alpmom17},  and \parencite{Lusardi2014}
-    
-    %\item Trust
-    
-    %\parencite{lgpslz2008} and \parencite{jbpglg2016}
-    %\end{itemize}
-  
-%\end{frame}
 %%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Related literature}
@@ -247,7 +179,7 @@ Representative agent models have a difficult time matching empirical estimates o
 \item Transitory component: $$\xi_t =
     \begin{cases}
        \mu & \text{with probability $\mho$} \\
-      (1-\tau_t) l \theta_t & \text{with probability $1-\mho$}
+      (1-\tau_t) \ell \theta_t & \text{with probability $1-\mho$}
    \end{cases}$$
 \end{itemize}
 %\vspace{1.5mm}
@@ -363,38 +295,58 @@ Net worth percentile & Cumulative net worth \\
 
 \section{Results}
 
-\begin{frame}{How good is the match?}
+\begin{frame}{How good is the fit?}
     
-    \begin{columns}
+   \begin{columns}
     \column{0.5\textwidth}
     \centering
-    \includegraphics[width=.9\textwidth]{Figures/hetreturns-PYunif.png}
+    \includegraphics[width=\textwidth]{Figures/PYrrPointNetWorthPlot.png}
     
     \column{0.5\textwidth}
-    \hspace{-5mm}
     \centering
-    
-    \begin{tabular}{|c|c|c|}
+    \includegraphics[width=\textwidth]{Figures/PYrrDistNetWorthPlot.png}
 
-\hline
-& $R$-point & $R$-dist \\
-\hline
-Center & 1.015 & 1.0105  \\
-Spread & 0  &  .011  \\
-Aggregate MPC & .095 &  .263 \\
-\hline
-\end{tabular}
-    
   \end{columns}
     
 \end{frame}
 %%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%
+ 
+\begin{frame}{Lifecycle version of the model}
+\begin{itemize}
+\item Education cohort $e \in \{D, HS, C\}$
+\item Initial wealth $k_0$ and income $p_0$ levels
+\item Education-age dependent mortality rates (cite the paper)
+\item Modified labor income uncertainty $y_t = \xi_t \psi_t \overline{\psi}_{es} p_{t-1}$
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Calibration}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%
+\begin{frame}{How good is the fit?}
+ \begin{columns}
+    \column{0.5\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{Figures/LCrrPointNetWorthPlot.png}
+    
+    \column{0.5\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{Figures/LCrrDistNetWorthPlot.png}
+
+  \end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%
+
+\subsection{Assessing the performance of the model}
+
 \begin{frame}{Revisiting the empirical evidence}
 
 \cite{aflgdmlp20} describe the empirical distribution of returns.
-
-
 
   \vfill
    \begin{figure}
@@ -404,136 +356,26 @@ Aggregate MPC & .095 &  .263 \\
   \vfill
 
 \end{frame}
-%%%%%%%%%%%%%%%
- 
-
-%\section{Liquid Asset Holdings}
-
-%\begin{frame}{Matching household data on liquid wealth holdings}
-
-%\par Why liquid wealth?
-
-%\vspace{5mm}
-%\par Capital-to-output ratio for liquid wealth to solve the $R$\textit{-point model}: $$\frac{K}{Y}=6.6$$
-%\par Lorenz targets for liquid wealth to solve the $R$\textit{-dist model}:
-
-%\centering
-%\vspace{2mm}
-%\begin{tabular}{|c|c|}
-%\hline
-%Net worth percentile & Cumulative net worth \\
-%\hline
-%20th & 0\%  \\
-%40th &  .4\% \\
-%60th &  2.5\% \\
-%80th &  11.7\% \\
-%\hline
-%\end{tabular}
-%\end{frame}
-%%%%%%%%%%%%%%%%
-
-%%%%%%%EXCLUDE IQUID WEALTH FOR NOW%%%%%%%%%%%%%%%
-
-%\begin{frame}{How well does the model distribution match the liquid wealth data?}
-  
-   
-    %\begin{columns}
-    %\column{0.5\textwidth}
-    %\centering
-    %\includegraphics[width=\textwidth]{Figures/hetreturns-PYunif-liqwealth.png}
-    
-    %\column{0.5\textwidth}
-    %\hspace{-5mm}
-    %\centering
-    
-   % \begin{tabular}{|c|c|c|}
-
-%\hline
-%& $R$-point & $R$-dist \\
-%\hline
-%Center & 1.014 & 1.0024  \\
-%Spread &0  &  .019 \\
-%Aggregate MPC & .108 &  .404 \\
-%Lorenz distance & 51.544 & 3.557 \\
-%\hline
-%\end{tabular}
-    
-  %\end{columns}
-  
-%\end{frame}
-%%%%%%%%%%%%%%%%
-
-%\begin{frame}{Matching liquid wealth data with an ex-ante lognormal distribution of returns}
-    %\begin{columns}
-    %\column{0.5\textwidth}
-    %\centering
-    %\includegraphics[width=\textwidth]{Figures/hetreturns-PYlognrm-liqwealth.png}
-    
-    %\column{0.5\textwidth}
-    %\hspace{-5mm}
-    %\centering
-    
-   % \begin{tabular}{|c|c|c|}
-
-%\hline
-%& $R$-point & $R$-dist \\
-%\hline
-%Center & 1.014 & 1.0023  \\
-%Spread &0  &  .010 \\
-%Aggregate MPC & .108 &  .422 \\
-%Lorenz distance & 51.542 & 3.629 \\
-%\hline
-%\end{tabular}
-    
-  %\end{columns}
-%\end{frame}
-%%%%%%%%%%%%%%%%
-
-%\begin{frame}{The estimated lognormal distribution of returns for households}
-%\begin{columns}
-    %\column{0.5\textwidth}
-    %\centering
-    %\includegraphics[width=\textwidth]{Figures/estimated-PYlognrm-liqwealth.png}
-    
-    %\column{0.5\textwidth}
-    %\centering
-    %\includegraphics[width=\textwidth]{Figures/Table3QuantileMatchingFinWealth.png}
-
-  %\end{columns}
-%\end{frame}
-%%%%%%%%%%%%%%%
-%%%%%%%EXCLUDE IQUID WEALTH FOR NOW%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%
 
 \subsection{Concluding Remarks}
 
 \begin{frame}{Work to be done}
        
        \begin{enumerate}
-       \item Potentially exclude retirement assets in the measure household net worth 
+       \item Modify structural estimation to include bequest parameter
+       \item Incorporate choice of risky asset
+       \item Robustness checks
        \begin{itemize}
-      \item Private pension wealth is unobservable in the dataset from \cite{aflgdmlp20}
-      \item Are there significant differences between retirement asset holdings in the U.S. v.s. Norway?
+      \item Wealth data from other waves of the SCF
+      \item Different measures of wealth (liquid or financial)
       \end{itemize}
-       \item Run the estimation for liquid wealth
-      \begin{itemize}
-      \item How close is it to its empirical counterpart (\say{financial wealth})?
-      \end{itemize}
-      \item Life-cycle version of the model
-      \item More recent wealth data from the SCF  
       \end{enumerate}
   
 \end{frame}
 %%%%%%%%%%%%%%%
 
 \begin{frame}{Future directions for this work}
-    \begin{itemize}
-    \item Scale dependence of heterogeneous rates of return
-    \item Endogenizing differences in the rate of return
-    \item Implications of wealth v.s. capital income taxation
-      \begin{itemize}
-        \item \parencite{Benhabib2008}, \parencite{Benhabib2011}, \parencite{Guvenen2019}
-      \end{itemize}
-    \end{itemize}
 \end{frame}
 %%%%%%%%%%%%%%
 
