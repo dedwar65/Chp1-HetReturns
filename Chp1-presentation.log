@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.17)  30 MAY 2024 11:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.17)  30 MAY 2024 17:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1032,30 +1032,84 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@lastruleclass=\count468
 \@thisrulewidth=\dimen316
 )
-\@quotelevel=\count469
-\@quotereset=\count470
+(/usr/local/texlive/2023/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+Package: adjustbox 2022/10/17 v1.3a Adjusting TeX boxes (trim, clip, ...)
+
+(/usr/local/texlive/2023/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+
+(/usr/local/texlive/2023/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/local/texlive/2023/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks48
+\XKV@tempa@toks=\toks49
+)
+\XKV@depth=\count469
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+(/usr/local/texlive/2023/texmf-dist/tex/latex/adjustbox/adjcalc.sty
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
+-ends (calc, etex, pgfmath)
+)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/adjustbox/trimclip.sty
+Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
+
+(/usr/local/texlive/2023/texmf-dist/tex/latex/collectbox/collectbox.sty
+Package: collectbox 2022/10/17 v0.4c Collect macro arguments as boxes
+\collectedbox=\box78
+)
+\tc@llx=\dimen317
+\tc@lly=\dimen318
+\tc@urx=\dimen319
+\tc@ury=\dimen320
+Package trimclip Info: Using driver 'tc-pdftex.def'.
+
+(/usr/local/texlive/2023/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
+File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
+))
+\adjbox@Width=\dimen321
+\adjbox@Height=\dimen322
+\adjbox@Depth=\dimen323
+\adjbox@Totalheight=\dimen324
+\adjbox@pwidth=\dimen325
+\adjbox@pheight=\dimen326
+\adjbox@pdepth=\dimen327
+\adjbox@ptotalheight=\dimen328
+
+(/usr/local/texlive/2023/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
+\c@checkoddpage=\count470
+)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box79
+\sift@deathcycles=\count471
+\@vwid@loff=\dimen329
+\@vwid@roff=\dimen330
+))
+\@quotelevel=\count472
+\@quotereset=\count473
 
 (./Chp1-presentation.aux)
 \openout1 = `Chp1-presentation.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1093,17 +1147,17 @@ LaTeX Font Info:    ... okay on input line 35.
 
 (/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count471
-\scratchdimen=\dimen317
-\scratchbox=\box78
-\nofMPsegments=\count472
-\nofMParguments=\count473
-\everyMPshowfont=\toks48
-\MPscratchCnt=\count474
-\MPscratchDim=\dimen318
-\MPnumerator=\count475
-\makeMPintoPDFobject=\count476
-\everyMPtoPDFconversion=\toks49
+\scratchcounter=\count474
+\scratchdimen=\dimen331
+\scratchbox=\box80
+\nofMPsegments=\count475
+\nofMParguments=\count476
+\everyMPshowfont=\toks50
+\MPscratchCnt=\count477
+\MPscratchDim=\dimen332
+\MPnumerator=\count478
+\makeMPintoPDFobject=\count479
+\everyMPtoPDFconversion=\toks51
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -1113,64 +1167,64 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 35.
+Package hyperref Info: Link coloring OFF on input line 36.
 
 (./Chp1-presentation.out) (./Chp1-presentation.out)
 \@outlinefile=\write6
 \openout6 = `Chp1-presentation.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 35.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 36.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 35.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 36.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 35.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 35.
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 36.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 36.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 35.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 36.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 35.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 35.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 36.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 36.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 35.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 36.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 35.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 35.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 36.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 36.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 35.
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 36.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 35.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 35.
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 36.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 36.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 35.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 36.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 35.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 36.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 35.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 36.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 35.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 36.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/cmr/b/n on input line 35.
+(Font)                  OT1/cmss/b/n --> OT1/cmr/b/n on input line 36.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/cmss/b/n on input line 35.
+(Font)                  OT1/cmss/b/n --> OT1/cmss/b/n on input line 36.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 35.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 36.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 35.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 36.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/b/n on input line 35.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 35.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/b/n on input line 36.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 36.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
 (Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 3
-5.
+6.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/cmss/b/it --> OT1/mathkerncmss/m/sl on input line 3
-5.
+6.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
-ut line 35.
+ut line 36.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/translator/translator-basic-dicti
 onary-English.dict
@@ -1211,192 +1265,150 @@ Package biblatex Info: Data encoding 'utf8' specified.
 \openout5 = `Chp1-presentation-blx.bib'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'Chp1-presentation.bbl' not found.
+Package biblatex Info: ... file 'Chp1-presentation.bbl' found.
 
-No file Chp1-presentation.bbl.
-Package biblatex Info: Reference section=0 on input line 35.
-Package biblatex Info: Reference segment=0 on input line 35.
+(./Chp1-presentation.bbl
+
+Package biblatex Warning: BibTeX reported the following issues
+(biblatex)                with 'lblcps18':
+(biblatex)                - Invalid format of field 'month'.
+
+
+Package biblatex Warning: BibTeX reported the following issues
+(biblatex)                with 'gkgv22':
+(biblatex)                - Invalid format of field 'month'.
+
+
+Package biblatex Warning: BibTeX reported the following issues
+(biblatex)                with 'ks1998':
+(biblatex)                - Invalid format of field 'month'.
+
+)
+Package biblatex Info: Reference section=0 on input line 36.
+Package biblatex Info: Reference segment=0 on input line 36.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-(./Chp1-presentation.nav) [1{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex
-/updmap/pdftex.map}
+ (./Chp1-presentation.nav) [1{/usr/local/texlive/2023/texmf-var/fonts/map/pdfte
+x/updmap/pdftex.map}
 
 ] [2
 
-]
+] [3
 
-LaTeX Warning: Citation 'ks1998' on page 3 undefined on input line 74.
+] [4
 
-
-LaTeX Warning: Citation 'cstw2017' on page 3 undefined on input line 74.
-
-
-LaTeX Warning: Citation 'gkgv22' on page 3 undefined on input line 74.
-
-
-LaTeX Warning: Citation 'Guvenen2011' on page 3 undefined on input line 74.
-
-
-LaTeX Warning: Citation 'Krueger2016' on page 3 undefined on input line 74.
-
-[3
-
-]
-
-LaTeX Warning: Citation 'aflgdmlp20' on page 4 undefined on input line 88.
-
-
-LaTeX Warning: Citation 'lblcps18' on page 4 undefined on input line 88.
-
-
-LaTeX Warning: Citation 'Campbell2019' on page 4 undefined on input line 88.
-
-
-LaTeX Warning: Citation 'Deuflhard2018' on page 4 undefined on input line 88.
-
-[4
-
-]
-
-LaTeX Warning: Citation 'Benhabib2011' on page 5 undefined on input line 102.
-
-
-LaTeX Warning: Citation 'Benhabib2015' on page 5 undefined on input line 102.
-
-
-LaTeX Warning: Citation 'Benhabib2016' on page 5 undefined on input line 102.
-
-
-LaTeX Warning: Citation 'Benhabib2019' on page 5 undefined on input line 102.
-
-
-LaTeX Warning: Citation 'Guler2022' on page 5 undefined on input line 102.
-
-[5
+] [5
 
 ] [6
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 139
+LaTeX Font Info:    Trying to load font information for U+msa on input line 140
 .
- (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
+
+(/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 139
+LaTeX Font Info:    Trying to load font information for U+msb on input line 140
 .
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on inp
-ut line 139.
+ut line 140.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
 )
-<Figures/Fagereng2020Fig1.png, id=279, 748.29562pt x 466.24188pt>
+<Figures/Fagereng2020Fig1.png, id=306, 748.29562pt x 466.24188pt>
 File: Figures/Fagereng2020Fig1.png Graphic file (type png)
 <use Figures/Fagereng2020Fig1.png>
-Package pdftex.def Info: Figures/Fagereng2020Fig1.png  used on input line 139.
+Package pdftex.def Info: Figures/Fagereng2020Fig1.png  used on input line 140.
 (pdftex.def)             Requested size: 173.56186pt x 108.13689pt.
-
-
-LaTeX Warning: Citation 'aflgdmlp20' on page 7 undefined on input line 139.
-
-
-LaTeX Warning: Citation 'aflgdmlp20' on page 7 undefined on input line 139.
-
-
-LaTeX Warning: Citation 'aflgdmlp20' on page 7 undefined on input line 139.
-
-[7
+ [7
 
  <./Figures/Fagereng2020Fig1.png>]
-<Figures/Fagereng2020Fig8.png, id=320, 771.38188pt x 498.86375pt>
+<Figures/Fagereng2020Fig8.png, id=350, 771.38188pt x 498.86375pt>
 File: Figures/Fagereng2020Fig8.png Graphic file (type png)
 <use Figures/Fagereng2020Fig8.png>
-Package pdftex.def Info: Figures/Fagereng2020Fig8.png  used on input line 167.
+Package pdftex.def Info: Figures/Fagereng2020Fig8.png  used on input line 168.
 (pdftex.def)             Requested size: 173.56186pt x 112.2395pt.
+ [8
 
-
-LaTeX Warning: Citation 'aflgdmlp20' on page 8 undefined on input line 167.
-
-
-LaTeX Warning: Citation 'aflgdmlp20' on page 8 undefined on input line 167.
-
-[8
-
- <./Figures/Fagereng2020Fig8.png>] [9
+ <./Figures/Fagereng2020Fig8.png>]
+[9
 
 ] [10
 
-]
-
-LaTeX Warning: Citation 'Carroll2019bst' on page 11 undefined on input line 221
-.
-
-[11
+] [11
 
 ]
-<Tables/calibrationPY.pdf, id=460, 544.97646pt x 309.14465pt>
+<Tables/calibrationPY.pdf, id=494, 560.73302pt x 357.8158pt>
 File: Tables/calibrationPY.pdf Graphic file (type pdf)
 <use Tables/calibrationPY.pdf>
-Package pdftex.def Info: Tables/calibrationPY.pdf  used on input line 238.
-(pdftex.def)             Requested size: 295.05728pt x 167.37431pt.
- [12
+Package pdftex.def Info: Tables/calibrationPY.pdf  used on input line 239.
+(pdftex.def)             Requested size: 295.05728pt x 188.28197pt.
+
+Overfull \vbox (0.58105pt too high) detected at line 239
+ []
+
+[12
 
  <./Tables/calibrationPY.pdf, page is rotated 90 degrees>] [13
 
-]
-[14
+] [14
 
 ]
-<Figures/PYrrPointNetWorthPlot.png, id=592, 361.35pt x 361.35pt>
+<Figures/PYrrPointNetWorthPlot.png, id=627, 361.35pt x 361.35pt>
 File: Figures/PYrrPointNetWorthPlot.png Graphic file (type png)
 <use Figures/PYrrPointNetWorthPlot.png>
 Package pdftex.def Info: Figures/PYrrPointNetWorthPlot.png  used on input line 
-311.
+312.
 (pdftex.def)             Requested size: 173.56186pt x 173.56181pt.
-<Figures/PYrrDistNetWorthPlot.png, id=593, 361.35pt x 361.35pt>
+<Figures/PYrrDistNetWorthPlot.png, id=628, 361.35pt x 361.35pt>
 File: Figures/PYrrDistNetWorthPlot.png Graphic file (type png)
 <use Figures/PYrrDistNetWorthPlot.png>
 Package pdftex.def Info: Figures/PYrrDistNetWorthPlot.png  used on input line 3
-11.
+12.
 (pdftex.def)             Requested size: 173.56186pt x 173.56181pt.
- [15
+
+[15
 
  <./Figures/PYrrPointNetWorthPlot.png> <./Figures/PYrrDistNetWorthPlot.png>] [1
 6
 
-] [17
-
 ]
-<Figures/LCrrPointNetWorthPlot.png, id=687, 361.35pt x 361.35pt>
+<Tables/calibrationLC.pdf, id=701, 405.93417pt x 251.93643pt>
+File: Tables/calibrationLC.pdf Graphic file (type pdf)
+<use Tables/calibrationLC.pdf>
+Package pdftex.def Info: Tables/calibrationLC.pdf  used on input line 337.
+(pdftex.def)             Requested size: 608.89977pt x 377.9037pt.
+ [17
+
+ <./Tables/calibrationLC.pdf, page is rotated 90 degrees>]
+<Figures/LCrrPointNetWorthPlot.png, id=747, 361.35pt x 361.35pt>
 File: Figures/LCrrPointNetWorthPlot.png Graphic file (type png)
 <use Figures/LCrrPointNetWorthPlot.png>
 Package pdftex.def Info: Figures/LCrrPointNetWorthPlot.png  used on input line 
-341.
+351.
 (pdftex.def)             Requested size: 173.56186pt x 173.56181pt.
-<Figures/LCrrDistNetWorthPlot.png, id=688, 361.35pt x 361.35pt>
+<Figures/LCrrDistNetWorthPlot.png, id=748, 361.35pt x 361.35pt>
 File: Figures/LCrrDistNetWorthPlot.png Graphic file (type png)
 <use Figures/LCrrDistNetWorthPlot.png>
 Package pdftex.def Info: Figures/LCrrDistNetWorthPlot.png  used on input line 3
-41.
+51.
 (pdftex.def)             Requested size: 173.56186pt x 173.56181pt.
  [18
 
  <./Figures/LCrrPointNetWorthPlot.png> <./Figures/LCrrDistNetWorthPlot.png>]
-
-LaTeX Warning: Citation 'aflgdmlp20' on page 19 undefined on input line 358.
-
-<Figures/Fagereng2020Table3.png, id=720, 419.166pt x 233.07076pt>
+<Figures/Fagereng2020Table3.png, id=783, 419.166pt x 233.07076pt>
 File: Figures/Fagereng2020Table3.png Graphic file (type png)
 <use Figures/Fagereng2020Table3.png>
-Package pdftex.def Info: Figures/Fagereng2020Table3.png  used on input line 358
+Package pdftex.def Info: Figures/Fagereng2020Table3.png  used on input line 368
 .
 (pdftex.def)             Requested size: 260.34279pt x 144.76198pt.
-[19
+ [19
 
  <./Figures/Fagereng2020Table3.png>] [20
 
@@ -1404,9 +1416,29 @@ Package pdftex.def Info: Figures/Fagereng2020Table3.png  used on input line 358
 
 ]
 
-LaTeX Warning: Empty bibliography on input line 385.
+LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10.95> not available
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 395.
 
 [22
+
+ </usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamericonarticle.pdf>] [
+23
+
+
+] [24
+
+
+] [25
+
+
+] [26
+
+
+] [27
+
+
+] [28
+
 
 ]
 \tf@nav=\write7
@@ -1419,73 +1451,49 @@ LaTeX Warning: Empty bibliography on input line 385.
 \openout9 = `Chp1-presentation.snm'.
 
  (./Chp1-presentation.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-Package rerunfilecheck Warning: File `Chp1-presentation.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Chp1-presentation.out':
-(rerunfilecheck)             Before: C3CFDA53450C11185BD3C7167BE77439;1238
-(rerunfilecheck)             After:  4C0AC3DC12ABAD916240D490FC0D85AE;1150.
-
-Package biblatex Warning: Please (re)run BibTeX on the file(s):
-(biblatex)                Chp1-presentation
-(biblatex)                and rerun LaTeX afterwards.
-
+Package rerunfilecheck Info: File `Chp1-presentation.out' has not changed.
+(rerunfilecheck)             Checksum: 114D7F62338218EF171155B6873258C3;1243.
 Package logreq Info: Writing requests to 'Chp1-presentation.run.xml'.
 \openout1 = `Chp1-presentation.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30992 strings out of 476025
- 617266 string characters out of 5790017
- 1867388 words of memory out of 5000000
- 50823 multiletter control sequences out of 15000+600000
- 526967 words of font info for 84 fonts, out of 8000000 for 9000
+ 32340 strings out of 476025
+ 643930 string characters out of 5790017
+ 1875388 words of memory out of 5000000
+ 52107 multiletter control sequences out of 15000+600000
+ 526616 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,19n,122p,1888b,1361s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{Outline0.4.2.20} has been referenced but does not e
-xist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{Outline0.4.1.19} has been referenced but does not e
-xist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{Outline0.4} has been referenced but does not exist,
- replaced by a fixed one
-
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
-/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pf
-b></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
-></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><
-/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></u
-sr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr
-/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/l
-ocal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/loca
-l/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local
-/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/
-texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/te
-xlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texl
-ive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/tex
-live/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/tex
-live/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/local/texl
-ive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/local/texli
-ve/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
-e/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/
-2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/20
-23/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2023/t
-exmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/local/texlive/2
-023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Chp1-presentation.pdf (22 pages, 916671 bytes).
+ 128i,19n,122p,1888b,1815s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pf
+b></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
+></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.
+pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.p
+fb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
+></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><
+/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></u
+sr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
+/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/lo
+cal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/loc
+al/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/loca
+l/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/
+texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/te
+xlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/t
+exlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/t
+exlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/local/te
+xlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/local/tex
+live/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
+ive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texliv
+e/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/
+2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/20
+23/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2023
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/
+texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/local/texlive/
+2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Chp1-presentation.pdf (28 pages, 970657 bytes).
 PDF statistics:
- 952 PDF objects out of 1000 (max. 8388607)
- 829 compressed objects within 9 object streams
- 56 named destinations out of 1000 (max. 500000)
- 227 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1257 PDF objects out of 1440 (max. 8388607)
+ 1112 compressed objects within 12 object streams
+ 81 named destinations out of 1000 (max. 500000)
+ 232 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -25,6 +25,7 @@
 \usepackage{wrapfig}
 \usepackage{caption}
 \usepackage{booktabs}
+\usepackage{adjustbox}
 
 % Title slide
 \title[]{Heterogeneous Returns and the Distribution of Wealth}
@@ -318,12 +319,21 @@ Net worth percentile & Cumulative net worth \\
 \item Education cohort $e \in \{D, HS, C\}$
 \item Initial wealth $k_0$ and income $p_0$ levels
 \item Education-age dependent mortality rates (cite the paper)
-\item Modified labor income uncertainty $y_t = \xi_t \psi_t \overline{\psi}_{es} p_{t-1}$
+\item Modified labor income uncertainty $y_t = \xi_t \psi_t \overline{\psi}_{es} p_{t-1}$ 
+\begin{itemize}
+\item Education-age dependent shock variances from (cite paper)
+\end{itemize}
 \end{itemize}
 \end{frame}
-
+%%%%%%%%%%%%%%%
 
 \begin{frame}{Calibration}
+  \vfill
+   \begin{figure}
+    \centering
+    \includegraphics[width=.85\linewidth, scale=1.5]{Tables/calibrationLC.pdf}
+  \end{figure}
+  \vfill
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%

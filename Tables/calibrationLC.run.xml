@@ -44,11 +44,11 @@
   <internal package="biblatex" priority="9" active="0">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>Chp1-presentation.aux</file>
-      <file>Chp1-presentation-blx.bib</file>
+      <file>calibrationLC.aux</file>
+      <file>calibrationLC-blx.bib</file>
     </provides>
     <requires type="dynamic">
-      <file>Chp1-presentation.bbl</file>
+      <file>calibrationLC.bbl</file>
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
@@ -67,23 +67,23 @@
     <cmdline>
       <binary>bibtex</binary>
       <option>-min-crossrefs 2</option>
-      <infile>Chp1-presentation</infile>
+      <infile>calibrationLC</infile>
     </cmdline>
     <input>
-      <file>Chp1-presentation.aux</file>
+      <file>calibrationLC.aux</file>
     </input>
     <output>
-      <file>Chp1-presentation.bbl</file>
+      <file>calibrationLC.bbl</file>
     </output>
     <provides type="dynamic">
-      <file>Chp1-presentation.bbl</file>
+      <file>calibrationLC.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>Chp1-presentation.aux</file>
-      <file>Chp1-presentation-blx.bib</file>
+      <file>calibrationLC.aux</file>
+      <file>calibrationLC-blx.bib</file>
     </requires>
     <requires type="editable">
-      <file>Chp1.bib</file>
+      <file>../Chp1.bib</file>
     </requires>
     <requires type="static">
       <file>biblatex.bst</file>
