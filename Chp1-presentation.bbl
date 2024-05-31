@@ -297,6 +297,109 @@
     \field{year}{2016}
   \endentry
 
+  \entry{Brown2007}{incollection}{}
+    \name{author}{3}{}{%
+      {{hash=BJR}{%
+         family={Brown},
+         familyi={B\bibinitperiod},
+         given={Jeffrey\bibnamedelima R},
+         giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+      {{hash=LJB}{%
+         family={Liebman},
+         familyi={L\bibinitperiod},
+         given={Jeffrey\bibnamedelima B},
+         giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=PJ}{%
+         family={Pollet},
+         familyi={P\bibinitperiod},
+         given={Joshua},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {en}%
+    }
+    \list{publisher}{1}{%
+      {University of Chicago Press}%
+    }
+    \strng{namehash}{BJRLJBPJ1}
+    \strng{fullhash}{BJRLJBPJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2007}
+    \field{labeldatesource}{}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{abstract}{%
+    Appendix: Estimating Life Tables That Reflect Socioeconomic Differences in
+  Mortality was published in The Distributional Aspects of Social Security and
+  Social Security Reform on page 447.%
+    }
+    \field{booktitle}{{The Distributional Aspects of Social Security and Social
+  Security Reform}}
+    \field{isbn}{9780226241890}
+    \field{pages}{447\bibrangedash 458}
+    \field{title}{{Appendix: Estimating Life Tables That Reflect Socioeconomic
+  Differences in Mortality}}
+    \verb{url}
+    \verb https://www.degruyter.com/document/doi/10.7208/9780226241890-013/html
+    \verb ?lang=en
+    \endverb
+    \field{month}{11}
+    \field{year}{2007}
+  \endentry
+
+  \entry{Cagetti2003}{article}{}
+    \name{author}{1}{}{%
+      {{hash=CM}{%
+         family={Cagetti},
+         familyi={C\bibinitperiod},
+         given={Marco},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {[American Statistical Association, Taylor \& Francis, Ltd.]}%
+    }
+    \strng{namehash}{CM1}
+    \strng{fullhash}{CM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2003}
+    \field{labeldatesource}{}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{abstract}{%
+    [This article constructs and simulates a life cycle model of wealth
+  accumulation and estimates the parameters of the utility function (the rate
+  of time preference and the coefficient of risk aversion) by matching the
+  simulated median wealth profiles with those observed in the Panel Study of
+  Income Dynamics and in the Survey of Consumer Finances. The estimates imply a
+  low degree of patience and a high degree of risk aversion. The results are
+  used to study the importance of precautionary savings in explaining wealth
+  accumulation. They imply that wealth accumulation is driven mostly by
+  precautionary motives at the beginning of the life cycle, whereas savings for
+  retirement purposes become significant only closer to retirement.]%
+    }
+    \field{issn}{0735-0015}
+    \field{number}{3}
+    \field{pages}{339\bibrangedash 353}
+    \field{title}{{Wealth Accumulation over the Life Cycle and Precautionary
+  Savings}}
+    \verb{url}
+    \verb http://www.jstor.org/stable/1392584
+    \endverb
+    \field{volume}{21}
+    \verb{file}
+    \verb All-Papers/C/Cagetti-2003-Wealth-Accumulation-over-the-Life-Cycle-and
+    \verb -Precautionary-Savings.pdf
+    \endverb
+    \field{journaltitle}{J. Bus. Econ. Stat.}
+    \field{year}{2003}
+  \endentry
+
   \entry{Campbell2019}{article}{}
     \name{author}{3}{}{%
       {{hash=CJY}{%
@@ -353,34 +456,6 @@
     \endverb
     \field{journaltitle}{American Economic Review: Insights}
     \field{month}{09}
-    \field{year}{2019}
-  \endentry
-
-  \entry{Carroll2019bst}{article}{}
-    \name{author}{1}{}{%
-      {{hash=C}{%
-         family={{Carroll}},
-         familyi={C\bibinitperiod},
-      }}%
-    }
-    \keyw{BufferStockTheory.bib}
-    \strng{namehash}{C1}
-    \strng{fullhash}{C1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{labelyear}{2019}
-    \field{labeldatesource}{}
-    \field{sortinit}{C}
-    \field{sortinithash}{C}
-    \verb{doi}
-    \verb https://zenodo.org/badge/latestdoi/304124725
-    \endverb
-    \field{issn}{1759-7323, 1759-7331}
-    \field{title}{{Theoretical Foundations of Buffer Stock Saving}}
-    \verb{url}
-    \verb https://econ-ark.github.io/BufferStockTheory
-    \endverb
-    \field{journaltitle}{Quant. Econom.}
     \field{year}{2019}
   \endentry
 
@@ -451,6 +526,65 @@
     \field{volume}{8}
     \field{journaltitle}{Quantitative Economics}
     \field{year}{2017}
+  \endentry
+
+  \entry{Daminato2024}{unpublished}{}
+    \name{author}{2}{}{%
+      {{hash=DC}{%
+         family={Daminato},
+         familyi={D\bibinitperiod},
+         given={Claudio},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=PL}{%
+         family={Pistaferri},
+         familyi={P\bibinitperiod},
+         given={Luigi},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DCPL1}
+    \strng{fullhash}{DCPL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2024}
+    \field{labeldatesource}{}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{abstract}{%
+    A recent literature argues that persistent heterogeneity in wealth returns
+  (``type dependence'') as well as a positive association with wealth levels
+  (``scale dependence'') play an important role for explaining features of the
+  wealth distribution, especially its extreme concentration at the top. In
+  contrast, traditional models of wealth accumulation emphasize the role of
+  persistent differences in labor earnings. Using panel data from the PSID, we
+  first document that a common unobserved component (which we interpret as the
+  endowment of cognitive and non-cognitive skills of an individual) drives
+  persistent heterogeneity in both wealth returns and labor earnings. We embed
+  these features of the joint wealth return-earnings process in a life-cycle
+  model of consumer behavior and show that ignoring them would dramatically
+  understate average returns for people at the top of the wealth distribution
+  as well as the level and rise of consumption inequality over the life cycle.%
+    }
+    \verb{doi}
+    \verb 10.3386/w32490
+    \endverb
+    \field{number}{32490}
+    \field{series}{Working Paper Series}
+    \field{title}{{Returns Heterogeneity and Consumption Inequality Over the
+  Life Cycle}}
+    \verb{url}
+    \verb http://www.nber.org/papers/w32490
+    \endverb
+    \list{institution}{1}{%
+      {National Bureau of Economic Research}%
+    }
+    \verb{file}
+    \verb All-Papers/D/Daminato-and-Pistaferri-2024-Returns-Heterogeneity-and-C
+    \verb onsumption-Inequality-Over-the-Life-Cycle.pdf
+    \endverb
+    \field{month}{05}
+    \field{year}{2024}
   \endentry
 
   \entry{Deuflhard2018}{article}{}
@@ -852,6 +986,70 @@
     \field{journaltitle}{Journal of Political Economy}
     \field{year}{1998}
     \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{Sabelhaus2010}{article}{}
+    \name{author}{2}{}{%
+      {{hash=SJ}{%
+         family={Sabelhaus},
+         familyi={S\bibinitperiod},
+         given={John},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=SJ}{%
+         family={Song},
+         familyi={S\bibinitperiod},
+         given={Jae},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \keyw{Labor earnings; Earnings volatility; Great moderation}
+    \strng{namehash}{SJSJ1}
+    \strng{fullhash}{SJSJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2010}
+    \field{labeldatesource}{}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{abstract}{%
+    Between 1980 and the early 1990s the variability of labor earnings growth
+  rates across the prime-age working population fell significantly. This
+  decline and timing are consistent with other macro and micro observations
+  about growth variability that are collectively referred to as the ``Great
+  Moderation.'' The variability of earnings growth is negatively correlated
+  with age at any point in time, and the U.S. working age population got older
+  during this period because the Baby Boom was aging. However, the decrease in
+  variability was roughly uniform across all age groups, so population aging is
+  not the source of the overall decline. The variance of log changes also
+  declined at multi-year frequencies in such a way as to suggest that both
+  permanent and transitory components of earnings shocks became more moderate.
+  A simple identification strategy for separating age and cohort effects shows
+  a very intuitive pattern of permanent and transitory shocks over the life
+  cycle, and confirms that a shift over time in the stochastic process occurred
+  even after controlling for age effects.%
+    }
+    \verb{doi}
+    \verb 10.1016/j.jmoneco.2010.04.003
+    \endverb
+    \field{issn}{0304-3932}
+    \field{number}{4}
+    \field{pages}{391\bibrangedash 403}
+    \field{title}{{The great moderation in micro labor earnings}}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/S0304393210000358
+    \endverb
+    \field{volume}{57}
+    \verb{file}
+    \verb All-Papers/S/Sabelhaus-and-Song-2010-The-great-moderation-in-micro-la
+    \verb bor-earnings.pdf
+    \endverb
+    \field{journaltitle}{J. Monet. Econ.}
+    \field{month}{05}
+    \field{year}{2010}
   \endentry
 \enddatalist
 \endinput

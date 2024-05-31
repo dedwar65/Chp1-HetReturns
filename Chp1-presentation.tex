@@ -99,10 +99,13 @@ Representative agent models have a difficult time matching empirical estimates o
 
 \item Endogenize heterogeneous returns through access to high return investment technology.
 \par  \parencite{Guler2022}
+
+\item (Add description)
+\par \parencite{Daminato2024}
 \end{itemize}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%
-%Too many words here%
+
 \begin{frame}{Outline}
 \begin{enumerate}
 \item Empirical evidence of heterogeneous returns
@@ -190,9 +193,9 @@ Representative agent models have a difficult time matching empirical estimates o
 %Put equations for permanent and transitory income%
 
 \footnotesize
-\begin{frame}{Heterogeneous agents in G.E.}
+\begin{frame}{(Normalized) Optimization problem}
 
-(Normalized) Optimization problem for households: Choose profiles $\{c_{t_n}\}_{n=0}^{\infty}$ that satisfy
+Choose profiles $\{c_{t_n}\}_{n=0}^{\infty}$ that satisfy
  \begin{eqnarray*}
   v(m_t) &=& \max_{c_t} u(c_t(m_t)) + \beta \cancel{D} \mathbb{E}_{t}[\psi_{t+1}^{1-\rho}v(m_{t+1})] \\
   &\text{s.t.}& \\
@@ -203,21 +206,6 @@ Representative agent models have a difficult time matching empirical estimates o
 \end{eqnarray*}
 
 Production function $$Y = Z K^{\alpha} (\ell L)^{1-\alpha}$$ 
-
-\end{frame}
-%%%%%%%%%%%%%%%%%
-
-%\begin{frame}{Rate of return and the evolution of market resources}
-%\end{frame}
-%%%%%%%%%%%%%%%%%
-
-\begin{frame}{Conditions for a stable wealth distribution}
-
-\cite{Carroll2019bst} provides the following \textit{death-modified growth impatience condition} such that a unique target wealth-to-permanent income ratio exists for households:
-
-\begin{eqnarray*}
-\left(\frac{(R \beta)^{1/ \rho}\mathbb{E}[\psi^{-1}]\cancel{D}}{\Gamma}\right) & < & 1.
-\end{eqnarray*} 
 
 \end{frame}
 %%%%%%%%%%%%%%%%%
@@ -317,11 +305,14 @@ Net worth percentile & Cumulative net worth \\
 \begin{frame}{Lifecycle version of the model}
 \begin{itemize}
 \item Education cohort $e \in \{D, HS, C\}$
-\item Initial wealth $k_0$ and income $p_0$ levels
-\item Education-age dependent mortality rates (cite the paper)
+\item Initial wealth $k_0$ and income $p_0$ levels 
+\item Education-age dependent mortality rates 
+\par \parencite{Brown2007}
 \item Modified labor income uncertainty $y_t = \xi_t \psi_t \overline{\psi}_{es} p_{t-1}$ 
+\par \parencite{Cagetti2003}
 \begin{itemize}
-\item Education-age dependent shock variances from (cite paper)
+\item Education-age dependent shock variances 
+\par \parencite{Sabelhaus2010}
 \end{itemize}
 \end{itemize}
 \end{frame}
@@ -352,18 +343,36 @@ Net worth percentile & Cumulative net worth \\
 
 %%%%%%%%%%%%%%%%
 
-\subsection{Assessing the performance of the model}
+\begin{frame}{Assessing the performance of the model}
+\centering
 
-\begin{frame}{Revisiting the empirical evidence}
-
-\cite{aflgdmlp20} describe the empirical distribution of returns.
-
-  \vfill
-   \begin{figure}
-    \centering
-    \includegraphics[width=.75\linewidth]{Figures/Fagereng2020Table3.png}
-  \end{figure}
-  \vfill
+\begin{flushleft}
+\par Empirical values from \cite{aflgdmlp20}
+\end{flushleft}
+    \begin{tabular}{|c|c|c|}
+\hline
+& Mean & St. Dev \\
+\hline
+Net worth (before tax) & 0.0379 & 0.0859  \\
+Net worth (after tax) & 0.0365 & 0.0781  \\
+Net worth (before tax, unweighted) & 0.0004 & 0.2205  \\
+Net worth (after tax, unweighted) & 0.0155 & 0.1546  \\
+\hline
+\end{tabular}
+    
+\begin{flushleft}
+\par Values from the structural estimation
+\end{flushleft}
+    \begin{tabular}{|c|c|c|}
+\hline
+& Center & Spread \\
+\hline
+PY-Point & 1.014 & 0.0  \\
+PY-Dist & 1.007  &  0.013  \\
+LC-Point & 1.05 & 0.0  \\
+LC-Dist & 1.034  &  0.074  \\
+\hline
+\end{tabular}
 
 \end{frame}
 %%%%%%%%%%%%%%%%%%
@@ -378,14 +387,10 @@ Net worth percentile & Cumulative net worth \\
        \item Robustness checks
        \begin{itemize}
       \item Wealth data from other waves of the SCF
-      \item Different measures of wealth (liquid or financial)
+      \item Different measures of wealth (liquid and/or financial)
       \end{itemize}
       \end{enumerate}
   
-\end{frame}
-%%%%%%%%%%%%%%%
-
-\begin{frame}{Future directions for this work}
 \end{frame}
 %%%%%%%%%%%%%%
 

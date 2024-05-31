@@ -2,7 +2,6 @@
 \beamer@subsectionintoc {1}{1}{Literature Review}{3}{0}{1}
 \beamer@subsectionintoc {1}{2}{Heterogeneous Returns in the Data}{7}{0}{1}
 \beamer@sectionintoc {2}{Model}{9}{0}{2}
-\beamer@subsectionintoc {2}{1}{Simulation}{12}{0}{2}
-\beamer@sectionintoc {3}{Results}{15}{0}{3}
-\beamer@subsectionintoc {3}{1}{Assessing the performance of the model}{19}{0}{3}
-\beamer@subsectionintoc {3}{2}{Concluding Remarks}{20}{0}{3}
+\beamer@subsectionintoc {2}{1}{Simulation}{11}{0}{2}
+\beamer@sectionintoc {3}{Results}{14}{0}{3}
+\beamer@subsectionintoc {3}{1}{Concluding Remarks}{19}{0}{3}
