@@ -1,10 +1,10 @@
 ---
-title: "Pending"
+title: "Heterogeneous Returns and the Distribution of Wealth"
 author: "Decory Edwards"
 date: 2024/06/03
 
 ---
-# Title pending
+# Heterogeneous Returns and the Distribution of Wealth
 
 ## Abstract
 
