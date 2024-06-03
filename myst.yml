@@ -10,9 +10,9 @@ site:
       url: https://mystmd.org/guide
   domains: []
 project:
-  title:  
+  title:
   # description:
-  short_title: 
+  short_title:
   keywords: []
   affiliations:
     - id: jhu
@@ -22,7 +22,7 @@ project:
     - id: econ-ark
       institution: Econ-ARK
       url: https://econ-ark.org
-  authors: 
+  authors:
       - name: Decory Edwards
         corresponding: true
         email: dedwar65@jhu.edu
@@ -33,13 +33,12 @@ project:
     content: CC-BY-4.0
     code: MIT
   github: https://github.com/dedwar65/Chp1-HetReturns
-  bibliography: Paper/references.bib
+  bibliography: Chp1.bib
   settings:
     output_matplotlib_strings: remove
-  exports: 
+  exports:
     - format: pdf
       template: arxiv_nips
-      output: 
-      article: 
+      output:
+      article:
 
-    
