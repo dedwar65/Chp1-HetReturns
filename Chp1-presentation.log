@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.17)  31 MAY 2024 11:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.17)  4 JUN 2024 10:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1321,7 +1321,7 @@ ut line 143.
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
 )
-<Figures/Fagereng2020Fig1.png, id=304, 748.29562pt x 466.24188pt>
+<Figures/Fagereng2020Fig1.png, id=298, 748.29562pt x 466.24188pt>
 File: Figures/Fagereng2020Fig1.png Graphic file (type png)
 <use Figures/Fagereng2020Fig1.png>
 Package pdftex.def Info: Figures/Fagereng2020Fig1.png  used on input line 143.
@@ -1329,7 +1329,7 @@ Package pdftex.def Info: Figures/Fagereng2020Fig1.png  used on input line 143.
  [7
 
  <./Figures/Fagereng2020Fig1.png>]
-<Figures/Fagereng2020Fig8.png, id=348, 771.38188pt x 498.86375pt>
+<Figures/Fagereng2020Fig8.png, id=342, 771.38188pt x 498.86375pt>
 File: Figures/Fagereng2020Fig8.png Graphic file (type png)
 <use Figures/Fagereng2020Fig8.png>
 Package pdftex.def Info: Figures/Fagereng2020Fig8.png  used on input line 171.
@@ -1342,7 +1342,7 @@ Package pdftex.def Info: Figures/Fagereng2020Fig8.png  used on input line 171.
 ] [10
 
 ]
-<Tables/calibrationPY.pdf, id=457, 560.73302pt x 357.8158pt>
+<Tables/calibrationPY.pdf, id=451, 560.73302pt x 357.8158pt>
 File: Tables/calibrationPY.pdf Graphic file (type pdf)
 <use Tables/calibrationPY.pdf>
 Package pdftex.def Info: Tables/calibrationPY.pdf  used on input line 227.
@@ -1358,13 +1358,13 @@ Overfull \vbox (0.58105pt too high) detected at line 227
 ] [13
 
 ]
-<Figures/PYrrPointNetWorthPlot.png, id=591, 361.35pt x 361.35pt>
+<Figures/PYrrPointNetWorthPlot.png, id=585, 361.35pt x 361.35pt>
 File: Figures/PYrrPointNetWorthPlot.png Graphic file (type png)
 <use Figures/PYrrPointNetWorthPlot.png>
 Package pdftex.def Info: Figures/PYrrPointNetWorthPlot.png  used on input line 
 300.
 (pdftex.def)             Requested size: 173.56186pt x 173.56181pt.
-<Figures/PYrrDistNetWorthPlot.png, id=592, 361.35pt x 361.35pt>
+<Figures/PYrrDistNetWorthPlot.png, id=586, 361.35pt x 361.35pt>
 File: Figures/PYrrDistNetWorthPlot.png Graphic file (type png)
 <use Figures/PYrrDistNetWorthPlot.png>
 Package pdftex.def Info: Figures/PYrrDistNetWorthPlot.png  used on input line 3
@@ -1377,7 +1377,7 @@ Package pdftex.def Info: Figures/PYrrDistNetWorthPlot.png  used on input line 3
 5
 
 ]
-<Tables/calibrationLC.pdf, id=668, 405.93417pt x 251.93643pt>
+<Tables/calibrationLC.pdf, id=662, 405.93417pt x 251.93643pt>
 File: Tables/calibrationLC.pdf Graphic file (type pdf)
 <use Tables/calibrationLC.pdf>
 Package pdftex.def Info: Tables/calibrationLC.pdf  used on input line 328.
@@ -1385,13 +1385,13 @@ Package pdftex.def Info: Tables/calibrationLC.pdf  used on input line 328.
  [16
 
  <./Tables/calibrationLC.pdf, page is rotated 90 degrees>]
-<Figures/LCrrPointNetWorthPlot.png, id=713, 361.35pt x 361.35pt>
+<Figures/LCrrPointNetWorthPlot.png, id=707, 361.35pt x 361.35pt>
 File: Figures/LCrrPointNetWorthPlot.png Graphic file (type png)
 <use Figures/LCrrPointNetWorthPlot.png>
 Package pdftex.def Info: Figures/LCrrPointNetWorthPlot.png  used on input line 
 342.
 (pdftex.def)             Requested size: 173.56186pt x 173.56181pt.
-<Figures/LCrrDistNetWorthPlot.png, id=714, 361.35pt x 361.35pt>
+<Figures/LCrrDistNetWorthPlot.png, id=708, 361.35pt x 361.35pt>
 File: Figures/LCrrDistNetWorthPlot.png Graphic file (type png)
 <use Figures/LCrrDistNetWorthPlot.png>
 Package pdftex.def Info: Figures/LCrrDistNetWorthPlot.png  used on input line 3
@@ -1452,10 +1452,10 @@ Package logreq Info: Writing requests to 'Chp1-presentation.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32348 strings out of 476025
- 644312 string characters out of 5790017
+ 32345 strings out of 476025
+ 644281 string characters out of 5790017
  1877388 words of memory out of 5000000
- 52116 multiletter control sequences out of 15000+600000
+ 52113 multiletter control sequences out of 15000+600000
  526616 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,19n,122p,1888b,1815s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1483,10 +1483,10 @@ texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2023/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/tex
 mf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/local/texlive/202
 3/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Chp1-presentation.pdf (27 pages, 854006 bytes).
+Output written on Chp1-presentation.pdf (27 pages, 853994 bytes).
 PDF statistics:
- 1219 PDF objects out of 1440 (max. 8388607)
- 1080 compressed objects within 11 object streams
+ 1216 PDF objects out of 1440 (max. 8388607)
+ 1077 compressed objects within 11 object streams
  81 named destinations out of 1000 (max. 500000)
  219 words of extra memory for PDF output out of 10000 (max. 10000000)
 
