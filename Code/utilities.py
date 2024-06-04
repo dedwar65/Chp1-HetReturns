@@ -1,12 +1,13 @@
+import os
+
 import numpy as np
 from HARK.ConsumptionSaving.ConsIndShockModel import IndShockConsumerType
-import os
 
 
 class AltIndShockConsumerType(IndShockConsumerType):
     def __repr__(self):
         return ('AltIndShockConsumerType with Rfree=' + str(self.Rfree) + ' and DiscFac=' + str(self.DiscFac))
-    
+
     def sim_one_period(self):
         """
         Overwrite the core simulation routine with a simplified special one, but
@@ -79,12 +80,12 @@ class AltIndShockConsumerType(IndShockConsumerType):
         self.t_cycle[self.t_cycle == self.T_cycle] = 0
 
 # Function to calculate empirical moments
-def calcEmpMoments(wealth, income, weights, pctiles):
+def calcEmpMoments(asset, wealth, income, weights, pctiles):
     """
     Calculate the empirical targets using the wave of the SCF specified when
     setting up the agent type.
     """
-    WealthToIncRatioEmp = np.dot(wealth,weights) / np.dot(income,weights)
+    WealthToIncRatioEmp = np.dot(asset,weights) / np.dot(income,weights)
     LorenzValuesEmp = get_lorenz_shares(wealth, weights, percentiles=pctiles)
     return WealthToIncRatioEmp, LorenzValuesEmp
 
@@ -148,7 +149,7 @@ def get_lorenz_shares(data, weights=None, percentiles=None, presorted=False):
         top = cum_dist[j]
         alpha = (p - bot) / (top - bot)
         lorenz_out[i] = (1.-alpha)*cum_data[j-1] + alpha*cum_data[j]
-    
+
     return lorenz_out
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -156,8 +157,8 @@ results_location = os.path.join(script_dir, '../Results/')
 
 def show_statistics(tag, center, spread, dist):
     """
-    Calculates statistics post estimation of interest to the end-user that can be used to 
-    quickly assess a given instance of the structural estimation. 
+    Calculates statistics post estimation of interest to the end-user that can be used to
+    quickly assess a given instance of the structural estimation.
     """
     # Create a list of strings to concatenate
     results_list = [

@@ -50,6 +50,7 @@ spread_range = yaml_params['spread_range']
 # Setup basics for computing empirical targets from the SCF
 TargetPercentiles = yaml_params['TargetPercentiles']
 wealth_data_file = yaml_params['wealth_data_file']
+asset_col = yaml_params['asset_col']
 wealth_col = yaml_params['wealth_col']
 weight_col = yaml_params['weight_col']
 income_col = yaml_params['income_col']
@@ -61,15 +62,18 @@ wealth_data_raw = list(wealth_data_reader)
 wealth_data = np.zeros(len(wealth_data_raw)) + np.nan
 weights_data = deepcopy(wealth_data)
 income_data = deepcopy(wealth_data)
+asset_data = deepcopy(wealth_data)
 for j in range(len(wealth_data_raw)):
     # skip the row of headers
     wealth_data[j] = float(wealth_data_raw[j][wealth_col])
     weights_data[j] = float(wealth_data_raw[j][weight_col])
     income_data[j] = float(wealth_data_raw[j][income_col])
+    asset_data[j] = float(wealth_data_raw[j][asset_col])
 
 # Calculate empirical moments to be used as targets
-empirical_moments = calcEmpMoments(wealth_data, income_data, weights_data, TargetPercentiles)
-emp_KY_ratio = empirical_moments[0]
+empirical_moments = calcEmpMoments(asset_data, wealth_data, income_data, weights_data, TargetPercentiles)
+# emp_KY_ratio = empirical_moments[0]
+emp_KY_ratio = 10.26
 print(emp_KY_ratio)
 emp_lorenz = empirical_moments[1]
 print(emp_lorenz)

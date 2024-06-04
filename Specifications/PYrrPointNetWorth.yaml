@@ -9,6 +9,7 @@ center_range: [0.98, 1.05]
 spread_range: [0.001, 0.05]
 TargetPercentiles: [0.2, 0.4, 0.6, 0.8]
 wealth_data_file: rscfp2004_reduced.txt
+asset_col: 4
 wealth_col: 5
 weight_col: 0
 income_col: 1
