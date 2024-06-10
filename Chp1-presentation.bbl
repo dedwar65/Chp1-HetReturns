@@ -21,6 +21,82 @@
 \providecommand{\noopsort}[1]{} \providecommand{\singleletter}[1]{#1}
 }
 
+  \entry{Ahn2017}{article}{}
+    \name{author}{5}{}{%
+      {{hash=AS}{%
+         family={Ahn},
+         familyi={A\bibinitperiod},
+         given={Sehyoun},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=KG}{%
+         family={Kaplan},
+         familyi={K\bibinitperiod},
+         given={Greg},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=MB}{%
+         family={Moll},
+         familyi={M\bibinitperiod},
+         given={Benjamin},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=WT}{%
+         family={Winberry},
+         familyi={W\bibinitperiod},
+         given={Thomas},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=WC}{%
+         family={Wolf},
+         familyi={W\bibinitperiod},
+         given={Christian},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {National Bureau of Economic Research, Inc}%
+    }
+    \strng{namehash}{AS+1}
+    \strng{fullhash}{ASKGMBWTWC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2017}
+    \field{labeldatesource}{}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{abstract}{%
+    We develop an efficient and easy to use computational method for solving a
+  wide class of general equilibrium heterogeneous agent models with aggregate
+  shocks together with an open source suite of codes that implement our
+  algorithms in an easy to use toolbox. Our method extends standard
+  linearization techniques and is designed to work in cases when inequality
+  matters for the dynamics of macroeconomic aggregates. We present two
+  applications that analyze a two asset incomplete markets model parameterized
+  to match the distribution of income, wealth, and marginal propensities to
+  consume. First, we show that our model is consistent with two key features of
+  aggregate consumption dynamics that are difficult to match with
+  representative agent models: (1) the sensitivity of aggregate consumption to
+  predictable changes in aggregate income, and (2) the relative smoothness of
+  aggregate consumption. Second, we extend the model to feature capital-skill
+  complementarity and show how factor-specific productivity shocks shape
+  dynamics of income and consumption inequality.(This abstract was borrowed
+  from another version of this item.)%
+    }
+    \field{pages}{1\bibrangedash 75}
+    \field{title}{{When Inequality Matters for Macro and Macro Matters for
+  Inequality}}
+    \verb{url}
+    \verb https://ideas.repec.org/h/nbr/nberch/13927.html
+    \endverb
+    \verb{file}
+    \verb All-Papers/A/Ahn-et-al.-2017-When-Inequality-Matters-for-Macro-and-Ma
+    \verb cro-Matters-for-Inequality.pdf
+    \endverb
+    \field{journaltitle}{NBER Chapters}
+    \field{year}{2017}
+  \endentry
+
   \entry{lblcps18}{article}{}
     \name{author}{3}{}{%
       {{hash=BL}{%
@@ -125,176 +201,6 @@
     \field{journaltitle}{Am. Econ. Rev.}
     \field{month}{05}
     \field{year}{2019}
-  \endentry
-
-  \entry{Benhabib2011}{article}{}
-    \name{author}{3}{}{%
-      {{hash=BJ}{%
-         family={Benhabib},
-         familyi={B\bibinitperiod},
-         given={Jess},
-         giveni={J\bibinitperiod},
-      }}%
-      {{hash=BA}{%
-         family={Bisin},
-         familyi={B\bibinitperiod},
-         given={Alberto},
-         giveni={A\bibinitperiod},
-      }}%
-      {{hash=ZS}{%
-         family={Zhu},
-         familyi={Z\bibinitperiod},
-         given={Shenghao},
-         giveni={S\bibinitperiod},
-      }}%
-    }
-    \keyw{Wealth distribution, Pareto, fat tails, capital income risk}
-    \strng{namehash}{BJBAZS1}
-    \strng{fullhash}{BJBAZS1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{labelyear}{2011}
-    \field{labeldatesource}{}
-    \field{sortinit}{B}
-    \field{sortinithash}{B}
-    \field{abstract}{%
-    We study the dynamics of the distribution of wealth in an overlapping
-  generation economy with finitely lived agents and intergenerational
-  transmission of wealth. Financial markets are incomplete, exposing agents to
-  both labor and capital income risk. We show that the stationary wealth
-  distribution is a Pareto distribution in the right tail and that it is
-  capital income risk, rather than labor income, that drives the properties of
-  the right tail of the wealth distribution. We also study analytically the
-  dependence of the distribution of wealth—of wealth inequality in
-  particular—on various fiscal policy instruments like capital income taxes
-  and estate taxes, and on different degrees of social mobility. We show that
-  capital income and estate taxes can significantly reduce wealth inequality,
-  as do institutions favoring social mobility. Finally, we calibrate the
-  economy to match the Lorenz curve of the wealth distribution of the U.S.
-  economy.%
-    }
-    \verb{doi}
-    \verb https://doi.org/10.3982/ECTA8416
-    \endverb
-    \verb{eprint}
-    \verb https://onlinelibrary.wiley.com/doi/pdf/10.3982/ECTA8416
-    \endverb
-    \field{number}{1}
-    \field{pages}{123\bibrangedash 157}
-    \field{title}{The Distribution of Wealth and Fiscal Policy in Economies
-  With Finitely Lived Agents}
-    \verb{url}
-    \verb https://onlinelibrary.wiley.com/doi/abs/10.3982/ECTA8416
-    \endverb
-    \field{volume}{79}
-    \field{journaltitle}{Econometrica}
-    \field{year}{2011}
-  \endentry
-
-  \entry{Benhabib2015}{article}{}
-    \name{author}{3}{}{%
-      {{hash=BJ}{%
-         family={Benhabib},
-         familyi={B\bibinitperiod},
-         given={Jess},
-         giveni={J\bibinitperiod},
-      }}%
-      {{hash=BA}{%
-         family={Bisin},
-         familyi={B\bibinitperiod},
-         given={Alberto},
-         giveni={A\bibinitperiod},
-      }}%
-      {{hash=ZS}{%
-         family={Zhu},
-         familyi={Z\bibinitperiod},
-         given={Shenghao},
-         giveni={S\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{1}{%
-      {Elsevier}%
-    }
-    \strng{namehash}{BJBAZS1}
-    \strng{fullhash}{BJBAZS1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{labelyear}{2015}
-    \field{labeldatesource}{}
-    \field{sortinit}{B}
-    \field{sortinithash}{B}
-    \field{issn}{0022-0531}
-    \field{pages}{489\bibrangedash 515}
-    \field{title}{{The wealth distribution in Bewley economies with capital
-  income risk}}
-    \field{volume}{159}
-    \field{journaltitle}{J. Econ. Theory}
-    \field{annotation}{%
-    Available at https://www.nber.org/papers/w20157.pdf%
-    }
-    \field{year}{2015}
-  \endentry
-
-  \entry{Benhabib2016}{article}{}
-    \name{author}{3}{}{%
-      {{hash=BJ}{%
-         family={Benhabib},
-         familyi={B\bibinitperiod},
-         given={Jess},
-         giveni={J\bibinitperiod},
-      }}%
-      {{hash=BA}{%
-         family={Bisin},
-         familyi={B\bibinitperiod},
-         given={Alberto},
-         giveni={A\bibinitperiod},
-      }}%
-      {{hash=ZS}{%
-         family={Zhu},
-         familyi={Z\bibinitperiod},
-         given={Shenghao},
-         giveni={S\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{1}{%
-      {Cambridge University Press}%
-    }
-    \keyw{Wealth Distribution; Rate of Return Risk; Fat Tails}
-    \strng{namehash}{BJBAZS1}
-    \strng{fullhash}{BJBAZS1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{labelyear}{2016}
-    \field{labeldatesource}{}
-    \field{sortinit}{B}
-    \field{sortinithash}{B}
-    \field{abstract}{%
-    We study the dynamics of the distribution of wealth in an economy with
-  infinitely lived agents, intergenerational transmission of wealth, and
-  redistributive fiscal policy. We show that wealth accumulation with
-  idiosyncratic investment risk and uncertain lifetimes can generate a double
-  Pareto wealth distribution.%
-    }
-    \verb{doi}
-    \verb 10.1017/S1365100514000066
-    \endverb
-    \field{issn}{1365-1005, 1469-8056}
-    \field{number}{2}
-    \field{pages}{466\bibrangedash 481}
-    \field{title}{{THE DISTRIBUTION OF WEALTH IN THE BLANCHARD--YAARI MODEL}}
-    \verb{url}
-    \verb https://www.cambridge.org/core/journals/macroeconomic-dynamics/articl
-    \verb e/distribution-of-wealth-in-the-blanchardyaari-model/02522D3ADFD9A1A9
-    \verb 9C2650DFABDB220E
-    \endverb
-    \field{volume}{20}
-    \verb{file}
-    \verb All-Papers/B/Benhabib-et-al.-2016-THE-DISTRIBUTION-OF-WEALTH-IN-THE-B
-    \verb LANCHARD–YAARI-MODEL.pdf
-    \endverb
-    \field{journaltitle}{Macroecon. Dyn.}
-    \field{month}{03}
-    \field{year}{2016}
   \endentry
 
   \entry{Brown2007}{incollection}{}

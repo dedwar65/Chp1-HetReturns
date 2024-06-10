@@ -1,3 +1,4 @@
+import math
 import os
 
 import numpy as np
@@ -163,6 +164,7 @@ def show_statistics(tag, center, spread, dist):
     # Create a list of strings to concatenate
     results_list = [
         f"Estimate is center={center}, spread={spread}\n",
+        f"Conversion is mean={.5 * ((center - spread) + (center + spread))}, std_dev={(1/12) * ((center + spread) - (center - spread))}\n",
         f"Lorenz distance is {dist}\n",
         ##Add more summary stats here##
     ]
@@ -181,5 +183,6 @@ def show_statistics(tag, center, spread, dist):
         ) as f:
             f.write(results_string)
             f.close()
+
 
 

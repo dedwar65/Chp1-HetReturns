@@ -5,9 +5,9 @@ PermGroFacAgg: 1.0
 BoroCnstArt: 0.0
 CubicBool: False
 vFuncBool: False
-PermShkStd: [0.0603]
+PermShkStd: [0.1206]
 PermShkCount: 5
-TranShkStd: [0.2]
+TranShkStd: [0.4]
 TranShkCount: 5
 UnempPrb: 0.07
 IncUnemp: 0.15
@@ -18,8 +18,8 @@ aXtraMax: 40
 aXtraCount: 32
 aXtraExtra: []
 aXtraNestFac: 3
-LivPrb: [0.99375]
-DiscFac: 0.99
+LivPrb: [0.97523339996]
+DiscFac: 0.96059601
 cycles: 0
 T_cycle: 1
 T_retire: 0

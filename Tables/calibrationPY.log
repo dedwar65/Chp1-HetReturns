@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.17)  30 MAY 2024 16:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.17)  10 JUN 2024 09:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -492,21 +492,23 @@ Package logreq Info: Writing requests to 'calibrationPY.run.xml'.
 Here is how much of TeX's memory you used:
  11254 strings out of 476025
  217943 string characters out of 5790017
- 1859388 words of memory out of 5000000
+ 1860388 words of memory out of 5000000
  31617 multiletter control sequences out of 15000+600000
  513986 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 63i,18n,68p,1887b,1337s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 63i,22n,68p,1887b,1337s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 ></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><
 /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
 sr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/
 local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/l
-ocal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on calibrationPY.pdf (1 page, 63223 bytes).
+ocal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></
+usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pf
+b>
+Output written on calibrationPY.pdf (1 page, 65539 bytes).
 PDF statistics:
- 38 PDF objects out of 1000 (max. 8388607)
- 22 compressed objects within 1 object stream
+ 43 PDF objects out of 1000 (max. 8388607)
+ 25 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

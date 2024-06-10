@@ -41,22 +41,23 @@
 
 \section{Introduction}
 
-\begin{frame}{Why do macroeconomists care about inequality?}
+\begin{frame}{A two-way street between macro and inequality \parencite{Ahn2017} :}
 
-Empirical evidence shows that macroeconomic policies, as well as aggregate shocks, may have differential effects across households.
+
+Empirically, fiscal policy (i.e. stimulus checks) and aggregate shocks can have differential effects across households.
 
 \begin{itemize}
 \item Macro matters for inequality
 \end{itemize}
 \vspace{2.5mm}
 
-Representative agent models have a difficult time matching empirical estimates of macroeconomic variables (MPC and the wealth distribution).
+Representative agent models have a difficult time matching empirical estimates of macro variables (MPC and the wealth distribution).
 
 \begin{itemize}
 \item Inequality matters for macro
 \end{itemize}
 
-%\cite{Ahn2017} note this two-way street between macroeconomics and inequality. Incorporating \textit{heterogeneity across households} can help with this second issue. 
+Incorporating \textit{heterogeneity across households} can help focus on this second issue.
 
 \end{frame}
 
@@ -66,43 +67,23 @@ Representative agent models have a difficult time matching empirical estimates o
 \begin{frame}{Macro with heterogeneous agents}
 
     \begin{itemize}
-    \item Uninsurable, idiosyncratic risk to income and movements in aggregate productivity \parencite{ks1998} 
+    \item Uninsurable, idiosyncratic risk to income and movements in aggregate productivity \parencite{ks1998}
     \item Ex-ante heterogeneity in the time preference of households \parencite{cstw2017}
     \item Classifying models with ex-ante and ex-post heterogeneity \parencite{gkgv22}
-    \item Further surveys regarding heterogeneous agent macroeconomics \parencite{Guvenen2011} and \parencite{Krueger2016} 
+    \item Further surveys regarding heterogeneous agent macroeconomics \parencite{Guvenen2011} and \parencite{Krueger2016}
     \end{itemize}
-    
-\end{frame}
-%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Empirical estimates of returns}
-
-   \small
-   \begin{enumerate}
-    \item Comprehensive, administrative tax data in Norway from 2004 to 2015  \parencite{aflgdmlp20}
-    \item Asset holdings and income for Swedish residents from 1999 to 2007 \parencite{lblcps18}
-    \item Wealth held in equity accounts in India from 2002 to 2011 \parencite{Campbell2019}
-    \item DNB 2005 survey of dutch households regarding savings accounts and financial literacy \parencite{Deuflhard2018}
-    \end{enumerate}
-   
-  
 \end{frame}
 %%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Related literature}
-\begin{itemize}
-%\item Stochastic process for returns implying a stationary wealth distribution.
-%\par  \parencite{Benhabib2011}, \parencite{Benhabib2015}, \parencite{Benhabib2016}
 
-\item Stochastic process for returns which best fits the empirical distribution of wealth.
-\par \parencite{Benhabib2019}
+   \small
+   \begin{enumerate}
+    \item Comprehensive, administrative tax data in Norway from 2004 to 2015  \parencite{aflgdmlp20}
+    \item Documents heterogeneous returns in PSID and structural estimation of a model with skill endowments \parencite{Daminato2024}
+    \end{enumerate}
 
-\item Endogenize heterogeneous returns through access to high return investment technology.
-\par  \parencite{Guler2022}
-
-\item Documents heterogeneous returns in PSID and structural estimation of a model with skill endowments.
-\par \parencite{Daminato2024}
-\end{itemize}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -117,20 +98,20 @@ Representative agent models have a difficult time matching empirical estimates o
 
 \subsection{Heterogeneous Returns in the Data}
 \begin{frame}{A closer look at \cite{aflgdmlp20}}
-   
+
    \begin{columns}
      \column{0.5\textwidth}
      \small
      Following optimal portfolio choice theory from Merton (1969) and Samuelson (1969)
     \centering
-    
+
     \begin{itemize}
     \item Optimal share in the risky asset is given by
     $$ \alpha_{it}^{m} = \frac{\mathbb{E}(r_{t}^{m} - r_{t}^{s})}{\gamma_i \sigma^{2}_{t}}.$$
-    \item Individual \textit{realized} return to financial assets can be written as 
+    \item Individual \textit{realized} return to financial assets can be written as
     $$ r_{it}^{f} = r_{t}^{s} + \alpha_{it}^{m} (r_{t}^{m} - r_{t}^{s}). $$
     \end{itemize}
-    
+
     \column{0.5\textwidth}
     \centering
     \begin{figure}
@@ -139,26 +120,26 @@ Representative agent models have a difficult time matching empirical estimates o
     \caption{Heterogeneity in returns to financial wealth by share of risky assets from \cite{aflgdmlp20}.}
     \end{figure}
   \end{columns}
-   
+
 \end{frame}
 %%%%%%%%%%%%%%%%
 
 \begin{frame}{}
-   
+
      \begin{columns}
      \small
      \column{0.5\textwidth}
     \centering
-    
+
     \begin{itemize}
     \item Step 1: \textit{linear panel data regression model} for the return to net worth
     $$ r^{n}_{it} = X^{'}_{it} \beta + u_{it}. $$
-    \item Step 2: Add fixed effects 
+    \item Step 2: Add fixed effects
     $$ u_{it} = f_{i} + e_{it}. $$
     $\implies R^2$ goes from $.33$ to $.5$.
     \end{itemize}
-    
-    
+
+
     \column{0.5\textwidth}
     \centering
     \begin{figure}
@@ -167,7 +148,7 @@ Representative agent models have a difficult time matching empirical estimates o
     \caption{Distribution of fixed effects in the return to net worth from \cite{aflgdmlp20}.}
     \end{figure}
   \end{columns}
-   
+
 \end{frame}
 %%%%%%%%%%%%%%%%
 
@@ -205,7 +186,7 @@ Choose profiles $\{c_{t_n}\}_{n=0}^{\infty}$ that satisfy
   a_t &\geq& 0.
 \end{eqnarray*}
 
-Production function $$Y = Z K^{\alpha} (\ell L)^{1-\alpha}$$ 
+Production function $$Y = Z K^{\alpha} (\ell L)^{1-\alpha}$$
 
 \end{frame}
 %%%%%%%%%%%%%%%%%
@@ -238,21 +219,21 @@ Simulated method of moments (SMM) estimation for $R$.
 %\vspace{5mm}
   \begin{enumerate}
   \item No ex-ante heterogeneity: $R$\textit{-point} model
-  \par $R$ which matches the capital-to-output ($\frac{K}{Y}$) ratio of $10.26$
+  \par Estimate a common rate of return across households by finding the $\grave{R}$ which matches the capital-to-output ($\frac{K}{Y}$) ratio from data.
   \vspace{2.5mm}
-  
-  \item Ex-ante heterogeneity: $R$\textit{-dist} model 
-  \par \textbf{Uniform distribution} of $R$ matching lorenz targets, given $\frac{K}{Y} = 10.26$ 
+
+  \item Ex-ante heterogeneity: $R$\textit{-dist} model
+  \par Estimate  a \textbf{Uniform distribution} of returns across households by finding the $\grave{R}$,$\nabla$ which matches empirical Lorenz targets, given $\frac{K}{Y}$.
   \end{enumerate}
- 
-  
+
+
 \end{frame}
 %%%%%%%%%%%%%%%%%
 
 \begin{frame}{Estimation procedure with heterogeneity}
 
 \small
-\par Empirical lorenz targets using 2004 SCF data \vspace{2mm}
+\par Empirical targets using 2004 SCF data \vspace{2mm}
 
 \centering
 \begin{tabular}{|c|c|}
@@ -267,14 +248,14 @@ Net worth percentile & Cumulative net worth \\
 \end{tabular}
 
 \begin{flushleft}
-\par Optimization problem for the $R$\textit{-dist} model 
+\par Optimization problem for the $R$\textit{-dist} model
 \end{flushleft}
 
 \vspace{-7.5mm}
  \begin{eqnarray*}
   \{\grave{R}, \nabla\} = \text{arg}\min_{R, \nabla} \bigg( \sum_{i=20, 40, 60, 80} (w_{i}(R, \nabla)-\omega_i )^{2} \bigg)^{\frac{1}{2}}\\
   &\text{s.t.}& \\
-  \frac{K}{Y} = 10.26. %\frac{K_{PF}}{Y_{PF}}. 
+  \frac{K}{Y} = 7.47. %\frac{K_{PF}}{Y_{PF}}.
 \end{eqnarray*}
 
 %try to move "s.t."%
@@ -285,33 +266,33 @@ Net worth percentile & Cumulative net worth \\
 \section{Results}
 
 \begin{frame}{How good is the fit?}
-    
+
    \begin{columns}
     \column{0.5\textwidth}
     \centering
     \includegraphics[width=\textwidth]{Figures/PYrrPointNetWorthPlot.png}
-    
+
     \column{0.5\textwidth}
     \centering
     \includegraphics[width=\textwidth]{Figures/PYrrDistNetWorthPlot.png}
 
   \end{columns}
-    
+
 \end{frame}
 %%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
- 
+
 \begin{frame}{Lifecycle version of the model}
 \begin{itemize}
 \item Education cohort $e \in \{D, HS, C\}$
-\item Initial wealth-to-income $k_0$ and income $p_0$ levels 
-\item Education-age dependent mortality rates 
+\item Initial wealth-to-income $k_0$ and income $p_0$ levels
+\item Education-age dependent mortality rates
 \par \parencite{Brown2007}
-\item Modified labor income uncertainty $y_t = \xi_t \psi_t \overline{\psi}_{es} p_{t-1}$ 
+\item Modified labor income uncertainty $y_t = \xi_t \psi_t \overline{\psi}_{es} p_{t-1}$
 \par \parencite{Cagetti2003}
 \begin{itemize}
-\item Education-age dependent shock variances 
+\item Education-age dependent shock variances
 \par \parencite{Sabelhaus2010}
 \end{itemize}
 \end{itemize}
@@ -333,7 +314,7 @@ Net worth percentile & Cumulative net worth \\
     \column{0.5\textwidth}
     \centering
     \includegraphics[width=\textwidth]{Figures/LCrrPointNetWorthPlot.png}
-    
+
     \column{0.5\textwidth}
     \centering
     \includegraphics[width=\textwidth]{Figures/LCrrDistNetWorthPlot.png}
@@ -353,24 +334,21 @@ Net worth percentile & Cumulative net worth \\
 \hline
 & Mean & St. Dev \\
 \hline
-Net worth (before tax) & 0.0379 & 0.0859  \\
 Net worth (after tax) & 0.0365 & 0.0781  \\
-Net worth (before tax, unweighted) & 0.0004 & 0.2205  \\
-Net worth (after tax, unweighted) & 0.0155 & 0.1546  \\
 \hline
 \end{tabular}
-    
+
 \begin{flushleft}
-\par Values from the structural estimation
+\par Values from the structural estimation (uniform distribution for $R$)
 \end{flushleft}
     \begin{tabular}{|c|c|c|}
 \hline
-& Center & Spread \\
+& Mean & St. Dev \\
 \hline
-PY-Point & 1.015 & 0.0  \\
-PY-Dist & 1.011  &  0.011  \\
-LC-Point & 1.072 & 0.0  \\
-LC-Dist & 1.05  &  0.074  \\
+PY-Point & 0.071 & 0.0  \\
+PY-Dist & 0.055  &  0.006  \\
+LC-Point & 0.063 & 0.0  \\
+LC-Dist & 0.039  &  0.012  \\
 \hline
 \end{tabular}
 
@@ -380,7 +358,7 @@ LC-Dist & 1.05  &  0.074  \\
 \subsection{Concluding Remarks}
 
 \begin{frame}{Work to be done}
-       
+
        \begin{enumerate}
        \item Modify structural estimation to include bequest parameter
        \item Incorporate choice of risky asset
@@ -390,7 +368,7 @@ LC-Dist & 1.05  &  0.074  \\
       \item Different measures of wealth (liquid and/or financial)
       \end{itemize}
       \end{enumerate}
-  
+
 \end{frame}
 %%%%%%%%%%%%%%
 

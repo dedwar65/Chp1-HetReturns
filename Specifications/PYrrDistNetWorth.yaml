@@ -5,7 +5,7 @@ DstnType: Uniform
 HetTypeCount: 7
 LifeCycle: False
 AgentsPerType: 10000
-center_range: [0.95, 1.03]
+center_range: [0.95, 1.15]
 spread_range: [0.001, 0.03]
 TargetPercentiles: [0.2, 0.4, 0.6, 0.8]
 wealth_data_file: rscfp2004_reduced.txt
