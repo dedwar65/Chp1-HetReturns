@@ -76,7 +76,7 @@ Incorporating \textit{heterogeneity across households} can help focus on this se
 \end{frame}
 %%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Related literature}
+\begin{frame}{Empirical evidence of heterogeneous returns}
 
    \small
    \begin{enumerate}
@@ -214,29 +214,21 @@ Standard calibration scheme used to simulate the model.
 %\vspace{2.5mm}
 %Goal: Find $R$ value(s) such that the simulated distribution of wealth best matches \textit{moments} of the household wealth data from the 2004 Survey of Consumer Finances (SCF).
 
-Simulated method of moments (SMM) estimation for $R$.
+Simulated method of moments (SMM) estimation for $R$ using 2004 SCF wealth data.
 
 %\vspace{5mm}
   \begin{enumerate}
   \item No ex-ante heterogeneity: $R$\textit{-point} model
-  \par Estimate a common rate of return across households by finding the $\grave{R}$ which matches the capital-to-output ($\frac{K}{Y}$) ratio from data.
+  \par Estimate a common rate of return across households by finding the $\grave{R}$ which matches the capital-to-output ratio $(\frac{K}{Y} = 7.47)$.
   \vspace{2.5mm}
 
   \item Ex-ante heterogeneity: $R$\textit{-dist} model
   \par Estimate  a \textbf{Uniform distribution} of returns across households by finding the $\grave{R}$,$\nabla$ which matches empirical Lorenz targets, given $\frac{K}{Y}$.
   \end{enumerate}
-
-
-\end{frame}
-%%%%%%%%%%%%%%%%%
-
-\begin{frame}{Estimation procedure with heterogeneity}
-
-\small
-\par Empirical targets using 2004 SCF data \vspace{2mm}
-
-\centering
-\begin{tabular}{|c|c|}
+  
+  \centering
+  \small
+  \begin{tabular}{|c|c|}
 \hline
 Net worth percentile & Cumulative net worth \\
 \hline
@@ -247,18 +239,6 @@ Net worth percentile & Cumulative net worth \\
 \hline
 \end{tabular}
 
-\begin{flushleft}
-\par Optimization problem for the $R$\textit{-dist} model
-\end{flushleft}
-
-\vspace{-7.5mm}
- \begin{eqnarray*}
-  \{\grave{R}, \nabla\} = \text{arg}\min_{R, \nabla} \bigg( \sum_{i=20, 40, 60, 80} (w_{i}(R, \nabla)-\omega_i )^{2} \bigg)^{\frac{1}{2}}\\
-  &\text{s.t.}& \\
-  \frac{K}{Y} = 7.47. %\frac{K_{PF}}{Y_{PF}}.
-\end{eqnarray*}
-
-%try to move "s.t."%
 
 \end{frame}
 %%%%%%%%%%%%%%%%%
