@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.17)  13 JUN 2024 11:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.17)  3 SEP 2024 08:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1300,37 +1300,37 @@ x/updmap/pdftex.map}
 ] [5
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 124
+LaTeX Font Info:    Trying to load font information for U+msa on input line 127
 .
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 124
+LaTeX Font Info:    Trying to load font information for U+msb on input line 127
 .
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on inp
-ut line 124.
+ut line 127.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
 )
-<Figures/Fagereng2020Fig1.png, id=258, 748.29562pt x 466.24188pt>
+<Figures/Fagereng2020Fig1.png, id=254, 748.29562pt x 466.24188pt>
 File: Figures/Fagereng2020Fig1.png Graphic file (type png)
 <use Figures/Fagereng2020Fig1.png>
-Package pdftex.def Info: Figures/Fagereng2020Fig1.png  used on input line 124.
+Package pdftex.def Info: Figures/Fagereng2020Fig1.png  used on input line 127.
 (pdftex.def)             Requested size: 173.56186pt x 108.13689pt.
  [6
 
  <./Figures/Fagereng2020Fig1.png>]
-<Figures/Fagereng2020Fig8.png, id=301, 771.38188pt x 498.86375pt>
+<Figures/Fagereng2020Fig8.png, id=297, 771.38188pt x 498.86375pt>
 File: Figures/Fagereng2020Fig8.png Graphic file (type png)
 <use Figures/Fagereng2020Fig8.png>
-Package pdftex.def Info: Figures/Fagereng2020Fig8.png  used on input line 152.
+Package pdftex.def Info: Figures/Fagereng2020Fig8.png  used on input line 155.
 (pdftex.def)             Requested size: 173.56186pt x 112.2395pt.
  [7
 
@@ -1340,27 +1340,27 @@ Package pdftex.def Info: Figures/Fagereng2020Fig8.png  used on input line 152.
 ] [9
 
 ]
-<Tables/calibrationPY.pdf, id=411, 577.27963pt x 308.2452pt>
+<Tables/calibrationPY.pdf, id=407, 577.27963pt x 308.2452pt>
 File: Tables/calibrationPY.pdf Graphic file (type pdf)
 <use Tables/calibrationPY.pdf>
-Package pdftex.def Info: Tables/calibrationPY.pdf  used on input line 208.
+Package pdftex.def Info: Tables/calibrationPY.pdf  used on input line 211.
 (pdftex.def)             Requested size: 295.05728pt x 157.55571pt.
  [10
 
  <./Tables/calibrationPY.pdf, page is rotated 90 degrees>] [11
 
 ]
-<Figures/PYrrPointNetWorthPlot.png, id=519, 361.35pt x 361.35pt>
+<Figures/PYrrPointNetWorthPlot.png, id=514, 361.35pt x 361.35pt>
 File: Figures/PYrrPointNetWorthPlot.png Graphic file (type png)
 <use Figures/PYrrPointNetWorthPlot.png>
 Package pdftex.def Info: Figures/PYrrPointNetWorthPlot.png  used on input line 
-261.
+264.
 (pdftex.def)             Requested size: 173.56186pt x 173.56181pt.
-<Figures/PYrrDistNetWorthPlot.png, id=520, 361.35pt x 361.35pt>
+<Figures/PYrrDistNetWorthPlot.png, id=515, 361.35pt x 361.35pt>
 File: Figures/PYrrDistNetWorthPlot.png Graphic file (type png)
 <use Figures/PYrrDistNetWorthPlot.png>
 Package pdftex.def Info: Figures/PYrrDistNetWorthPlot.png  used on input line 2
-61.
+64.
 (pdftex.def)             Requested size: 173.56186pt x 173.56181pt.
 
 [12
@@ -1369,25 +1369,25 @@ Package pdftex.def Info: Figures/PYrrDistNetWorthPlot.png  used on input line 2
 3
 
 ]
-<Tables/calibrationLC.pdf, id=595, 391.04735pt x 216.10185pt>
+<Tables/calibrationLC.pdf, id=591, 391.04735pt x 216.10185pt>
 File: Tables/calibrationLC.pdf Graphic file (type pdf)
 <use Tables/calibrationLC.pdf>
-Package pdftex.def Info: Tables/calibrationLC.pdf  used on input line 289.
+Package pdftex.def Info: Tables/calibrationLC.pdf  used on input line 292.
 (pdftex.def)             Requested size: 586.56958pt x 324.15198pt.
  [14
 
  <./Tables/calibrationLC.pdf, page is rotated 90 degrees>]
-<Figures/LCrrPointNetWorthPlot.png, id=641, 361.35pt x 361.35pt>
+<Figures/LCrrPointNetWorthPlot.png, id=637, 361.35pt x 361.35pt>
 File: Figures/LCrrPointNetWorthPlot.png Graphic file (type png)
 <use Figures/LCrrPointNetWorthPlot.png>
 Package pdftex.def Info: Figures/LCrrPointNetWorthPlot.png  used on input line 
-303.
+306.
 (pdftex.def)             Requested size: 173.56186pt x 173.56181pt.
-<Figures/LCrrDistNetWorthPlot.png, id=642, 361.35pt x 361.35pt>
+<Figures/LCrrDistNetWorthPlot.png, id=638, 361.35pt x 361.35pt>
 File: Figures/LCrrDistNetWorthPlot.png Graphic file (type png)
 <use Figures/LCrrDistNetWorthPlot.png>
 Package pdftex.def Info: Figures/LCrrDistNetWorthPlot.png  used on input line 3
-03.
+06.
 (pdftex.def)             Requested size: 173.56186pt x 173.56181pt.
  [15
 
@@ -1400,7 +1400,7 @@ Package pdftex.def Info: Figures/LCrrDistNetWorthPlot.png  used on input line 3
 ]
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10.95> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 358.
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 361.
 
 [18
 
@@ -1431,66 +1431,48 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10.95> not available
 \openout9 = `Chp1-presentation.snm'.
 
  (./Chp1-presentation.aux)
-
-Package rerunfilecheck Warning: File `Chp1-presentation.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Chp1-presentation.out':
-(rerunfilecheck)             Before: FFAC348B3E8E3488A46320AF851F0C5D;980
-(rerunfilecheck)             After:  18A3365432F57D9AD6C4094D3E2FCEA6;980.
-
-Package biblatex Warning: Please rerun LaTeX.
-(biblatex)                Page breaks have changed.
-
+Package rerunfilecheck Info: File `Chp1-presentation.out' has not changed.
+(rerunfilecheck)             Checksum: 18A3365432F57D9AD6C4094D3E2FCEA6;980.
 Package logreq Info: Writing requests to 'Chp1-presentation.run.xml'.
 \openout1 = `Chp1-presentation.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32313 strings out of 476025
- 643585 string characters out of 5790017
+ 32307 strings out of 476025
+ 643530 string characters out of 5790017
  1876388 words of memory out of 5000000
- 52089 multiletter control sequences out of 15000+600000
+ 52085 multiletter control sequences out of 15000+600000
  526616 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,19n,122p,1888b,1815s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{Navigation24} has been referenced but does not exis
-t, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{Outline0.3.1.18} has been referenced but does not e
-xist, replaced by a fixed one
-
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb>
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
-/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
-usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></us
-r/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/
-local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/lo
-cal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loca
-l/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/t
-exlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/te
-xlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/tex
-live/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texli
-ve/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive
-/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texliv
-e/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texliv
-e/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/local/texlive
-/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/local/texlive/
-2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2
-023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/202
-3/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2023/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/texmf
--dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/local/texlive/2023/
-texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Chp1-presentation.pdf (23 pages, 839638 bytes).
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pf
+b></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
+></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></
+usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></us
+r/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/
+local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
+cal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local
+/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/
+texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/t
+exlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/tex
+live/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texli
+ve/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texl
+ive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texl
+ive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/local/texli
+ve/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/local/texliv
+e/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
+/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2
+023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/202
+3/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2023/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/tex
+mf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/local/texlive/202
+3/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Chp1-presentation.pdf (23 pages, 839705 bytes).
 PDF statistics:
- 1082 PDF objects out of 1200 (max. 8388607)
- 948 compressed objects within 10 object streams
- 73 named destinations out of 1000 (max. 500000)
+ 1076 PDF objects out of 1200 (max. 8388607)
+ 942 compressed objects within 10 object streams
+ 71 named destinations out of 1000 (max. 500000)
  219 words of extra memory for PDF output out of 10000 (max. 10000000)
 
