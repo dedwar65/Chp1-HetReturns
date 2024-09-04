@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.17)  3 SEP 2024 08:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.17)  4 SEP 2024 10:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1469,7 +1469,7 @@ texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2023/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/tex
 mf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/local/texlive/202
 3/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Chp1-presentation.pdf (23 pages, 839705 bytes).
+Output written on Chp1-presentation.pdf (23 pages, 839703 bytes).
 PDF statistics:
  1076 PDF objects out of 1200 (max. 8388607)
  942 compressed objects within 10 object streams
