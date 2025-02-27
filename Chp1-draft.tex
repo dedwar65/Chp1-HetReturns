@@ -1,32 +1,30 @@
-\documentclass[titlepage]{article}
+\documentclass{article}
 \usepackage{subfiles}
-\usepackage{athblk}
+%\usepackage{athblk}
 \usepackage{footnote}
 \usepackage{lipsum}
 
 \input{Subfiles/packages}
 
-\begin{document}
-
 \title{blank}
 \author{Decory Edwards\thanks{blank}}
 \date{\today}
 
-\begin{center}
-    {\LARGE \bfseries Your Research Paper Title}  % Large, bold title
-    \\[1.5em]  % Space below title
-    {\large Your Name\footnotemark}  % Author name with footnote
-    \\[0.5em]  % Small space
-    {\small Your Institution}  % Institution (if needed)
-    \\[1em]  % Space before date
-    {\small \today}  % Date
-  \end{center}
+\begin{document}
+
+\maketitle
 
 \footnotetext{blank}
 
+\vspace{2em}
+\noindent
 \begin{abstract}
+  \noindent
   \subfile{Subfiles/abstract}
 \end{abstract}
+
+\newpage
+
 
 %main paper begins here
 \subfile{Subfiles/intro}
@@ -34,5 +32,6 @@
 \subfile{Subfiles/model}
 \subfile{Subfiles/results}
 
+\printbibliography
 
 \end{document}

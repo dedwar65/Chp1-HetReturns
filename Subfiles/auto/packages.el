@@ -3,10 +3,10 @@
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-package-options
                      '(("inputenc" "utf8") ("biblatex" "backend=bibtex" "style=authoryear") ("fontenc" "T1") ("caption" "font=small" "format=plain" "labelfont=bf" "textfont=normal" "justification=justified" "singlelinecheck=false") ("nth" "super")))
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
-   (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "url")
+   (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "footmisc"
     "datetime2"
