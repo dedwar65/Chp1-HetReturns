@@ -1,0 +1,38 @@
+\documentclass[titlepage]{article}
+\usepackage{subfiles}
+\usepackage{athblk}
+\usepackage{footnote}
+\usepackage{lipsum}
+
+\input{Subfiles/packages}
+
+\begin{document}
+
+\title{blank}
+\author{Decory Edwards\thanks{blank}}
+\date{\today}
+
+\begin{center}
+    {\LARGE \bfseries Your Research Paper Title}  % Large, bold title
+    \\[1.5em]  % Space below title
+    {\large Your Name\footnotemark}  % Author name with footnote
+    \\[0.5em]  % Small space
+    {\small Your Institution}  % Institution (if needed)
+    \\[1em]  % Space before date
+    {\small \today}  % Date
+  \end{center}
+
+\footnotetext{blank}
+
+\begin{abstract}
+  \subfile{Subfiles/abstract}
+\end{abstract}
+
+%main paper begins here
+\subfile{Subfiles/intro}
+\subfile{Subfiles/litrev}
+\subfile{Subfiles/model}
+\subfile{Subfiles/results}
+
+
+\end{document}

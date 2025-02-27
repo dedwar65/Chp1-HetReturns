@@ -1,0 +1,175 @@
+% Define a few objects that are unique to the BST paper
+%\input{\ResourcesDir/owner} % Owned by llorracc (draft) or econ-ark (published) ?
+
+\usepackage{footmisc,datetime2,refcount,xr-hyper,hhline,rotating,makecell,subfiles}
+\usepackage{subfiles}
+
+
+% Allow different actions depending on whether document is being processed as
+% subfile or being process as standalone
+\providecommand{\onlyinsubfile}{}\renewcommand{\onlyinsubfile}[1]{#1}
+\providecommand{\notinsubfile}{}\renewcommand{\notinsubfile}[1]{}
+
+% Commands unique to paper
+\provideboolean{CDCEdits}\setboolean{CDCEdits}{true}
+\setboolean{CDCEdits}{false}
+\setboolean{CDCEdits}{true}
+\providecommand{\ifCDC}{\ifthenelse{\boolean{CDCEdits}}}
+
+  %% added packages
+  
+%Key intro packages
+\usepackage[utf8]{inputenc}
+\usepackage[backend=bibtex, style=authoryear]{biblatex}
+\addbibresource{Chp1.bib}
+\usepackage{dirtytalk}
+\usepackage{cancel}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{booktabs}
+\usepackage{adjustbox}
+
+%% added packages
+\usepackage[T1]{fontenc}
+\usepackage{sectsty}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{booktabs}
+\usepackage{placeins}
+\usepackage[font=small,format=plain,labelfont=bf,textfont=normal,justification=justified,singlelinecheck=false]{caption}
+%\usepackage[round, authoryear]{natbib}
+\usepackage[super]{nth}
+\usepackage{dcolumn}
+\usepackage{subcaption}
+\usepackage{color} 
+\usepackage{afterpage}
+
+%% added commands
+\newcommand{\myred}[1]{\textcolor{red}{#1}}
+\newcommand{\myblue}[1]{\textcolor{blue}{#1}}
+\newcolumntype{d}[1]{D{.}{.}{#1}}
+
+
+% Terms unique to paper
+\newtheorem{tm}{Theorem}
+\newtheorem{dfn}{Definition}
+\newtheorem{lma}{Lemma}
+\newtheorem{assu}{Assumption}
+\newtheorem{prop}{Proposition}
+\newtheorem{cro}{Corollary}
+
+\newtheorem{example}{Example}
+\newtheorem{observation}{Observation}
+\newcommand{\exm}{\begin{example}}
+\newcommand{\exmm}{\end{example}}
+\newcommand{\obs}{\begin{observation}}
+\newcommand{\obss}{\end{observation}}
+\newcommand{\cor}{\begin{cro}}
+\newcommand{\corr}{\end{cro}}
+\newtheorem{exa}{Example}
+\newcommand{\ex}{\begin{exa}}
+\newcommand{\exx}{\end{exa}}
+\newtheorem{remak}{Remark}
+\newcommand{\brmk}{\begin{remak}}
+\newcommand{\ermk}{\end{remak}}
+\newcommand{\thm}{\begin{tm}}
+\newcommand{\nt}{\noindent}
+\newcommand{\thmm}{\end{tm}}
+\newcommand{\lm}{\begin{lma}}
+\newcommand{\lmm}{\end{lma}}
+\newcommand{\ass}{\begin{assu}}
+\newcommand{\asss}{\end{assu}}
+\newcommand{\df}{\begin{dfn}  }
+\newcommand{\dff}{\end{dfn}}
+\newcommand{\prp}{\begin{prop}}
+\newcommand{\prpp}{\end{prop}}
+\newcommand{\bqu}{\sloppy \small \begin{quote}}
+\newcommand{\equ}{\end{quote} \sloppy \large}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheorem{ax}{Axiom}
+\newtheorem{ax.V}{V}
+\newtheorem{ax.AA}{AA}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\eq}{\begin{equation}}
+\newcommand{\eqq}{\end{equation}}
+\newtheorem{claim}{\it Claim}
+\newcommand{\cl}{\begin{claim}}
+\newcommand{\cll}{\end{claim}}
+\newcommand{\bit}{\begin{itemize}}
+\newcommand{\eit}{\end{itemize}}
+\newcommand{\ben}{\begin{enumerate}}
+\newcommand{\een}{\end{enumerate}}
+\newcommand{\bcen}{\begin{center}}
+\newcommand{\ecen}{\end{center}}
+\newcommand{\fn}{\footnote}
+\newcommand{\ds}{\begin{description}}
+\newcommand{\dss}{\end{description}}
+\newcommand{\prf}{\begin{proof}}
+\newcommand{\prff}{\end{proof}}
+\newcommand{\cs}{\begin{cases}}
+\newcommand{\css}{\end{cases}}
+\newcommand{\ml}{\item}
+\newcommand{\lb}{\label}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\tra}{\twoheadrightarrow}
+\newcommand*{\supp}{\operatornamewithlimits{sup}\limits}
+\newcommand*{\inff}{\operatornamewithlimits{inf}\limits}
+\newcommand{\nf}{\normalfont}
+\renewcommand{\Re}{\mathbb{R}}
+\newcommand*{\mmax}{\operatornamewithlimits{max}\limits}
+\newcommand*{\mmin}{\operatornamewithlimits{min}\limits}
+%\newcommand*{\argmax}{\operatornamewithlimits{arg max}\limits}
+%\newcommand*{\argmin}{\operatornamewithlimits{arg min}\limits}
+\newcommand{\uhr}{\!\! \upharpoonright  \!\! }
+
+\newcommand{\CR}{\mathcal R}
+%\newcommand{L}{\mathcal F}
+\newcommand{\CC}{\mathcal C}
+\newcommand{\CT}{\mathcal T}
+\newcommand{\CS}{\mathcal S}
+\newcommand{\CM}{\mathcal M}
+\newcommand{\CL}{\mathcal L}
+\newcommand{\CP}{\mathcal P}
+\newcommand{\CN}{\mathcal N}
+
+\newtheorem{innercustomthm}{Theorem}
+\newenvironment{customthm}[1]
+  {\renewcommand\theinnercustomthm{#1}\innercustomthm}
+  {\endinnercustomthm}
+\newtheorem{einnercustomthm}{Extended Theorem}
+\newenvironment{ecustomthm}[1]
+  {\renewcommand\theeinnercustomthm{#1}\einnercustomthm}
+  {\endeinnercustomthm}
+  
+  \newtheorem{innercustomcor}{Corollary}
+\newenvironment{customcor}[1]
+  {\renewcommand\theinnercustomcor{#1}\innercustomcor}
+  {\endinnercustomcor}
+\newtheorem{einnercustomcor}{Extended Theorem}
+\newenvironment{ecustomcor}[1]
+  {\renewcommand\theeinnercustomcor{#1}\einnercustomcor}
+  {\endeinnercustomcor}
+    \newtheorem{innercustomlm}{Lemma}
+\newenvironment{customlm}[1]
+  {\renewcommand\theinnercustomlm{#1}\innercustomlm}
+  {\endinnercustomlm}
+    \newtheorem{innercustomdf}{Definition}
+\newenvironment{customdf}[1]
+{\renewcommand\theinnercustomdf{#1}\innercustomdf}
+{\endinnercustomdf}
+
+
+\newcommand{\red}{\textcolor{red}}
+\newcommand{\green}{\textcolor{green}}
+\newcommand{\blue}{\textcolor{blue}}
+\newcommand{\purple}{\textcolor{purple}}
+\newcommand{\mred}[1]{\color{red}{#1}\color{black}}
+\newcommand{\mblue}[1]{\color{blue}{#1}\color{black}}
+\newcommand{\mpurple}[1]{\color{purple}{#1}\color{black}}
+\newcommand*{\medcap}{\mathbin{\scalebox{1.5}{\ensuremath{\cap}}}}%
+\newcommand*{\medcup}{\mathbin{\scalebox{1.5}{\ensuremath{\cup}}}}%
+%\renewcommand{\thefootnote}{\fnsymbol{footnote}}

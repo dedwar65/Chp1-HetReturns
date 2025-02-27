@@ -1,0 +1,1268 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{nyt/global//global/global}
+\preamble{%
+\providecommand{\noopsort}[1]{} \providecommand{\singleletter}[1]{#1}
+}
+
+  \entry{ra1994}{article}{}
+    \name{author}{1}{}{%
+      {{hash=ASR}{%
+         family={Aiyagari},
+         familyi={A\bibinitperiod},
+         given={S\bibnamedelima Rao},
+         giveni={S\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {MIT Press}%
+    }
+    \strng{namehash}{ASR1}
+    \strng{fullhash}{ASR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1994}
+    \field{labeldatesource}{}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{number}{3}
+    \field{pages}{659\bibrangedash 684}
+    \field{title}{Uninsured idiosyncratic risk and aggregate saving}
+    \field{volume}{109}
+    \field{journaltitle}{The Quarterly Journal of Economics}
+    \field{year}{1994}
+  \endentry
+
+  \entry{lblcps18}{article}{}
+    \name{author}{3}{}{%
+      {{hash=BL}{%
+         family={Bach},
+         familyi={B\bibinitperiod},
+         given={Laurent},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=CLE}{%
+         family={Calvet},
+         familyi={C\bibinitperiod},
+         given={Laurent\bibnamedelima E.},
+         giveni={L\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+      {{hash=SP}{%
+         family={Sodini},
+         familyi={S\bibinitperiod},
+         given={Paolo},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BLCLESP1}
+    \strng{fullhash}{BLCLESP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2018}
+    \field{labeldatesource}{}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \verb{doi}
+    \verb 10.1257/aer.20170666
+    \endverb
+    \field{number}{9}
+    \field{pages}{2703\bibrangedash 47}
+    \field{title}{Rich Pickings? Risk, Return, and Skill in Household Wealth}
+    \verb{url}
+    \verb https://www.aeaweb.org/articles?id=10.1257/aer.20170666
+    \endverb
+    \field{volume}{110}
+    \field{journaltitle}{American Economic Review}
+    \field{year}{2018}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{jbab18}{article}{}
+    \name{author}{2}{}{%
+      {{hash=BJ}{%
+         family={Benhabib},
+         familyi={B\bibinitperiod},
+         given={Jess},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=BA}{%
+         family={Bisin},
+         familyi={B\bibinitperiod},
+         given={Alberto},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BJBA1}
+    \strng{fullhash}{BJBA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2018}
+    \field{labeldatesource}{}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \verb{doi}
+    \verb 10.1257/jel.20161390
+    \endverb
+    \field{number}{4}
+    \field{pages}{1261\bibrangedash 91}
+    \field{title}{Skewed Wealth Distributions: Theory and Empirics}
+    \verb{url}
+    \verb https://www.aeaweb.org/articles?id=10.1257/jel.20161390
+    \endverb
+    \field{volume}{56}
+    \field{journaltitle}{Journal of Economic Literature}
+    \field{year}{2018}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{jbabml17}{article}{}
+    \name{author}{3}{}{%
+      {{hash=BJ}{%
+         family={Benhabib},
+         familyi={B\bibinitperiod},
+         given={Jess},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=BA}{%
+         family={Bisin},
+         familyi={B\bibinitperiod},
+         given={Alberto},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=LM}{%
+         family={Luo},
+         familyi={L\bibinitperiod},
+         given={Mi},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BJBALM1}
+    \strng{fullhash}{BJBALM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2017}
+    \field{labeldatesource}{}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \verb{doi}
+    \verb 10.1257/aer.p20171005
+    \endverb
+    \field{number}{5}
+    \field{pages}{593\bibrangedash 97}
+    \field{title}{Earnings Inequality and Other Determinants of Wealth
+  Inequality}
+    \verb{url}
+    \verb https://www.aeaweb.org/articles?id=10.1257/aer.p20171005
+    \endverb
+    \field{volume}{107}
+    \field{journaltitle}{American Economic Review}
+    \field{year}{2017}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{Benhabib2019}{article}{}
+    \name{author}{3}{}{%
+      {{hash=BJ}{%
+         family={Benhabib},
+         familyi={B\bibinitperiod},
+         given={Jess},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=BA}{%
+         family={Bisin},
+         familyi={B\bibinitperiod},
+         given={Alberto},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=LM}{%
+         family={Luo},
+         familyi={L\bibinitperiod},
+         given={Mi},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {aeaweb.org}%
+    }
+    \strng{namehash}{BJBALM1}
+    \strng{fullhash}{BJBALM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2019}
+    \field{labeldatesource}{}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{abstract}{%
+    Wealth Distribution and Social Mobility in the US: A Quantitative Approach
+  by Jess Benhabib, Alberto Bisin and Mi Luo. Published in volume 109, issue 5,
+  pages 1623-47 of American Economic Review, May 2019, Abstract: We
+  quantitatively identify the factors that drive wealth dynamics in the United
+  Stat...%
+    }
+    \verb{doi}
+    \verb 10.1257/aer.20151684
+    \endverb
+    \field{issn}{0002-8282}
+    \field{number}{5}
+    \field{pages}{1623\bibrangedash 1647}
+    \field{title}{{Wealth Distribution and Social Mobility in the US: A
+  Quantitative Approach}}
+    \verb{url}
+    \verb https://www.aeaweb.org/doi/10.1257/aer.20151684
+    \endverb
+    \field{volume}{109}
+    \verb{file}
+    \verb All-Papers/B/Benhabib-et-al.-2019-Wealth-Distribution-and-Social-Mobi
+    \verb lity-in-the-US-A-Quantitative-Approach.pdf;All-Papers/B/Benhabib-et-a
+    \verb l.-2019-Wealth-Distribution-and-Social-Mobility-in-the-US-A-Quantitat
+    \verb ive-Approach.pdf
+    \endverb
+    \field{journaltitle}{Am. Econ. Rev.}
+    \field{month}{05}
+    \field{year}{2019}
+  \endentry
+
+  \entry{tb1983}{article}{}
+    \name{author}{1}{}{%
+      {{hash=BT}{%
+         family={Bewley},
+         familyi={B\bibinitperiod},
+         given={Truman},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {JSTOR}%
+    }
+    \strng{namehash}{BT1}
+    \strng{fullhash}{BT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1983}
+    \field{labeldatesource}{}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{pages}{1485\bibrangedash 1504}
+    \field{title}{A difficulty with the optimum quantity of money}
+    \field{journaltitle}{Econometrica: Journal of the Econometric Society}
+    \field{year}{1983}
+  \endentry
+
+  \entry{Campbell2019}{article}{}
+    \name{author}{3}{}{%
+      {{hash=CJY}{%
+         family={Campbell},
+         familyi={C\bibinitperiod},
+         given={John\bibnamedelima Y},
+         giveni={J\bibinitperiod\bibinitdelim Y\bibinitperiod},
+      }}%
+      {{hash=RT}{%
+         family={Ramadorai},
+         familyi={R\bibinitperiod},
+         given={Tarun},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=RB}{%
+         family={Ranish},
+         familyi={R\bibinitperiod},
+         given={Benjamin},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {aeaweb.org}%
+    }
+    \strng{namehash}{CJYRTRB1}
+    \strng{fullhash}{CJYRTRB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2019}
+    \field{labeldatesource}{}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{abstract}{%
+    Do the Rich Get Richer in the Stock Market? Evidence from India by John Y.
+  Campbell, Tarun Ramadorai and Benjamin Ranish. Published in volume 1, issue
+  2, pages 225-40 of American Economic Review: Insights, September 2019,
+  Abstract: We use data on Indian stock portfolios to show that return
+  heterogen...%
+    }
+    \verb{doi}
+    \verb 10.1257/aeri.20180158
+    \endverb
+    \field{number}{2}
+    \field{pages}{225\bibrangedash 240}
+    \field{title}{{Do the Rich Get Richer in the Stock Market? Evidence from
+  India}}
+    \verb{url}
+    \verb https://www.aeaweb.org/articles?id=10.1257/aeri.20180158
+    \endverb
+    \field{volume}{1}
+    \verb{file}
+    \verb All-Papers/C/Campbell-et-al.-2019-Do-the-Rich-Get-Richer-in-the-Stock
+    \verb -Market-Evidence-from-India.pdf
+    \endverb
+    \field{journaltitle}{American Economic Review: Insights}
+    \field{month}{09}
+    \field{year}{2019}
+  \endentry
+
+  \entry{cstw2017}{article}{}
+    \name{author}{4}{}{%
+      {{hash=CC}{%
+         family={Carroll},
+         familyi={C\bibinitperiod},
+         given={Christopher},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=SJ}{%
+         family={Slacalek},
+         familyi={S\bibinitperiod},
+         given={Jiri},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=TK}{%
+         family={Tokuoka},
+         familyi={T\bibinitperiod},
+         given={Kiichi},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=WMN}{%
+         family={White},
+         familyi={W\bibinitperiod},
+         given={Matthew\bibnamedelima N.},
+         giveni={M\bibinitperiod\bibinitdelim N\bibinitperiod},
+      }}%
+    }
+    \keyw{Wealth distribution, marginal propensity to consume, heterogeneity,
+  inequality, D12, D31, D91, E21}
+    \strng{namehash}{CC+1}
+    \strng{fullhash}{CCSJTKWMN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2017}
+    \field{labeldatesource}{}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{abstract}{%
+    In a model calibrated to match micro- and macroeconomic evidence on
+  household income dynamics, we show that a modest degree of heterogeneity in
+  household preferences or beliefs is sufficient to match empirical measures of
+  wealth inequality in the United States. The heterogeneity-augmented model's
+  predictions are consistent with microeconomic evidence that suggests that the
+  annual marginal propensity to consume (MPC) is much larger than the roughly
+  0.04 implied by commonly used macroeconomic models (even ones including some
+  heterogeneity). The high MPC arises because many consumers hold little wealth
+  despite having a strong precautionary motive. Our model also plausibly
+  predicts that the aggregate MPC can differ greatly depending on how the shock
+  is distributed across households (depending, e.g., on their wealth, or
+  employment status).%
+    }
+    \verb{doi}
+    \verb https://doi.org/10.3982/QE694
+    \endverb
+    \verb{eprint}
+    \verb https://onlinelibrary.wiley.com/doi/pdf/10.3982/QE694
+    \endverb
+    \field{number}{3}
+    \field{pages}{977\bibrangedash 1020}
+    \field{title}{The distribution of wealth and the marginal propensity to
+  consume}
+    \verb{url}
+    \verb https://onlinelibrary.wiley.com/doi/abs/10.3982/QE694
+    \endverb
+    \field{volume}{8}
+    \field{journaltitle}{Quantitative Economics}
+    \field{year}{2017}
+  \endentry
+
+  \entry{Daminato2024}{unpublished}{}
+    \name{author}{2}{}{%
+      {{hash=DC}{%
+         family={Daminato},
+         familyi={D\bibinitperiod},
+         given={Claudio},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=PL}{%
+         family={Pistaferri},
+         familyi={P\bibinitperiod},
+         given={Luigi},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DCPL1}
+    \strng{fullhash}{DCPL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2024}
+    \field{labeldatesource}{}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{abstract}{%
+    A recent literature argues that persistent heterogeneity in wealth returns
+  (``type dependence'') as well as a positive association with wealth levels
+  (``scale dependence'') play an important role for explaining features of the
+  wealth distribution, especially its extreme concentration at the top. In
+  contrast, traditional models of wealth accumulation emphasize the role of
+  persistent differences in labor earnings. Using panel data from the PSID, we
+  first document that a common unobserved component (which we interpret as the
+  endowment of cognitive and non-cognitive skills of an individual) drives
+  persistent heterogeneity in both wealth returns and labor earnings. We embed
+  these features of the joint wealth return-earnings process in a life-cycle
+  model of consumer behavior and show that ignoring them would dramatically
+  understate average returns for people at the top of the wealth distribution
+  as well as the level and rise of consumption inequality over the life cycle.%
+    }
+    \verb{doi}
+    \verb 10.3386/w32490
+    \endverb
+    \field{number}{32490}
+    \field{series}{Working Paper Series}
+    \field{title}{{Returns Heterogeneity and Consumption Inequality Over the
+  Life Cycle}}
+    \verb{url}
+    \verb http://www.nber.org/papers/w32490
+    \endverb
+    \list{institution}{1}{%
+      {National Bureau of Economic Research}%
+    }
+    \verb{file}
+    \verb All-Papers/D/Daminato-and-Pistaferri-2024-Returns-Heterogeneity-and-C
+    \verb onsumption-Inequality-Over-the-Life-Cycle.pdf
+    \endverb
+    \field{month}{05}
+    \field{year}{2024}
+  \endentry
+
+  \entry{De_Nardi2017}{article}{}
+    \name{author}{2}{}{%
+      {{hash=DNM}{%
+         family={De\bibnamedelima Nardi},
+         familyi={D\bibinitperiod\bibinitdelim N\bibinitperiod},
+         given={Mariacristina},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=FG}{%
+         family={Fella},
+         familyi={F\bibinitperiod},
+         given={Giulio},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \keyw{Inequality; Saving; Wealth}
+    \strng{namehash}{DNMFG1}
+    \strng{fullhash}{DNMFG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2017}
+    \field{labeldatesource}{}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{abstract}{%
+    Why are some people wealthy while others are poor? To what extent can
+  governments affect inequality? Which instruments should they use? Answering
+  these questions requires understanding why people save. Dynamic quantitative
+  models of wealth inequality can help us to understand and quantify the
+  determinants of the outcomes that we observe in the data and to evaluate the
+  consequences of policy reform. This paper surveys the savings mechanisms
+  generated by the transmission of bequests and human capital, by preference
+  heterogeneity, by rate of return heterogeneity, by entrepreneurship, by
+  richer earnings processes, and by medical expenses. It concludes that the
+  transmission of bequests and human capital, entrepreneurship, and
+  medical-expense risk are crucial determinants of savings and wealth
+  inequality and that we need to look at more data to measure their relative
+  importance.%
+    }
+    \verb{doi}
+    \verb 10.1016/j.red.2017.06.002
+    \endverb
+    \field{issn}{1094-2025}
+    \field{pages}{280\bibrangedash 300}
+    \field{title}{{Saving and wealth inequality}}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/S1094202517300546
+    \endverb
+    \field{volume}{26}
+    \verb{file}
+    \verb All-Papers/D/De-Nardi-and-Fella-2017-Saving-and-wealth-inequality.pdf
+    \endverb
+    \field{journaltitle}{Rev. Econ. Dyn.}
+    \field{month}{10}
+    \field{year}{2017}
+  \endentry
+
+  \entry{Deuflhard2018}{article}{}
+    \name{author}{3}{}{%
+      {{hash=DF}{%
+         family={Deuflhard},
+         familyi={D\bibinitperiod},
+         given={Florian},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=GD}{%
+         family={Georgarakos},
+         familyi={G\bibinitperiod},
+         given={Dimitris},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=IR}{%
+         family={Inderst},
+         familyi={I\bibinitperiod},
+         given={Roman},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {en}%
+    }
+    \list{publisher}{1}{%
+      {Oxford Academic}%
+    }
+    \strng{namehash}{DFGDIR1}
+    \strng{fullhash}{DFGDIR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2018}
+    \field{labeldatesource}{}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{abstract}{%
+    Abstract. Savings accounts are owned by most households, but little is
+  known about the performance of households' investments. We create a unique
+  dataset by mat%
+    }
+    \verb{doi}
+    \verb 10.1093/jeea/jvy003
+    \endverb
+    \field{issn}{1542-4766}
+    \field{number}{1}
+    \field{pages}{131\bibrangedash 164}
+    \field{title}{{Financial Literacy and Savings Account Returns}}
+    \verb{url}
+    \verb https://academic.oup.com/jeea/article-abstract/17/1/131/4981453
+    \endverb
+    \field{volume}{17}
+    \verb{file}
+    \verb All-Papers/D/Deuflhard-et-al.-2018-Financial-Literacy-and-Savings-Acc
+    \verb ount-Returns.pdf
+    \endverb
+    \field{journaltitle}{J. Eur. Econ. Assoc.}
+    \field{month}{04}
+    \field{year}{2018}
+  \endentry
+
+  \entry{aflgdmlp20}{article}{}
+    \name{author}{4}{}{%
+      {{hash=FA}{%
+         family={Fagereng},
+         familyi={F\bibinitperiod},
+         given={Andreas},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=GL}{%
+         family={Guiso},
+         familyi={G\bibinitperiod},
+         given={Luigi},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=MD}{%
+         family={Malacrino},
+         familyi={M\bibinitperiod},
+         given={Davide},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=PL}{%
+         family={Pistaferri},
+         familyi={P\bibinitperiod},
+         given={Luigi},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \keyw{Wealth inequality, returns to wealth, financial wealth, net worth,
+  heterogeneity, intergenerational mobility}
+    \strng{namehash}{FA+1}
+    \strng{fullhash}{FAGLMDPL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2020}
+    \field{labeldatesource}{}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{abstract}{%
+    We provide a systematic analysis of the properties of individual returns to
+  wealth using 12 years of population data from Norway's administrative tax
+  records. We document a number of novel results. First, individuals earn
+  markedly different average returns on their net worth (a standard deviation
+  of 22.1\%) and on its components. Second, heterogeneity in returns does not
+  arise merely from differences in the allocation of wealth between safe and
+  risky assets: returns are heterogeneous even within narrow asset classes.
+  Third, returns are positively correlated with wealth: moving from the 10th to
+  the 90th percentile of the net worth distribution increases the return by 18
+  percentage points (and 10 percentage points if looking at net-of-tax
+  returns). Fourth, individual wealth returns exhibit substantial persistence
+  over time. We argue that while this persistence partly arises from stable
+  differences in risk exposure and assets scale, it also reflects heterogeneity
+  in sophistication and financial information, as well as entrepreneurial
+  talent. Finally, wealth returns are correlated across generations. We discuss
+  the implications of these findings for several strands of the wealth
+  inequality debate.%
+    }
+    \verb{doi}
+    \verb https://doi.org/10.3982/ECTA14835
+    \endverb
+    \verb{eprint}
+    \verb https://onlinelibrary.wiley.com/doi/pdf/10.3982/ECTA14835
+    \endverb
+    \field{number}{1}
+    \field{pages}{115\bibrangedash 170}
+    \field{title}{Heterogeneity and Persistence in Returns to Wealth}
+    \verb{url}
+    \verb https://onlinelibrary.wiley.com/doi/abs/10.3982/ECTA14835
+    \endverb
+    \field{volume}{88}
+    \field{journaltitle}{Econometrica}
+    \field{year}{2020}
+  \endentry
+
+  \entry{mf1957}{book}{}
+    \name{author}{1}{}{%
+      {{hash=FM}{%
+         family={Friedman},
+         familyi={F\bibinitperiod},
+         given={Milton},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Princeton University Press}%
+    }
+    \strng{namehash}{FM1}
+    \strng{fullhash}{FM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1957}
+    \field{labeldatesource}{}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{abstract}{%
+    What is the exact nature of the consumption function? Can this term be
+  defined so that it will be consistent with empirical evidence and a valid
+  instrument in the hands of future economic researchers and policy makers? In
+  this volume a distinguished American economist presents a new theory of the
+  consumption function, tests it against extensive statistical J material and
+  suggests some of its significant implications.Central to the new theory is
+  its sharp distinction between two concepts of income, measured income, or
+  that which is recorded for a particular period, and permanent income, a
+  longer-period concept in terms of which consumers decide how much to spend
+  and how much to save. Milton Friedman suggests that the total amount spent on
+  consumption is on the average the same fraction of permanent income,
+  regardless of the size of permanent income. The magnitude of the fraction
+  depends on variables such as interest rate, degree of uncertainty relating to
+  occupation, ratio of wealth to income, family size, and so on.The hypothesis
+  is shown to be consistent with budget studies and time series data, and some
+  of its far-reaching implications are explored in the final chapter.%
+    }
+    \field{title}{Theory of the Consumption Function}
+    \verb{url}
+    \verb http://www.jstor.org/stable/j.ctv39x7zh
+    \endverb
+    \field{year}{1957}
+    \field{urlday}{21}
+    \field{urlmonth}{03}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{Gabaix2016}{article}{}
+    \name{author}{4}{}{%
+      {{hash=GX}{%
+         family={Gabaix},
+         familyi={G\bibinitperiod},
+         given={X},
+         giveni={X},
+      }}%
+      {{hash=LJM}{%
+         family={Lasry},
+         familyi={L\bibinitperiod},
+         given={J\bibnamedelima M},
+         giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=LPL}{%
+         family={Lions},
+         familyi={L\bibinitperiod},
+         given={P\bibnamedelima L},
+         giveni={P\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+      {{hash=MB}{%
+         family={Moll},
+         familyi={M\bibinitperiod},
+         given={B},
+         giveni={B},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Wiley Online Library}%
+    }
+    \strng{namehash}{GX+1}
+    \strng{fullhash}{GXLJMLPLMB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2016}
+    \field{labeldatesource}{}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{abstract}{%
+    The past forty years have seen a rapid rise in top income inequality in the
+  United States. While there is a large number of existing theories of the
+  Pareto tail of the long-run income distributions, almost none of these
+  address the fast rise in top inequality observed in the data. We show that
+  standard theories, which build on a random growth mechanism, generate
+  transition dynamics that are an order of magnitude too slow relative to those
+  observed in the data. We then suggest two parsimonious deviations from the
+  canonical model that can explain such changes: ``scale dependence'' that may
+  arise from changes in skill prices, and ``type dependence,'' i.e. the
+  presence of some ``high-growth types.'' These deviations are consistent with
+  theories in which the increase in top income inequality is driven by the rise
+  of ``superstar'' entrepreneurs or managers.%
+    }
+    \verb{doi}
+    \verb 10.3982/ECTA13569
+    \endverb
+    \field{issn}{0012-9682}
+    \field{title}{{The dynamics of inequality}}
+    \verb{url}
+    \verb https://onlinelibrary.wiley.com/doi/abs/10.3982/ECTA13569?casa_token=
+    \verb 9ibahWJ9lG4AAAAA:0dYLGnKViEPFH4QjzOkhrmrwUun5w7L47DXcniNeYOAnQM5FIFHG
+    \verb 5164k1_OLkoZNmHKtLN4v9HI5TA
+    \endverb
+    \verb{file}
+    \verb All-Papers/G/Gabaix-et-al.-2016-The-dynamics-of-inequality.pdf;All-Pa
+    \verb pers/G/Gabaix-et-al.-2016-ecta1638-sup-0001-Supplement.pdf
+    \endverb
+    \field{journaltitle}{Econometrica}
+    \field{year}{2016}
+  \endentry
+
+  \entry{Guvenen2011}{report}{}
+    \name{author}{1}{}{%
+      {{hash=GF}{%
+         family={Guvenen},
+         familyi={G\bibinitperiod},
+         given={Fatih},
+         giveni={F\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GF1}
+    \strng{fullhash}{GF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2011}
+    \field{labeldatesource}{}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{abstract}{%
+    This article reviews macroeconomic models with heterogeneous households. A
+  key question for the relevance of these models concerns the degree to which
+  markets are complete. This is because the existence of complete markets
+  imposes restrictions on (i) how much heterogeneity matters for aggregate
+  phenomena and (ii) the types of cross-sectional distributions that can be
+  obtained. The degree of market incompleteness, in turn, depends on two
+  factors: (i) the richness of insurance opportunities provided by the economic
+  environment and (ii) the nature and magnitude of idiosyncratic risks to be
+  insured. First, I review a broad collection of empirical evidence--from
+  econometric tests of \&quot;full insurance,\&quot; to quantitative and
+  empirical analyses of the permanent income (\&quot;self-insurance\&quot;)
+  model that examine how it fits the facts about life cycle allocations, to
+  studies that try to directly measure where economies place between these two
+  benchmarks (\&quot;partial insurance\&quot;). The empirical evidence I survey
+  reveals significant uncertainty in the profession regarding the magnitudes of
+  idiosyncratic risks as well as whether or not these risks have increased
+  since the 1970s. An important difficulty stems from the fact that inequality
+  often arises from a mixture of idiosyncratic risk and fixed (or predictable)
+  heterogeneity, making the two challenging to disentangle. I also discuss
+  applications of incomplete markets models to trends in wealth, consumption,
+  and earnings inequality both over the life cycle and over time, where this
+  challenge is evident. Third, I discuss \&quot;approximate\&quot;
+  aggregation--the finding that some incomplete markets models generate
+  aggregate implications very similar to representative-agent models. What
+  approximate aggregation does and does not imply is illustrated through
+  several examples. Finally, I discuss some computational issues relevant for
+  solving and calibrating such models and I provide a simple yet fully
+  parallelizable%
+    }
+    \field{number}{17622}
+    \field{title}{{Macroeconomics With Heterogeneity: A Practical Guide}}
+    \verb{url}
+    \verb https://ideas.repec.org/p/nbr/nberwo/17622.html
+    \endverb
+    \list{institution}{1}{%
+      {National Bureau of Economic Research, Inc}%
+    }
+    \field{type}{NBER Working Papers}
+    \field{month}{11}
+    \field{year}{2011}
+  \endentry
+
+  \entry{mh1993}{article}{}
+    \name{author}{1}{}{%
+      {{hash=HM}{%
+         family={Huggett},
+         familyi={H\bibinitperiod},
+         given={Mark},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{HM1}
+    \strng{fullhash}{HM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1993}
+    \field{labeldatesource}{}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{number}{5-6}
+    \field{pages}{953\bibrangedash 969}
+    \field{title}{The risk-free rate in heterogeneous-agent
+  incomplete-insurance economies}
+    \field{volume}{17}
+    \field{journaltitle}{Journal of economic Dynamics and Control}
+    \field{year}{1993}
+  \endentry
+
+  \entry{gkgv22}{report}{}
+    \name{author}{2}{}{%
+      {{hash=KG}{%
+         family={Kaplan},
+         familyi={K\bibinitperiod},
+         given={Greg},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=VGL}{%
+         family={Violante},
+         familyi={V\bibinitperiod},
+         given={Giovanni\bibnamedelima L},
+         giveni={G\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KGVGL1}
+    \strng{fullhash}{KGVGL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2022}
+    \field{labeldatesource}{}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{abstract}{%
+    What model features and calibration strategies yield a large average
+  marginal propensity to consume (MPC) in heterogeneous agent models? Through a
+  systematic investigation of models with different preferences, dimensions of
+  ex-ante heterogeneity, income processes and asset structure, we show that the
+  most important factor is the share and type of hand-to-mouth households.
+  One-asset models either feature a trade-off between a high average MPC and a
+  realistic level of aggregate wealth, or generate an excessively polarized
+  wealth distribution that vastly understates the wealth held by households in
+  the middle of the distribution. Two-asset models that include both liquid and
+  illiquid assets can resolve this tension with a large enough gap between
+  liquid and illiquid returns. We discuss how such return differential can be
+  justified from the perspective of theory and data.%
+    }
+    \verb{doi}
+    \verb 10.3386/w30013
+    \endverb
+    \field{number}{30013}
+    \field{series}{Working Paper Series}
+    \field{title}{The Marginal Propensity to Consume in Heterogeneous Agent
+  Models}
+    \verb{url}
+    \verb http://www.nber.org/papers/w30013
+    \endverb
+    \list{institution}{1}{%
+      {National Bureau of Economic Research}%
+    }
+    \field{type}{Working Paper}
+    \field{year}{2022}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{kennickell2017a}{article}{}
+    \name{author}{1}{}{%
+      {{hash=KAB}{%
+         family={Kennickell},
+         familyi={K\bibinitperiod},
+         given={Arthur\bibnamedelima B},
+         giveni={A\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IOS Press}%
+    }
+    \strng{namehash}{KAB1}
+    \strng{fullhash}{KAB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2017}
+    \field{extradate}{1}
+    \field{labeldatesource}{}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{abstract}{%
+    … faces many of the same obstacles as for other respondents , wealthy
+  respondents appear … viewing a set of wealthy respondents in the 2007
+  Survey of Consumer Finances ( SCF ) and it …%
+    }
+    \verb{doi}
+    \verb 10.3233/sji-160295
+    \endverb
+    \field{issn}{1874-7655, 1875-9254}
+    \field{number}{1}
+    \field{pages}{113\bibrangedash 123}
+    \field{title}{{Getting to the top: Reaching wealthy respondents in the
+  SCF}}
+    \verb{url}
+    \verb https://content.iospress.com/articles/statistical-journal-of-the-iaos
+    \verb /sji160295
+    \endverb
+    \field{volume}{33}
+    \verb{file}
+    \verb All-Papers/K/Kennickell-2017-Getting-to-the-top-Reaching-wealthy-resp
+    \verb ondents-in-the-SCF.pdf
+    \endverb
+    \field{journaltitle}{Stat. J. IAOS}
+    \field{month}{03}
+    \field{year}{2017}
+  \endentry
+
+  \entry{kennickell2017b}{article}{}
+    \name{author}{1}{}{%
+      {{hash=KAB}{%
+         family={Kennickell},
+         familyi={K\bibinitperiod},
+         given={Arthur\bibnamedelima B},
+         giveni={A\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IOS Press}%
+    }
+    \strng{namehash}{KAB1}
+    \strng{fullhash}{KAB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2017}
+    \field{extradate}{2}
+    \field{labeldatesource}{}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{abstract}{%
+    Abstract The Survey of Consumer Finances (SCF) has a dual-frame sample
+  design that supplements a standard area-probability frame with a sample of
+  observations drawn from statistical records derived from tax returns. The
+  tax-based frame is stratified on the basis of a``wealth index''constructed
+  largely from observed income flows, with the intent of heavily oversampling
+  wealthy households. Although the SCF is not specifically designed to estimate
+  wealth concentration, the design arguably provides sufficient support to
+  enable such …%
+    }
+    \verb{doi}
+    \verb 10.3233/sji-170349
+    \endverb
+    \field{issn}{1874-7655, 1875-9254}
+    \field{number}{1}
+    \field{pages}{59\bibrangedash 79}
+    \field{title}{{Lining up: Survey and administrative data estimates of
+  wealth concentration}}
+    \verb{url}
+    \verb https://content.iospress.com/articles/statistical-journal-of-the-iaos
+    \verb /sji170349
+    \endverb
+    \field{volume}{33}
+    \verb{file}
+    \verb All-Papers/K/Kennickell-2017-Lining-up-Survey-and-administrative-data
+    \verb -estimates-of-wealth-concentration.pdf
+    \endverb
+    \field{journaltitle}{Stat. J. IAOS}
+    \field{month}{03}
+    \field{year}{2017}
+  \endentry
+
+  \entry{Krueger2016}{unpublished}{}
+    \name{author}{3}{}{%
+      {{hash=KD}{%
+         family={Krueger},
+         familyi={K\bibinitperiod},
+         given={Dirk},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=MK}{%
+         family={Mitman},
+         familyi={M\bibinitperiod},
+         given={Kurt},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=PF}{%
+         family={Perri},
+         familyi={P\bibinitperiod},
+         given={Fabrizio},
+         giveni={F\bibinitperiod},
+      }}%
+    }
+    \keyw{BufferStockTheory.bib}
+    \strng{namehash}{KDMKPF1}
+    \strng{fullhash}{KDMKPF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2016}
+    \field{labeldatesource}{}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{abstract}{%
+    The goal of this chapter is to study how, and by how much, household
+  income, wealth, and preference heterogeneity amplify and propagate a
+  macroeconomic shock. We focus on the U.S. Great Recession of 2007-2009 and
+  proceed in two steps. First, using data from the Panel Study of Income
+  Dynamics, we document the patterns of household income, consumption and
+  wealth inequality before and during the Great Recession. We then investigate
+  how households in different segments of the wealth distribution were affected
+  by income declines, and how they changed their expenditures differentially
+  during the aggregate downturn. Motivated by this evidence, we study several
+  variants of a standard heterogeneous household model with aggregate shocks
+  and an endogenous cross-sectional wealth distribution. Our key finding is
+  that wealth inequality can significantly amplify the impact of an aggregate
+  shock, and it does so if the distribution features a sufficiently large
+  fraction of households with very little net worth that sharply increase their
+  saving (i.e. they are not hand-to mouth) as the recession hits. We document
+  that both these features are observed in the PSID. We also investigate the
+  role that social insurance policies, such as unemployment insurance, play in
+  shaping the cross-sectional income and wealth distribution, and through it,
+  the dynamics of business cycles.%
+    }
+    \field{title}{{Macroeconomics and Household Heterogeneity}}
+    \verb{url}
+    \verb http://www.nber.org/papers/w22319
+    \endverb
+    \verb{file}
+    \verb All-Papers/K/Krueger-et-al.-2016-Macroeconomics-and-Household-Heterog
+    \verb eneity.pdf
+    \endverb
+    \field{month}{06}
+    \field{year}{2016}
+  \endentry
+
+  \entry{ks1998}{article}{}
+    \name{author}{2}{}{%
+      {{hash=KP}{%
+         family={Krusell},
+         familyi={K\bibinitperiod},
+         given={Per},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=SA}{%
+         family={Smith},
+         familyi={S\bibinitperiod},
+         given={Anthony},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KPSA1}
+    \strng{fullhash}{KPSA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1998}
+    \field{labeldatesource}{}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{abstract}{%
+    How do movements in the distribution of income and wealth affect the
+  macroeconomy? We analyze this question theoretically, using numerical
+  methods, in the context of a calibrated version of the stochastic growth
+  model with partially uninsurable idiosyncratic risk and movements in
+  aggregate productivity.<br><small>(This abstract was borrowed from another
+  version of this item.)</small><br><small>(This abstract was borrowed from
+  another version of this item.)</small>%
+    }
+    \verb{doi}
+    \verb 10.1086/250034
+    \endverb
+    \field{number}{5}
+    \field{pages}{867\bibrangedash 896}
+    \field{title}{{Income and Wealth Heterogeneity in the Macroeconomy}}
+    \verb{url}
+    \verb https://ideas.repec.org/a/ucp/jpolec/v106y1998i5p867-896.html
+    \endverb
+    \field{volume}{106}
+    \field{journaltitle}{Journal of Political Economy}
+    \field{year}{1998}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{jpjsledj2022}{report}{}
+    \name{author}{4}{}{%
+      {{hash=PJA}{%
+         family={Parker},
+         familyi={P\bibinitperiod},
+         given={Jonathan\bibnamedelima A},
+         giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=SJ}{%
+         family={Schild},
+         familyi={S\bibinitperiod},
+         given={Jake},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=EL}{%
+         family={Erhard},
+         familyi={E\bibinitperiod},
+         given={Laura},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=JD}{%
+         family={Johnson},
+         familyi={J\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PJA+1}
+    \strng{fullhash}{PJASJELJD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2022}
+    \field{labeldatesource}{}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{title}{Economic Impact Payments and Household Spending During the
+  Pandemic}
+    \list{institution}{1}{%
+      {National Bureau of Economic Research}%
+    }
+    \field{type}{techreport}
+    \field{year}{2022}
+  \endentry
+
+  \entry{sz16}{report}{}
+    \name{author}{2}{}{%
+      {{hash=SE}{%
+         family={Saez},
+         familyi={S\bibinitperiod},
+         given={Emmanuel},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=ZG}{%
+         family={Zucman},
+         familyi={Z\bibinitperiod},
+         given={Gabriel},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SEZG1}
+    \strng{fullhash}{SEZG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2014}
+    \field{labeldatesource}{}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{abstract}{%
+    This paper combines income tax returns with Flow of Funds data to estimate
+  the distribution of household wealth in the United States since 1913. We
+  estimate wealth by capitalizing the incomes reported by individual taxpayers,
+  accounting for assets that do not generate taxable income. We successfully
+  test our capitalization method in three micro datasets where we can observe
+  both income and wealth: the Survey of Consumer Finance, linked estate and
+  income tax returns, and foundations' tax records. Wealth concentration has
+  followed a U-shaped evolution over the last 100 years: It was high in the
+  beginning of the twentieth century, fell from 1929 to 1978, and has
+  continuously increased since then. The rise of wealth inequality is almost
+  entirely due to the rise of the top 0.1% wealth share, from 7% in 1979 to 22%
+  in 2012--a level almost as high as in 1929. The bottom 90% wealth share first
+  increased up to the mid-1980s and then steadily declined. The increase in
+  wealth concentration is due to the surge of top incomes combined with an
+  increase in saving rate inequality. Top wealth-holders are younger today than
+  in the 1960s and earn a higher fraction of total labor income in the economy.
+  We explain how our findings can be reconciled with Survey of Consumer
+  Finances and estate tax data.%
+    }
+    \verb{doi}
+    \verb 10.3386/w20625
+    \endverb
+    \field{number}{20625}
+    \field{series}{Working Paper Series}
+    \field{title}{Wealth Inequality in the United States since 1913: Evidence
+  from Capitalized Income Tax Data}
+    \verb{url}
+    \verb http://www.nber.org/papers/w20625
+    \endverb
+    \list{institution}{1}{%
+      {National Bureau of Economic Research}%
+    }
+    \field{type}{Working Paper}
+    \field{year}{2014}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{wolff2004}{report}{}
+    \name{author}{1}{}{%
+      {{hash=WEN}{%
+         family={Wolff},
+         familyi={W\bibinitperiod},
+         given={Edward\bibnamedelima N},
+         giveni={E\bibinitperiod\bibinitdelim N\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {econstor.eu}%
+    }
+    \strng{namehash}{WEN1}
+    \strng{fullhash}{WEN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2004}
+    \field{labeldatesource}{}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{abstract}{%
+    The Levy Economics Institute of Bard College, founded in 1986, is a
+  nonprofit, nonpartisan, independently funded research organization devoted to
+  public service. Through scholarship and economic research it generates
+  viable, effective public policy responses to important economic problems that
+  profoundly affect the quality of life in the United States and abroad.%
+    }
+    \field{title}{{Changes in Household Wealth in the 1980s and 1990s in the
+  US}}
+    \verb{url}
+    \verb https://www.econstor.eu/bitstream/10419/31563/1/504002554.pdf
+    \endverb
+    \list{institution}{1}{%
+      {working paper}%
+    }
+    \verb{file}
+    \verb All-Papers/W/Wolff-2004-Changes-in-Household-Wealth-in-the-1980s-and-
+    \verb 1990s-in-the-US.pdf
+    \endverb
+    \field{type}{techreport}
+    \field{year}{2004}
+  \endentry
+\enddatalist
+\endinput
