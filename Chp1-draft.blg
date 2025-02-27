@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2023)
+This is BibTeX, Version 0.99d (TeX Live 2024)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: Chp1-draft.aux
 The style file: biblatex.bst
@@ -19,47 +19,52 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: Chp1-draft-blx.bib
 Database file #2: Chp1.bib
-Biblatex version: 3.19
+Repeated entry---line 1737 of file Chp1.bib
+ : @article{Guler2022
+ :                   ,
+I'm skipping whatever remains of this entry
+Biblatex version: 3.20
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 25 entries,
-            6399 wiz_defined-function locations,
-            1435 strings with 29319 characters,
-and the built_in function-call counts, 191767 in all, are:
-= -- 14601
-> -- 3369
-< -- 1038
-+ -- 5472
-- -- 1396
-* -- 13937
-:= -- 20482
+You've used 27 entries,
+            6402 wiz_defined-function locations,
+            1447 strings with 29864 characters,
+and the built_in function-call counts, 209540 in all, are:
+= -- 15992
+> -- 3682
+< -- 1138
++ -- 6046
+- -- 1526
+* -- 15215
+:= -- 22460
 add.period$ -- 0
-call.type$ -- 25
-change.case$ -- 609
+call.type$ -- 27
+change.case$ -- 662
 chr.to.int$ -- 126
-cite$ -- 48
-duplicate$ -- 20332
-empty$ -- 16813
-format.name$ -- 1655
-if$ -- 39073
+cite$ -- 52
+duplicate$ -- 22333
+empty$ -- 18261
+format.name$ -- 1830
+if$ -- 42670
 int.to.chr$ -- 0
-int.to.str$ -- 72
+int.to.str$ -- 77
 missing$ -- 0
-newline$ -- 1075
-num.names$ -- 1389
-pop$ -- 8491
+newline$ -- 1153
+num.names$ -- 1506
+pop$ -- 9276
 preamble$ -- 2
-purify$ -- 735
+purify$ -- 804
 quote$ -- 0
-skip$ -- 5326
+skip$ -- 5807
 stack$ -- 0
-substring$ -- 25783
-swap$ -- 4734
-text.length$ -- 724
-text.prefix$ -- 26
+substring$ -- 28137
+swap$ -- 5105
+text.length$ -- 796
+text.prefix$ -- 28
 top$ -- 1
-type$ -- 821
+type$ -- 889
 warning$ -- 0
-while$ -- 2562
+while$ -- 2813
 width$ -- 0
-write$ -- 1050
+write$ -- 1126
+(There was 1 error message)
