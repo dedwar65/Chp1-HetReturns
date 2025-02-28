@@ -2,23 +2,84 @@
 \section{Results}\notinsubfile{\label{sec:results}}
 %\setcounter{page}{0}\pagenumbering{arabic}
 
-\subsection{Matching observed inequality in the distribtution of wealth}
+\subsubsection{The analogous exercise for ex-ante heterogenous rates of return}
 
-\subsubsection{Adding ex-ante heterogeneity in time preferences}
+\par To solve and simulate the model, I follow the calibration scheme captured in table \ref{tab:calib1}.
+\input{../Tables/calibPY.tex}\unskip
 
-\par In \cite{cstw2017}'s baseline model, heterogeneity in the time preference factor is not accounted for. However, to address this, the model is extended to include this factor. This is done by assuming that different types of households have a time preference factor drawn uniformly from the interval $(\grave{\beta} - \nabla, \grave{\beta} + \nabla)$, where $\nabla$ represents the level of dispersion. Afterward, the model is simulated to estimate the values of both $\grave{\beta}$ and $\nabla$ so that the model matches the inequality in the wealth distribution. To achieve this, the following minimization problem is solved:
+\par The solution of the model with no heterogeneity in returns (the R-point model) is the one which finds the value for the rate of return $R$ which minimizes the distance between the simulated and empirical wealth shares at the 20th, 40th, 60th, and 80th percentiles. The empirical targets are computed using the 2004 SCF data on household wealth. The estimation procedure finds this optimal value to be $R = 1.0709$.
 
-$$ \{\grave{\beta}, \nabla\} = \text{arg}\min_{\beta, \nabla} \bigg( \sum_{i=20, 40, 60, 80} (w_{i}(\beta, \nabla)-\omega_i )^{2} \bigg)^{\frac{1}{2}} $$
+\subsubsection{Incorporating heterogeneous returns}
 
-\par subject to the constraint that the aggregate capital-to-output ratio in this model matches that of the perfect foresight setting:
+\par As noted above, recent studies by \cite{aflgdmlp20} and \cite{lblcps18} have not only estimated the rate of return on asset holdings but have also uncovered significant heterogeneity across households. With this in mind, the next estimation (the R-dist model) assumes the existence of multiple types of agents, each earning a distinct rate of return on their assets.
 
-$$ \frac{K}{Y} = \frac{K_{PF}}{Y_{PF}}. $$
+\par I follow closely the procedure outlined by \cite{cstw2017}. Specifically, I assume that different types of households have a time preference factor drawn from a uniform distribution on the interval $(\grave{R} - \nabla, \grave{R} + \nabla)$, where $\nabla$ represents the level of dispersion. Afterward, the model is simulated to estimate the values of both $\grave{R}$ and $\nabla$ so that the model matches the inequality in the wealth distribution. To achieve this, the following minimization problem is solved:
+
+$$ \{\grave{R}, \nabla\} = \text{arg}\min_{R, \nabla} \bigg( \sum_{i=20, 40, 60, 80} (w_{i}(R, \nabla)-\omega_i )^{2} \bigg)^{\frac{1}{2}} $$
+
+\par subject to the constraint that the aggregate capital-to-output ratio in this model matches the calibrated value from the previous table of $10.26$.
 
 \par Note that $w_i$ and $\omega_i$ give the porportion of total aggregate net worth held by the top $i$ percent in the model and in the data, respectively.
 
-\subsubsection{The analogous exercise for ex-ante heterogenous rates of return}
+\par The estimation procedure finds this optimal values of $R = 1.0546$ and $\nabla = 0.0368$. The performance of the estimation of both the R-point and R-dist models, measured by their ability to match the SCF data, is compared in figure \ref{fig:PYUnif}.
 
-\par The $\beta$-dist model proves to be useful in a setting where there are heterogeneous time preference factors since it captures an unobservable component of a household's decision-making process. While the microeconomics literature has put in considerable effort to estimate this parameter, there is currently no consensus on its value.
+\begin{figure}[h]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../Figures/PYrrPointNetWorthPlot.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../Figures/PYrrDistNetWorthPlot.png}
+    \end{minipage}
+    \caption{Comparison of R-Point and R-Dist Models.}
+    \label{fig:PYUnif} 
+\end{figure}
 
-\par Recent studies by \cite{aflgdmlp20} and \cite{lblcps18} have not only estimated the rate of return on asset holdings but have also uncovered significant heterogeneity across households. Given this motivation, the revised model assumes the existence of multiple types of agents, each earning a distinct rate of return on their assets. A calibration exercise akin to the one used in the $\beta$-dist model is then performed. This crucial step involves comparing the resulting endogenous distribution from simulating this calibrated model to its empirical counterpart to determine if there is an ex-ante distribution of rates of return that can match the observable inequality in the wealth distribution. If a distribution of returns to asset holdings satisfies this criterion, the final step involves reconciling this model heterogeneity with the observed differences in rates of return found in the aforementioned literature.
+
+\subsection{Incorporating life cycle dynamics into the model}
+
+\par More realistic assumptions regarding the age and education level of households can have important implications for the income and mortality process of households. Here, I extend the model to incorporate these life cycle dynamics.
+
+\par Households enter the economy at time $t$ aged 24 years old and are endowed with an education level $e \in \{D,HS,C\}$, and initial permanent income level $\textbf{p}_0$, and a capital stock $k_0$. The life cycle version of household income is given by:
+
+$$ y_t = \xi_t \textbf{p}_t = (1 - \tau) \theta_t \textbf{p}_t, $$
+
+where $\textbf{p}_t = \psi_t \bar{\psi}_{es} \textbf{p}_{t-1}$ and $\bar{\psi}_{es}$ captures the age-education-specific average growth factor. Households that have lived for $s$ periods have permanent shocks drawn from a lognormal distribution with mean $1$ and variance $\sigma^{2}_{\psi s}$ and transitory shocks drawn from a lognormal distribution with mean $\frac{1}{\cancel{\mho}}$ and variance $\sigma^{2}_{\theta s}$ with probability $\cancel{\mho} = (1-\mho)$ and $\mu$ with probability $\mho$.
+
+\par The normalized version of the age-education-specific consumption-saving problem for households is given by
+
+\begin{eqnarray*}
+  v_{es}(m_t) &=& \max_{c_t} u(c_t(m_t)) + \beta \cancel{D}_{es} \mathbb{E}_{t}[\psi_{t+1}^{1-\rho}v_{es + 1}(m_{t+1})] \\
+  &\text{s.t.}& \\
+  a_t &=& m_t - c_t, \\
+  k_{t+1} &=& \frac{a_t}{\psi_{t+1}}, \\
+  m_{t+1} &=& (\daleth + r_t)k_{t+1} + \xi_{t+1}, \\
+  a_t &\geq& 0.
+\end{eqnarray*}
+
+\par The additional parameters necessary to calibrate the life cycle version of the model are given in table \ref{tab:calib2}.
+
+\input{../Tables/calibLC.tex}\unskip
+
+\par The estimation procedure finds this optimal value to be $R = 1.0626$ for the R-point model in this setting. The estimation procedure for the R-dist model in the life cycle setting finds optimal values of $R = 1.0395$ and $\nabla = 0.0737$. Notice the improved performance of the estimation in matching the data displayed in figure \ref{fig:LCUnif}.
+
+\begin{figure}[h]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../Figures/LCrrPointNetWorthPlot.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../Figures/LCrrDistNetWorthPlot.png}
+    \end{minipage}
+    \caption{Comparison of R-Point and R-Dist Models in the Life-Cycle Setting.}
+    \label{fig:LCUnif} 
+\end{figure}
+
+
 

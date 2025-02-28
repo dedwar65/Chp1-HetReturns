@@ -428,6 +428,94 @@
     \field{year}{2017}
   \endentry
 
+  \entry{Carroll1992}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=CCD}{%
+         family={Carroll},
+         familyi={C\bibinitperiod},
+         given={Christopher\bibnamedelima D},
+         giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CCD1}
+    \strng{fullhash}{CCD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1992}
+    \field{labeldatesource}{}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{issn}{0007-2303}
+    \field{number}{2}
+    \field{pages}{61\bibrangedash 156}
+    \field{title}{{The Buffer-Stock Theory of Saving: Some Macroeconomic
+  Evidence}}
+    \field{volume}{1992}
+    \field{journaltitle}{Brookings Pap. Econ. Act.}
+    \field{annotation}{%
+    https://www.econ2.jhu.edu/people/ccarroll/BufferStockBPEA.pdf%
+    }
+    \field{year}{1992}
+  \endentry
+
+  \entry{Carroll2015}{article}{}{}
+    \name{author}{3}{}{%
+      {{hash=CCD}{%
+         family={Carroll},
+         familyi={C\bibinitperiod},
+         given={Christopher\bibnamedelima D},
+         giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=SJ}{%
+         family={Slacalek},
+         familyi={S\bibinitperiod},
+         given={Jiri},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=TK}{%
+         family={Tokuoka},
+         familyi={T\bibinitperiod},
+         given={Kiichi},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \keyw{Household income process; Wealth inequality; Household heterogeneity}
+    \strng{namehash}{CCDSJTK1}
+    \strng{fullhash}{CCDSJTK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2015}
+    \field{labeldatesource}{}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{abstract}{%
+    We modify the widely-used Krusell and Smith (1998) model (KS) to
+  accommodate an income process with permanent and transitory components.
+  Appropriately calibrated permanent shocks help explain a substantial part of
+  the empirical wealth heterogeneity unexplained in the baseline KS model.%
+    }
+    \verb{doi}
+    \verb 10.1016/j.econlet.2015.04.021
+    \endverb
+    \field{issn}{0165-1765}
+    \field{pages}{97\bibrangedash 100}
+    \field{title}{{Buffer-stock saving in a Krusell--Smith world}}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/S016517651500172X
+    \endverb
+    \field{volume}{132}
+    \verb{file}
+    \verb All-Papers/C/Carroll-et-al.-2015-Buffer-stock-saving-in-a-Krusell–S
+    \verb mith-world.pdf
+    \endverb
+    \field{journaltitle}{Econ. Lett.}
+    \field{month}{07}
+    \field{year}{2015}
+  \endentry
+
   \entry{Daminato2024}{unpublished}{}{}
     \name{author}{2}{}{%
       {{hash=DC}{%
@@ -545,6 +633,133 @@
     \field{journaltitle}{Rev. Econ. Dyn.}
     \field{month}{10}
     \field{year}{2017}
+  \endentry
+
+  \entry{Debacker2013}{article}{}{}
+    \name{author}{5}{}{%
+      {{hash=DJ}{%
+         family={Debacker},
+         familyi={D\bibinitperiod},
+         given={Jason},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=HB}{%
+         family={Heim},
+         familyi={H\bibinitperiod},
+         given={Bradley},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=PV}{%
+         family={Panousi},
+         familyi={P\bibinitperiod},
+         given={Vasia},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=RS}{%
+         family={Ramnath},
+         familyi={R\bibinitperiod},
+         given={Shanthi},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=VI}{%
+         family={Vidangos},
+         familyi={V\bibinitperiod},
+         given={Ivan},
+         giveni={I\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Brookings Institution Press}%
+    }
+    \strng{namehash}{DJ+1}
+    \strng{fullhash}{DJHBPVRSVI1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2013}
+    \field{labeldatesource}{}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{abstract}{%
+    [We use a new, large, and confidential panel of tax returns to study the
+  persistent-versus-transitory nature of rising inequality in male labor
+  earnings and in total household income, both before and after taxes, in the
+  United States over the period 1987---2009. We apply various statistical
+  decomposition methods that allow for different ways of characterizing
+  persistent and transitory income components. For male labor earnings, we find
+  that the entire increase in cross-sectional inequality over our sample period
+  was driven by an increase in the dispersion of the persistent component of
+  earnings. For total household income, we find that most of the increase in
+  inequality reflects an increase in the dispersion of the persistent income
+  component, but the transitory component also appears to have played some
+  role. We also show that the tax system partly mitigated the increase in
+  income inequality, but not sufficiently to alter its broadly increasing trend
+  over the period.]%
+    }
+    \field{issn}{0007-2303, 1533-4465}
+    \field{pages}{67\bibrangedash 122}
+    \field{title}{{Rising Inequality: Transitory or Persistent? New Evidence
+  from a Panel of U.S. Tax Returns}}
+    \verb{url}
+    \verb http://www.jstor.org/stable/23594863
+    \endverb
+    \field{journaltitle}{Brookings Pap. Econ. Act.}
+    \field{year}{2013}
+  \endentry
+
+  \entry{Den_Haan2010}{article}{}{}
+    \name{author}{3}{}{%
+      {{hash=DHWJ}{%
+         family={Den\bibnamedelima Haan},
+         familyi={D\bibinitperiod\bibinitdelim H\bibinitperiod},
+         given={Wouter\bibnamedelima J},
+         giveni={W\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=JKL}{%
+         family={Judd},
+         familyi={J\bibinitperiod},
+         given={Kenneth\bibnamedelima L},
+         giveni={K\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+      {{hash=JM}{%
+         family={Juillard},
+         familyi={J\bibinitperiod},
+         given={Michel},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \keyw{Numerical solutions; Simulations; Approximations}
+    \strng{namehash}{DHWJJKLJM1}
+    \strng{fullhash}{DHWJJKLJM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2010}
+    \field{labeldatesource}{}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{abstract}{%
+    This paper describes the first model considered in the computational suite
+  project that compares different numerical algorithms. It is an incomplete
+  markets economy with a continuum of agents and an inequality (borrowing)
+  constraint.%
+    }
+    \verb{doi}
+    \verb 10.1016/j.jedc.2009.07.001
+    \endverb
+    \field{issn}{0165-1889}
+    \field{number}{1}
+    \field{pages}{1\bibrangedash 3}
+    \field{title}{{Computational suite of models with heterogeneous agents:
+  Incomplete markets and aggregate uncertainty}}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/S0165188909001286
+    \endverb
+    \field{volume}{34}
+    \field{journaltitle}{J. Econ. Dyn. Control}
+    \field{month}{01}
+    \field{year}{2010}
   \endentry
 
   \entry{Deuflhard2018}{article}{}{}
