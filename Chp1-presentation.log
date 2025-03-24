@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.27)  24 MAR 2025 10:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.27)  24 MAR 2025 11:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1299,38 +1299,38 @@ Package caption Info: End \AtBeginDocument code.
 [5
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 127
+LaTeX Font Info:    Trying to load font information for U+msa on input line 130
 .
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 127
+LaTeX Font Info:    Trying to load font information for U+msb on input line 130
 .
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on inp
-ut line 127.
+ut line 130.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
 )
-<Figures/Fagereng2020Fig1.png, id=294, 748.29562pt x 466.24188pt>
+<Figures/Fagereng2020Fig1.png, id=293, 748.29562pt x 466.24188pt>
 File: Figures/Fagereng2020Fig1.png Graphic file (type png)
 <use Figures/Fagereng2020Fig1.png>
-Package pdftex.def Info: Figures/Fagereng2020Fig1.png  used on input line 127.
+Package pdftex.def Info: Figures/Fagereng2020Fig1.png  used on input line 130.
 (pdftex.def)             Requested size: 173.56186pt x 108.13689pt.
 
 
 [6
 
  <./Figures/Fagereng2020Fig1.png>]
-<Figures/Fagereng2020Fig8.png, id=344, 771.38188pt x 498.86375pt>
+<Figures/Fagereng2020Fig8.png, id=343, 771.38188pt x 498.86375pt>
 File: Figures/Fagereng2020Fig8.png Graphic file (type png)
 <use Figures/Fagereng2020Fig8.png>
-Package pdftex.def Info: Figures/Fagereng2020Fig8.png  used on input line 155.
+Package pdftex.def Info: Figures/Fagereng2020Fig8.png  used on input line 158.
 (pdftex.def)             Requested size: 173.56186pt x 112.2395pt.
 
 
@@ -1345,10 +1345,10 @@ Package pdftex.def Info: Figures/Fagereng2020Fig8.png  used on input line 155.
 [9
 
 ]
-<Tables/calibrationPY.pdf, id=472, 577.27963pt x 308.2452pt>
+<Tables/calibrationPY.pdf, id=471, 577.27963pt x 308.2452pt>
 File: Tables/calibrationPY.pdf Graphic file (type pdf)
 <use Tables/calibrationPY.pdf>
-Package pdftex.def Info: Tables/calibrationPY.pdf  used on input line 211.
+Package pdftex.def Info: Tables/calibrationPY.pdf  used on input line 214.
 (pdftex.def)             Requested size: 295.05728pt x 157.55571pt.
 
 
@@ -1359,17 +1359,17 @@ Package pdftex.def Info: Tables/calibrationPY.pdf  used on input line 211.
 [11
 
 ]
-<Figures/PYrrPointNetWorthPlot.png, id=591, 361.35pt x 361.35pt>
+<Figures/PYrrPointNetWorthPlot.png, id=588, 361.35pt x 361.35pt>
 File: Figures/PYrrPointNetWorthPlot.png Graphic file (type png)
 <use Figures/PYrrPointNetWorthPlot.png>
 Package pdftex.def Info: Figures/PYrrPointNetWorthPlot.png  used on input line 
-264.
+267.
 (pdftex.def)             Requested size: 173.56186pt x 173.56181pt.
-<Figures/PYrrDistNetWorthPlot.png, id=592, 361.35pt x 361.35pt>
+<Figures/PYrrDistNetWorthPlot.png, id=589, 361.35pt x 361.35pt>
 File: Figures/PYrrDistNetWorthPlot.png Graphic file (type png)
 <use Figures/PYrrDistNetWorthPlot.png>
 Package pdftex.def Info: Figures/PYrrDistNetWorthPlot.png  used on input line 2
-64.
+67.
 (pdftex.def)             Requested size: 173.56186pt x 173.56181pt.
 
 
@@ -1380,27 +1380,27 @@ Package pdftex.def Info: Figures/PYrrDistNetWorthPlot.png  used on input line 2
 [13
 
 ]
-<Tables/calibrationLC.pdf, id=680, 391.04735pt x 216.10185pt>
+<Tables/calibrationLC.pdf, id=678, 391.04735pt x 216.10185pt>
 File: Tables/calibrationLC.pdf Graphic file (type pdf)
 <use Tables/calibrationLC.pdf>
-Package pdftex.def Info: Tables/calibrationLC.pdf  used on input line 292.
+Package pdftex.def Info: Tables/calibrationLC.pdf  used on input line 295.
 (pdftex.def)             Requested size: 586.56958pt x 324.15198pt.
 
 
 [14
 
  <./Tables/calibrationLC.pdf, page is rotated 90 degrees>]
-<Figures/LCrrPointNetWorthPlot.png, id=732, 361.35pt x 361.35pt>
+<Figures/LCrrPointNetWorthPlot.png, id=730, 361.35pt x 361.35pt>
 File: Figures/LCrrPointNetWorthPlot.png Graphic file (type png)
 <use Figures/LCrrPointNetWorthPlot.png>
 Package pdftex.def Info: Figures/LCrrPointNetWorthPlot.png  used on input line 
-306.
+309.
 (pdftex.def)             Requested size: 173.56186pt x 173.56181pt.
-<Figures/LCrrDistNetWorthPlot.png, id=733, 361.35pt x 361.35pt>
+<Figures/LCrrDistNetWorthPlot.png, id=731, 361.35pt x 361.35pt>
 File: Figures/LCrrDistNetWorthPlot.png Graphic file (type png)
 <use Figures/LCrrDistNetWorthPlot.png>
 Package pdftex.def Info: Figures/LCrrDistNetWorthPlot.png  used on input line 3
-06.
+09.
 (pdftex.def)             Requested size: 173.56186pt x 173.56181pt.
 
 
@@ -1417,7 +1417,7 @@ Package pdftex.def Info: Figures/LCrrDistNetWorthPlot.png  used on input line 3
 ]
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10.95> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 359.
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 362.
 
 
 
@@ -1461,10 +1461,10 @@ Package logreq Info: Writing requests to 'Chp1-presentation.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  32285 strings out of 473201
- 635188 string characters out of 5716120
- 1379738 words of memory out of 5000000
+ 635197 string characters out of 5716120
+ 1379716 words of memory out of 5000000
  54893 multiletter control sequences out of 15000+600000
- 573166 words of font info for 87 fonts, out of 8000000 for 9000
+ 573460 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,19n,123p,1888b,1844s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pf
@@ -1491,10 +1491,10 @@ texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2024/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2024/tex
 mf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/local/texlive/202
 4/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Chp1-presentation.pdf (21 pages, 833128 bytes).
+Output written on Chp1-presentation.pdf (21 pages, 833996 bytes).
 PDF statistics:
- 1104 PDF objects out of 1200 (max. 8388607)
- 860 compressed objects within 9 object streams
+ 1103 PDF objects out of 1200 (max. 8388607)
+ 859 compressed objects within 9 object streams
  60 named destinations out of 1000 (max. 500000)
  219 words of extra memory for PDF output out of 10000 (max. 10000000)
 
