@@ -1,0 +1,70 @@
+This is BibTeX, Version 0.99d (TeX Live 2024)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Chp1-presentation.aux
+The style file: biblatex.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: Chp1-presentation-blx.bib
+Database file #2: Chp1.bib
+Repeated entry---line 1698 of file Chp1.bib
+ : @article{Ahn2017
+ :                 ,
+I'm skipping whatever remains of this entry
+Biblatex version: 3.20
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+You've used 10 entries,
+            6402 wiz_defined-function locations,
+            1311 strings with 19655 characters,
+and the built_in function-call counts, 83257 in all, are:
+= -- 6677
+> -- 1286
+< -- 461
++ -- 2440
+- -- 467
+* -- 5874
+:= -- 9126
+add.period$ -- 0
+call.type$ -- 10
+change.case$ -- 303
+chr.to.int$ -- 62
+cite$ -- 18
+duplicate$ -- 8844
+empty$ -- 7110
+format.name$ -- 660
+if$ -- 16941
+int.to.chr$ -- 0
+int.to.str$ -- 25
+missing$ -- 0
+newline$ -- 465
+num.names$ -- 591
+pop$ -- 3301
+preamble$ -- 2
+purify$ -- 359
+quote$ -- 0
+skip$ -- 2251
+stack$ -- 0
+substring$ -- 11791
+swap$ -- 1951
+text.length$ -- 287
+text.prefix$ -- 9
+top$ -- 1
+type$ -- 323
+warning$ -- 0
+while$ -- 1167
+width$ -- 0
+write$ -- 455
+(There was 1 error message)
