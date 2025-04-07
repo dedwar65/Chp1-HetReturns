@@ -24,8 +24,8 @@ MyAgentType = AltIndShockConsumerType
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 data_location = os.path.join(script_dir, '../Data/')
-specs_location = os.path.join(script_dir, '../Specifications/')
-SpecificationFilename = 'LCrrDistNetWorth.yaml'
+specs_location = os.path.join(script_dir, '../Specifications/_Robustness/')
+SpecificationFilename = 'LCrrPointNetWorthR.yaml'
 
 with open(specs_location + SpecificationFilename, 'r') as f:
     spec_raw = f.read()
@@ -100,6 +100,11 @@ BaseParamDict = {
     "track_vars": ['aLvl','pLvl','WeightFac']
 }
 BaseParamDict.update(yaml.safe_load(init_raw)) # Later, add conditions to include other agent types
+
+Discfac = BaseParamDict['DiscFac']
+risk = BaseParamDict['CRRA']
+print(risk)
+print(Discfac)
 
 # Adjust survival probabilities from SSA tables using education cohort adjustments;
 # method provided by Brown, Liebman, and Pollett (2002).
@@ -218,4 +223,3 @@ for n in range(HetTypeCount):
 opt_center = None
 opt_spread = None
 lorenz_distance = None
-

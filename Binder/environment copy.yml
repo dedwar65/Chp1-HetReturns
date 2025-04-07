@@ -1,4 +1,4 @@
-name: hetret
+name: envtest
 channels:
   - defaults
   - conda-forge
