@@ -1,0 +1,11 @@
+Estimate is center=1.0177429638754187, spread=0.15866971204612085
+Conversion is mean=1.0177429638754187, std_dev=0.026444952007686817
+Lorenz distance is  message: 
+          Optimization terminated successfully;
+          The returned value satisfies the termination criteria
+          (using xtol = 0.0001 )
+ success: True
+     fun: 8.071994835629705e-05
+       x: 0.15866971204612085
+     nit: 5
+    nfev: 13

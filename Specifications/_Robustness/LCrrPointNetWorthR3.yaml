@@ -1,4 +1,4 @@
-tag: LCrrPointNetWorthRobustness
+tag: LCrrPointNetWorthRobustness3
 description: Lifecycle rate of return estimation with no heterogeneity - robustness check
 HetParam: Rfree
 DstnType: Uniform
@@ -13,6 +13,6 @@ asset_col: 4
 wealth_col: 5
 weight_col: 0
 income_col: 1
-base_param_filename: LifecycleDictR
+base_param_filename: LifecycleDictR3
 mort_data_file: EducMortAdj.txt
 model: Point

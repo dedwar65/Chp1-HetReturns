@@ -1,0 +1,18 @@
+tag: LCrrPointNetWorthRobustness2
+description: Lifecycle rate of return estimation with no heterogeneity - robustness check
+HetParam: Rfree
+DstnType: Uniform
+HetTypeCount: 1
+LifeCycle: True
+AgentsPerType: 10000
+center_range: [0.98, 1.075]
+spread_range: [0.001, 0.05]
+TargetPercentiles: [0.2, 0.4, 0.6, 0.8]
+wealth_data_file: rscfp2004_reduced.txt
+asset_col: 4
+wealth_col: 5
+weight_col: 0
+income_col: 1
+base_param_filename: LifecycleDictR2
+mort_data_file: EducMortAdj.txt
+model: Point

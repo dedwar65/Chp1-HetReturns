@@ -3,11 +3,11 @@ from copy import copy
 
 import matplotlib.pyplot as plt
 import numpy as np
-import parameters as params
+import _parametersR as params
 from HARK.parallel import multi_thread_commands
 from HARK.utilities import plot_funcs
 from IPython.core.getipython import get_ipython
-from parameters import (BaseTypeCount, DstnParamMapping, DstnType, HetParam,
+from _parametersR import (BaseTypeCount, DstnParamMapping, DstnType, HetParam,
                         HetTypeCount, LifeCycle, MyPopulation,
                         TargetPercentiles, center_range, emp_KY_ratio,
                         emp_lorenz, income_data, model, spread_range, tag,
