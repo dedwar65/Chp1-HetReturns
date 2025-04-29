@@ -25,7 +25,7 @@ MyAgentType = AltIndShockConsumerType
 script_dir = os.path.dirname(os.path.abspath(__file__))
 data_location = os.path.join(script_dir, '../Data/')
 specs_location = os.path.join(script_dir, '../Specifications/')
-SpecificationFilename = 'LCrrDistNetWorth.yaml'
+SpecificationFilename = 'LCrrPointNetWorth.yaml'
 
 with open(specs_location + SpecificationFilename, 'r') as f:
     spec_raw = f.read()
@@ -54,21 +54,33 @@ asset_col = yaml_params['asset_col']
 wealth_col = yaml_params['wealth_col']
 weight_col = yaml_params['weight_col']
 income_col = yaml_params['income_col']
+year = yaml_params['year']
 
+# Read full dataset and filter by year
+df = pd.read_csv(os.path.join(data_location, wealth_data_file))
+df_year = df[df['year'] == year]
+
+# Extract columns by name
+asset_data = df_year[asset_col].astype(float).to_numpy()
+wealth_data = df_year[wealth_col].astype(float).to_numpy()
+income_data = df_year[income_col].astype(float).to_numpy()
+weights_data = df_year[weight_col].astype(float).to_numpy()
+
+#####Old way of computing empirical targets!######
 # Import the wealth and income data to be matched in estimation
-f = open(data_location + "/" + wealth_data_file)
-wealth_data_reader = csv.reader(f, delimiter="\t")
-wealth_data_raw = list(wealth_data_reader)
-wealth_data = np.zeros(len(wealth_data_raw)) + np.nan
-weights_data = deepcopy(wealth_data)
-income_data = deepcopy(wealth_data)
-asset_data = deepcopy(wealth_data)
-for j in range(len(wealth_data_raw)):
+#f = open(data_location + "/" + wealth_data_file)
+#wealth_data_reader = csv.reader(f, delimiter="\t")
+#wealth_data_raw = list(wealth_data_reader)
+#wealth_data = np.zeros(len(wealth_data_raw)) + np.nan
+#weights_data = deepcopy(wealth_data)
+#income_data = deepcopy(wealth_data)
+#asset_data = deepcopy(wealth_data)
+#for j in range(len(wealth_data_raw)):
     # skip the row of headers
-    wealth_data[j] = float(wealth_data_raw[j][wealth_col])
-    weights_data[j] = float(wealth_data_raw[j][weight_col])
-    income_data[j] = float(wealth_data_raw[j][income_col])
-    asset_data[j] = float(wealth_data_raw[j][asset_col])
+#    wealth_data[j] = float(wealth_data_raw[j][wealth_col])
+#    weights_data[j] = float(wealth_data_raw[j][weight_col])
+#    income_data[j] = float(wealth_data_raw[j][income_col])
+#    asset_data[j] = float(wealth_data_raw[j][asset_col])
 
 # Calculate empirical moments to be used as targets
 empirical_moments = calcEmpMoments(asset_data, wealth_data, income_data, weights_data, TargetPercentiles)
