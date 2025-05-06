@@ -1,3 +1,3 @@
-Estimate is center=1.0709254628200169, spread=0.0
-Conversion is mean=1.0709254628200169, std_dev=0.0
-Lorenz distance is 0.08959620660810236
+Estimate is center=1.0708788794262836, spread=0.0
+Conversion is mean=1.0708788794262836, std_dev=0.0
+Lorenz distance is 0.09027611359819694

@@ -1,7 +1,12 @@
 import pandas as pd
 import numpy as np
+import os
+import re
 from pathlib import Path
 from utilities import (get_lorenz_shares)
+from estimation import (getDistributionsFromHetParamValues,
+                        calc_Lorenz_Sim)
+from parameters import (opt_center, opt_spread)
 
 # 1. Load your combined SCF CSV
 csv_path = Path('Data/scf_processed_dc.csv')
@@ -66,3 +71,31 @@ lorenz_2004 = compute_lorenz_by_group(df_2004, 'networth', 'wgt', ['year'], perc
 # Print results
 print(lorenz_5yr_2004)
 print(lorenz_2004)
+
+# 7. Import optimal values post estimation to compute untargeted moments
+# Set up paths - KEY IS CHANGE RESULTSFILENAME and FULL_PATH to import correct optimal values
+script_dir = os.path.dirname(os.path.abspath(__file__))
+results_location = os.path.join(script_dir, '../Results/')
+results_robust_location = os.path.join(script_dir, '../Results/_Robustness')
+ResultsFilename = "PYrrPointNetWorthResults.txt"
+full_path = os.path.join(results_location, ResultsFilename)
+
+# Read and parse the results file
+with open(full_path, 'r') as f:
+    content = f.read()
+
+# Extract values using regular expressions
+center_match = re.search(r"center=([0-9.eE+-]+)", content)
+spread_match = re.search(r"spread=([0-9.eE+-]+)", content)
+
+# Check and assign
+if center_match and spread_match:
+    opt_center = float(center_match.group(1))
+    opt_spread = float(spread_match.group(1))
+
+    print("Center:", opt_center)
+    print("Spread:", opt_spread)
+else:
+    raise ValueError("One or more values could not be parsed from the results file.")
+
+
