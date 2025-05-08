@@ -19,13 +19,18 @@ from HARK.Calibration.SCF.WealthIncomeDist.SCFDistTools import \
 from HARK.distributions import Lognormal, Uniform
 from utilities import (AltIndShockConsumerType, calcEmpMoments,
                        get_lorenz_shares)
+import pandas as pd
+import numpy as np
+import os
+import re
+from pathlib import Path
 
 MyAgentType = AltIndShockConsumerType
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 data_location = os.path.join(script_dir, '../Data/')
 specs_location = os.path.join(script_dir, '../Specifications/')
-SpecificationFilename = 'LCrrDistNetWorth.yaml'
+SpecificationFilename = 'LCrrPointNetWorth.yaml'
 
 with open(specs_location + SpecificationFilename, 'r') as f:
     spec_raw = f.read()
@@ -66,22 +71,6 @@ wealth_data = df_year[wealth_col].astype(float).to_numpy()
 income_data = df_year[income_col].astype(float).to_numpy()
 weights_data = df_year[weight_col].astype(float).to_numpy()
 
-#####Old way of computing empirical targets!######
-# Import the wealth and income data to be matched in estimation
-#f = open(data_location + "/" + wealth_data_file)
-#wealth_data_reader = csv.reader(f, delimiter="\t")
-#wealth_data_raw = list(wealth_data_reader)
-#wealth_data = np.zeros(len(wealth_data_raw)) + np.nan
-#weights_data = deepcopy(wealth_data)
-#income_data = deepcopy(wealth_data)
-#asset_data = deepcopy(wealth_data)
-#for j in range(len(wealth_data_raw)):
-    # skip the row of headers
-#    wealth_data[j] = float(wealth_data_raw[j][wealth_col])
-#    weights_data[j] = float(wealth_data_raw[j][weight_col])
-#    income_data[j] = float(wealth_data_raw[j][income_col])
-#    asset_data[j] = float(wealth_data_raw[j][asset_col])
-
 # Calculate empirical moments to be used as targets
 empirical_moments = calcEmpMoments(asset_data, wealth_data, income_data, weights_data, TargetPercentiles)
 emp_KY_ratio = empirical_moments[0]
@@ -89,6 +78,50 @@ emp_KY_ratio = empirical_moments[0]
 print(emp_KY_ratio)
 emp_lorenz = empirical_moments[1]
 print(emp_lorenz)
+
+# Next, series of lines of code to compute untargeted moments.
+# Keep df_year unmodified for estimation targets
+df_age_binned = df_year[df_year['age'] <= 70].copy()
+
+# Age bin specifications (not aligned with simulation - includes ages 20-25)
+age_bins_5 = np.arange(20, 71, 5)  # Change the upper limit to 71 to include 70
+age_labels_5 = [f"{i}-{i+5}" for i in age_bins_5[:-1]]
+df_age_binned['age_bin_5yr'] = pd.cut(df_age_binned['age'], bins=age_bins_5, labels=age_labels_5, right=False)
+
+age_bins_10 = np.arange(20, 71, 10)  # Change the upper limit to 71 to include 70
+age_labels_10 = [f"{i}-{i+10}" for i in age_bins_10[:-1]]
+df_age_binned['age_bin_10yr'] = pd.cut(df_age_binned['age'], bins=age_bins_10, labels=age_labels_10, right=False)
+
+# Compute empirical Lorenz shares by age bin
+def compute_lorenz_by_group(df, value_col, weight_col, group_cols, percentiles):
+    rows = []
+    for keys, grp in df.groupby(group_cols, observed=False):  # Add observed=False here
+        vals = grp[value_col].to_numpy()
+        wts = grp[weight_col].to_numpy()
+        shares = get_lorenz_shares(vals, wts, percentiles, presorted=False)
+        row = dict(zip(group_cols, keys if isinstance(keys, tuple) else [keys]))
+        for p, s in zip(percentiles, shares):
+            row[f'lorenz_{int(p*100)}'] = s
+        rows.append(row)
+    return pd.DataFrame(rows)
+
+emp_lorenz_5yr = compute_lorenz_by_group(
+    df_age_binned, value_col=wealth_col, weight_col=weight_col,
+    group_cols=['age_bin_5yr'], percentiles=TargetPercentiles
+)
+
+emp_lorenz_10yr = compute_lorenz_by_group(
+    df_age_binned, value_col=wealth_col, weight_col=weight_col,
+    group_cols=['age_bin_10yr'], percentiles=TargetPercentiles
+)
+
+# Optional: print for verification
+print("\nEmpirical Lorenz Shares by 5-Year Age Bin (Untargeted):")
+print(emp_lorenz_5yr)
+
+print("\nEmpirical Lorenz Shares by 10-Year Age Bin (Untargeted):")
+print(emp_lorenz_10yr)
+
 
 # Define a mapping from (center,spread) to the actual parameters of the distribution.
 # For each class of distributions you want to allow, there needs to be an entry for

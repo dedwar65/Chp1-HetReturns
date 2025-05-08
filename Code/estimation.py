@@ -14,6 +14,7 @@ from parameters import (BaseTypeCount, DstnParamMapping, DstnType, HetParam,
                         wealth_data, weights_data)
 from scipy.optimize import minimize, minimize_scalar, root_scalar
 from utilities import get_lorenz_shares, show_statistics
+import pandas as pd
 
 
 def updateHetParamValues(center, spread):
@@ -202,6 +203,79 @@ def estimation():
     show_statistics(tag, opt_center, opt_spread, lorenz_dist)
     graph_lorenz(opt_center, opt_spread)
 
+# New function for computing simulated, untargeted moments. May be changed later. 
+def compute_simulated_lorenz_by_age_bins(percentiles=[0.2, 0.4, 0.6, 0.8]):
+    '''
+    Computes Lorenz shares from simulation grouped by:
+    - 5-year bins: 25–30, 30–35, ..., 65–70
+    - Mixed bins: 25–30, 30–40, 40–50, ..., 60–70
+
+    Returns
+    -------
+    df_5yr : pd.DataFrame of Lorenz shares by 5-year bins
+    df_10yr : pd.DataFrame of Lorenz shares by hybrid 10-year bins
+    '''
+    updateHetParamValues(opt_center, opt_spread)
+    multi_thread_commands(MyPopulation, ['solve()', 'initialize_sim()', 'simulate()'])
+
+    # Define age bins
+    age_bins_5yr = np.arange(25, 75 + 1, 5)  # 25,30,...,70
+    labels_5yr = [f"{i}-{i+5}" for i in age_bins_5yr[:-1]]
+
+    age_bins_10yr = [25, 30, 40, 50, 60, 70]
+    labels_10yr = ["25-30", "30-40", "40-50", "50-60", "60-70"]
+
+    # Containers for both sets of bins
+    binning = {
+        '5yr': {'bins': age_bins_5yr, 'labels': labels_5yr, 'results': {}},
+        '10yr': {'bins': age_bins_10yr, 'labels': labels_10yr, 'results': {}}
+    }
+
+    if LifeCycle:
+        for this_type in MyPopulation:
+            aLvl_hist = this_type.history['aLvl']
+            wFac_hist = this_type.history['WeightFac']
+            T = aLvl_hist.shape[0]
+
+            for t in range(T):
+                age = 25 + t
+                if age > 70:
+                    continue
+
+                for key in binning:
+                    bin_def = binning[key]
+                    bin_label = pd.cut([age], bins=bin_def['bins'], labels=bin_def['labels'], right=False)[0]
+                    if bin_label not in bin_def['results']:
+                        bin_def['results'][bin_label] = {'wealth': [], 'weights': []}
+                    bin_def['results'][bin_label]['wealth'].append(aLvl_hist[t, :])
+                    bin_def['results'][bin_label]['weights'].append(wFac_hist[t, :])
+
+    else:
+        # No lifecycle structure: treat all as "25-30" in both cases
+        aLvl = np.concatenate([t.state_now['aLvl'] for t in MyPopulation])
+        wFac = np.concatenate([t.state_now['WeightFac'] for t in MyPopulation])
+        for key in binning:
+            bin_label = binning[key]['labels'][0]  # "25-30"
+            binning[key]['results'][bin_label] = {'wealth': [aLvl], 'weights': [wFac]}
+
+    # Final DataFrames
+    def compute_df(bin_def):
+        rows = []
+        for bin_label, data in bin_def['results'].items():
+            vals = np.concatenate(data['wealth'])
+            wts = np.concatenate(data['weights'])
+            shares = get_lorenz_shares(vals, wts, percentiles)
+            row = {'age_bin': bin_label}
+            for p, s in zip(percentiles, shares):
+                row[f'lorenz_{int(p*100)}'] = s
+            rows.append(row)
+        return pd.DataFrame(rows)
+
+    df_5yr = compute_df(binning['5yr'])
+    df_10yr = compute_df(binning['10yr'])
+
+    return df_5yr, df_10yr
+
 
 if __name__ == '__main__':
     from time import time
@@ -211,3 +285,13 @@ if __name__ == '__main__':
     t1 = time()
 
     print('That took ' + str(t1-t0) + ' seconds.')
+
+     # After estimation, compute simulated Lorenz shares by age cohort
+    print("\nComputing simulated Lorenz shares by age cohort...")
+    df_sim_lorenz_5yr, df_sim_lorenz_10yr = compute_simulated_lorenz_by_age_bins()
+
+    print("\nSimulated Lorenz Shares by 5-Year Age Bin:")
+    print(df_sim_lorenz_5yr)
+
+    print("\nSimulated Lorenz Shares by 10-Year Age Bin:")
+    print(df_sim_lorenz_10yr)
