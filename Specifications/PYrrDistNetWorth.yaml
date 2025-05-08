@@ -15,4 +15,5 @@ wealth_col: networth
 weight_col: wgt
 income_col: income
 base_param_filename: PerpetualYouthDict
-mort_data_file: 
+mort_data_file: EducMortAdj.txt
+model: Dist
