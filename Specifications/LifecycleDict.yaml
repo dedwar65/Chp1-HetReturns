@@ -2,7 +2,7 @@ CRRA: 1.0
 Rfree: 1.04
 PermGroFac: [1.0]
 PermGroFacAgg: 1.0
-BoroCnstArt: 0.0
+BoroCnstArt: -2.0
 CubicBool: False
 vFuncBool: False
 PermShkCount: 5

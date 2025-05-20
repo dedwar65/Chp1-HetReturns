@@ -81,15 +81,16 @@ print(emp_lorenz)
 
 # Next, series of lines of code to compute untargeted moments.
 # Keep df_year unmodified for estimation targets
-df_age_binned = df_year[df_year['age'] <= 70].copy()
+# Restrict df_age_binned to match simulation: ages 25–70 only
+df_age_binned = df_year[(df_year['age'] >= 25) & (df_year['age'] <= 70)].copy()
 
-# Age bin specifications (not aligned with simulation - includes ages 20-25)
-age_bins_5 = np.arange(20, 71, 5)  # Change the upper limit to 71 to include 70
+# Age bin specifications
+age_bins_5 = np.arange(25, 76, 5)
 age_labels_5 = [f"{i}-{i+5}" for i in age_bins_5[:-1]]
 df_age_binned['age_bin_5yr'] = pd.cut(df_age_binned['age'], bins=age_bins_5, labels=age_labels_5, right=False)
 
-age_bins_10 = np.arange(20, 71, 10)  # Change the upper limit to 71 to include 70
-age_labels_10 = [f"{i}-{i+10}" for i in age_bins_10[:-1]]
+age_bins_10 = [25, 30, 40, 50, 60, 70]
+age_labels_10 = ["25-30", "30-40", "40-50", "50-60", "60-70"]
 df_age_binned['age_bin_10yr'] = pd.cut(df_age_binned['age'], bins=age_bins_10, labels=age_labels_10, right=False)
 
 # Compute empirical Lorenz shares by age bin

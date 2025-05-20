@@ -280,7 +280,7 @@ def compute_simulated_lorenz_by_age_bins(center, spread, percentiles):
 
 def estimation():
     """
-    Performs the estimation based on the specifications from the yaml file. 
+    Performs the estimation based on the specifications from the yaml file.
     1. Produces an accompanying results file and key graph.
     2. Prints untargeted moments.
     3. Returns what the lorenz targets were for comparison.
