@@ -13,7 +13,7 @@ from parameters import (BaseTypeCount, DstnParamMapping, DstnType, HetParam,
                         emp_lorenz, income_data, model, spread_range, tag,
                         wealth_data, weights_data, TargetPercentiles)
 from scipy.optimize import minimize, minimize_scalar, root_scalar
-from utilities import get_lorenz_shares, show_statistics
+from utilities import get_lorenz_shares, show_statistics, results_location
 import pandas as pd
 
 
@@ -317,6 +317,18 @@ def estimation():
     print("\nEmpirical vs. Simulated Lorenz Shares at Optimal Parameters:")
     for p, sim_val, emp_val in zip(TargetPercentiles, final_sim_lorenz, emp_lorenz):
         print(f"  P{int(p*100)}% — Sim: {sim_val:.6f} | Emp: {emp_val:.6f}")
+
+    # Export simulated and empirical lorenz shares to an excel file
+
+    results_file = os.path.join(results_location, f"Lorenz_by_age_{tag}.xlsx")
+    with pd.ExcelWriter(results_file, engine='xlsxwriter') as writer:
+        df_sim_lorenz_5yr.to_excel(writer, sheet_name='Sim_5yr', index=False)
+        df_sim_lorenz_10yr.to_excel(writer, sheet_name='Sim_10yr', index=False)
+        params.emp_lorenz_5yr.to_excel(writer, sheet_name='Emp_5yr', index=False)
+        params.emp_lorenz_10yr.to_excel(writer, sheet_name='Emp_10yr', index=False)
+
+    print(f"\nExported Lorenz shares by age to: {results_file}")
+
 
 if __name__ == '__main__':
     from time import time
