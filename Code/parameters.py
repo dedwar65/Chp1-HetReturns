@@ -85,7 +85,7 @@ print(emp_lorenz)
 df_age_binned = df_year[(df_year['age'] >= 25) & (df_year['age'] <= 70)].copy()
 
 # Age bin specifications
-age_bins_5 = np.arange(25, 76, 5)
+age_bins_5 = np.arange(25, 75, 5)
 age_labels_5 = [f"{i}-{i+5}" for i in age_bins_5[:-1]]
 df_age_binned['age_bin_5yr'] = pd.cut(df_age_binned['age'], bins=age_bins_5, labels=age_labels_5, right=False)
 

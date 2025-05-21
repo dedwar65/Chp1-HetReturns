@@ -278,6 +278,66 @@ def compute_simulated_lorenz_by_age_bins(center, spread, percentiles):
 
     return df_5yr, df_10yr
 
+def rename_lorenz_columns(df):
+    """
+    Renames Lorenz output columns for presentation.
+    """
+    df = df.reset_index(drop=True)  # Ensures index is a column
+    rename_map = {
+        'age_bin': 'age',
+        'age_bin_5yr': 'age',
+        'age_bin_10yr': 'age',
+        'lorenz_20': '20th',
+        'lorenz_40': '40th',
+        'lorenz_60': '60th',
+        'lorenz_80': '80th'
+    }
+    return df.rename(columns=rename_map)
+
+
+tables_location = os.path.join(script_dir, '../Tables/')
+
+def save_lorenz_table_png(df, title, filename, decimals=4):
+    """
+    Save a Lorenz DataFrame as a PNG image for slides.
+
+    Parameters
+    ----------
+    df : pd.DataFrame
+        The DataFrame to render.
+    title : str
+        Title to show above the table.
+    filename : str
+        Filename (with .png) for saving the output.
+    decimals : int
+        Number of decimal places to round values.
+    """
+    import matplotlib.pyplot as plt
+
+    # Round numeric data
+    df_rounded = df.copy()
+    for col in df_rounded.select_dtypes(include=[np.number]).columns:
+        df_rounded[col] = df_rounded[col].round(decimals)
+
+    fig, ax = plt.subplots(figsize=(8, 2.5))
+    ax.axis('tight')
+    ax.axis('off')
+    ax.set_title(title, fontweight="bold", pad=10)
+
+    table = ax.table(cellText=df_rounded.values,
+                     colLabels=df_rounded.columns,
+                     rowLabels=df_rounded.index if df_rounded.index.name else None,
+                     loc='center')
+    table.scale(1.0, 1.3)
+
+    os.makedirs(tables_location, exist_ok=True)
+    out_path = os.path.join(tables_location, filename)
+    plt.tight_layout()
+    plt.savefig(out_path, dpi=300)
+    plt.close()
+
+    print(f"Saved PNG table to: {out_path}")
+
 def estimation():
     """
     Performs the estimation based on the specifications from the yaml file.
@@ -298,7 +358,7 @@ def estimation():
     show_statistics(tag, opt_center, opt_spread, lorenz_dist)
     graph_lorenz(opt_center, opt_spread)
 
-    # NEW: Compute simulated Lorenz shares by age bins
+    # 2. NEW: Compute simulated Lorenz shares by age bins
     df_sim_lorenz_5yr, df_sim_lorenz_10yr = compute_simulated_lorenz_by_age_bins(
         center=opt_center,
         spread=opt_spread,
@@ -311,14 +371,14 @@ def estimation():
     print("\nSimulated Lorenz Shares by 10-Year Age Bin:")
     print(df_sim_lorenz_10yr)
 
-    # Also print the final simulated Lorenz shares at optimal parameters (used in estimation)
+    # 2.1 Also print the final simulated Lorenz shares at optimal parameters (used in estimation)
     final_sim_lorenz = get_final_simulated_lorenz(opt_center, opt_spread)
 
     print("\nEmpirical vs. Simulated Lorenz Shares at Optimal Parameters:")
     for p, sim_val, emp_val in zip(TargetPercentiles, final_sim_lorenz, emp_lorenz):
         print(f"  P{int(p*100)}% — Sim: {sim_val:.6f} | Emp: {emp_val:.6f}")
 
-    # Export simulated and empirical lorenz shares to an excel file
+    # 2.2 Export simulated and empirical lorenz shares to an excel file
 
     results_file = os.path.join(results_location, f"Lorenz_by_age_{tag}.xlsx")
     with pd.ExcelWriter(results_file, engine='xlsxwriter') as writer:
@@ -329,6 +389,34 @@ def estimation():
 
     print(f"\nExported Lorenz shares by age to: {results_file}")
 
+    # 2.3 Save Lorenz tables as individual PNGs for presentation
+    save_lorenz_table_png(
+        rename_lorenz_columns(df_sim_lorenz_5yr),
+        title="Simulated Lorenz Shares (5-Year)",
+        filename=f"Sim_Lorenz_5yr_{tag}.png",
+        decimals=4
+    )
+
+    save_lorenz_table_png(
+        rename_lorenz_columns(df_sim_lorenz_10yr),
+        title="Simulated Lorenz Shares (10-Year)",
+        filename=f"Sim_Lorenz_10yr_{tag}.png",
+        decimals=4
+    )
+
+    save_lorenz_table_png(
+        rename_lorenz_columns(params.emp_lorenz_5yr),
+        title="Empirical Lorenz Shares (5-Year)",
+        filename=f"Emp_Lorenz_5yr_{tag}.png",
+        decimals=4
+    )
+
+    save_lorenz_table_png(
+        rename_lorenz_columns(params.emp_lorenz_10yr),
+        title="Empirical Lorenz Shares (10-Year)",
+        filename=f"Emp_Lorenz_10yr_{tag}.png",
+        decimals=4
+    )
 
 if __name__ == '__main__':
     from time import time

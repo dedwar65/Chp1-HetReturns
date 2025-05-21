@@ -26,6 +26,8 @@
 \usepackage{caption}
 \usepackage{booktabs}
 \usepackage{adjustbox}
+\usepackage{amssymb}
+
 
 % Title slide
 \title[]{Heterogeneous Returns and the Distribution of Wealth}
@@ -310,7 +312,7 @@ Net worth percentile & Cumulative net worth \\
 
 %%%%%%%%%%%%%%%%
 
-\begin{frame}{Assessing the performance of the model}
+\begin{frame}{Model performance: returns distribution}
 \centering
 
 \begin{flushleft}
@@ -334,12 +336,24 @@ Net worth (after tax) & 0.0365 & 0.0781  \\
 PY-Point & 0.071 & 0.0  \\
 PY-Dist & 0.055  &  0.006  \\
 LC-Point & 0.063 & 0.0  \\
-LC-Dist & 0.039  &  0.012  \\
+LC-Dist & 0.049  &  0.010  \\
 \hline
 \end{tabular}
 
 \end{frame}
 %%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Model performance: untargeted moments}
+\centering
+\includegraphics[width=0.8\textwidth]{Tables/Emp_Lorenz_10yr_LCrrDistNetWorth.png}
+
+%\vspace{0.5cm} % vertical space between the two tables/images
+
+\includegraphics[width=0.8\textwidth]{Tables/Sim_Lorenz_10yr_LCrrDistNetWorth.png}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%
+
 
 \subsection{Concluding Remarks}
 
@@ -355,6 +369,21 @@ LC-Dist & 0.039  &  0.012  \\
 
 \end{frame}
 %%%%%%%%%%%%%%
+
+%\subsection{Concluding Remarks}
+%
+%\begin{frame}{Work to be done}
+
+ %      \begin{enumerate}
+ %      \item Robustness checks
+  %     \begin{itemize}
+%      \item Plausible parameter values for time preferences and risk aversion
+%      \item Different measures of wealth (liquid and/or financial)
+%      \end{itemize}
+ %     \end{enumerate}
+
+ %   \end{frame}
+%%%%%%%%%%%%%
 
 
 \begin{frame}[allowframebreaks]{References}
