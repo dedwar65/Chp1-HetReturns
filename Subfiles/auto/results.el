@@ -10,4 +10,6 @@
     "fig:LCUnif"
     "fig:EmpLorenzTar"
     "fig:SimLorenzTarPoint"
-    "fi
+    "fig:SimLorenzTarDist"))
+ :latex)
+
