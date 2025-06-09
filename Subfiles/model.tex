@@ -1,8 +1,26 @@
-\onlyinsubfile{\setcounter{section}{2}}
+\onlyinsubfile{\setcounter{section}{3}}
 \section{Model}
 \notinsubfile{\label{sec:Model}}
 
-\subsection{Defining the stochastic income process}
+\subsection{Banking sector}
+
+\par There are a continuum of banks, deemed either globally integrated or local. Whether or not a bank falls within a given category depends solely on the elasticity of their offered deposit rate to changes in the level of foreign deposits.
+
+\par The model is static in that, I assume that the level of foreign deposits at either bank type is constant across all periods. Additionally, a given bank cannot take actions to increase the number of depositors (foreign or domestic) at their given institution \footnote{For example, compare a bank in a suburb area of Montana (local) versus a bank near downtown Houston, Texas (globally integrated).}.
+
+\par Lastly, in this simple version of the model, I assume that households do not endogenously choose a bank type to do business with. Clearly, this would lead us towards the literature on costly human capital acquisition and financial literacy. Instead, I assume that a bank type, either globally integrated or local, is assigned to a household at birth with some probability. The household is \say{stuck} with this bank assignment until death.
+
+\subsubsection{Equilibrium deposit rates and bank owners}
+
+\par A set of questions arise naturally are: how is the optimal deposit rate chosen? If they are profit-maximizing, to whom do these profits go to?
+
+\par The answer can be seen in the following scenario. Consider the case where there are only two bank, one globally integrated and one local. The globally integrated bank has an elasticity of deposit rates which is very elastic, and the local bank has an elastcity which is extremely inelastic. This suggests that the former will need to offer a deposit rate which is close to the prevailing world interest rate, else they will face a large reduction in their foreign deposit holdings. The latter will offer a deposit rate which is significantly lower than the world interest rate since they do not face this issue.
+
+\par In this scenario, the globally integrated bank will earn a profit that can be normalized to 1, and the local bank will earn a profit that can be normalized to a value that is strictly greater than 1 in each period. This implies that the stream of revenue for the entire period (or infinity horizon) for the local bank is strictly higher than the stream of revenue associated with the globally integrated bank. Furthermore, from the literature on asset pricing, we know that a setting such as this will result in a share price for owning the local bank which is strictly larger than the share price for owning the globally integrated bank, so that the ratio of reveneue stream to share price is equal for the two bank types.
+
+\subsection{Households}
+
+\subsubsection{Defining the stochastic income process}
 
 \par Each household's income $(y_t)$ during a given period depends on three main factors. The first factor is the aggregate wage rate $(W_t)$ that all households in the economy face. The second factor is the permanent income component $(p_t)$, which represents an agent's present discounted value of human wealth. Lastly, the transitory shock component $(\xi_t)$ reflects the potential risks that households may face in receiving their income payment during that period. Thus, household income can be expressed as the following:
 
@@ -24,7 +42,8 @@ $$ p_t = p_{t-1} \psi_{t}, $$
 
 \par where $l$ is the time worked per agent and the parameter $\theta$ captures the white noise component of the transitory shock.
 
-\subsection{Baseline model for households}
+
+\subsubsection{Decision problem for households}
 
 \par This paragraph presents the baseline version of the household's optimization problem for consumption-savings decisions, assuming no ex-ante heterogeneity. In this case, each household aims to maximize its expected discounted utility of consumption $u(c) = \frac{c^{1-\rho}}{1-\rho}$ by solving the following:
 
@@ -41,23 +60,27 @@ $$ \max \mathbb{E}_t \sum_{n=0}^{\infty}(\cancel{D}\beta)^{n} u(c_{t+n}). $$
   a_t &\geq& 0.
 \end{eqnarray*}
 
-\subsubsection{The analogy for rates of return}
 
-\par If we want to explore how different returns to assets can affect the endogenous wealth distribution, it's important to examine the following decomposition of a household's evolution of market resources over time:
 
-\begin{enumerate}
-  \item Assets at the end of the period are equal to market resources minus consumption:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\subsubsection{The analogy for rates of return}
 
-$$ a_t = m_t - c_t.  $$
+%\par If we want to explore how different returns to assets can affect the endogenous wealth distribution, it's important to examine the following decomposition of a household's evolution of market resources over time:
+
+%\begin{enumerate}
+ % \item Assets at the end of the period are equal to market resources minus consumption:
+
+%$$ a_t = m_t - c_t.  $$
     
-  \item Next period's capital is determined from this period's assets via
+ % \item Next period's capital is determined from this period's assets via
 
-$$ k_{t+1} = \frac{a_t}{\cancel{D}\psi_t}.  $$
+%$$ k_{t+1} = \frac{a_t}{\cancel{D}\psi_t}.  $$
 
-  \item Finally, the transition from the beginning of period $t+1$ when capital has not yet been used to produce output, to the middle of that period when output has been produced and incorporated into resources but has not yet been consumed is:
+%  \item Finally, the transition from the beginning of period $t+1$ when capital has not yet been used to produce output, to the middle of that period when output has been produced and incorporated into resources but has not yet been consumed is:
 
-$$ m_{t+1} = (\daleth + r_t)K_{t+1} + \xi_{t+1}.  $$
+%$$ m_{t+1} = (\daleth + r_t)K_{t+1} + \xi_{t+1}.  $$
 
-  \end{enumerate}
+ % \end{enumerate}
 
-\par It's worth recalling that in this model, the rate of return to capital is represented as $(\daleth + r_t)$. This rate of return is directly related to the endogenous level of wealth, which is determined by the level of capital $K_{t+1}$. Therefore, if there are differences in the rate of return across households, this will result in further disparities in wealth holdings.
+%\par It's worth recalling that in this model, the rate of return to capital is represented as $(\daleth + r_t)$. This rate of return is directly related to the endogenous level of wealth, which is determined by the level of capital $K_{t+1}$. Therefore, if there are differences in the rate of return across households, this will result in further disparities in wealth holdings.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

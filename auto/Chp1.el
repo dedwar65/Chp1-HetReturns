@@ -59,7 +59,7 @@
     "jhs86"
     "https://doi.org/10.3982/ECTA6658"
     "fddgri14"
-    "alpmom17"
+    "Lusardi2017"
     "jp17"
     "mkjnls19"
     "jperess04"
@@ -101,6 +101,11 @@
     "Brown2007"
     "Cagetti2003"
     "Sabelhaus2010"
-    "altmejd2024"))
+    "altmejd2024"
+    "Cagetti2006"
+    "Cagetti2009"
+    "Ahmed2025"
+    "Sarkisyan2021"
+    "d"))
  '(or :bibtex :latex))
 

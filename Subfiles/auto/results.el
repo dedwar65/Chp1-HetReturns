@@ -7,6 +7,7 @@
    (LaTeX-add-labels
     "sec:results"
     "fig:PYUnif"
-    "fig:LCUnif"))
- :latex)
-
+    "fig:LCUnif"
+    "fig:EmpLorenzTar"
+    "fig:SimLorenzTarPoint"
+    "fi
