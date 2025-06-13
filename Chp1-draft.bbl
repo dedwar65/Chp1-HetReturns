@@ -1466,6 +1466,43 @@
     \field{year}{2017}
   \endentry
 
+  \entry{Klein1971}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=KMA}{%
+         family={Klein},
+         familyi={K\bibinitperiod},
+         given={Michael\bibnamedelima A},
+         giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {JSTOR}%
+    }
+    \strng{namehash}{KMA1}
+    \strng{fullhash}{KMA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1971}
+    \field{labeldatesource}{}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \verb{doi}
+    \verb 10.2307/1991279
+    \endverb
+    \field{pages}{205}
+    \field{title}{{A theory of the banking firm}}
+    \verb{url}
+    \verb https://www.jstor.org/stable/1991279
+    \endverb
+    \field{volume}{3}
+    \verb{file}
+    \verb All-Papers/K/Klein-1971-A-theory-of-the-banking-firm.pdf
+    \endverb
+    \field{journaltitle}{Journal of Money, Credit and Banking}
+    \field{month}{05}
+    \field{year}{1971}
+  \endentry
+
   \entry{Krueger2016}{unpublished}{}{}
     \name{author}{3}{}{%
       {{hash=KD}{%
@@ -1699,6 +1736,35 @@
     \field{journaltitle}{J. Econ. Lit.}
     \field{month}{03}
     \field{year}{2014}
+  \endentry
+
+  \entry{Monti1972}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=MM}{%
+         family={Monti},
+         familyi={M\bibinitperiod},
+         given={M},
+         giveni={M},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Amsterdam: North Holland}%
+    }
+    \strng{namehash}{MM1}
+    \strng{fullhash}{MM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1972}
+    \field{labeldatesource}{}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{title}{{Deposits, Credit and Interest Rate Determination under
+  Alternative Bank Objectives. Szego, GP \& Shell, K. Edition. Mathematical
+  Methods in Investment …}}
+    \verb{url}
+    \verb https://scholar.google.com/citations?user=FtjxNk4AAAAJ&hl=en&oi=sra
+    \endverb
+    \field{year}{1972}
   \endentry
 
   \entry{jpjsledj2022}{report}{}{}
