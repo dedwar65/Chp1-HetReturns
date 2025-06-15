@@ -148,6 +148,23 @@ def get_final_simulated_lorenz(center, spread):
     WealthDstn, _, WeightDstn = getDistributionsFromHetParamValues(center, spread)
     return get_lorenz_shares(WealthDstn, weights=WeightDstn, percentiles=TargetPercentiles)
 
+def get_final_KY_ratio(center, spread):
+    """
+    Returns the simulated aggregate K/Y (wealth–to–income) ratio
+    at the given center and spread.
+    """
+    WealthDstn, ProdDstn, WeightDstn = getDistributionsFromHetParamValues(center, spread)
+    return calc_KY_Sim(WealthDstn, ProdDstn, WeightDstn)
+
+def get_discretized_het_params(center, spread):
+    """
+    Returns the list of the HetParam values (length = HetTypeCount)
+    implied by the uniform distribution with (center, spread).
+    """
+    dstn = DstnType(*DstnParamMapping(center, spread)).discretize(HetTypeCount)
+    # dstn.atoms is a 2‐D array [1 × HetTypeCount], so flatten to a 1D list:
+    return list(dstn.atoms.flatten())
+
 def graph_lorenz(center, spread):
     """
     Produces the key graph for assessing the results of the structural estimation.
@@ -417,6 +434,15 @@ def estimation():
         filename=f"Emp_Lorenz_10yr_{tag}.png",
         decimals=4
     )
+
+    # 3a) Show the aggregate K/Y ratio at the optimum
+    sim_KY = get_final_KY_ratio(opt_center, opt_spread)
+    print(f"Simulated K/Y ratio at optimum: {sim_KY:.4f}")
+
+    # 3b) Show the 7 underlying agent‐type parameter values
+    het_pts = get_discretized_het_params(opt_center, opt_spread)
+    print("Discretized HetParam values:", het_pts)
+
 
 if __name__ == '__main__':
     from time import time
