@@ -2,7 +2,7 @@
 \section{Results}\notinsubfile{\label{sec:results}}
 %\setcounter{page}{0}\pagenumbering{arabic}
 
-\subsubsection{The analogous exercise for ex-ante heterogenous rates of return}
+\subsubsection{The model with no returns heterogeneity}
 
 \par To solve and simulate the model, I follow the calibration scheme captured in table \ref{tab:calib1}.
 \input{../Tables/calibPY.tex}\unskip
@@ -79,7 +79,20 @@ where $\textbf{p}_t = \psi_t \bar{\psi}_{es} \textbf{p}_{t-1}$ and $\bar{\psi}_{
     \end{minipage}
     \caption{Comparison of R-Point and R-Dist Models in the Life-Cycle Setting.}
     \label{fig:LCUnif} 
-\end{figure}
+  \end{figure}
+
+  \subsection{The implied distribution of bank heterogeneity}
+
+  \par First, recall that we provided a simple model for the bank's decision problem, where profits depend only on the dispersion between the market interest rate $R^m$ and the offered deposit rate $R^d$ and the level of foreign deposits that the banks hold. Since I chose to model the demand for foreign deposits with an isoelastic demand function $S_i(R^d) = A_i (R_i^d)^{\varepsilon_i}$ , this implies that the \textit{elasticity of foreign deposits to the interest rate} is given by
+
+  \begin{align}
+    \varepsilon_i = \frac{\partial S_i(R^d)}{\partial R^d} \frac{R^d}{S_i(R^d)}
+  \end{align}
+
+  for each bank $i$. Thus, since I've estimated the distribution of returns which matches the wealth moements, I can use this feature of the model to back out an implied distribution of $\varepsilon$, which will describe how the banks differ in their sensitivities to foreign deposit outflows, ultimately affecting their optimal choice of the offered deposit rates. 
+
+  \par To do this, I assume that the aggregate production function,  so that the marginal product of capital can be written as $\alpha \frac{Y}{K}$. With the calibrated values  $\delta = .025$, $\alpha = .36$, and the capital to output ratio $\approx 7.47$  matched by using the 2004 SCF, this setting has an effective interest rate of $R^m = 1.0231$ which can be used as the market interest rate.
+ 
 
 \subsection{Untargeted moments}
 

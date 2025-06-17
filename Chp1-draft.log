@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.27)  15 JUN 2025 13:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.27)  17 JUN 2025 11:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -790,7 +790,14 @@ Package: afterpage 2023/07/04 v1.08 After-Page Package (DPC)
 \@quotelevel=\count459
 \@quotereset=\count460
 
-(./Chp1-draft.aux)
+(./Chp1-draft.aux
+
+LaTeX Warning: Label `fig:SimLorenzTarPoint' multiply defined.
+
+
+LaTeX Warning: Label `fig:SimLorenzTarDist' multiply defined.
+
+)
 \openout1 = `Chp1-draft.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
@@ -811,8 +818,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
-
-(/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count461
 \scratchdimen=\dimen256
@@ -951,13 +957,13 @@ Package hyperref Warning: Difference (2) between bookmark levels is greater
 (./Subfiles/../Tables/calibPY.tex)
 
 [12]
-<Subfiles/../Figures/PYrrPointNetWorthPlot.png, id=312, 361.35pt x 361.35pt>
+<Subfiles/../Figures/PYrrPointNetWorthPlot.png, id=320, 361.35pt x 361.35pt>
 File: Subfiles/../Figures/PYrrPointNetWorthPlot.png Graphic file (type png)
 <use Subfiles/../Figures/PYrrPointNetWorthPlot.png>
 Package pdftex.def Info: Subfiles/../Figures/PYrrPointNetWorthPlot.png  used on
  input line 30.
 (pdftex.def)             Requested size: 165.59853pt x 165.59996pt.
-<Subfiles/../Figures/PYrrDistNetWorthPlot.png, id=314, 361.35pt x 361.35pt>
+<Subfiles/../Figures/PYrrDistNetWorthPlot.png, id=322, 361.35pt x 361.35pt>
 File: Subfiles/../Figures/PYrrDistNetWorthPlot.png Graphic file (type png)
 <use Subfiles/../Figures/PYrrDistNetWorthPlot.png>
 Package pdftex.def Info: Subfiles/../Figures/PYrrDistNetWorthPlot.png  used on 
@@ -967,13 +973,13 @@ input line 35.
 
 [13 <./Subfiles/../Figures/PYrrPointNetWorthPlot.png> <./Subfiles/../Figures/PY
 rrDistNetWorthPlot.png>] (./Subfiles/../Tables/calibLC.tex)
-<Subfiles/../Figures/LCrrPointNetWorthPlot.png, id=324, 361.35pt x 361.35pt>
+<Subfiles/../Figures/LCrrPointNetWorthPlot.png, id=333, 361.35pt x 361.35pt>
 File: Subfiles/../Figures/LCrrPointNetWorthPlot.png Graphic file (type png)
 <use Subfiles/../Figures/LCrrPointNetWorthPlot.png>
 Package pdftex.def Info: Subfiles/../Figures/LCrrPointNetWorthPlot.png  used on
  input line 73.
 (pdftex.def)             Requested size: 165.59853pt x 165.59996pt.
-<Subfiles/../Figures/LCrrDistNetWorthPlot.png, id=325, 361.35pt x 361.35pt>
+<Subfiles/../Figures/LCrrDistNetWorthPlot.png, id=334, 361.35pt x 361.35pt>
 File: Subfiles/../Figures/LCrrDistNetWorthPlot.png Graphic file (type png)
 <use Subfiles/../Figures/LCrrDistNetWorthPlot.png>
 Package pdftex.def Info: Subfiles/../Figures/LCrrDistNetWorthPlot.png  used on 
@@ -986,31 +992,32 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 [14]
-<Tables/Emp_Lorenz_10yr_LCrrDistNetWorth.png, id=337, 578.16pt x 180.675pt>
+
+[15 <./Subfiles/../Figures/LCrrPointNetWorthPlot.png> <./Subfiles/../Figures/LC
+rrDistNetWorthPlot.png>]
+<Tables/Emp_Lorenz_10yr_LCrrDistNetWorth.png, id=352, 578.16pt x 180.675pt>
 File: Tables/Emp_Lorenz_10yr_LCrrDistNetWorth.png Graphic file (type png)
 <use Tables/Emp_Lorenz_10yr_LCrrDistNetWorth.png>
 Package pdftex.def Info: Tables/Emp_Lorenz_10yr_LCrrDistNetWorth.png  used on i
-nput line 92.
+nput line 105.
 (pdftex.def)             Requested size: 276.00105pt x 86.24883pt.
-<Tables/Sim_Lorenz_10yr_LCrrPointNetWorth.png, id=342, 578.16pt x 180.675pt>
+<Tables/Sim_Lorenz_10yr_LCrrPointNetWorth.png, id=357, 578.16pt x 180.675pt>
 File: Tables/Sim_Lorenz_10yr_LCrrPointNetWorth.png Graphic file (type png)
 <use Tables/Sim_Lorenz_10yr_LCrrPointNetWorth.png>
 Package pdftex.def Info: Tables/Sim_Lorenz_10yr_LCrrPointNetWorth.png  used on 
-input line 101.
+input line 114.
 (pdftex.def)             Requested size: 276.00105pt x 86.24883pt.
-<Tables/Sim_Lorenz_10yr_LCrrDistNetWorth.png, id=343, 578.16pt x 180.675pt>
+<Tables/Sim_Lorenz_10yr_LCrrDistNetWorth.png, id=358, 578.16pt x 180.675pt>
 File: Tables/Sim_Lorenz_10yr_LCrrDistNetWorth.png Graphic file (type png)
 <use Tables/Sim_Lorenz_10yr_LCrrDistNetWorth.png>
 Package pdftex.def Info: Tables/Sim_Lorenz_10yr_LCrrDistNetWorth.png  used on i
-nput line 108.
+nput line 121.
 (pdftex.def)             Requested size: 276.00105pt x 86.24883pt.
 )
 
-[15 <./Subfiles/../Figures/LCrrPointNetWorthPlot.png> <./Subfiles/../Figures/LC
-rrDistNetWorthPlot.png> <./Tables/Emp_Lorenz_10yr_LCrrDistNetWorth.png>]
-
-[16 <./Tables/Sim_Lorenz_10yr_LCrrPointNetWorth.png> <./Tables/Sim_Lorenz_10yr_
-LCrrDistNetWorth.png>] (./Subfiles/conclusion.tex
+[16 <./Tables/Emp_Lorenz_10yr_LCrrDistNetWorth.png> <./Tables/Sim_Lorenz_10yr_L
+CrrPointNetWorth.png> <./Tables/Sim_Lorenz_10yr_LCrrDistNetWorth.png>]
+(./Subfiles/conclusion.tex
 
 [17
 
@@ -1051,24 +1058,41 @@ Overfull \hbox (0.60034pt too wide) in paragraph at lines 39--39
 
 
 
-[20]
+[20] (./Subfiles/appendix.tex
+File: Tables/Sim_Lorenz_10yr_LCrrPointNetWorth.png Graphic file (type png)
+<use Tables/Sim_Lorenz_10yr_LCrrPointNetWorth.png>
+Package pdftex.def Info: Tables/Sim_Lorenz_10yr_LCrrPointNetWorth.png  used on 
+input line 7.
+(pdftex.def)             Requested size: 276.00105pt x 86.24883pt.
+File: Tables/Sim_Lorenz_10yr_LCrrDistNetWorth.png Graphic file (type png)
+<use Tables/Sim_Lorenz_10yr_LCrrDistNetWorth.png>
+Package pdftex.def Info: Tables/Sim_Lorenz_10yr_LCrrDistNetWorth.png  used on i
+nput line 14.
+(pdftex.def)             Requested size: 276.00105pt x 86.24883pt.
+)
 
-[21] (./Chp1-draft.aux)
+[21]
+
+[22] (./Chp1-draft.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `Chp1-draft.out' has not changed.
-(rerunfilecheck)             Checksum: 77D06FEA8649D7C3F224C221D932D50D;5533.
+(rerunfilecheck)             Checksum: E744325027B8A1D84568B7639010E644;5957.
 Package logreq Info: Writing requests to 'Chp1-draft.run.xml'.
 \openout1 = `Chp1-draft.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 25092 strings out of 473201
- 459685 string characters out of 5716120
- 1320563 words of memory out of 5000000
- 47860 multiletter control sequences out of 15000+600000
+ 25109 strings out of 473201
+ 460032 string characters out of 5716120
+ 1321603 words of memory out of 5000000
+ 47869 multiletter control sequences out of 15000+600000
  579085 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  80i,22n,120p,1907b,1640s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1104,10 +1128,10 @@ onts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2024/texmf-dist/fon
 ts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2024/texmf-dist/fonts
 /type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2024/texmf-dist/fonts/t
 ype1/public/cm-super/sftt1000.pfb>
-Output written on Chp1-draft.pdf (22 pages, 1157162 bytes).
+Output written on Chp1-draft.pdf (23 pages, 1162252 bytes).
 PDF statistics:
- 643 PDF objects out of 1000 (max. 8388607)
- 533 compressed objects within 6 object streams
- 106 named destinations out of 1000 (max. 500000)
- 220 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 662 PDF objects out of 1000 (max. 8388607)
+ 551 compressed objects within 6 object streams
+ 112 named destinations out of 1000 (max. 500000)
+ 236 words of extra memory for PDF output out of 10000 (max. 10000000)
 

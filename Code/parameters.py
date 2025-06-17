@@ -30,7 +30,7 @@ MyAgentType = AltIndShockConsumerType
 script_dir = os.path.dirname(os.path.abspath(__file__))
 data_location = os.path.join(script_dir, '../Data/')
 specs_location = os.path.join(script_dir, '../Specifications/')
-SpecificationFilename = 'PYrrDistNetWorth.yaml'
+SpecificationFilename = 'LCrrDistNetWorth.yaml'
 
 with open(specs_location + SpecificationFilename, 'r') as f:
     spec_raw = f.read()
@@ -78,6 +78,10 @@ emp_KY_ratio = empirical_moments[0]
 print(emp_KY_ratio)
 emp_lorenz = empirical_moments[1]
 print(emp_lorenz)
+
+# Calculate effective market interest rate
+eff_R = ((.36)*(1/(emp_KY_ratio))) - .025
+print(eff_R)
 
 # Next, series of lines of code to compute untargeted moments.
 # Keep df_year unmodified for estimation targets

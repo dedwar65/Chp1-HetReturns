@@ -22,7 +22,7 @@
 
 $$ \max (R^m -R_i^d) S_i(R^d) $$
 
-\par subject to the constraint that foreign deposit demand is given by the function $S(R^d) = A_i (R_i^d)^{\varepsilon_i}$, where $A_i$ is some constant. 
+\par subject to the constraint that foreign deposit demand is given by the function $S_i(R^d) = A_i (R_i^d)^{\varepsilon_i}$, where $A_i$ is some constant. 
 
 \par Importantly, the first order condition implies that the optimal deposit rate for the $i$-th bank is given by $$ R_i^d = \frac{\varepsilon_i}{1+\varepsilon_i} R^m  $$. This is crucial for the model in that, so long as we calibrate the model for a particular value of $R^m$, estimating a uniform distribution of returns using the simulated method of moments will imply a corresponding distribution of elasticities (the one that minimizes the distance between simulated and lorenz wealth moments.) In this way, the 7 discretized points capturing 7 different deposit rates offered corresponds to 7 different bank types, which can be distinguished as either global or local based on their elasticities since, from the expression above, banks with higher values of $\varepsilon_i$ (i.e. global banks)  must set $R_i^d$ closer to $R^m$. The reverse would be true for local banks.\footnote{IN the conclusion, I discuss in detail two major drawbacks on my simple version of a source for returns heterogeneity in this model, which could be exploted in future work.}
 
