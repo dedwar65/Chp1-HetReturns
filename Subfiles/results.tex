@@ -7,7 +7,7 @@
 \par To solve and simulate the model, I follow the calibration scheme captured in table \ref{tab:calib1}.
 \input{../Tables/calibPY.tex}\unskip
 
-\par The solution of the model with no heterogeneity in returns (the R-point model) is the one which finds the value for the rate of return $R$ which minimizes the distance between the simulated and empirical wealth shares at the 20th, 40th, 60th, and 80th percentiles. The empirical targets are computed using the 2004 SCF data on household wealth. The estimation procedure finds this optimal value to be $R = 1.0709$.
+\par The solution of the model with no heterogeneity in returns (the R-point model) is the one which finds the value for the rate of return $R$ which minimizes the distance between the simulated and empirical wealth shares at the 20th, 40th, 60th, and 80th percentiles. The empirical targets are computed using the 2004 SCF data on household wealth. The estimation procedure finds this optimal value to be $R = 1.0602$.
 
 \subsubsection{Incorporating heterogeneous returns}
 
@@ -17,11 +17,11 @@
 
 $$ \{\grave{R}, \nabla\} = \text{arg}\min_{R, \nabla} \bigg( \sum_{i=20, 40, 60, 80} (w_{i}(R, \nabla)-\omega_i )^{2} \bigg)^{\frac{1}{2}} $$
 
-\par subject to the constraint that the aggregate capital-to-output ratio in this model matches the calibrated value from the previous table of $10.26$.
+\par subject to the constraint that the aggregate capital-to-output ratio in this model matches the calibrated value $5$. This is towards the upper bound on plausibly calibrated values for the capital-to-output ratio, as much of the literature chooses values between $2$ and  $3$.
 
 \par Note that $w_i$ and $\omega_i$ give the porportion of total aggregate net worth held by the top $i$ percent in the model and in the data, respectively.
 
-\par The estimation procedure finds this optimal values of $R = 1.0546$ and $\nabla = 0.0368$. The performance of the estimation of both the R-point and R-dist models, measured by their ability to match the SCF data, is compared in figure \ref{fig:PYUnif}.
+\par The estimation procedure finds this optimal values of $R = 1.0212$ and $\nabla = 0.06728$. These parameter values pin down the estimated uniform distribution. In the model, I've chosen to discretize that distribution to 7 chosen points. The performance of the estimation of both the R-point and R-dist models, measured by their ability to match the SCF data, is compared in figure \ref{fig:PYUnif}.
 
 \begin{figure}[h]
     \centering
@@ -64,7 +64,7 @@ where $\textbf{p}_t = \psi_t \bar{\psi}_{es} \textbf{p}_{t-1}$ and $\bar{\psi}_{
 
 \input{../Tables/calibLC.tex}\unskip
 
-\par The estimation procedure finds this optimal value to be $R = 1.0626$ for the R-point model in this setting. The estimation procedure for the R-dist model in the life cycle setting finds optimal values of $R = 1.0395$ and $\nabla = 0.0737$. Notice the improved performance of the estimation in matching the data displayed in figure \ref{fig:LCUnif}.
+\par The estimation procedure finds this optimal value to be $R = 1.0414$ for the R-point model in this setting. The estimation procedure for the R-dist model in the life cycle setting finds optimal values of $R = 1.0343$ and $\nabla =0.03557$. Notice the improved performance of the estimation in matching the data displayed in figure \ref{fig:LCUnif}.
 
 \begin{figure}[h]
     \centering
@@ -91,7 +91,9 @@ where $\textbf{p}_t = \psi_t \bar{\psi}_{es} \textbf{p}_{t-1}$ and $\bar{\psi}_{
 
   for each bank $i$. Thus, since I've estimated the distribution of returns which matches the wealth moements, I can use this feature of the model to back out an implied distribution of $\varepsilon$, which will describe how the banks differ in their sensitivities to foreign deposit outflows, ultimately affecting their optimal choice of the offered deposit rates. 
 
-  \par To do this, I assume that the aggregate production function,  so that the marginal product of capital can be written as $\alpha \frac{Y}{K}$. With the calibrated values  $\delta = .025$, $\alpha = .36$, and the capital to output ratio $\approx 7.47$  matched by using the 2004 SCF, this setting has an effective interest rate of $R^m = 1.0231$ which can be used as the market interest rate.
+  \par To do this, I assume that the aggregate production function is Cobb-douglas, so that the marginal product of capital can be written as $\alpha \frac{Y}{K}$. With the calibrated values  $\delta = .025$, $\alpha = .36$, and the capital to output ratio $3$  matched by using the 2004 SCF, this setting has an effective interest rate of $R^m = 1.095$ which can be used as the market interest rate.
+
+  \par Since the model with heterogeneity (i.e. the R-dist model) has 7 estimated points for the uniform distribution, the implied, estimated points for $\varepsilon$ are given by $[ 0.0423, 0.1731, 0.3414, 0.5661, 0.8812, 1.3551, 2.1482 ]$. Following the logic of the  elasticity of foreign deposits to the interest rate in the work by \cite{Sarkisyan2021}, globally integrated banks would face larger foregin deposit outflows when the offered deposit rate is significantly further than the market interest rate. These would be precisely the banks with higher elasticities -- in my descritized model with 7 points, this would suggest that the last two banks may be interpreted as globally integrated. The individuals \say{stuck} with banking at this institution (since I assume that households cannot switch banks) would be relatively better of than their counterparts, as they will receive a higher offered deposit rate.  
  
 
 \subsection{Untargeted moments}

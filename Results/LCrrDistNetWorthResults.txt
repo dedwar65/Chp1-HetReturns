@@ -1,6 +1,6 @@
 Estimate is center=1.0343393648978958, spread=0.03556596545850527
 Conversion is mean=1.0343393648978958, std_dev=0.0059276609097508775
-Lorenz distance is  message: 
+Lorenz distance is  message:
           Optimization terminated successfully;
           The returned value satisfies the termination criteria
           (using xtol = 0.0001 )
@@ -9,3 +9,9 @@ Lorenz distance is  message:
        x: 0.03556596545850527
      nit: 7
     nfev: 10
+
+Empirical vs. Simulated Lorenz Shares at Optimal Parameters:
+  P20% — Sim: -0.024917 | Emp: -0.001818
+  P40% — Sim: -0.009732 | Emp: 0.009516
+  P60% — Sim: 0.043083 | Emp: 0.053096
+  P80% — Sim: 0.191928 | Emp: 0.170918
