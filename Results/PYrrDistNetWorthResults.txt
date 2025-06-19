@@ -1,11 +1,11 @@
-Estimate is center=1.0545985797180297, spread=0.03703757194850505
-Conversion is mean=1.0545985797180297, std_dev=0.006172928658084165
+Estimate is center=1.0211998134197764, spread=0.06728339598564156
+Conversion is mean=1.0211998134197764, std_dev=0.011213899330940264
 Lorenz distance is  message: 
           Optimization terminated successfully;
           The returned value satisfies the termination criteria
           (using xtol = 0.0001 )
  success: True
-     fun: 0.0005077212493921626
-       x: 0.03703757194850505
-     nit: 11
+     fun: 0.0005105814400460747
+       x: 0.06728339598564156
+     nit: 9
     nfev: 14

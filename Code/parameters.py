@@ -74,7 +74,7 @@ weights_data = df_year[weight_col].astype(float).to_numpy()
 # Calculate empirical moments to be used as targets
 empirical_moments = calcEmpMoments(asset_data, wealth_data, income_data, weights_data, TargetPercentiles)
 emp_KY_ratio = empirical_moments[0]
-# emp_KY_ratio = 10.26 * 4
+emp_KY_ratio = 3
 print(emp_KY_ratio)
 emp_lorenz = empirical_moments[1]
 print(emp_lorenz)
