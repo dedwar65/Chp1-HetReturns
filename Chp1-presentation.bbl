@@ -21,80 +21,32 @@
 \providecommand{\noopsort}[1]{} \providecommand{\singleletter}[1]{#1}
 }
 
-  \entry{Ahn2017}{article}{}{}
-    \name{author}{5}{}{%
-      {{hash=AS}{%
-         family={Ahn},
+  \entry{d'Avernas2024}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=A}{%
+         family={{Adrien d'Avernas, Andrea L. Eisfeldt, Can Huang, Richard
+  Stanton, Nancy Wallace}},
          familyi={A\bibinitperiod},
-         given={Sehyoun},
-         giveni={S\bibinitperiod},
-      }}%
-      {{hash=KG}{%
-         family={Kaplan},
-         familyi={K\bibinitperiod},
-         given={Greg},
-         giveni={G\bibinitperiod},
-      }}%
-      {{hash=MB}{%
-         family={Moll},
-         familyi={M\bibinitperiod},
-         given={Benjamin},
-         giveni={B\bibinitperiod},
-      }}%
-      {{hash=WT}{%
-         family={Winberry},
-         familyi={W\bibinitperiod},
-         given={Thomas},
-         giveni={T\bibinitperiod},
-      }}%
-      {{hash=WC}{%
-         family={Wolf},
-         familyi={W\bibinitperiod},
-         given={Christian},
-         giveni={C\bibinitperiod},
       }}%
     }
-    \list{publisher}{1}{%
-      {National Bureau of Economic Research, Inc}%
-    }
-    \strng{namehash}{AS+1}
-    \strng{fullhash}{ASKGMBWTWC1}
+    \strng{namehash}{A1}
+    \strng{fullhash}{A1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2017}
+    \field{labelyear}{2024}
     \field{labeldatesource}{}
     \field{sortinit}{A}
     \field{sortinithash}{A}
-    \field{abstract}{%
-    We develop an efficient and easy to use computational method for solving a
-  wide class of general equilibrium heterogeneous agent models with aggregate
-  shocks together with an open source suite of codes that implement our
-  algorithms in an easy to use toolbox. Our method extends standard
-  linearization techniques and is designed to work in cases when inequality
-  matters for the dynamics of macroeconomic aggregates. We present two
-  applications that analyze a two asset incomplete markets model parameterized
-  to match the distribution of income, wealth, and marginal propensities to
-  consume. First, we show that our model is consistent with two key features of
-  aggregate consumption dynamics that are difficult to match with
-  representative agent models: (1) the sensitivity of aggregate consumption to
-  predictable changes in aggregate income, and (2) the relative smoothness of
-  aggregate consumption. Second, we extend the model to feature capital-skill
-  complementarity and show how factor-specific productivity shocks shape
-  dynamics of income and consumption inequality.(This abstract was borrowed
-  from another version of this item.)%
-    }
-    \field{pages}{1\bibrangedash 75}
-    \field{title}{{When Inequality Matters for Macro and Macro Matters for
-  Inequality}}
+    \field{title}{{The Deposit Business at Large vs. Small Banks}}
     \verb{url}
-    \verb https://ideas.repec.org/h/nbr/nberch/13927.html
+    \verb https://www.fdic.gov/system/files/2024-09/wallace-paper-091224.pdf
     \endverb
     \verb{file}
-    \verb All-Papers/A/Ahn-et-al.-2017-When-Inequality-Matters-for-Macro-and-Ma
-    \verb cro-Matters-for-Inequality.pdf
+    \verb All-Papers/A/Adrien-d'Avernas,-Andrea-L.-Eisfeldt,...-2024-The-Deposi
+    \verb t-Business-at-Large-vs.-Small-Banks.pdf
     \endverb
-    \field{journaltitle}{NBER Chapters}
-    \field{year}{2017}
+    \field{month}{08}
+    \field{year}{2024}
   \endentry
 
   \entry{Brown2007}{incollection}{}{}
@@ -200,13 +152,43 @@
     \field{year}{2003}
   \endentry
 
-  \entry{cstw2017}{article}{}{}
-    \name{author}{4}{}{%
-      {{hash=CC}{%
+  \entry{Carroll1992}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=CCD}{%
          family={Carroll},
          familyi={C\bibinitperiod},
-         given={Christopher},
-         giveni={C\bibinitperiod},
+         given={Christopher\bibnamedelima D},
+         giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CCD1}
+    \strng{fullhash}{CCD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1992}
+    \field{labeldatesource}{}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{issn}{0007-2303}
+    \field{number}{2}
+    \field{pages}{61\bibrangedash 156}
+    \field{title}{{The Buffer-Stock Theory of Saving: Some Macroeconomic
+  Evidence}}
+    \field{volume}{1992}
+    \field{journaltitle}{Brookings Pap. Econ. Act.}
+    \field{annotation}{%
+    https://www.econ2.jhu.edu/people/ccarroll/BufferStockBPEA.pdf%
+    }
+    \field{year}{1992}
+  \endentry
+
+  \entry{Carroll2015}{article}{}{}
+    \name{author}{3}{}{%
+      {{hash=CCD}{%
+         family={Carroll},
+         familyi={C\bibinitperiod},
+         given={Christopher\bibnamedelima D},
+         giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod},
       }}%
       {{hash=SJ}{%
          family={Slacalek},
@@ -220,112 +202,169 @@
          given={Kiichi},
          giveni={K\bibinitperiod},
       }}%
-      {{hash=WMN}{%
-         family={White},
-         familyi={W\bibinitperiod},
-         given={Matthew\bibnamedelima N.},
-         giveni={M\bibinitperiod\bibinitdelim N\bibinitperiod},
-      }}%
     }
-    \keyw{Wealth distribution, marginal propensity to consume, heterogeneity,
-  inequality, D12, D31, D91, E21}
-    \strng{namehash}{CC+1}
-    \strng{fullhash}{CCSJTKWMN1}
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \keyw{Household income process; Wealth inequality; Household heterogeneity}
+    \strng{namehash}{CCDSJTK1}
+    \strng{fullhash}{CCDSJTK1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2017}
+    \field{labelyear}{2015}
     \field{labeldatesource}{}
     \field{sortinit}{C}
     \field{sortinithash}{C}
     \field{abstract}{%
-    In a model calibrated to match micro- and macroeconomic evidence on
-  household income dynamics, we show that a modest degree of heterogeneity in
-  household preferences or beliefs is sufficient to match empirical measures of
-  wealth inequality in the United States. The heterogeneity-augmented model's
-  predictions are consistent with microeconomic evidence that suggests that the
-  annual marginal propensity to consume (MPC) is much larger than the roughly
-  0.04 implied by commonly used macroeconomic models (even ones including some
-  heterogeneity). The high MPC arises because many consumers hold little wealth
-  despite having a strong precautionary motive. Our model also plausibly
-  predicts that the aggregate MPC can differ greatly depending on how the shock
-  is distributed across households (depending, e.g., on their wealth, or
-  employment status).%
+    We modify the widely-used Krusell and Smith (1998) model (KS) to
+  accommodate an income process with permanent and transitory components.
+  Appropriately calibrated permanent shocks help explain a substantial part of
+  the empirical wealth heterogeneity unexplained in the baseline KS model.%
     }
     \verb{doi}
-    \verb https://doi.org/10.3982/QE694
+    \verb 10.1016/j.econlet.2015.04.021
     \endverb
-    \verb{eprint}
-    \verb https://onlinelibrary.wiley.com/doi/pdf/10.3982/QE694
-    \endverb
-    \field{number}{3}
-    \field{pages}{977\bibrangedash 1020}
-    \field{title}{The distribution of wealth and the marginal propensity to
-  consume}
+    \field{issn}{0165-1765}
+    \field{pages}{97\bibrangedash 100}
+    \field{title}{{Buffer-stock saving in a Krusell--Smith world}}
     \verb{url}
-    \verb https://onlinelibrary.wiley.com/doi/abs/10.3982/QE694
+    \verb https://www.sciencedirect.com/science/article/pii/S016517651500172X
     \endverb
-    \field{volume}{8}
-    \field{journaltitle}{Quantitative Economics}
-    \field{year}{2017}
+    \field{volume}{132}
+    \verb{file}
+    \verb All-Papers/C/Carroll-et-al.-2015-Buffer-stock-saving-in-a-Krusell–S
+    \verb mith-world.pdf
+    \endverb
+    \field{journaltitle}{Econ. Lett.}
+    \field{month}{07}
+    \field{year}{2015}
   \endentry
 
-  \entry{Daminato2024}{unpublished}{}{}
-    \name{author}{2}{}{%
-      {{hash=DC}{%
-         family={Daminato},
+  \entry{Debacker2013}{article}{}{}
+    \name{author}{5}{}{%
+      {{hash=DJ}{%
+         family={Debacker},
          familyi={D\bibinitperiod},
-         given={Claudio},
-         giveni={C\bibinitperiod},
+         given={Jason},
+         giveni={J\bibinitperiod},
       }}%
-      {{hash=PL}{%
-         family={Pistaferri},
+      {{hash=HB}{%
+         family={Heim},
+         familyi={H\bibinitperiod},
+         given={Bradley},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=PV}{%
+         family={Panousi},
          familyi={P\bibinitperiod},
-         given={Luigi},
-         giveni={L\bibinitperiod},
+         given={Vasia},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=RS}{%
+         family={Ramnath},
+         familyi={R\bibinitperiod},
+         given={Shanthi},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=VI}{%
+         family={Vidangos},
+         familyi={V\bibinitperiod},
+         given={Ivan},
+         giveni={I\bibinitperiod},
       }}%
     }
-    \strng{namehash}{DCPL1}
-    \strng{fullhash}{DCPL1}
+    \list{publisher}{1}{%
+      {Brookings Institution Press}%
+    }
+    \strng{namehash}{DJ+1}
+    \strng{fullhash}{DJHBPVRSVI1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2024}
+    \field{labelyear}{2013}
     \field{labeldatesource}{}
     \field{sortinit}{D}
     \field{sortinithash}{D}
     \field{abstract}{%
-    A recent literature argues that persistent heterogeneity in wealth returns
-  (``type dependence'') as well as a positive association with wealth levels
-  (``scale dependence'') play an important role for explaining features of the
-  wealth distribution, especially its extreme concentration at the top. In
-  contrast, traditional models of wealth accumulation emphasize the role of
-  persistent differences in labor earnings. Using panel data from the PSID, we
-  first document that a common unobserved component (which we interpret as the
-  endowment of cognitive and non-cognitive skills of an individual) drives
-  persistent heterogeneity in both wealth returns and labor earnings. We embed
-  these features of the joint wealth return-earnings process in a life-cycle
-  model of consumer behavior and show that ignoring them would dramatically
-  understate average returns for people at the top of the wealth distribution
-  as well as the level and rise of consumption inequality over the life cycle.%
+    [We use a new, large, and confidential panel of tax returns to study the
+  persistent-versus-transitory nature of rising inequality in male labor
+  earnings and in total household income, both before and after taxes, in the
+  United States over the period 1987---2009. We apply various statistical
+  decomposition methods that allow for different ways of characterizing
+  persistent and transitory income components. For male labor earnings, we find
+  that the entire increase in cross-sectional inequality over our sample period
+  was driven by an increase in the dispersion of the persistent component of
+  earnings. For total household income, we find that most of the increase in
+  inequality reflects an increase in the dispersion of the persistent income
+  component, but the transitory component also appears to have played some
+  role. We also show that the tax system partly mitigated the increase in
+  income inequality, but not sufficiently to alter its broadly increasing trend
+  over the period.]%
+    }
+    \field{issn}{0007-2303, 1533-4465}
+    \field{pages}{67\bibrangedash 122}
+    \field{title}{{Rising Inequality: Transitory or Persistent? New Evidence
+  from a Panel of U.S. Tax Returns}}
+    \verb{url}
+    \verb http://www.jstor.org/stable/23594863
+    \endverb
+    \field{journaltitle}{Brookings Pap. Econ. Act.}
+    \field{year}{2013}
+  \endentry
+
+  \entry{Den_Haan2010}{article}{}{}
+    \name{author}{3}{}{%
+      {{hash=DHWJ}{%
+         family={Den\bibnamedelima Haan},
+         familyi={D\bibinitperiod\bibinitdelim H\bibinitperiod},
+         given={Wouter\bibnamedelima J},
+         giveni={W\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=JKL}{%
+         family={Judd},
+         familyi={J\bibinitperiod},
+         given={Kenneth\bibnamedelima L},
+         giveni={K\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+      {{hash=JM}{%
+         family={Juillard},
+         familyi={J\bibinitperiod},
+         given={Michel},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \keyw{Numerical solutions; Simulations; Approximations}
+    \strng{namehash}{DHWJJKLJM1}
+    \strng{fullhash}{DHWJJKLJM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2010}
+    \field{labeldatesource}{}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{abstract}{%
+    This paper describes the first model considered in the computational suite
+  project that compares different numerical algorithms. It is an incomplete
+  markets economy with a continuum of agents and an inequality (borrowing)
+  constraint.%
     }
     \verb{doi}
-    \verb 10.3386/w32490
+    \verb 10.1016/j.jedc.2009.07.001
     \endverb
-    \field{number}{32490}
-    \field{series}{Working Paper Series}
-    \field{title}{{Returns Heterogeneity and Consumption Inequality Over the
-  Life Cycle}}
+    \field{issn}{0165-1889}
+    \field{number}{1}
+    \field{pages}{1\bibrangedash 3}
+    \field{title}{{Computational suite of models with heterogeneous agents:
+  Incomplete markets and aggregate uncertainty}}
     \verb{url}
-    \verb http://www.nber.org/papers/w32490
+    \verb https://www.sciencedirect.com/science/article/pii/S0165188909001286
     \endverb
-    \list{institution}{1}{%
-      {National Bureau of Economic Research}%
-    }
-    \verb{file}
-    \verb All-Papers/D/Daminato-and-Pistaferri-2024-Returns-Heterogeneity-and-C
-    \verb onsumption-Inequality-Over-the-Life-Cycle.pdf
-    \endverb
-    \field{month}{05}
-    \field{year}{2024}
+    \field{volume}{34}
+    \field{journaltitle}{J. Econ. Dyn. Control}
+    \field{month}{01}
+    \field{year}{2010}
   \endentry
 
   \entry{aflgdmlp20}{article}{}{}
@@ -401,106 +440,70 @@
     \field{year}{2020}
   \endentry
 
-  \entry{gkgv22}{report}{}{}
-    \name{author}{2}{}{%
-      {{hash=KG}{%
-         family={Kaplan},
+  \entry{Klein1971}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=KMA}{%
+         family={Klein},
          familyi={K\bibinitperiod},
-         given={Greg},
-         giveni={G\bibinitperiod},
-      }}%
-      {{hash=VGL}{%
-         family={Violante},
-         familyi={V\bibinitperiod},
-         given={Giovanni\bibnamedelima L},
-         giveni={G\bibinitperiod\bibinitdelim L\bibinitperiod},
+         given={Michael\bibnamedelima A},
+         giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
       }}%
     }
-    \strng{namehash}{KGVGL1}
-    \strng{fullhash}{KGVGL1}
+    \list{publisher}{1}{%
+      {JSTOR}%
+    }
+    \strng{namehash}{KMA1}
+    \strng{fullhash}{KMA1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2022}
+    \field{labelyear}{1971}
     \field{labeldatesource}{}
     \field{sortinit}{K}
     \field{sortinithash}{K}
-    \field{abstract}{%
-    What model features and calibration strategies yield a large average
-  marginal propensity to consume (MPC) in heterogeneous agent models? Through a
-  systematic investigation of models with different preferences, dimensions of
-  ex-ante heterogeneity, income processes and asset structure, we show that the
-  most important factor is the share and type of hand-to-mouth households.
-  One-asset models either feature a trade-off between a high average MPC and a
-  realistic level of aggregate wealth, or generate an excessively polarized
-  wealth distribution that vastly understates the wealth held by households in
-  the middle of the distribution. Two-asset models that include both liquid and
-  illiquid assets can resolve this tension with a large enough gap between
-  liquid and illiquid returns. We discuss how such return differential can be
-  justified from the perspective of theory and data.%
-    }
     \verb{doi}
-    \verb 10.3386/w30013
+    \verb 10.2307/1991279
     \endverb
-    \field{number}{30013}
-    \field{series}{Working Paper Series}
-    \field{title}{The Marginal Propensity to Consume in Heterogeneous Agent
-  Models}
+    \field{pages}{205}
+    \field{title}{{A theory of the banking firm}}
     \verb{url}
-    \verb http://www.nber.org/papers/w30013
+    \verb https://www.jstor.org/stable/1991279
     \endverb
-    \list{institution}{1}{%
-      {National Bureau of Economic Research}%
-    }
-    \field{type}{Working Paper}
-    \field{year}{2022}
-    \warn{\item Invalid format of field 'month'}
+    \field{volume}{3}
+    \verb{file}
+    \verb All-Papers/K/Klein-1971-A-theory-of-the-banking-firm.pdf
+    \endverb
+    \field{journaltitle}{Journal of Money, Credit and Banking}
+    \field{month}{05}
+    \field{year}{1971}
   \endentry
 
-  \entry{ks1998}{article}{}{}
-    \name{author}{2}{}{%
-      {{hash=KP}{%
-         family={Krusell},
-         familyi={K\bibinitperiod},
-         given={Per},
-         giveni={P\bibinitperiod},
-      }}%
-      {{hash=SA}{%
-         family={Smith},
-         familyi={S\bibinitperiod},
-         given={Anthony},
-         giveni={A\bibinitperiod},
+  \entry{Monti1972}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=MM}{%
+         family={Monti},
+         familyi={M\bibinitperiod},
+         given={M},
+         giveni={M},
       }}%
     }
-    \strng{namehash}{KPSA1}
-    \strng{fullhash}{KPSA1}
+    \list{publisher}{1}{%
+      {Amsterdam: North Holland}%
+    }
+    \strng{namehash}{MM1}
+    \strng{fullhash}{MM1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{1998}
+    \field{labelyear}{1972}
     \field{labeldatesource}{}
-    \field{sortinit}{K}
-    \field{sortinithash}{K}
-    \field{abstract}{%
-    How do movements in the distribution of income and wealth affect the
-  macroeconomy? We analyze this question theoretically, using numerical
-  methods, in the context of a calibrated version of the stochastic growth
-  model with partially uninsurable idiosyncratic risk and movements in
-  aggregate productivity.<br><small>(This abstract was borrowed from another
-  version of this item.)</small><br><small>(This abstract was borrowed from
-  another version of this item.)</small>%
-    }
-    \verb{doi}
-    \verb 10.1086/250034
-    \endverb
-    \field{number}{5}
-    \field{pages}{867\bibrangedash 896}
-    \field{title}{{Income and Wealth Heterogeneity in the Macroeconomy}}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{title}{{Deposits, Credit and Interest Rate Determination under
+  Alternative Bank Objectives. Szego, GP \& Shell, K. Edition. Mathematical
+  Methods in Investment …}}
     \verb{url}
-    \verb https://ideas.repec.org/a/ucp/jpolec/v106y1998i5p867-896.html
+    \verb https://scholar.google.com/citations?user=FtjxNk4AAAAJ&hl=en&oi=sra
     \endverb
-    \field{volume}{106}
-    \field{journaltitle}{Journal of Political Economy}
-    \field{year}{1998}
-    \warn{\item Invalid format of field 'month'}
+    \field{year}{1972}
   \endentry
 
   \entry{Sabelhaus2010}{article}{}{}
@@ -565,6 +568,52 @@
     \field{journaltitle}{J. Monet. Econ.}
     \field{month}{05}
     \field{year}{2010}
+  \endentry
+
+  \entry{Sarkisyan2021}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=SS}{%
+         family={Sarkisyan},
+         familyi={S\bibinitperiod},
+         given={Sergey},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=VT}{%
+         family={Viratyosin},
+         familyi={V\bibinitperiod},
+         given={Tasaneeya},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {en}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier BV}%
+    }
+    \strng{namehash}{SSVT1}
+    \strng{fullhash}{SSVT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2021}
+    \field{labeldatesource}{}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \verb{doi}
+    \verb 10.2139/ssrn.3938284
+    \endverb
+    \field{issn}{1556-5068}
+    \field{title}{{The impact of the deposit channel on the international
+  transmission of monetary shocks}}
+    \verb{url}
+    \verb http://dx.doi.org/10.2139/ssrn.3938284
+    \endverb
+    \verb{file}
+    \verb All-Papers/S/Sarkisyan-and-Viratyosin-2021-The-impact-of-the-deposit-
+    \verb channel-on-the-international-transmission-of-monetary-shocks.pdf
+    \endverb
+    \field{journaltitle}{SSRN Electron. J.}
+    \field{year}{2021}
   \endentry
 \enddatalist
 \endinput

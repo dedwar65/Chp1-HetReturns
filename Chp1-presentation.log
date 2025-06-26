@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.27)  22 MAY 2025 08:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.27)  26 JUN 2025 09:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1262,18 +1262,7 @@ Package biblatex Info: Data encoding 'utf8' specified.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Chp1-presentation.bbl' found.
 
-(./Chp1-presentation.bbl
-
-Package biblatex Warning: BibTeX reported the following issues
-(biblatex)                with 'gkgv22':
-(biblatex)                - Invalid format of field 'month'.
-
-
-Package biblatex Warning: BibTeX reported the following issues
-(biblatex)                with 'ks1998':
-(biblatex)                - Invalid format of field 'month'.
-
-)
+(./Chp1-presentation.bbl)
 Package biblatex Info: Reference section=0 on input line 38.
 Package biblatex Info: Reference segment=0 on input line 38.
 Package caption Info: Begin \AtBeginDocument code.
@@ -1285,10 +1274,6 @@ Package caption Info: End \AtBeginDocument code.
 ]
 
 [2
-
-]
-
-[3
 
 ]
 LaTeX Font Info:    Trying to load font information for U+msa on input line 146
@@ -1309,26 +1294,30 @@ ut line 146.
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
 )
-<Figures/Fagereng2020Fig1.png, id=194, 748.29562pt x 466.24188pt>
+<Figures/Fagereng2020Fig1.png, id=164, 748.29562pt x 466.24188pt>
 File: Figures/Fagereng2020Fig1.png Graphic file (type png)
 <use Figures/Fagereng2020Fig1.png>
 Package pdftex.def Info: Figures/Fagereng2020Fig1.png  used on input line 146.
 (pdftex.def)             Requested size: 173.56186pt x 108.13689pt.
 
 
-[4
+[3
 
  <./Figures/Fagereng2020Fig1.png>]
-<Figures/Fagereng2020Fig8.png, id=242, 771.38188pt x 498.86375pt>
+<Figures/Fagereng2020Fig8.png, id=213, 771.38188pt x 498.86375pt>
 File: Figures/Fagereng2020Fig8.png Graphic file (type png)
 <use Figures/Fagereng2020Fig8.png>
 Package pdftex.def Info: Figures/Fagereng2020Fig8.png  used on input line 174.
 (pdftex.def)             Requested size: 173.56186pt x 112.2395pt.
 
 
-[5
+[4
 
  <./Figures/Fagereng2020Fig8.png>]
+
+[5
+
+]
 
 [6
 
@@ -1337,115 +1326,124 @@ Package pdftex.def Info: Figures/Fagereng2020Fig8.png  used on input line 174.
 [7
 
 ]
-<Tables/calibrationPY.pdf, id=369, 577.27963pt x 308.2452pt>
-File: Tables/calibrationPY.pdf Graphic file (type pdf)
-<use Tables/calibrationPY.pdf>
-Package pdftex.def Info: Tables/calibrationPY.pdf  used on input line 230.
-(pdftex.def)             Requested size: 295.05728pt x 157.55571pt.
-
 
 [8
 
- <./Tables/calibrationPY.pdf, page is rotated 90 degrees>]
+]
 
 [9
 
 ]
-<Figures/PYrrPointNetWorthPlot.png, id=488, 361.35pt x 361.35pt>
-File: Figures/PYrrPointNetWorthPlot.png Graphic file (type png)
-<use Figures/PYrrPointNetWorthPlot.png>
-Package pdftex.def Info: Figures/PYrrPointNetWorthPlot.png  used on input line 
-283.
-(pdftex.def)             Requested size: 173.56186pt x 173.56181pt.
-<Figures/PYrrDistNetWorthPlot.png, id=489, 361.35pt x 361.35pt>
-File: Figures/PYrrDistNetWorthPlot.png Graphic file (type png)
-<use Figures/PYrrDistNetWorthPlot.png>
-Package pdftex.def Info: Figures/PYrrDistNetWorthPlot.png  used on input line 2
-83.
-(pdftex.def)             Requested size: 173.56186pt x 173.56181pt.
-
 
 [10
 
- <./Figures/PYrrPointNetWorthPlot.png> <./Figures/PYrrDistNetWorthPlot.png>]
+] (./Tables/calibPY.tex)
 
 [11
 
 ]
-<Tables/calibrationLC.pdf, id=576, 391.04735pt x 216.10185pt>
-File: Tables/calibrationLC.pdf Graphic file (type pdf)
-<use Tables/calibrationLC.pdf>
-Package pdftex.def Info: Tables/calibrationLC.pdf  used on input line 311.
-(pdftex.def)             Requested size: 586.56958pt x 324.15198pt.
-
 
 [12
 
- <./Tables/calibrationLC.pdf, page is rotated 90 degrees>]
-<Figures/LCrrPointNetWorthPlot.png, id=628, 361.35pt x 361.35pt>
-File: Figures/LCrrPointNetWorthPlot.png Graphic file (type png)
-<use Figures/LCrrPointNetWorthPlot.png>
-Package pdftex.def Info: Figures/LCrrPointNetWorthPlot.png  used on input line 
-325.
-(pdftex.def)             Requested size: 173.56186pt x 173.56181pt.
-<Figures/LCrrDistNetWorthPlot.png, id=629, 361.35pt x 361.35pt>
-File: Figures/LCrrDistNetWorthPlot.png Graphic file (type png)
-<use Figures/LCrrDistNetWorthPlot.png>
-Package pdftex.def Info: Figures/LCrrDistNetWorthPlot.png  used on input line 3
-25.
-(pdftex.def)             Requested size: 173.56186pt x 173.56181pt.
-
+]
 
 [13
 
- <./Figures/LCrrPointNetWorthPlot.png> <./Figures/LCrrDistNetWorthPlot.png>]
+]
+<Figures/PYrrPointNetWorthPlot.png, id=681, 361.35pt x 361.35pt>
+File: Figures/PYrrPointNetWorthPlot.png Graphic file (type png)
+<use Figures/PYrrPointNetWorthPlot.png>
+Package pdftex.def Info: Figures/PYrrPointNetWorthPlot.png  used on input line 
+369.
+(pdftex.def)             Requested size: 173.56186pt x 173.56181pt.
+<Figures/PYrrDistNetWorthPlot.png, id=682, 361.35pt x 361.35pt>
+File: Figures/PYrrDistNetWorthPlot.png Graphic file (type png)
+<use Figures/PYrrDistNetWorthPlot.png>
+Package pdftex.def Info: Figures/PYrrDistNetWorthPlot.png  used on input line 3
+69.
+(pdftex.def)             Requested size: 173.56186pt x 173.56181pt.
+
 
 [14
 
-]
-<Tables/Emp_Lorenz_10yr_LCrrDistNetWorth.png, id=707, 578.16pt x 180.675pt>
-File: Tables/Emp_Lorenz_10yr_LCrrDistNetWorth.png Graphic file (type png)
-<use Tables/Emp_Lorenz_10yr_LCrrDistNetWorth.png>
-Package pdftex.def Info: Tables/Emp_Lorenz_10yr_LCrrDistNetWorth.png  used on i
-nput line 368.
-(pdftex.def)             Requested size: 277.70004pt x 86.7809pt.
-<Tables/Sim_Lorenz_10yr_LCrrDistNetWorth.png, id=708, 578.16pt x 180.675pt>
-File: Tables/Sim_Lorenz_10yr_LCrrDistNetWorth.png Graphic file (type png)
-<use Tables/Sim_Lorenz_10yr_LCrrDistNetWorth.png>
-Package pdftex.def Info: Tables/Sim_Lorenz_10yr_LCrrDistNetWorth.png  used on i
-nput line 368.
-(pdftex.def)             Requested size: 277.70004pt x 86.7809pt.
-
+ <./Figures/PYrrPointNetWorthPlot.png> <./Figures/PYrrDistNetWorthPlot.png>]
 
 [15
 
- <./Tables/Emp_Lorenz_10yr_LCrrDistNetWorth.png> <./Tables/Sim_Lorenz_10yr_LCrr
-DistNetWorth.png>]
+] (./Tables/calibLC.tex)
 
 [16
 
 ]
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10.95> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 409.
-
+<Figures/LCrrPointNetWorthPlot.png, id=807, 361.35pt x 361.35pt>
+File: Figures/LCrrPointNetWorthPlot.png Graphic file (type png)
+<use Figures/LCrrPointNetWorthPlot.png>
+Package pdftex.def Info: Figures/LCrrPointNetWorthPlot.png  used on input line 
+413.
+(pdftex.def)             Requested size: 173.56186pt x 173.56181pt.
+<Figures/LCrrDistNetWorthPlot.png, id=808, 361.35pt x 361.35pt>
+File: Figures/LCrrDistNetWorthPlot.png Graphic file (type png)
+<use Figures/LCrrDistNetWorthPlot.png>
+Package pdftex.def Info: Figures/LCrrDistNetWorthPlot.png  used on input line 4
+13.
+(pdftex.def)             Requested size: 173.56186pt x 173.56181pt.
 
 
 [17
 
- </usr/local/texlive/2024/texmf-dist/tex/latex/beamer/beamericonarticle.pdf>]
+ <./Figures/LCrrPointNetWorthPlot.png> <./Figures/LCrrDistNetWorthPlot.png>]
 
 [18
 
-
 ]
+<Tables/Emp_Lorenz_10yr_LCrrDistNetWorth.png, id=886, 578.16pt x 180.675pt>
+File: Tables/Emp_Lorenz_10yr_LCrrDistNetWorth.png Graphic file (type png)
+<use Tables/Emp_Lorenz_10yr_LCrrDistNetWorth.png>
+Package pdftex.def Info: Tables/Emp_Lorenz_10yr_LCrrDistNetWorth.png  used on i
+nput line 456.
+(pdftex.def)             Requested size: 277.70004pt x 86.7809pt.
+<Tables/Sim_Lorenz_10yr_LCrrDistNetWorth.png, id=887, 578.16pt x 180.675pt>
+File: Tables/Sim_Lorenz_10yr_LCrrDistNetWorth.png Graphic file (type png)
+<use Tables/Sim_Lorenz_10yr_LCrrDistNetWorth.png>
+Package pdftex.def Info: Tables/Sim_Lorenz_10yr_LCrrDistNetWorth.png  used on i
+nput line 456.
+(pdftex.def)             Requested size: 277.70004pt x 86.7809pt.
+
 
 [19
 
+ <./Tables/Emp_Lorenz_10yr_LCrrDistNetWorth.png> <./Tables/Sim_Lorenz_10yr_LCrr
+DistNetWorth.png>]
+
+[20
 
 ]
 
-[20
+LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10.95> not available
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 497.
+
+
+
+[21
+
+ </usr/local/texlive/2024/texmf-dist/tex/latex/beamer/beamericonarticle.pdf>]
+
+[22
+
+
+]
+
+[23
+
+
+]
+
+[24
+
+
+]
+
+[25
 
 
 ]
@@ -1464,47 +1462,48 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `Chp1-presentation.out' has not changed.
-(rerunfilecheck)             Checksum: 8635B0179173B2107D402FEA75A2CBE0;834.
+(rerunfilecheck)             Checksum: 3B893144CDAD8623F24DE89368334C98;1024.
 Package logreq Info: Writing requests to 'Chp1-presentation.run.xml'.
 \openout1 = `Chp1-presentation.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32284 strings out of 473201
- 635723 string characters out of 5716120
- 1379622 words of memory out of 5000000
- 54895 multiletter control sequences out of 15000+600000
- 573166 words of font info for 87 fonts, out of 8000000 for 9000
+ 32418 strings out of 473201
+ 638270 string characters out of 5716120
+ 1384378 words of memory out of 5000000
+ 54995 multiletter control sequences out of 15000+600000
+ 574816 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,19n,123p,1888b,1844s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,20n,123p,1888b,1844s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pf
 b></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 ></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></
-usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></us
-r/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/
-local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
-cal/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local
-/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/
-texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/t
-exlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/tex
-live/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texli
-ve/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texl
-ive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texl
-ive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/local/texli
-ve/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/local/texliv
-e/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
-/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2
-024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/202
-4/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2024/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2024/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2024/tex
-mf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/local/texlive/202
-4/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Chp1-presentation.pdf (20 pages, 969543 bytes).
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
+/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></u
+sr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr
+/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/l
+ocal/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/lo
+cal/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/loc
+al/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local
+/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/t
+exlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/
+texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/
+texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/local/
+texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/local/t
+exlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/local/te
+xlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/tex
+live/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texli
+ve/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive
+/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2
+024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/202
+4/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2024/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2024/t
+exmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/local/texlive/2
+024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Chp1-presentation.pdf (25 pages, 973288 bytes).
 PDF statistics:
- 1048 PDF objects out of 1200 (max. 8388607)
- 813 compressed objects within 9 object streams
- 57 named destinations out of 1000 (max. 500000)
- 221 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1279 PDF objects out of 1440 (max. 8388607)
+ 1002 compressed objects within 11 object streams
+ 82 named destinations out of 1000 (max. 500000)
+ 227 words of extra memory for PDF output out of 10000 (max. 10000000)
 

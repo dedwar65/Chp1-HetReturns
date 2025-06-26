@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.27)  19 JUN 2025 15:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.27)  21 JUN 2025 12:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -999,19 +999,19 @@ rrDistNetWorthPlot.png>]
 File: Tables/Emp_Lorenz_10yr_LCrrDistNetWorth.png Graphic file (type png)
 <use Tables/Emp_Lorenz_10yr_LCrrDistNetWorth.png>
 Package pdftex.def Info: Tables/Emp_Lorenz_10yr_LCrrDistNetWorth.png  used on i
-nput line 107.
+nput line 111.
 (pdftex.def)             Requested size: 276.00105pt x 86.24883pt.
 <Tables/Sim_Lorenz_10yr_LCrrPointNetWorth.png, id=365, 578.16pt x 180.675pt>
 File: Tables/Sim_Lorenz_10yr_LCrrPointNetWorth.png Graphic file (type png)
 <use Tables/Sim_Lorenz_10yr_LCrrPointNetWorth.png>
 Package pdftex.def Info: Tables/Sim_Lorenz_10yr_LCrrPointNetWorth.png  used on 
-input line 116.
+input line 120.
 (pdftex.def)             Requested size: 276.00105pt x 86.24883pt.
 <Tables/Sim_Lorenz_10yr_LCrrDistNetWorth.png, id=366, 578.16pt x 180.675pt>
 File: Tables/Sim_Lorenz_10yr_LCrrDistNetWorth.png Graphic file (type png)
 <use Tables/Sim_Lorenz_10yr_LCrrDistNetWorth.png>
 Package pdftex.def Info: Tables/Sim_Lorenz_10yr_LCrrDistNetWorth.png  used on i
-nput line 123.
+nput line 127.
 (pdftex.def)             Requested size: 276.00105pt x 86.24883pt.
 )
 
@@ -1130,7 +1130,7 @@ onts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2024/texmf-dist/fon
 ts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2024/texmf-dist/fonts
 /type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2024/texmf-dist/fonts/t
 ype1/public/cm-super/sftt1000.pfb>
-Output written on Chp1-draft.pdf (24 pages, 1162873 bytes).
+Output written on Chp1-draft.pdf (24 pages, 1160054 bytes).
 PDF statistics:
  675 PDF objects out of 1000 (max. 8388607)
  563 compressed objects within 6 object streams

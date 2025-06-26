@@ -110,12 +110,12 @@
 \end{frame}
 %%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Why het. returns?}
-\begin{enumerate}
-\item Observable feauture of household decision problem
-\item Financial literacy and inequality
-\end{enumerate}
-\end{frame}
+%\begin{frame}{Why het. returns?}
+%\begin{enumerate}
+%\item Observable feauture of household decision problem
+%\item Exploring possible explanations for the persistent component of return het. 
+%\end{enumerate}
+%\end{frame}
 %%%%%%%%%%%%%%%%%%
 
 \subsection{Heterogeneous Returns in the Data}
@@ -175,7 +175,75 @@
 %%%%%%%%%%%%%%%%
 
 \section{Model}
-%\subsection{Environment}
+\subsection{Banks}
+\begin{frame}{A potential source of return heterogeneity}
+  \par Entrpreneurship and financial literacy
+  \par Sensitivity of bank deposits to interest rate changes
+  \begin{itemize}
+  \item $\Delta$ in market rate $\rightarrow$ variation in $\Delta$ in deposits held at banks
+    \begin{itemize}
+  \item \cite{Sarkisyan2021} - globally integrated vs local banks
+  \item \cite{d'Avernas2024} - small vs large banks
+    \end{itemize}
+  \end{itemize}
+
+  $\implies$ variation in deposit rates offered across banks
+  \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[label=bankmodel]{A simple model of bank heterogeneity (\cite{Monti1972}, \cite{Klein1971})}
+
+\par Let $R^m$ be the market rate of return, $R^d$ be the rate of return offered on deposits by a  bank, and $S(R^d, R^m)$ be the level of deposits held at a given bank.
+
+\par Banks solve:
+\[
+\max (R^m - R^d) \cdot S(R^d, R^m)
+\]
+
+\par subject to:
+\[
+S(R^d, R^m) = A \left( \frac{R^d}{R^m} \right)^{\varepsilon}
+\]
+
+\vspace{1em}
+\hyperlink{epsilonslide}{\beamerbutton{Show interpretation of $\varepsilon$}}
+
+\end{frame}
+
+\begin{frame}[label=epsilonslide]{Interpreting the Elasticity Parameter $\varepsilon$}
+
+\small
+\par In this setting, the parameter $\varepsilon$ has a clear interpretation as the elasticity of deposits to changes in the market interest rate. It can be shown that:
+
+\[
+-\varepsilon = \frac{\partial S(\cdot)}{\partial R^m} \cdot \frac{R^m}{S(\cdot)}
+\]
+
+\vspace{1em}
+\hyperlink{bankmodel}{\beamerbutton{Back to model}}
+
+\vspace{1em}
+\hyperlink{focslide}{\beamerbutton{First order condition}}
+
+\end{frame}
+
+\begin{frame}[label=focslide]{Bank's optimal choice of  $R^d$}
+
+\small
+\par  The first order condition for the bank's optimization problem implies that:
+
+\[
+R^d  = \frac{\varepsilon}{1+ \varepsilon} R^m 
+\]
+
+\vspace{1em}
+\hyperlink{bankmodel}{\beamerbutton{Back to model}}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%
+
+  
+\subsection{Households}
 
 \small
 \begin{frame}{Labor income process}
@@ -204,7 +272,7 @@ Choose profiles $\{c_{t_n}\}_{n=0}^{\infty}$ that satisfy
   &\text{s.t.}& \\
   a_t &=& m_t - c_t(m_t), \\
   k_{t+1} &=& \frac{a_t}{\cancel{D}\psi_{t+1}}, \\
-  m_{t+1} &=& (\daleth + r_t)k_{t+1} + \xi_{t+1}, \\
+  m_{t+1} &=& (\daleth + r^d_t)k_{t+1} + \xi_{t+1}, \\
   a_t &\geq& 0.
 \end{eqnarray*}
 
@@ -214,21 +282,20 @@ Production function $$Y = Z K^{\alpha} (\ell L)^{1-\alpha}$$
 %%%%%%%%%%%%%%%%%
 
 \subsection{Simulation}
-%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Calibration}
-
-Standard calibration scheme used to simulate the model.
-
-  \vfill
-   \begin{figure}
-    \centering
-    \includegraphics[width=.85\linewidth]{Tables/calibrationPY.pdf}
-  \end{figure}
-  \vfill
-
+\vfill
+\begin{table}
+  \centering
+  \scriptsize  % or \tiny, \footnotesize as needed
+  \input{Tables/calibPY.tex}
+\end{table}
+\vfill
 \end{frame}
-%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%
+
 
 
 \begin{frame}{Estimation procedure}
@@ -241,7 +308,7 @@ Simulated method of moments (SMM) estimation for $R$ using 2004 SCF wealth data.
 %\vspace{5mm}
   \begin{enumerate}
   \item No ex-ante heterogeneity: $R$\textit{-point} model
-  \par Estimate a common rate of return across households by finding the $\grave{R}$ which matches the capital-to-output ratio $(\frac{K}{Y} = 7.47)$.
+  \par Estimate a common rate of return across households by finding the $\grave{R}$ which matches the capital-to-output ratio $(\frac{K}{Y} = 3)$.
   \vspace{2.5mm}
 
   \item Ex-ante heterogeneity: $R$\textit{-dist} model
@@ -265,6 +332,25 @@ Net worth percentile & Cumulative net worth \\
 \end{frame}
 %%%%%%%%%%%%%%%%%
 
+\begin{frame}{Estimation procedure}
+
+Simulated method of moments (SMM) estimation for $R$ using 2004 SCF wealth data.
+
+%\vspace{5mm}
+\begin{enumerate}
+  \setcounter{enumi}{2} 
+\item Implied distribution of elasticities $\epsilon$
+  \par The solution to the bank's optimization problem implies
+  \begin{align}
+    \varepsilon = \frac{R^d}{R^m - R^d}
+  \end{align}
+
+  \par Thus, so long as the market interest rate is given, the SMM procedure can be used to uniquely pin down a distribution of elasticites which describes banking heterogeneity.
+  \end{enumerate}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%
+
 \section{Results}
 
 \begin{frame}{How good is the fit?}
@@ -281,7 +367,6 @@ Net worth percentile & Cumulative net worth \\
   \end{columns}
 
 \end{frame}
-%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 
@@ -302,15 +387,18 @@ Net worth percentile & Cumulative net worth \\
 %%%%%%%%%%%%%%%
 
 \begin{frame}{Calibration}
-  \vfill
-   \begin{figure}
-    \centering
-    \includegraphics[width=.85\linewidth, scale=1.5]{Tables/calibrationLC.pdf}
-  \end{figure}
-  \vfill
+\vfill
+\begin{table}
+  \centering
+  \scriptsize 
+  \input{Tables/calibLC.tex}
+\end{table}
+\vfill
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%
+
+
 \begin{frame}{How good is the fit?}
  \begin{columns}
     \column{0.5\textwidth}
@@ -347,10 +435,10 @@ Net worth (after tax) & 0.0365 & 0.0781  \\
 \hline
 & Mean & St. Dev \\
 \hline
-PY-Point & 0.071 & 0.0  \\
-PY-Dist & 0.055  &  0.006  \\
-LC-Point & 0.063 & 0.0  \\
-LC-Dist & 0.049  &  0.010  \\
+PY-Point & 0.060 & 0.0  \\
+PY-Dist & 0.021  &  0.011  \\
+LC-Point & 0.040 & 0.0  \\
+LC-Dist & 0.023  &  0.009  \\
 \hline
 \end{tabular}
 
