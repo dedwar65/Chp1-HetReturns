@@ -13,7 +13,7 @@ from parameters import (BaseTypeCount, DstnParamMapping, DstnType, HetParam,
                         emp_lorenz, income_data, model, spread_range, tag,
                         wealth_data, weights_data, TargetPercentiles)
 from scipy.optimize import minimize, minimize_scalar, root_scalar
-from utilities import get_lorenz_shares, show_statistics, results_location
+from utilities import get_lorenz_shares
 import pandas as pd
 
 
@@ -164,6 +164,40 @@ def get_discretized_het_params(center, spread):
     dstn = DstnType(*DstnParamMapping(center, spread)).discretize(HetTypeCount)
     # dstn.atoms is a 2‐D array [1 × HetTypeCount], so flatten to a 1D list:
     return list(dstn.atoms.flatten())
+
+script_dir = os.path.dirname(os.path.abspath(__file__))
+results_location = os.path.join(script_dir, '../Results/')
+
+def show_statistics(tag, center, spread, dist):
+    """
+    Calculates statistics post estimation of interest to the end-user that can be used to
+    quickly assess a given instance of the structural estimation.
+    """
+    het_pts = get_discretized_het_params(center, spread)
+
+    # Create a list of strings to concatenate
+    results_list = [
+        f"Estimate is center={center}, spread={spread}\n",
+        f"Conversion is mean={.5 * ((center - spread) + (center + spread))}, std_dev={(1/12) * ((center + spread) - (center - spread))}\n",
+        f"Lorenz distance is {dist}\n",
+        f"Discretized HetParam values: {het_pts}\n",
+        ##Add more summary stats here##
+    ]
+
+    # Concatenate the list into a single string
+    results_string = "".join(results_list)
+
+    print(results_string)
+
+    # Save results to disk
+    if tag is not None:
+        with open(
+            results_location + tag + "Results.txt",
+            "w",
+            encoding="utf-8",
+        ) as f:
+            f.write(results_string)
+            f.close()
 
 def graph_lorenz(center, spread):
     """
