@@ -1,0 +1,12 @@
+Estimate is center=0.9716817359813688, spread=0.13514047367244955
+Conversion is mean=0.9716817359813688, std_dev=0.022523412278741585
+Lorenz distance is  message: 
+          Optimization terminated successfully;
+          The returned value satisfies the termination criteria
+          (using xtol = 0.0001 )
+ success: True
+     fun: 0.00014139030749245576
+       x: 0.13514047367244955
+     nit: 10
+    nfev: 16
+Discretized HetParam values: [np.float64(0.8558470442621263), np.float64(0.8944586081685405), np.float64(0.9330701720749546), np.float64(0.9716817359813688), np.float64(1.010293299887783), np.float64(1.0489048637941971), np.float64(1.0875164277006113)]

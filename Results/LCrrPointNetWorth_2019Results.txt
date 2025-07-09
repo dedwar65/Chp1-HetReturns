@@ -1,0 +1,4 @@
+Estimate is center=1.0416411571881892, spread=0.0
+Conversion is mean=1.0416411571881892, std_dev=0.0
+Lorenz distance is 0.0952134328605945
+Discretized HetParam values: [np.float64(1.0416411571881892)]

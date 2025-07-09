@@ -6,6 +6,17 @@ from HARK.ConsumptionSaving.ConsIndShockModel import IndShockConsumerType
 
 
 class AltIndShockConsumerType(IndShockConsumerType):
+    def __init__(self, **kwds):
+        # 1) Initialize exactly as HARK does
+        super().__init__(**kwds)
+        # 2) Force scalar Rfree/LivPrb into 1‑element lists
+        if not isinstance(self.Rfree, (list, tuple)):
+            self.Rfree = [self.Rfree]
+        if not isinstance(self.LivPrb, (list, tuple)):
+            self.LivPrb = [self.LivPrb]
+
+        # print("Patched Agent init—Rfree:", self.Rfree, "LivPrb:", self.LivPrb)
+
     def __repr__(self):
         return ('AltIndShockConsumerType with Rfree=' + str(self.Rfree) + ' and DiscFac=' + str(self.DiscFac))
 
@@ -39,7 +50,8 @@ class AltIndShockConsumerType(IndShockConsumerType):
         PermShkNow = IncShkNow[0, :]
         TranShkNow = IncShkNow[1, :]
         PermGroFac = self.PermGroFac[t - 1]
-        RfreeEff = self.Rfree / (PermGroFac * PermShkNow)
+        r_t = float(self.Rfree[t-1])
+        RfreeEff = r_t / (PermGroFac * PermShkNow)
         pLvlNow = PermGroFac * PermShkNow * self.state_prev["pLvl"]
 
         # Move from aNrmPrev to mNrmNow using our income shock draws
@@ -152,7 +164,6 @@ def get_lorenz_shares(data, weights=None, percentiles=None, presorted=False):
         lorenz_out[i] = (1.-alpha)*cum_data[j-1] + alpha*cum_data[j]
 
     return lorenz_out
-
 
 
 

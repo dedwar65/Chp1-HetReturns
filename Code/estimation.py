@@ -16,6 +16,36 @@ from scipy.optimize import minimize, minimize_scalar, root_scalar
 from utilities import get_lorenz_shares
 import pandas as pd
 
+import HARK
+print("Using HARK from:", HARK.__file__)
+
+from HARK.ConsumptionSaving.ConsIndShockModel import IndShockConsumerType
+
+# Keep references to originals
+_orig_calc_limiting   = IndShockConsumerType.calc_limiting_values
+_orig_describe       = IndShockConsumerType.describe_parameters
+
+# 1) Patch calc_limiting_values so it never does `list * float`
+def _patched_calc_limiting(self, *args, **kwargs):
+    saved = None
+    if isinstance(self.DiscFac, list) and len(self.DiscFac) == 1:
+        saved = self.DiscFac
+        self.DiscFac = float(saved[0])
+    out = _orig_calc_limiting(self, *args, **kwargs)
+    if saved is not None:
+        self.DiscFac = saved
+    return out
+
+# 2) Patch describe_parameters to swallow any TypeError from formatting a list
+def _patched_describe(self, *args, **kwargs):
+    try:
+        return _orig_describe(self, *args, **kwargs)
+    except TypeError:
+        return ""    # skip the f"{val:.5f}" mess entirely
+
+# 3) Install the patches
+IndShockConsumerType.calc_limiting_values   = _patched_calc_limiting
+IndShockConsumerType.describe_parameters    = _patched_describe
 
 def updateHetParamValues(center, spread):
     '''
@@ -44,6 +74,50 @@ def updateHetParamValues(center, spread):
         setattr(ThisType, HetParam, vals[0][i])
         setattr(ThisType, 'AgentCount', int(weights[i] * ThisType.BaseAgentCount))
 
+    for agent in MyPopulation:
+        T = agent.T_cycle
+        is_infinite = getattr(agent, "infinite_horizon", False)
+
+        for attr in ['Rfree', 'DiscFac', 'LivPrb', 'PermGroFac']:
+            val = getattr(agent, attr)
+
+            # Fix parameter shape depending on horizon type
+            if is_infinite:
+                # Infinite horizon: must be scalar
+                if isinstance(val, list):
+                    if len(val) == 1:
+                        val = float(val[0])
+                    else:
+                        raise ValueError(f"{attr} must be scalar (not list of len={len(val)}).")
+                elif isinstance(val, np.ndarray):
+                    if val.size == 1:
+                        val = float(val.item())
+                    else:
+                        raise ValueError(f"{attr} ndarray must have size 1.")
+            else:
+                # Lifecycle: must be list of length T
+                if isinstance(val, (int, float, np.floating)):
+                    val = [float(val)] * T
+                elif isinstance(val, np.ndarray):
+                    val = val.tolist()
+                elif isinstance(val, list):
+                    if len(val) == 1:
+                        val = [float(val[0])] * T
+                    elif len(val) != T:
+                        raise ValueError(f"{attr} list length {len(val)} != T_cycle {T}")
+                else:
+                    raise TypeError(f"{attr} is of unsupported type {type(val)}.")
+
+            # ✅ Always assign back the cleaned-up value
+            setattr(agent, attr, val)
+
+        # Add time-varying fields for lifecycle agents
+        if not is_infinite:
+            agent.time_vary = ['Rfree', 'DiscFac', 'LivPrb', 'PermGroFac',
+                           'IncShkDstn', 'PermShkStd', 'TranShkStd']
+            agent.update()
+            agent.update_income_process()
+
 
 def getDistributionsFromHetParamValues(center, spread):
     '''
@@ -66,7 +140,14 @@ def getDistributionsFromHetParamValues(center, spread):
         survival probability and population growth factor.
     '''
     updateHetParamValues(center, spread)
-    multi_thread_commands(MyPopulation,['solve()','initialize_sim()','simulate()'])
+
+    for i, ag in enumerate(MyPopulation):
+        missing = [name for name in ["IncShkDstn","PermShkStd","TranShkStd"]
+                if not hasattr(ag, name)]
+        if missing:
+            raise RuntimeError(f"Agent {i} still missing {missing}")
+
+    multi_thread_commands(MyPopulation,['solve()','initialize_sim()','simulate()'], num_jobs=1)
     if LifeCycle:
         IndWealthArray = np.concatenate([this_type.history['aLvl'].flatten() for this_type in MyPopulation])
         IndProdArray = np.concatenate([this_type.history['pLvl'].flatten() for this_type in MyPopulation])
@@ -265,7 +346,7 @@ def compute_simulated_lorenz_by_age_bins(center, spread, percentiles):
     df_10yr : pd.DataFrame of Lorenz shares by hybrid 10-year bins
     '''
     updateHetParamValues(center, spread)
-    multi_thread_commands(MyPopulation, ['solve()', 'initialize_sim()', 'simulate()'])
+    multi_thread_commands(MyPopulation, ['solve()', 'initialize_sim()', 'simulate()'], num_jobs=1)
 
     # Define age bins
     age_bins_5yr = np.arange(25, 75 + 1, 5)

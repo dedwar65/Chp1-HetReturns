@@ -30,7 +30,7 @@ MyAgentType = AltIndShockConsumerType
 script_dir = os.path.dirname(os.path.abspath(__file__))
 data_location = os.path.join(script_dir, '../Data/')
 specs_location = os.path.join(script_dir, '../Specifications/')
-SpecificationFilename = 'PYrrPointNetWorth.yaml'
+SpecificationFilename = 'LCrrDistNetWorth.yaml'
 
 with open(specs_location + SpecificationFilename, 'r') as f:
     spec_raw = f.read()
@@ -38,7 +38,11 @@ with open(specs_location + SpecificationFilename, 'r') as f:
 yaml_params = yaml.safe_load(spec_raw)
 print('Loading a specification called ' + yaml_params['description'])
 
-tag = yaml_params['tag']
+#tag = yaml_params['tag']
+tag = f"{yaml_params['tag']}_{yaml_params['year']}"
+model = yaml_params["model"]
+print(tag)
+
 model = yaml_params["model"]
 
 # Choose basic specification parameters
@@ -151,6 +155,7 @@ BaseParamDict = {
 }
 BaseParamDict.update(yaml.safe_load(init_raw)) # Later, add conditions to include other agent types
 
+
 # Adjust survival probabilities from SSA tables using education cohort adjustments;
 # method provided by Brown, Liebman, and Pollett (2002).
 mort_data_file = yaml_params['mort_data_file']
@@ -160,7 +165,7 @@ death_age = BaseParamDict['death_age']
 
 # Compute base mortality rates for the specified age range
 base_liv_prb = parse_ssa_life_table(
-        female=True, cross_sec=True, year=2004, min_age=birth_age, max_age=death_age - 1
+        female=True, cross_sec=True, year=2019, min_age=birth_age, max_age=death_age - 1
     )
 
 # Import adjustments for education and apply them to the base mortality rates
@@ -183,7 +188,7 @@ for j in range(death_age - birth_age):
 
 # Here define the population of agents for the simulation
 if LifeCycle:
-    adjust_infl_to = 2004
+    adjust_infl_to = 2019
     income_calib = Cagetti_income
 
     # Define fractions of education types
@@ -247,6 +252,16 @@ if LifeCycle:
     college_dict.update({"LivPrb": c_death_probs})
     college_dict['BaseAgentCount'] = TotalAgentCount*college_frac
 
+    for dct in (nohs_dict, hs_dict, college_dict):
+        T = dct['T_cycle']
+        for key in ['Rfree', 'DiscFac']:
+            v = dct.get(key)
+            if isinstance(v, (list, tuple)):
+                if len(v) != T:
+                    dct[key] = [float(v[0])] * T
+            else:
+                dct[key] = [float(v)] * T
+
     # Make base agent types
     DropoutType = MyAgentType(**nohs_dict)
     HighschType = MyAgentType(**hs_dict)
@@ -263,6 +278,19 @@ else:
 MyPopulation = []
 for n in range(HetTypeCount):
     MyPopulation += deepcopy(BasePopulation)
+
+# ─── DIAGNOSTIC: Verify all MyPopulation agents have proper list lengths ─────
+for i, ag in enumerate(MyPopulation):
+    print(f"\nAgent {i} of {len(MyPopulation)} (type: {type(ag).__name__}, T_cycle={ag.T_cycle}):")
+    for key in ['Rfree', 'DiscFac', 'PermGroFac', 'LivPrb', 'PermShkStd', 'TranShkStd']:
+        val = getattr(ag, key, None)
+        if val is None:
+            print(f"  {key}: MISSING")
+        elif isinstance(val, (list, tuple)):
+            print(f"  {key}: list length {len(val)}")
+        else:
+            print(f"  {key}: SCALAR → needs wrapping")
+# ─────────────────────────────────────────────────────────────────────────────
 
 # Store optimal parameters here
 opt_center = None

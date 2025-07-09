@@ -1,5 +1,5 @@
 CRRA: 1.0
-Rfree: 1.04
+Rfree: [1.04]
 PermGroFac: [1.0]
 PermGroFacAgg: 1.0
 BoroCnstArt: -0.3

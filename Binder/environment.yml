@@ -14,4 +14,4 @@ dependencies:
   - seaborn
   - pip
   - pip:
-      - git+https://github.com/econ-ark/HARK@master
+      - git+https://github.com/econ-ark/HARK@v0.16.0
