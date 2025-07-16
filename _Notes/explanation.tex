@@ -1,22 +1,88 @@
 \documentclass{article}
-
-
 \usepackage{footnote}
+\usepackage{babel}
+\usepackage[backend=bibtex, style=authoryear]{biblatex}
+\addbibresource{Chp1.bib}
 
+\newcommand{\say}[1]{``#1''}
 
 
 \begin{document}
 
-\par
+\section{What I do}
 
-\par
+\par I take a standard consumption saving problem with permanent and transitory shocks to income and calibrate values necessary to solve for values of optimal consumption and market resources over the life-cycle. This leads to a simulated distribution of wealth that can be compared to the empirical distribution measured by waves of the SCF.
 
-\par
+\par First, I assume everyone has the same rate of return on the single asset in the model. All other parameter values remaining constant, a different value for the rate of return will clearly lead to a different simulated wealth distribution. 
 
-\par
+\par Next, I assume that there is a uniform distribution returns across households. In the simulation, this distribution is discretized so that there are 7 types of households, indexed by the rate of return earned on their level of assets. 
 
+\par Thus, the key estimation procedure in my paper is to see which 7 values of the rate of return will minimize the distance between moments of the simulated distribution and moments of the empirical one. These \say{moments} are the 20-th, 40-th, 60-th, and 80-th percentiles of the wealth distribution, which I am referring to as lorenz points.
 
+\section{A critique a received}
 
+\par A common pushback I got on this work was: Why do people have different returns in your model? Is there a source of this heterogeneity in returns, or are you just allowing for households to have different returns?
+
+\par Although the latter was true, and this has also been done in the literature for other parameters (no one asks why two households have different time preferences -- for intutitive reasons), I wanted to try to come up with an adequate answer to this critique.
+
+\section{My answer to this critique}
+
+\subsection{Empirical evidence}
+
+\par A recent paper by \cite{Ahmed2025} discusses the sensitivity of deposit rates on both local and foreign accounts to changes in the federal funds rate. This was my first motivation for considering a setting where \textit{different bank may optimally choose to offer different rates of returns on deposits} to explain the heterogeneity in returns that I have in my model.
+
+\par To fully understand the mechanism, I relied on research which describes the relationship between changes in the federal funds rate and changes in the level of deposits held at banks. Specifically, \cite{Sarkisyan2021} make a distinction between \textit{local} and \textit{globally integrated} banks, and note that \say{global banks lose much more deposits relative to local banks in response to unexpected changed in the federal funds rate} \footnote{ \cite{d'Avernas2024} show a similar finding regarding heterogeneity in deposit rates, but for largers vs smaller banks}.
+
+\subsection{A simple model capturing this evidence}
+
+\par To answer this critique, I wanted to explain the source of returns heterogeneity for a single, riskless asset using a combination of (i) the fact that there is much variety in the rates of returns offered on deposit accounts and (ii) this empirical finding regarding how there is variation in the change in deposit levels at banks in response to changes in the market interest rate.
+
+\par The simplest way of accomplishing this is considering a static environment in which banks are allocated to households at the start of the lifecycle, and households can not switch to a different bank. Furthermore, I assume that bank cannot expand their client base. With these assumptions, I tried to think of the simplest optimization problem in which banks take deposits from households, and lend them out at the market interest rate in order to make profit. I modeled this in the following way:
+
+ \par Let $R^m$ be the market rate of return, $R^d$ be the rate of return offered on deposits by a  bank, and $S(R^d, R^m)$ be the level of deposits held at a given bank.
+
+\par Banks solve:
+\[
+\max (R^m - R^d) \cdot S(R^d, R^m)
+\]
+
+\par subject to:
+\[
+S(R^d, R^m) = A \left( \frac{R^d}{R^m} \right)^{\varepsilon}
+\]
+
+\par The usefulness of this is that the parameter $\varepsilon$ has a clear interpretation as the elasticity of deposits to changes in the market interest rate. It can be shown that:
+
+\[
+-\varepsilon = \frac{\partial S(\cdot)}{\partial R^m} \cdot \frac{R^m}{S(\cdot)}
+\]
+
+\par This is the sense in which I am clearly trying to incorporate the empirical work I mentioned before.
+
+\section{Where I am stuck/confused}
+
+\par In this setting, the first order condition for the bank's optimization problem implies that:
+
+\[
+R^d  = \frac{\varepsilon}{1+ \varepsilon} R^m 
+\]
+
+\par Clearly, this implies that, if one knows the market interest rate $R^m$, then you can back out a value for $\varepsilon$ for a given value of $R^d$.
+
+\par With this in mind, consider again the current results of my JMP. I have estimated 7 values, which are a discretization of a uniform distribution for the rate of return which minimize the distance between moments of the simulated distribution and moments of the empirical one. Thus, this would correspond to 7 points for $\varepsilon$, which can be interpreted as 7 different elasticities for bank deposits to changes in the market interest rate.
+
+\par The issues with this that I am still unclear about how to explain/resolve with an audience are
+
+\begin{enumerate}
+\item (Most important) In every estimation of the model with heterogeneous returns, some individuals are required to earn returns less than 1 (i.e. negative returns) in order to match the skewness in the distribution of wealth. However, this would imply negative values for $\varepsilon$, which would violate the assumption regarding the isoelastic demand function parameter being positive. In other words, this would be like violating the law of demand.
+  \item Practically, in my code, I don't have any \say{banking agents}. That is, my code is still just matching the distribution of wealth by allowing there to be 7 different types of households earning different returns. I also don't allow households to choose to \say{own} a share of the bank and its profits.
+  \end{enumerate}
+
+  \par For the first question, I am wondering if this means I should ditch the assumptions I've made about banks in the model and the particular functional form for the demand for holding deposits at the bank. It was the simplest formulation I could come to which retained the features from the empirical work.
+
+  \par For the second question, I am also wondering if this is okay to do. Since I've written down a model for banks but haven't explicitly coded them in my SMM estimation, I think my model is more saying \say{The hetereogeneity in the rate of return required to match the wealth distribution would correspond to 7 different elasticities of deposits to changes in the market interest rate in a simple setting where banks solve the optimization problem I described before. But then those 7 points lead to some elasticity parameter values which would suggest that the optimization problem I described isn't the right model in the sense that the isoelastic demand parameter is assumed to be positive. }
+
+  \printbibliography
 
 
 \end{document}
