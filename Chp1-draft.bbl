@@ -49,31 +49,6 @@
     \field{year}{2024}
   \endentry
 
-  \entry{Ahmed2025}{misc}{}{}
-    \name{author}{1}{}{%
-      {{hash=AR}{%
-         family={Ahmed},
-         familyi={A\bibinitperiod},
-         given={Rashad},
-         giveni={R\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{AR1}
-    \strng{fullhash}{AR1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{labelyear}{2025}
-    \field{labeldatesource}{}
-    \field{sortinit}{A}
-    \field{sortinithash}{A}
-    \field{title}{{Foreign-borne Interest Rate Risk}}
-    \verb{url}
-    \verb https://download.ssrn.com/2025/2/10/4753135.pdf
-    \endverb
-    \field{month}{02}
-    \field{year}{2025}
-  \endentry
-
   \entry{ra1994}{article}{}{}
     \name{author}{1}{}{%
       {{hash=ASR}{%
@@ -351,6 +326,109 @@
     \field{title}{A difficulty with the optimum quantity of money}
     \field{journaltitle}{Econometrica: Journal of the Econometric Society}
     \field{year}{1983}
+  \endentry
+
+  \entry{Brown2007}{incollection}{}{}
+    \name{author}{3}{}{%
+      {{hash=BJR}{%
+         family={Brown},
+         familyi={B\bibinitperiod},
+         given={Jeffrey\bibnamedelima R},
+         giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+      {{hash=LJB}{%
+         family={Liebman},
+         familyi={L\bibinitperiod},
+         given={Jeffrey\bibnamedelima B},
+         giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=PJ}{%
+         family={Pollet},
+         familyi={P\bibinitperiod},
+         given={Joshua},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {en}%
+    }
+    \list{publisher}{1}{%
+      {University of Chicago Press}%
+    }
+    \strng{namehash}{BJRLJBPJ1}
+    \strng{fullhash}{BJRLJBPJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2007}
+    \field{labeldatesource}{}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{abstract}{%
+    Appendix: Estimating Life Tables That Reflect Socioeconomic Differences in
+  Mortality was published in The Distributional Aspects of Social Security and
+  Social Security Reform on page 447.%
+    }
+    \field{booktitle}{{The Distributional Aspects of Social Security and Social
+  Security Reform}}
+    \field{isbn}{9780226241890}
+    \field{pages}{447\bibrangedash 458}
+    \field{title}{{Appendix: Estimating Life Tables That Reflect Socioeconomic
+  Differences in Mortality}}
+    \verb{url}
+    \verb https://www.degruyter.com/document/doi/10.7208/9780226241890-013/html
+    \verb ?lang=en
+    \endverb
+    \field{month}{11}
+    \field{year}{2007}
+  \endentry
+
+  \entry{Cagetti2003}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=CM}{%
+         family={Cagetti},
+         familyi={C\bibinitperiod},
+         given={Marco},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {[American Statistical Association, Taylor \& Francis, Ltd.]}%
+    }
+    \strng{namehash}{CM1}
+    \strng{fullhash}{CM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2003}
+    \field{labeldatesource}{}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{abstract}{%
+    [This article constructs and simulates a life cycle model of wealth
+  accumulation and estimates the parameters of the utility function (the rate
+  of time preference and the coefficient of risk aversion) by matching the
+  simulated median wealth profiles with those observed in the Panel Study of
+  Income Dynamics and in the Survey of Consumer Finances. The estimates imply a
+  low degree of patience and a high degree of risk aversion. The results are
+  used to study the importance of precautionary savings in explaining wealth
+  accumulation. They imply that wealth accumulation is driven mostly by
+  precautionary motives at the beginning of the life cycle, whereas savings for
+  retirement purposes become significant only closer to retirement.]%
+    }
+    \field{issn}{0735-0015}
+    \field{number}{3}
+    \field{pages}{339\bibrangedash 353}
+    \field{title}{{Wealth Accumulation over the Life Cycle and Precautionary
+  Savings}}
+    \verb{url}
+    \verb http://www.jstor.org/stable/1392584
+    \endverb
+    \field{volume}{21}
+    \verb{file}
+    \verb All-Papers/C/Cagetti-2003-Wealth-Accumulation-over-the-Life-Cycle-and
+    \verb -Precautionary-Savings.pdf
+    \endverb
+    \field{journaltitle}{J. Bus. Econ. Stat.}
+    \field{year}{2003}
   \endentry
 
   \entry{Cagetti2006}{article}{}{}
@@ -987,6 +1065,78 @@
     \field{year}{2018}
   \endentry
 
+  \entry{Drechsler2017}{article}{}{}
+    \name{author}{3}{}{%
+      {{hash=DI}{%
+         family={Drechsler},
+         familyi={D\bibinitperiod},
+         given={Itamar},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=SA}{%
+         family={Savov},
+         familyi={S\bibinitperiod},
+         given={Alexi},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=SP}{%
+         family={Schnabl},
+         familyi={S\bibinitperiod},
+         given={Philipp},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {en}%
+    }
+    \list{publisher}{1}{%
+      {Oxford University Press (OUP)}%
+    }
+    \strng{namehash}{DISASP1}
+    \strng{fullhash}{DISASP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2017}
+    \field{labeldatesource}{}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{abstract}{%
+    AbstractWe present a new channel for the transmission of monetary policy,
+  the deposits channel. We show that when the Fed funds rate rises, banks widen
+  the spreads they charge on deposits, and deposits flow out of the banking
+  system. We present a model where this is due to market power in deposit
+  markets. Consistent with the market power mechanism, deposit spreads increase
+  more and deposits flow out more in concentrated markets. This is true even
+  when we control for lending opportunities by only comparing different
+  branches of the same bank. Since deposits are the main source of liquid
+  assets for households, the deposits channel can explain the observed strong
+  relationship between the liquidity premium and the Fed funds rate. Since
+  deposits are also a uniquely stable funding source for banks, the deposits
+  channel impacts bank lending. When the Fed funds rate rises, banks that raise
+  deposits in concentrated markets contract their lending by more than other
+  banks. Our estimates imply that the deposits channel can account for the
+  entire transmission of monetary policy through bank balance sheets.%
+    }
+    \verb{doi}
+    \verb 10.1093/qje/qjx019
+    \endverb
+    \field{issn}{0033-5533,1531-4650}
+    \field{number}{4}
+    \field{pages}{1819\bibrangedash 1876}
+    \field{title}{{The deposits channel of monetary policy}}
+    \verb{url}
+    \verb https://dx.doi.org/10.1093/qje/qjx019
+    \endverb
+    \field{volume}{132}
+    \verb{file}
+    \verb All-Papers/D/Drechsler-et-al.-2017-The-deposits-channel-of-monetary-p
+    \verb olicy.pdf
+    \endverb
+    \field{journaltitle}{Q. J. Econ.}
+    \field{month}{11}
+    \field{year}{2017}
+  \endentry
+
   \entry{aflgdmlp20}{article}{}{}
     \name{author}{4}{}{%
       {{hash=FA}{%
@@ -1058,6 +1208,74 @@
     \field{volume}{88}
     \field{journaltitle}{Econometrica}
     \field{year}{2020}
+  \endentry
+
+  \entry{PaulUlate2024}{article}{}{}
+    \name{author}{4}{}{%
+      {{hash=F}{%
+         family={{Federal Reserve Bank of San Francisco}},
+         familyi={F\bibinitperiod},
+      }}%
+      {{hash=PP}{%
+         family={Paul},
+         familyi={P\bibinitperiod},
+         given={Pascal},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=UM}{%
+         family={Ulate},
+         familyi={U\bibinitperiod},
+         given={Mauricio},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=F}{%
+         family={{Federal Reserve Bank of San Francisco}},
+         familyi={F\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Federal Reserve Bank of San Francisco}%
+    }
+    \strng{namehash}{F+1}
+    \strng{fullhash}{FPPUMF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2024}
+    \field{labeldatesource}{}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{abstract}{%
+    We develop a quantitative New Keynesian DSGE model to study the
+  introduction of a central bank digital currency (CBDC): government-backed
+  digital money available to retail consumers. At the heart of our model are
+  monopolistic banks with market power in deposit and loan markets. When a CBDC
+  is introduced, households benefit from an expansion of liquidity services and
+  higher deposit rates as bank deposit market power is curtailed. However,
+  deposits also flow out of the banking system and bank lending contracts. We
+  assess this welfare trade-off for a wide range of economies that differ in
+  their level of interest rates. We find substantial welfare gains from
+  introducing a CBDC with an optimal interest rate that can be approximated by
+  a simple rule of thumb: the maximum between 0\% and the policy rate minus
+  1\%.%
+    }
+    \verb{doi}
+    \verb 10.24148/wp2024-11
+    \endverb
+    \field{number}{11}
+    \field{pages}{01\bibrangedash 83}
+    \field{title}{{A macroeconomic model of central bank digital currency}}
+    \verb{url}
+    \verb http://dx.doi.org/10.24148/wp2024-11
+    \endverb
+    \field{volume}{2024}
+    \verb{file}
+    \verb All-Papers/F/Federal-Reserve-Bank-of-San-Francisco...-2024-A-macroeco
+    \verb nomic-model-of-central-bank-digital-currency.pdf
+    \endverb
+    \field{journaltitle}{Federal Reserve Bank of San Francisco, Working Paper
+  Series}
+    \field{month}{04}
+    \field{year}{2024}
   \endentry
 
   \entry{mf1957}{book}{}{}
@@ -1466,43 +1684,6 @@
     \field{year}{2017}
   \endentry
 
-  \entry{Klein1971}{article}{}{}
-    \name{author}{1}{}{%
-      {{hash=KMA}{%
-         family={Klein},
-         familyi={K\bibinitperiod},
-         given={Michael\bibnamedelima A},
-         giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{1}{%
-      {JSTOR}%
-    }
-    \strng{namehash}{KMA1}
-    \strng{fullhash}{KMA1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{labelyear}{1971}
-    \field{labeldatesource}{}
-    \field{sortinit}{K}
-    \field{sortinithash}{K}
-    \verb{doi}
-    \verb 10.2307/1991279
-    \endverb
-    \field{pages}{205}
-    \field{title}{{A theory of the banking firm}}
-    \verb{url}
-    \verb https://www.jstor.org/stable/1991279
-    \endverb
-    \field{volume}{3}
-    \verb{file}
-    \verb All-Papers/K/Klein-1971-A-theory-of-the-banking-firm.pdf
-    \endverb
-    \field{journaltitle}{Journal of Money, Credit and Banking}
-    \field{month}{05}
-    \field{year}{1971}
-  \endentry
-
   \entry{Krueger2016}{unpublished}{}{}
     \name{author}{3}{}{%
       {{hash=KD}{%
@@ -1738,33 +1919,40 @@
     \field{year}{2014}
   \endentry
 
-  \entry{Monti1972}{article}{}{}
-    \name{author}{1}{}{%
-      {{hash=MM}{%
-         family={Monti},
+  \entry{Menzio2025}{misc}{}{}
+    \name{author}{2}{}{%
+      {{hash=MG}{%
+         family={Menzio},
          familyi={M\bibinitperiod},
-         given={M},
-         giveni={M},
+         given={Guido},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=SS}{%
+         family={Spinella},
+         familyi={S\bibinitperiod},
+         given={Saverio},
+         giveni={S\bibinitperiod},
       }}%
     }
-    \list{publisher}{1}{%
-      {Amsterdam: North Holland}%
-    }
-    \strng{namehash}{MM1}
-    \strng{fullhash}{MM1}
+    \strng{namehash}{MGSS1}
+    \strng{fullhash}{MGSS1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{1972}
+    \field{labelyear}{2025}
     \field{labeldatesource}{}
     \field{sortinit}{M}
     \field{sortinithash}{M}
-    \field{title}{{Deposits, Credit and Interest Rate Determination under
-  Alternative Bank Objectives. Szego, GP \& Shell, K. Edition. Mathematical
-  Methods in Investment …}}
+    \field{title}{{A Quantitative Theory of Heterogeneous Returns to Wealth}}
     \verb{url}
-    \verb https://scholar.google.com/citations?user=FtjxNk4AAAAJ&hl=en&oi=sra
+    \verb https://bpb-us-e1.wpmucdn.com/wp.nyu.edu/dist/e/11962/files/2025/05/K
+    \verb BJ.pdf
     \endverb
-    \field{year}{1972}
+    \verb{file}
+    \verb All-Papers/M/Menzio-and-Spinella-2025-A-Quantitative-Theory-of-Hetero
+    \verb geneous-Returns-to-Wealth.pdf
+    \endverb
+    \field{month}{05}
+    \field{year}{2025}
   \endentry
 
   \entry{jpjsledj2022}{report}{}{}

@@ -1,6 +1,6 @@
 Estimate is center=1.02299795492603, spread=0.05538760051509333
 Conversion is mean=1.02299795492603, std_dev=0.009231266752515547
-Lorenz distance is  message: 
+Lorenz distance is  message:
           Optimization terminated successfully;
           The returned value satisfies the termination criteria
           (using xtol = 0.0001 )
@@ -9,3 +9,6 @@ Lorenz distance is  message:
        x: 0.05538760051509333
      nit: 8
     nfev: 12
+
+ Discretized HetParam values: [0.9755228687702358, 0.9913478974888338, 1.0071729262074318, 1.02299795492603,
+             1.038822983644628, 1.054648012363226, 1.0704730410818242]

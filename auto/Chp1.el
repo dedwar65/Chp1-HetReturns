@@ -106,6 +106,12 @@
     "Cagetti2009"
     "Ahmed2025"
     "Sarkisyan2021"
-    "d"))
+    "d"
+    "Cantu2024"
+    "Monti1972"
+    "Klein1971"
+    "Fillat2018"
+    "PaulUlate2024"
+    "Menzio2025"))
  '(or :bibtex :latex))
 

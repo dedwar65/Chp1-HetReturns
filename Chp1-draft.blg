@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2024)
+This is BibTeX, Version 0.99d (TeX Live 2025)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: Chp1-draft.aux
 The style file: biblatex.bst
@@ -17,55 +17,56 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated field_info (elt_size=4) to 10600 items from 5000.
+Reallocated field_info (elt_size=4) to 11020 items from 5000.
 Database file #1: Chp1-draft-blx.bib
 Database file #2: Chp1.bib
 Repeated entry---line 1737 of file Chp1.bib
  : @article{Guler2022
  :                   ,
 I'm skipping whatever remains of this entry
-Biblatex version: 3.20
+Warning--I didn't find a database entry for "bastos2004"
+Biblatex version: 3.21
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 40 entries,
+You've used 42 entries,
             6402 wiz_defined-function locations,
-            1577 strings with 37905 characters,
-and the built_in function-call counts, 313256 in all, are:
-= -- 24008
-> -- 5284
-< -- 1643
-+ -- 8603
-- -- 2140
-* -- 23245
-:= -- 33316
+            1608 strings with 41918 characters,
+and the built_in function-call counts, 343850 in all, are:
+= -- 26680
+> -- 5766
+< -- 1835
++ -- 9534
+- -- 2327
+* -- 25494
+:= -- 36640
 add.period$ -- 0
-call.type$ -- 40
-change.case$ -- 942
-chr.to.int$ -- 174
-cite$ -- 78
-duplicate$ -- 32617
-empty$ -- 27738
-format.name$ -- 2703
-if$ -- 64068
+call.type$ -- 42
+change.case$ -- 1087
+chr.to.int$ -- 186
+cite$ -- 82
+duplicate$ -- 35617
+empty$ -- 30205
+format.name$ -- 2932
+if$ -- 70330
 int.to.chr$ -- 0
-int.to.str$ -- 116
+int.to.str$ -- 124
 missing$ -- 0
-newline$ -- 1707
-num.names$ -- 2209
-pop$ -- 13796
+newline$ -- 1857
+num.names$ -- 2422
+pop$ -- 14572
 preamble$ -- 2
-purify$ -- 1148
+purify$ -- 1318
 quote$ -- 0
-skip$ -- 8513
+skip$ -- 9292
 stack$ -- 0
-substring$ -- 43323
-swap$ -- 7560
-text.length$ -- 1169
-text.prefix$ -- 42
+substring$ -- 48331
+swap$ -- 8216
+text.length$ -- 1245
+text.prefix$ -- 43
 top$ -- 1
-type$ -- 1331
+type$ -- 1399
 warning$ -- 0
-while$ -- 4073
+while$ -- 4456
 width$ -- 0
-write$ -- 1667
+write$ -- 1815
 (There was 1 error message)

@@ -6,25 +6,29 @@
 
 \subsection{Banking sector}
 
-\par There are a continuum of banks, deemed either globally integrated or local. Whether or not a bank falls within a given category depends solely on the elasticity of their offered deposit rate to changes in the level of foreign deposits.
+\par There are a continuum of banks, identical in all respects other than the elasticity of the level of deposits to changes in the market interest rate.
 
-\par The model is static in that, I assume that the level of foreign deposits at either bank type is constant across all periods. Additionally, a given bank cannot take actions to increase the number of depositors (foreign or domestic) at their given institution \footnote{For example, compare a bank in a suburb area of Montana (local) versus a bank near downtown Houston, Texas (globally integrated).}.
+\par The model is static in that, I assume that the bank chooses a deposit rate to offer to its clientele base at the start of the time horizon. This decision, as wel will see, thus depends soley on the market interest rate and the bank's given elasticity. Additionally, a given bank cannot take actions to increase the number of depositors at their given institution \footnote{For example, compare a bank in a suburb area of Montana (local) versus a bank near downtown Houston, Texas (globally integrated).}.
 
-\par Lastly, in this simple version of the model, I assume that households do not endogenously choose a bank type to do business with. Clearly, this would lead us towards the literature on costly human capital acquisition and financial literacy. Instead, I assume that a bank type, either globally integrated or local, is assigned to a household at birth with some probability. The household is \say{stuck} with this bank assignment until death.
-
-\par This means that I will need to think carefully about how I will allocate households to banks (i.e. by ad-hoc means or using available data) in the calibration and simulation of the model.
+\par Lastly, in this simple version of the model, I assume that households do not endogenously choose which banks to do business with. Clearly, this would lead us towards the literature on costly human capital acquisition and financial literacy. Instead, I assume that at the outset banks are assigned to a household at birth with some probability. The household is \say{stuck} with this bank assignment until death. In this way, the banking sector merely replaces the assignment of idiosyncratic rates of returns over the time horizon in the standard model. 
 
 \subsubsection{Decision problem for banks accepting foreign deposits}
 
-\par Note that we may view the distinction between globally integrated and local banks as a source of bank heterogeneity, indexed by $\varepsilon_i$. This will be the source of returns heterogeneity in the model. With this in mind, I propose a simple version of a model of monopolistic competition among hetergoeneous banks introduced by \cite{Monti1972} and \cite{Klein1971}.
+\par The sole distinction between banks in this model is the sensitivity of their level of deposits to changes in the market interest rate, which we will index by $\varepsilon_i$. This will be the source of returns heterogeneity in the model. To see this, I follow a similar, but simplified description of the decision problem for banks which can be found in \cite{PaulUlate2024}.
 
-\par Let $R^m$ be the market rate of return, $R^dd$ be the rate of return offered on deposits, and $S(R^d)$ be the level of foreign deposits held at a given bank. Banks solve the following optimization problem
+ \par Let $R^m$ be the market rate of return, $R^d$ be the rate of return offered on deposits by a  bank, and $S(R^d, R^m)$ be the level of deposits held at a given bank.
 
-$$ \max (R^m -R_i^d) S_i(R^d) $$
+\par Banks solve:
+\[
+\max (R^m - R^d) \cdot S(R^d, R^m)
+\]
 
-\par subject to the constraint that foreign deposit demand is given by the function $S_i(R^d) = A_i (R_i^d)^{\varepsilon_i}$, where $A_i$ is some constant. 
+\par subject to:
+\[
+S(R^d, R^m) = A \left( \frac{R^d}{R^m} \right)^{\varepsilon}
+\]
 
-\par Importantly, the first order condition implies that the optimal deposit rate for the $i$-th bank is given by $$ R_i^d = \frac{\varepsilon_i}{1+\varepsilon_i} R^m  $$. This is crucial for the model in that, so long as we calibrate the model for a particular value of $R^m$, estimating a uniform distribution of returns using the simulated method of moments will imply a corresponding distribution of elasticities (the one that minimizes the distance between simulated and lorenz wealth moments.) In this way, the 7 discretized points capturing 7 different deposit rates offered corresponds to 7 different bank types, which can be distinguished as either global or local based on their elasticities since, from the expression above, banks with higher values of $\varepsilon_i$ (i.e. global banks)  must set $R_i^d$ closer to $R^m$. The reverse would be true for local banks.\footnote{IN the conclusion, I discuss in detail two major drawbacks on my simple version of a source for returns heterogeneity in this model, which could be exploted in future work.}
+\par Importantly, the first order condition implies that the optimal deposit rate for the $i$-th bank is given by $$ R_i^d = \frac{\varepsilon_i}{1+\varepsilon_i} R^m  $$. This is crucial for the model in that, so long as we calibrate the model for a particular value of $R^m$, estimating a uniform distribution of returns using the simulated method of moments will imply a corresponding distribution of elasticities (the one that minimizes the distance between simulated and lorenz wealth moments). In this way, the 7 discretized points capturing 7 different deposit rates offered corresponds to 7 different bank types, which result in varying elasticities among 7 different bank types in the model. From the expression above, we see that banks with higher values of $\varepsilon_i$  must set $R_i^d$ closer to $R^m$.
 
 \subsection{Households}
 

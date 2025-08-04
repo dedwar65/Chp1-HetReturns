@@ -38,7 +38,17 @@ $$ \{\grave{R}, \nabla\} = \text{arg}\min_{R, \nabla} \bigg( \sum_{i=20, 40, 60,
     \label{fig:PYUnif} 
 \end{figure}
 
+ \subsubsection{The implied distribution of bank heterogeneity}
 
+  \par I've estimated the distribution of returns which matches the wealth moments. As mentioned earlier, I can use this and the assumptions regarding the bank's decision problem to back out an implied distribution of $\varepsilon$. This will describe how the banks differ in the sensitivity of their deposit levels to changes in the market interest rate. Both in our simplified setting, and in the transmission channel empirically documented by \cite{Drechsler2017}, differences in these sensitivities ultimately leads to differences in the deposit rates offered across banks.  
+
+  \par First, I assume that the aggregate production function is Cobb-douglas, so that the marginal product of capital can be written as $\alpha \frac{Y}{K}$. With the calibrated values  $\delta = .025$, $\alpha = .36$, and the capital to output ratio $3$, this setting has an effective interest rate of $R^m = 1.095$ which can be used as the market interest rate.
+
+  \par Since the model with heterogeneity (i.e. the R-dist model) has 7 estimated points for the uniform distribution, the implied, estimated points for $\varepsilon$ can be uniquely pineed down by the expression $$\varepsilon_i = \frac{R_i^d}{R^m - R_i^d} .$$
+
+  \par For the infinte horizon version of the model which matches 2004 SCF data on net worth, the 7 estimated points describing heterogeneous returns are $[0.9635283311463693, 0.9827521585708383, 1.0019759859953075, 1.0211998134197764, 1.0404236408442453, 1.0596474682687145, 1.0788712956931834]$. The corresponding 7 implied elasticities are given by $[7.328790602172086, 8.755198728619133, 10.771154058615055, 13.837360862356272, 19.06363225650498, 29.973736430620928, 66.89138043390217]$.
+
+ 
 \subsection{Incorporating life cycle dynamics into the model}
 
 \par More realistic assumptions regarding the age and education level of households can have important implications for the income and mortality process of households. Here, I extend the model to incorporate these life cycle dynamics.
@@ -81,26 +91,27 @@ where $\textbf{p}_t = \psi_t \bar{\psi}_{es} \textbf{p}_{t-1}$ and $\bar{\psi}_{
     \label{fig:LCUnif} 
   \end{figure}
 
-  \subsection{The implied distribution of bank heterogeneity}
+\par For the life cycle version of the model which matches 2004 SCF data on net worth, the 7 estimated points describing heterogeneous returns are $[0.9755228687702358, 0.9913478974888338, 1.0071729262074318, 1.02299795492603, 1.038822983644628, 1.054648012363226, 1.0704730410818242]$. The corresponding 7 implied elasticities are given by $[8.164933813938218, 9.564185129597716, 11.467681692164698, 14.207901371066216, 18.49195722807895, 26.136209741551728, 43.6447520727303]$.
 
-  \par First, recall that we provided a simple model for the bank's decision problem, where profits depend only on the dispersion between the market interest rate $R^m$ and the offered deposit rate $R^d$ and the level of foreign deposits that the banks hold. Since I chose to model the demand for foreign deposits with an isoelastic demand function $S_i(R^d) = A_i (R_i^d)^{\varepsilon_i}$ , this implies that the \textit{elasticity of foreign deposits to the interest rate} is given by
+\subsection{Assessing model performance}
 
-  \begin{align}
-    \varepsilon_i = \frac{\partial S_i(R^d)}{\partial R^d} \frac{R^d}{S_i(R^d)}
-  \end{align}
+\par The results presented thus far are encouraging for a number of reasons. First, these results are inline with a common finding in the heterogeneous agent literature, which is that a single source of ex-ante heterogeneity, even when there is only a single, riskless asset available to partially insure against uncertain labor income, is enough to drastically improve the models ability to generate a reasonably skewed wealth distribution. Second, I am also able to match moments similar to those in \cite{cstw2017}, which this model is a close analog of.
 
-  for each bank $i$. Thus, since I've estimated the distribution of returns which matches the wealth moements, I can use this feature of the model to back out an implied distribution of $\varepsilon$, which will describe how the banks differ in their sensitivities to foreign deposit outflows, ultimately affecting their optimal choice of the offered deposit rates. 
+\par Although these are reasons to be encouraged by these results, they also suggest that assessing the model's performance only by how well it matches wealth moments is insufficient. To that end, I return to the literature on bank deposit sensitivities to changes in the federal funds rate. As we will see, the implied distribution of elasticities from my estimation method can be directly compared to those empirical estimatese, and how well they match can be used to assess my model. Additionally, I include wealth shares by age cohort as an additional set of untargeted moments for a similar assessment.  
 
-  \par To do this, I assume that the aggregate production function is Cobb-douglas, so that the marginal product of capital can be written as $\alpha \frac{Y}{K}$. With the calibrated values  $\delta = .025$, $\alpha = .36$, and the capital to output ratio $3$  matched by using the 2004 SCF, this setting has an effective interest rate of $R^m = 1.095$ which can be used as the market interest rate.
+\subsubsection{Interpreting the implied distribution of elasticities}
 
-  \par Since the model with heterogeneity (i.e. the R-dist model) has 7 estimated points for the uniform distribution, the implied, estimated points for $\varepsilon$ can be uniquely pineed down by the expression $$\varepsilon_i = \frac{R_i^d}{R^m - R_i^d} .$$
+\par The usefulness in choosing a functional form for the level of deposits at a given bank as $S(\cdot) = A \left( \frac{R^d}{R^m} \right)^{\varepsilon}$ is that the parameter $\varepsilon$ has a clear interpretation as the elasticity of deposits to changes in the market interest rate. It can be shown that:
 
-  \par % are given by $[ 0.0423, 0.1731, 0.3414, 0.5661, 0.8812, 1.3551, 2.1482 ]$.
+\[
+-\varepsilon = \frac{\partial \ln S(\cdot)}{\partial \ln R^m}. 
+\]
 
-  \par Following the logic of the  elasticity of foreign deposits to the interest rate in the work by \cite{Sarkisyan2021}, globally integrated banks would face larger foregin deposit outflows when the offered deposit rate is significantly further than the market interest rate. These would be precisely the banks with higher elasticities -- in my descritized model with 7 points, this would suggest that the last two banks may be interpreted as globally integrated. The individuals \say{stuck} with banking at this institution (since I assume that households cannot switch banks) would be relatively better of than their counterparts, as they will receive a higher offered deposit rate.  
- 
+\par So, the elasticity parameter tells us how a percentage change in the market interest rate changes the level of deposit, in percent terms. This allows us to directly compare the implied elasticities following the SMM procedure to the emepirical evidence on the transmission channel described by \cite{Drechsler2017} regarding the relationship between the Fed funds rate and the level of deposits at banks. For example, \cite{bastos2004} finds that a $1\%$ change in the Fed funds rate leads to about a  $3\%$ to  $4\%$ change in the level of deposits, depending on the size of the bank.
 
-\subsection{Untargeted moments}
+\par The amount of returns heterogeneity required to match wealth inequality using only safe assets (i.e. bank deposits) will lead to vastly overstated elasticities for the resulting banking sector. This is not surprising. If bank wish to attract depositors in the face of an increasing Fed funds rate, they will need to offer a higher rate on deposits, regardless of the size of the bank. This suggests that there will be less variation in the optimal deposit rates offered across the banking sector. The banks which do not offer competitive deposit rates will likely find that their depositors switch to other safe investment technologies like money market funds. Since my model doesn't not match any moments regarding the number of banks in the economy, nor does it model returns heterogeneity by allowing for the choice between safe assets, it isn't too surprising that the elasticity of deposits to changes in the market interest rate is not well matched in this setting. That said, the ability of the model to back out a distribution of elasticities under the given assumptions is still useful. 
+
+\subsubsection{Untargeted moments}
 
 \par It is well-documented in the literature on heterogeneous agent modeling that, adding a source of (ex-ante) heterogeneous beyond the addition of labor income uncertainty to the representative agent framework will allow the simulated distribution of wealth to match moments of the empirical wealth distribution particularly well. So, although it is useful to see that the model with heterogeneous returns does a good job of matching the given lorenz targets, we need another way to assess the model's performance.
 

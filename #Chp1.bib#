@@ -1996,3 +1996,14 @@ year = {2017}
   issn      = "2041-4161,2041-417X",
   language  = "en"
 }
+
+@article{bastos2004,
+  author    = {Maria Bastos and Paul Glasserman},
+  title     = {How Do Changes in the Federal Funds Rate Affect Bank Deposits?},
+  journal   = {Chicago Fed Letter},
+  number    = {204},
+  year      = {2004},
+  institution = {Federal Reserve Bank of Chicago},
+  month     = {July},
+  url       = {https://www.chicagofed.org/publications/chicago-fed-letter/2004/july-204},
+}
