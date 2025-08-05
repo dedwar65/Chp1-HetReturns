@@ -98,6 +98,21 @@
 %\end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{frame}{Brief history on wealth inequality}
+\cite{jbab18} offers a useful survey of lit on modeling wealth inequality
+\begin{enumerate}
+\item Observable skewness in wealth holdings $\rightarrow$ assume distributional properties
+\item Use distribution of income to explain distribution of wealth
+\item Describe the process of accumulating wealth over the life cycle (i.e. dynamics of optimal consumption-saving behavior)
+\end{enumerate}
+
+\vspace{2.5mm}
+$\implies$ an interest in wealth inequality and its determinants may naturally lead one towards heterogeneous agent macro modeling.
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{frame}{Outline}
 \begin{enumerate}
 \item Empirical evidence of heterogeneous returns
@@ -105,17 +120,22 @@
 \item Structural estimation of model to match wealth data
 \end{enumerate}
 
-%\vspace{10mm}
-%Key finding: The life-cycle model with different returns for households matches data well in terms of targeted and untargeted wealth moments.
+\vspace{2.5mm}
+Key finding: The life-cycle model with different returns for households generates a realistic amount of skewness in the distribution of wealth.
+
+
 \end{frame}
 %%%%%%%%%%%%%%%%%%
 
-%\begin{frame}{Why het. returns?}
-%\begin{enumerate}
-%\item Observable feauture of household decision problem
-%\item Exploring possible explanations for the persistent component of return het. 
-%\end{enumerate}
-%\end{frame}
+\begin{frame}{My contribution}
+
+
+\begin{itemize}
+  \item Why returns? $\rightarrow$ an observable feature of household's problem
+\item Labor income process: Random walk v.s. AR$(1)$
+\item Age-education dependent labor income process and mortality rates
+\end{itemize}
+\end{frame}
 %%%%%%%%%%%%%%%%%%
 
 \subsection{Heterogeneous Returns in the Data}
@@ -176,10 +196,29 @@
 
 \section{Model}
 \subsection{Banks}
-\begin{frame}{A potential source of return heterogeneity}
-  \par Entrpreneurship and financial literacy
-  \par Sensitivity of bank deposits to interest rate changes
+\begin{frame}{Potential sources of return heterogeneity}
   \begin{itemize}
+  \item Entrpreneurship - \say{high levels of capital, low MPK}
+  \item Financial literacy - closer, but generally aimed at risky assets
+    \end{itemize}
+
+    \vspace{2.5mm}
+    We know that there is much variation in the banking sector regarding rates offered on deposit accounts. Is there a mechanism we can exploit?
+    
+  \end{frame}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Mechanism}
+
+\begin{itemize}
+    \item \say{Transmission channel of monetary policy} by  \cite{Drechsler2017}
+      \begin{itemize}
+      \item Sensitivity of bank deposits to market interest rate changes
+      \end{itemize}
+      \end{itemize}
+  
+ \begin{itemize}
   \item $\Delta$ in market rate $\rightarrow$ variation in $\Delta$ in deposits held at banks
     \begin{itemize}
   \item \cite{Sarkisyan2021} - globally integrated vs local banks
@@ -187,11 +226,13 @@
     \end{itemize}
   \end{itemize}
 
+  \vspace{2.5mm}
   $\implies$ variation in deposit rates offered across banks
-  \end{frame}
+  
+\end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[label=bankmodel]{A simple model of bank heterogeneity (\cite{Monti1972}, \cite{Klein1971})}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%5
+\begin{frame}[label=bankmodel]{A simple model of bank heterogeneity}
 
 \par Let $R^m$ be the market rate of return, $R^d$ be the rate of return offered on deposits by a  bank, and $S(R^d, R^m)$ be the level of deposits held at a given bank.
 
@@ -454,42 +495,69 @@ LC-Dist & 0.023  &  0.009  \\
 \includegraphics[width=0.8\textwidth]{Tables/Sim_Lorenz_10yr_LCrrDistNetWorth.png}
 
 \end{frame}
+
 %%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Model performance: implied elasticites}
+
+  \begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\multicolumn{2}{|c|}{PY} & \multicolumn{2}{|c|}{LC} \\
+\hline
+Estimated returns & Implied elasticities & Estimated returns & Implied elasticities \\
+\hline
+0.964 & 7.329 & 0.976 & 8.165 \\
+0.983 & 8.755 & 0.991 & 9.564 \\
+1.001 & 10.771 & 1.007 & 11.468 \\
+1.021 & 13.837 & 1.023 & 14.208 \\
+1.040 & 19.064 & 1.039 & 18.492 \\
+1.060 & 29.974 & 1.055 & 26.136 \\
+1.079 & 66.891 & 1.071 & 43.645 \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{2.5mm}
+\cite{Genay2004} - \say{A 1\% increase in the fed funds rate over four quarters is associated with a 2.96\% decline in the growth of core deposits at small banks and a 3.66\% decline at large banks.}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%
+
 
 
 \subsection{Concluding Remarks}
 
-\begin{frame}{Work to be done}
 
-       \begin{enumerate}
-       \item Robustness checks
-       \begin{itemize}
-      \item Plausible parameter values for time preferences and risk aversion
-      \item Different measures of wealth (liquid and/or financial)
-      \end{itemize}
-    \item More untargeted moments
-      \begin{itemize}
-        \item Wealth shares by education cohort
-        \end{itemize}
-    \end{enumerate}
-
+\begin{frame}{Conclusion}
+  \begin{itemize}
+\item 
+\item 
+\item 
+\end{itemize}
 \end{frame}
-%%%%%%%%%%%%%%
 
-%\subsection{Concluding Remarks}
-%
+
+%%%%%%%%%%%%%%%%%%%%%
 %\begin{frame}{Work to be done}
 
  %      \begin{enumerate}
- %      \item Robustness checks
-  %     \begin{itemize}
-%      \item Plausible parameter values for time preferences and risk aversion
-%      \item Different measures of wealth (liquid and/or financial)
-%      \end{itemize}
- %     \end{enumerate}
+  %     \item Robustness checks
+   %    \begin{itemize}
+    %  \item Plausible parameter values for time preferences and risk aversion
+   %   \item Different measures of wealth (liquid and/or financial)
+   %   \end{itemize}
+  %  \item More untargeted moments
+   %   \begin{itemize}
+     %   \item Wealth shares by education cohort
+    %    \end{itemize}
+   % \end{enumerate}
 
- %   \end{frame}
-%%%%%%%%%%%%%
+%\end{frame}
+%%%%%%%%%%%%%%
+
 
 
 \begin{frame}[allowframebreaks]{References}

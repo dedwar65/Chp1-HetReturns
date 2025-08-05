@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.16)  28 JUL 2025 09:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.16)  4 AUG 2025 10:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -957,29 +957,27 @@ input line 35.
 
 [14 <./Subfiles/../Figures/PYrrPointNetWorthPlot.png> <./Subfiles/../Figures/PY
 rrDistNetWorthPlot.png>]
-Overfull \hbox (606.42728pt too wide) in paragraph at lines 49--50
+Overfull \hbox (186.426pt too wide) in paragraph at lines 49--50
 \T1/cmr/m/n/10 net worth, the 7 es-ti-mated points de-scrib-ing het-ero-ge-neou
-s re-turns are $\OT1/cmr/m/n/10 [0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 96352833114
-63693\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 9827
-521585708383\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1\OML/cmm/m/it/10 :\OT1/cmr/m/n/
-10 0019759859953075\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1\OML/cmm/m/it/10 :\OT1/c
-mr/m/n/10 0211998134197764\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1\OML/cmm/m/it/10 
-:\OT1/cmr/m/n/10 0404236408442453\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1\OML/cmm/m
-/it/10 :\OT1/cmr/m/n/10 0596474682687145\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1\OM
-L/cmm/m/it/10 :\OT1/cmr/m/n/10 0788712956931834]$\T1/cmr/m/n/10 .
+s re-turns are $\OT1/cmr/m/n/10 [0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 9635\OML/cm
+m/m/it/10 ; \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 9828\OML/cmm/m/i
+t/10 ; \OT1/cmr/m/n/10 1\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0012\OML/cmm/m/it/10 
+; \OT1/cmr/m/n/10 1\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0212\OML/cmm/m/it/10 ; \OT
+1/cmr/m/n/10 1\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0404\OML/cmm/m/it/10 ; \OT1/cmr
+/m/n/10 1\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0596\OML/cmm/m/it/10 ; \OT1/cmr/m/n/
+10 1\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0789]$\T1/cmr/m/n/10 .
  []
 
 
-Overfull \hbox (509.3627pt too wide) in paragraph at lines 49--50
+Overfull \hbox (134.36156pt too wide) in paragraph at lines 49--50
 \T1/cmr/m/n/10 The cor-re-spond-ing 7 im-plied elas-tic-i-ties are given by $\O
-T1/cmr/m/n/10 [7\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 328790602172086\OML/cmm/m/it/
-10 ; \OT1/cmr/m/n/10 8\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 755198728619133\OML/cmm
-/m/it/10 ; \OT1/cmr/m/n/10 10\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 771154058615055\
-OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 13\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 837360862
-356272\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 19\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 06
-363225650498\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 29\OML/cmm/m/it/10 :\OT1/cmr/m/n
-/10 973736430620928\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 66\OML/cmm/m/it/10 :\OT1/
-cmr/m/n/10 89138043390217]$\T1/cmr/m/n/10 . 
+T1/cmr/m/n/10 [7\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 3288\OML/cmm/m/it/10 ; \OT1/c
+mr/m/n/10 8\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 7552\OML/cmm/m/it/10 ; \OT1/cmr/m/
+n/10 10\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 7712\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10
+ 13\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 8374\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 19\
+OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0636\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 29\OML/
+cmm/m/it/10 :\OT1/cmr/m/n/10 9737\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 66\OML/cmm/
+m/it/10 :\OT1/cmr/m/n/10 8914]$\T1/cmr/m/n/10 . 
  []
 
 
@@ -998,29 +996,27 @@ Package pdftex.def Info: Subfiles/../Figures/LCrrDistNetWorthPlot.png  used on
 input line 88.
 (pdftex.def)             Requested size: 165.59853pt x 165.59996pt.
 
-Overfull \hbox (570.32004pt too wide) in paragraph at lines 94--95
+Overfull \hbox (170.31882pt too wide) in paragraph at lines 94--95
 \T1/cmr/m/n/10 worth, the 7 es-ti-mated points de-scrib-ing het-ero-ge-neous re
--turns are $\OT1/cmr/m/n/10 [0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 975522868770235
-8\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 99134789
-74888338\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0
-071729262074318\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1\OML/cmm/m/it/10 :\OT1/cmr/m
-/n/10 02299795492603\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1\OML/cmm/m/it/10 :\OT1/
-cmr/m/n/10 038822983644628\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1\OML/cmm/m/it/10 
-:\OT1/cmr/m/n/10 054648012363226\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1\OML/cmm/m/
-it/10 :\OT1/cmr/m/n/10 0704730410818242]$\T1/cmr/m/n/10 .
+-turns are $\OT1/cmr/m/n/10 [0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 9755\OML/cmm/m/
+it/10 ; \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 9913\OML/cmm/m/it/10
+ ; \OT1/cmr/m/n/10 1\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0072\OML/cmm/m/it/10 ; \O
+T1/cmr/m/n/10 1\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0230\OML/cmm/m/it/10 ; \OT1/cm
+r/m/n/10 1\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0388\OML/cmm/m/it/10 ; \OT1/cmr/m/n
+/10 1\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0546\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1
+\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0705]$\T1/cmr/m/n/10 .
  []
 
 
-Overfull \hbox (504.36269pt too wide) in paragraph at lines 94--95
+Overfull \hbox (134.36156pt too wide) in paragraph at lines 94--95
 \T1/cmr/m/n/10 The cor-re-spond-ing 7 im-plied elas-tic-i-ties are given by $\O
-T1/cmr/m/n/10 [8\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 164933813938218\OML/cmm/m/it/
-10 ; \OT1/cmr/m/n/10 9\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 564185129597716\OML/cmm
-/m/it/10 ; \OT1/cmr/m/n/10 11\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 467681692164698\
-OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 14\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 207901371
-066216\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 18\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 49
-195722807895\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 26\OML/cmm/m/it/10 :\OT1/cmr/m/n
-/10 136209741551728\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 43\OML/cmm/m/it/10 :\OT1/
-cmr/m/n/10 6447520727303]$\T1/cmr/m/n/10 . 
+T1/cmr/m/n/10 [8\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 1649\OML/cmm/m/it/10 ; \OT1/c
+mr/m/n/10 9\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 5642\OML/cmm/m/it/10 ; \OT1/cmr/m/
+n/10 11\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 4677\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10
+ 14\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 2079\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 18\
+OML/cmm/m/it/10 :\OT1/cmr/m/n/10 4920\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 26\OML/
+cmm/m/it/10 :\OT1/cmr/m/n/10 1362\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 43\OML/cmm/
+m/it/10 :\OT1/cmr/m/n/10 6448]$\T1/cmr/m/n/10 . 
  []
 
 
@@ -1028,24 +1024,20 @@ cmr/m/n/10 6447520727303]$\T1/cmr/m/n/10 .
 [16 <./Subfiles/../Figures/LCrrPointNetWorthPlot.png> <./Subfiles/../Figures/LC
 rrDistNetWorthPlot.png>]
 
-LaTeX Warning: Citation 'bastos2004' on page 17 undefined on input line 110.
-
-
-
 [17]
-<Tables/Emp_Lorenz_10yr_LCrrDistNetWorth.png, id=456, 578.16pt x 180.675pt>
+<Tables/Emp_Lorenz_10yr_LCrrDistNetWorth.png, id=458, 578.16pt x 180.675pt>
 File: Tables/Emp_Lorenz_10yr_LCrrDistNetWorth.png Graphic file (type png)
 <use Tables/Emp_Lorenz_10yr_LCrrDistNetWorth.png>
 Package pdftex.def Info: Tables/Emp_Lorenz_10yr_LCrrDistNetWorth.png  used on i
 nput line 122.
 (pdftex.def)             Requested size: 276.00105pt x 86.24883pt.
-<Tables/Sim_Lorenz_10yr_LCrrPointNetWorth.png, id=461, 578.16pt x 180.675pt>
+<Tables/Sim_Lorenz_10yr_LCrrPointNetWorth.png, id=463, 578.16pt x 180.675pt>
 File: Tables/Sim_Lorenz_10yr_LCrrPointNetWorth.png Graphic file (type png)
 <use Tables/Sim_Lorenz_10yr_LCrrPointNetWorth.png>
 Package pdftex.def Info: Tables/Sim_Lorenz_10yr_LCrrPointNetWorth.png  used on 
 input line 131.
 (pdftex.def)             Requested size: 276.00105pt x 86.24883pt.
-<Tables/Sim_Lorenz_10yr_LCrrDistNetWorth.png, id=462, 578.16pt x 180.675pt>
+<Tables/Sim_Lorenz_10yr_LCrrDistNetWorth.png, id=464, 578.16pt x 180.675pt>
 File: Tables/Sim_Lorenz_10yr_LCrrDistNetWorth.png Graphic file (type png)
 <use Tables/Sim_Lorenz_10yr_LCrrDistNetWorth.png>
 Package pdftex.def Info: Tables/Sim_Lorenz_10yr_LCrrDistNetWorth.png  used on i
@@ -1098,12 +1090,6 @@ Overfull \hbox (41.65488pt too wide) in paragraph at lines 39--39
  []
 
 
-Overfull \hbox (0.60034pt too wide) in paragraph at lines 39--39
-[][][]\T1/cmr/m/n/10 (Mar. 2017b). ``Lin-ing up: Sur-vey and ad-min-is-tra-tive
- data es-ti-mates of wealth
- []
-
-
 
 [23] (./Subfiles/appendix.tex
 
@@ -1112,7 +1098,7 @@ Overfull \hbox (26.31046pt too wide) in paragraph at lines 30--45
  [] 
  []
 
-<Tables/Emp_Lorenz_10yr_LCrrDistNetWorth_2007.png, id=604, 578.16pt x 180.675pt
+<Tables/Emp_Lorenz_10yr_LCrrDistNetWorth_2007.png, id=610, 578.16pt x 180.675pt
 >
 File: Tables/Emp_Lorenz_10yr_LCrrDistNetWorth_2007.png Graphic file (type png)
 <use Tables/Emp_Lorenz_10yr_LCrrDistNetWorth_2007.png>
@@ -1122,7 +1108,7 @@ Package pdftex.def Info: Tables/Emp_Lorenz_10yr_LCrrDistNetWorth_2007.png  used
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Tables/Sim_Lorenz_10yr_LCrrPointNetWorth_2007.png, id=605, 578.16pt x 180.675p
+<Tables/Sim_Lorenz_10yr_LCrrPointNetWorth_2007.png, id=611, 578.16pt x 180.675p
 t>
 File: Tables/Sim_Lorenz_10yr_LCrrPointNetWorth_2007.png Graphic file (type png)
 
@@ -1130,7 +1116,7 @@ File: Tables/Sim_Lorenz_10yr_LCrrPointNetWorth_2007.png Graphic file (type png)
 Package pdftex.def Info: Tables/Sim_Lorenz_10yr_LCrrPointNetWorth_2007.png  use
 d on input line 61.
 (pdftex.def)             Requested size: 276.00105pt x 86.24883pt.
-<Tables/Sim_Lorenz_10yr_LCrrDistNetWorth_2007.png, id=606, 578.16pt x 180.675pt
+<Tables/Sim_Lorenz_10yr_LCrrDistNetWorth_2007.png, id=612, 578.16pt x 180.675pt
 >
 File: Tables/Sim_Lorenz_10yr_LCrrDistNetWorth_2007.png Graphic file (type png)
 <use Tables/Sim_Lorenz_10yr_LCrrDistNetWorth_2007.png>
@@ -1149,14 +1135,14 @@ Overfull \hbox (26.31046pt too wide) in paragraph at lines 98--113
 [26 <./Tables/Emp_Lorenz_10yr_LCrrDistNetWorth_2007.png> <./Tables/Sim_Lorenz_1
 0yr_LCrrPointNetWorth_2007.png> <./Tables/Sim_Lorenz_10yr_LCrrDistNetWorth_2007
 .png>]
-<Tables/Emp_Lorenz_10yr_LCrrDistNetWorth_2010.png, id=624, 578.16pt x 180.675pt
+<Tables/Emp_Lorenz_10yr_LCrrDistNetWorth_2010.png, id=630, 578.16pt x 180.675pt
 >
 File: Tables/Emp_Lorenz_10yr_LCrrDistNetWorth_2010.png Graphic file (type png)
 <use Tables/Emp_Lorenz_10yr_LCrrDistNetWorth_2010.png>
 Package pdftex.def Info: Tables/Emp_Lorenz_10yr_LCrrDistNetWorth_2010.png  used
  on input line 122.
 (pdftex.def)             Requested size: 276.00105pt x 86.24883pt.
-<Tables/Sim_Lorenz_10yr_LCrrPointNetWorth_2010.png, id=625, 578.16pt x 180.675p
+<Tables/Sim_Lorenz_10yr_LCrrPointNetWorth_2010.png, id=631, 578.16pt x 180.675p
 t>
 File: Tables/Sim_Lorenz_10yr_LCrrPointNetWorth_2010.png Graphic file (type png)
 
@@ -1164,7 +1150,7 @@ File: Tables/Sim_Lorenz_10yr_LCrrPointNetWorth_2010.png Graphic file (type png)
 Package pdftex.def Info: Tables/Sim_Lorenz_10yr_LCrrPointNetWorth_2010.png  use
 d on input line 129.
 (pdftex.def)             Requested size: 276.00105pt x 86.24883pt.
-<Tables/Sim_Lorenz_10yr_LCrrDistNetWorth_2010.png, id=626, 578.16pt x 180.675pt
+<Tables/Sim_Lorenz_10yr_LCrrDistNetWorth_2010.png, id=632, 578.16pt x 180.675pt
 >
 File: Tables/Sim_Lorenz_10yr_LCrrDistNetWorth_2010.png Graphic file (type png)
 <use Tables/Sim_Lorenz_10yr_LCrrDistNetWorth_2010.png>
@@ -1179,7 +1165,7 @@ Overfull \hbox (26.31046pt too wide) in paragraph at lines 167--182
  [] 
  []
 
-<Tables/Emp_Lorenz_10yr_LCrrDistNetWorth_2013.png, id=639, 578.16pt x 180.675pt
+<Tables/Emp_Lorenz_10yr_LCrrDistNetWorth_2013.png, id=645, 578.16pt x 180.675pt
 >
 File: Tables/Emp_Lorenz_10yr_LCrrDistNetWorth_2013.png Graphic file (type png)
 <use Tables/Emp_Lorenz_10yr_LCrrDistNetWorth_2013.png>
@@ -1189,7 +1175,7 @@ Package pdftex.def Info: Tables/Emp_Lorenz_10yr_LCrrDistNetWorth_2013.png  used
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Tables/Sim_Lorenz_10yr_LCrrPointNetWorth_2013.png, id=640, 578.16pt x 180.675p
+<Tables/Sim_Lorenz_10yr_LCrrPointNetWorth_2013.png, id=646, 578.16pt x 180.675p
 t>
 File: Tables/Sim_Lorenz_10yr_LCrrPointNetWorth_2013.png Graphic file (type png)
 
@@ -1197,7 +1183,7 @@ File: Tables/Sim_Lorenz_10yr_LCrrPointNetWorth_2013.png Graphic file (type png)
 Package pdftex.def Info: Tables/Sim_Lorenz_10yr_LCrrPointNetWorth_2013.png  use
 d on input line 198.
 (pdftex.def)             Requested size: 276.00105pt x 86.24883pt.
-<Tables/Sim_Lorenz_10yr_LCrrDistNetWorth_2013.png, id=641, 578.16pt x 180.675pt
+<Tables/Sim_Lorenz_10yr_LCrrDistNetWorth_2013.png, id=647, 578.16pt x 180.675pt
 >
 File: Tables/Sim_Lorenz_10yr_LCrrDistNetWorth_2013.png Graphic file (type png)
 <use Tables/Sim_Lorenz_10yr_LCrrDistNetWorth_2013.png>
@@ -1215,14 +1201,14 @@ Overfull \hbox (26.31046pt too wide) in paragraph at lines 235--250
  [] 
  []
 
-<Tables/Emp_Lorenz_10yr_LCrrDistNetWorth_2016.png, id=660, 578.16pt x 180.675pt
+<Tables/Emp_Lorenz_10yr_LCrrDistNetWorth_2016.png, id=667, 578.16pt x 180.675pt
 >
 File: Tables/Emp_Lorenz_10yr_LCrrDistNetWorth_2016.png Graphic file (type png)
 <use Tables/Emp_Lorenz_10yr_LCrrDistNetWorth_2016.png>
 Package pdftex.def Info: Tables/Emp_Lorenz_10yr_LCrrDistNetWorth_2016.png  used
  on input line 258.
 (pdftex.def)             Requested size: 276.00105pt x 86.24883pt.
-<Tables/Sim_Lorenz_10yr_LCrrPointNetWorth_2016.png, id=661, 578.16pt x 180.675p
+<Tables/Sim_Lorenz_10yr_LCrrPointNetWorth_2016.png, id=668, 578.16pt x 180.675p
 t>
 File: Tables/Sim_Lorenz_10yr_LCrrPointNetWorth_2016.png Graphic file (type png)
 
@@ -1230,7 +1216,7 @@ File: Tables/Sim_Lorenz_10yr_LCrrPointNetWorth_2016.png Graphic file (type png)
 Package pdftex.def Info: Tables/Sim_Lorenz_10yr_LCrrPointNetWorth_2016.png  use
 d on input line 265.
 (pdftex.def)             Requested size: 276.00105pt x 86.24883pt.
-<Tables/Sim_Lorenz_10yr_LCrrDistNetWorth_2016.png, id=662, 578.16pt x 180.675pt
+<Tables/Sim_Lorenz_10yr_LCrrDistNetWorth_2016.png, id=669, 578.16pt x 180.675pt
 >
 File: Tables/Sim_Lorenz_10yr_LCrrDistNetWorth_2016.png Graphic file (type png)
 <use Tables/Sim_Lorenz_10yr_LCrrDistNetWorth_2016.png>
@@ -1245,7 +1231,7 @@ Overfull \hbox (26.31046pt too wide) in paragraph at lines 302--317
  [] 
  []
 
-<Tables/Emp_Lorenz_10yr_LCrrDistNetWorth_2019.png, id=677, 578.16pt x 180.675pt
+<Tables/Emp_Lorenz_10yr_LCrrDistNetWorth_2019.png, id=683, 578.16pt x 180.675pt
 >
 File: Tables/Emp_Lorenz_10yr_LCrrDistNetWorth_2019.png Graphic file (type png)
 <use Tables/Emp_Lorenz_10yr_LCrrDistNetWorth_2019.png>
@@ -1255,7 +1241,7 @@ Package pdftex.def Info: Tables/Emp_Lorenz_10yr_LCrrDistNetWorth_2019.png  used
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Tables/Sim_Lorenz_10yr_LCrrPointNetWorth_2019.png, id=678, 578.16pt x 180.675p
+<Tables/Sim_Lorenz_10yr_LCrrPointNetWorth_2019.png, id=684, 578.16pt x 180.675p
 t>
 File: Tables/Sim_Lorenz_10yr_LCrrPointNetWorth_2019.png Graphic file (type png)
 
@@ -1263,7 +1249,7 @@ File: Tables/Sim_Lorenz_10yr_LCrrPointNetWorth_2019.png Graphic file (type png)
 Package pdftex.def Info: Tables/Sim_Lorenz_10yr_LCrrPointNetWorth_2019.png  use
 d on input line 332.
 (pdftex.def)             Requested size: 276.00105pt x 86.24883pt.
-<Tables/Sim_Lorenz_10yr_LCrrDistNetWorth_2019.png, id=679, 578.16pt x 180.675pt
+<Tables/Sim_Lorenz_10yr_LCrrDistNetWorth_2019.png, id=685, 578.16pt x 180.675pt
 >
 File: Tables/Sim_Lorenz_10yr_LCrrDistNetWorth_2019.png Graphic file (type png)
 <use Tables/Sim_Lorenz_10yr_LCrrDistNetWorth_2019.png>
@@ -1281,26 +1267,17 @@ Package pdftex.def Info: Tables/Sim_Lorenz_10yr_LCrrDistNetWorth_2019.png  used
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-11>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `Chp1-draft.out' has not changed.
 (rerunfilecheck)             Checksum: 73ACEB510E7C92B1E1D2BBB6879066EC;10512.
-
-Package biblatex Warning: Please (re)run BibTeX on the file(s):
-(biblatex)                Chp1-draft
-(biblatex)                and rerun LaTeX afterwards.
-
 Package logreq Info: Writing requests to 'Chp1-draft.run.xml'.
 \openout1 = `Chp1-draft.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 25293 strings out of 467816
- 466824 string characters out of 5432252
- 1332523 words of memory out of 5000000
- 53373 multiletter control sequences out of 15000+600000
+ 25300 strings out of 467816
+ 467030 string characters out of 5432252
+ 1333567 words of memory out of 5000000
+ 53379 multiletter control sequences out of 15000+600000
  647073 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  80i,22n,120p,1907b,1647s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1336,10 +1313,10 @@ onts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2024/texmf-dist/fon
 ts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2024/texmf-dist/fonts
 /type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2024/texmf-dist/fonts/t
 ype1/public/cm-super/sftt1000.pfb>
-Output written on Chp1-draft.pdf (33 pages, 2251901 bytes).
+Output written on Chp1-draft.pdf (33 pages, 2252192 bytes).
 PDF statistics:
- 869 PDF objects out of 1000 (max. 8388607)
- 716 compressed objects within 8 object streams
- 158 named destinations out of 1000 (max. 500000)
+ 875 PDF objects out of 1000 (max. 8388607)
+ 722 compressed objects within 8 object streams
+ 159 named destinations out of 1000 (max. 500000)
  495 words of extra memory for PDF output out of 10000 (max. 10000000)
 

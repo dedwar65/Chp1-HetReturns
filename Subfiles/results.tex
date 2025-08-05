@@ -46,7 +46,7 @@ $$ \{\grave{R}, \nabla\} = \text{arg}\min_{R, \nabla} \bigg( \sum_{i=20, 40, 60,
 
   \par Since the model with heterogeneity (i.e. the R-dist model) has 7 estimated points for the uniform distribution, the implied, estimated points for $\varepsilon$ can be uniquely pineed down by the expression $$\varepsilon_i = \frac{R_i^d}{R^m - R_i^d} .$$
 
-  \par For the infinte horizon version of the model which matches 2004 SCF data on net worth, the 7 estimated points describing heterogeneous returns are $[0.9635283311463693, 0.9827521585708383, 1.0019759859953075, 1.0211998134197764, 1.0404236408442453, 1.0596474682687145, 1.0788712956931834]$. The corresponding 7 implied elasticities are given by $[7.328790602172086, 8.755198728619133, 10.771154058615055, 13.837360862356272, 19.06363225650498, 29.973736430620928, 66.89138043390217]$.
+  \par For the infinte horizon version of the model which matches 2004 SCF data on net worth, the 7 estimated points describing heterogeneous returns are $[0.9635, 0.9828, 1.0012, 1.0212, 1.0404, 1.0596, 1.0789]$. The corresponding 7 implied elasticities are given by $[7.3288, 8.7552, 10.7712, 13.8374, 19.0636, 29.9737, 66.8914]$.
 
  
 \subsection{Incorporating life cycle dynamics into the model}
@@ -91,7 +91,7 @@ where $\textbf{p}_t = \psi_t \bar{\psi}_{es} \textbf{p}_{t-1}$ and $\bar{\psi}_{
     \label{fig:LCUnif} 
   \end{figure}
 
-\par For the life cycle version of the model which matches 2004 SCF data on net worth, the 7 estimated points describing heterogeneous returns are $[0.9755228687702358, 0.9913478974888338, 1.0071729262074318, 1.02299795492603, 1.038822983644628, 1.054648012363226, 1.0704730410818242]$. The corresponding 7 implied elasticities are given by $[8.164933813938218, 9.564185129597716, 11.467681692164698, 14.207901371066216, 18.49195722807895, 26.136209741551728, 43.6447520727303]$.
+\par For the life cycle version of the model which matches 2004 SCF data on net worth, the 7 estimated points describing heterogeneous returns are $[0.9755, 0.9913, 1.0072, 1.0230, 1.0388, 1.0546, 1.0705]$. The corresponding 7 implied elasticities are given by $[8.1649, 9.5642, 11.4677, 14.2079, 18.4920, 26.1362, 43.6448]$.
 
 \subsection{Assessing model performance}
 
@@ -107,7 +107,7 @@ where $\textbf{p}_t = \psi_t \bar{\psi}_{es} \textbf{p}_{t-1}$ and $\bar{\psi}_{
 -\varepsilon = \frac{\partial \ln S(\cdot)}{\partial \ln R^m}. 
 \]
 
-\par So, the elasticity parameter tells us how a percentage change in the market interest rate changes the level of deposit, in percent terms. This allows us to directly compare the implied elasticities following the SMM procedure to the emepirical evidence on the transmission channel described by \cite{Drechsler2017} regarding the relationship between the Fed funds rate and the level of deposits at banks. For example, \cite{bastos2004} finds that a $1\%$ change in the Fed funds rate leads to about a  $3\%$ to  $4\%$ change in the level of deposits, depending on the size of the bank.
+\par So, the elasticity parameter tells us how a percentage change in the market interest rate changes the level of deposit, in percent terms. This allows us to directly compare the implied elasticities following the SMM procedure to the emepirical evidence on the transmission channel described by \cite{Drechsler2017} regarding the relationship between the Fed funds rate and the level of deposits at banks. For example, \cite{Genay2004} finds that a $1\%$ change in the Fed funds rate leads to about a  $3\%$ to  $4\%$ change in the level of deposits, depending on the size of the bank.
 
 \par The amount of returns heterogeneity required to match wealth inequality using only safe assets (i.e. bank deposits) will lead to vastly overstated elasticities for the resulting banking sector. This is not surprising. If bank wish to attract depositors in the face of an increasing Fed funds rate, they will need to offer a higher rate on deposits, regardless of the size of the bank. This suggests that there will be less variation in the optimal deposit rates offered across the banking sector. The banks which do not offer competitive deposit rates will likely find that their depositors switch to other safe investment technologies like money market funds. Since my model doesn't not match any moments regarding the number of banks in the economy, nor does it model returns heterogeneity by allowing for the choice between safe assets, it isn't too surprising that the elasticity of deposits to changes in the market interest rate is not well matched in this setting. That said, the ability of the model to back out a distribution of elasticities under the given assumptions is still useful. 
 

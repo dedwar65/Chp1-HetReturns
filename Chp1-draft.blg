@@ -24,49 +24,48 @@ Repeated entry---line 1737 of file Chp1.bib
  : @article{Guler2022
  :                   ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "bastos2004"
 Biblatex version: 3.21
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 42 entries,
+You've used 43 entries,
             6402 wiz_defined-function locations,
-            1608 strings with 41918 characters,
-and the built_in function-call counts, 343850 in all, are:
-= -- 26680
-> -- 5766
-< -- 1835
-+ -- 9534
-- -- 2327
-* -- 25494
-:= -- 36640
+            1613 strings with 42137 characters,
+and the built_in function-call counts, 351569 in all, are:
+= -- 27306
+> -- 5859
+< -- 1865
++ -- 9637
+- -- 2354
+* -- 26163
+:= -- 37406
 add.period$ -- 0
-call.type$ -- 42
-change.case$ -- 1087
-chr.to.int$ -- 186
-cite$ -- 82
-duplicate$ -- 35617
-empty$ -- 30205
-format.name$ -- 2932
-if$ -- 70330
+call.type$ -- 43
+change.case$ -- 1100
+chr.to.int$ -- 192
+cite$ -- 84
+duplicate$ -- 36155
+empty$ -- 31007
+format.name$ -- 2980
+if$ -- 71989
 int.to.chr$ -- 0
-int.to.str$ -- 124
+int.to.str$ -- 127
 missing$ -- 0
-newline$ -- 1857
-num.names$ -- 2422
-pop$ -- 14572
+newline$ -- 1884
+num.names$ -- 2468
+pop$ -- 14906
 preamble$ -- 2
-purify$ -- 1318
+purify$ -- 1333
 quote$ -- 0
-skip$ -- 9292
+skip$ -- 9461
 stack$ -- 0
-substring$ -- 48331
-swap$ -- 8216
-text.length$ -- 1245
-text.prefix$ -- 43
+substring$ -- 49782
+swap$ -- 8362
+text.length$ -- 1271
+text.prefix$ -- 44
 top$ -- 1
-type$ -- 1399
+type$ -- 1433
 warning$ -- 0
-while$ -- 4456
+while$ -- 4514
 width$ -- 0
-write$ -- 1815
+write$ -- 1841
 (There was 1 error message)

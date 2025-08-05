@@ -112,6 +112,9 @@
     "Klein1971"
     "Fillat2018"
     "PaulUlate2024"
-    "Menzio2025"))
+    "Menzio2025"
+    "Drechsler2017"
+    "Cetorelli2011"
+    "Genay2004"))
  '(or :bibtex :latex))
 

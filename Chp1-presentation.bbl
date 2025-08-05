@@ -49,6 +49,44 @@
     \field{year}{2024}
   \endentry
 
+  \entry{jbab18}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=BJ}{%
+         family={Benhabib},
+         familyi={B\bibinitperiod},
+         given={Jess},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=BA}{%
+         family={Bisin},
+         familyi={B\bibinitperiod},
+         given={Alberto},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BJBA1}
+    \strng{fullhash}{BJBA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2018}
+    \field{labeldatesource}{}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \verb{doi}
+    \verb 10.1257/jel.20161390
+    \endverb
+    \field{number}{4}
+    \field{pages}{1261\bibrangedash 91}
+    \field{title}{Skewed Wealth Distributions: Theory and Empirics}
+    \verb{url}
+    \verb https://www.aeaweb.org/articles?id=10.1257/jel.20161390
+    \endverb
+    \field{volume}{56}
+    \field{journaltitle}{Journal of Economic Literature}
+    \field{year}{2018}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
   \entry{Brown2007}{incollection}{}{}
     \name{author}{3}{}{%
       {{hash=BJR}{%
@@ -367,6 +405,78 @@
     \field{year}{2010}
   \endentry
 
+  \entry{Drechsler2017}{article}{}{}
+    \name{author}{3}{}{%
+      {{hash=DI}{%
+         family={Drechsler},
+         familyi={D\bibinitperiod},
+         given={Itamar},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=SA}{%
+         family={Savov},
+         familyi={S\bibinitperiod},
+         given={Alexi},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=SP}{%
+         family={Schnabl},
+         familyi={S\bibinitperiod},
+         given={Philipp},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {en}%
+    }
+    \list{publisher}{1}{%
+      {Oxford University Press (OUP)}%
+    }
+    \strng{namehash}{DISASP1}
+    \strng{fullhash}{DISASP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2017}
+    \field{labeldatesource}{}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{abstract}{%
+    AbstractWe present a new channel for the transmission of monetary policy,
+  the deposits channel. We show that when the Fed funds rate rises, banks widen
+  the spreads they charge on deposits, and deposits flow out of the banking
+  system. We present a model where this is due to market power in deposit
+  markets. Consistent with the market power mechanism, deposit spreads increase
+  more and deposits flow out more in concentrated markets. This is true even
+  when we control for lending opportunities by only comparing different
+  branches of the same bank. Since deposits are the main source of liquid
+  assets for households, the deposits channel can explain the observed strong
+  relationship between the liquidity premium and the Fed funds rate. Since
+  deposits are also a uniquely stable funding source for banks, the deposits
+  channel impacts bank lending. When the Fed funds rate rises, banks that raise
+  deposits in concentrated markets contract their lending by more than other
+  banks. Our estimates imply that the deposits channel can account for the
+  entire transmission of monetary policy through bank balance sheets.%
+    }
+    \verb{doi}
+    \verb 10.1093/qje/qjx019
+    \endverb
+    \field{issn}{0033-5533,1531-4650}
+    \field{number}{4}
+    \field{pages}{1819\bibrangedash 1876}
+    \field{title}{{The deposits channel of monetary policy}}
+    \verb{url}
+    \verb https://dx.doi.org/10.1093/qje/qjx019
+    \endverb
+    \field{volume}{132}
+    \verb{file}
+    \verb All-Papers/D/Drechsler-et-al.-2017-The-deposits-channel-of-monetary-p
+    \verb olicy.pdf
+    \endverb
+    \field{journaltitle}{Q. J. Econ.}
+    \field{month}{11}
+    \field{year}{2017}
+  \endentry
+
   \entry{aflgdmlp20}{article}{}{}
     \name{author}{4}{}{%
       {{hash=FA}{%
@@ -440,70 +550,38 @@
     \field{year}{2020}
   \endentry
 
-  \entry{Klein1971}{article}{}{}
-    \name{author}{1}{}{%
-      {{hash=KMA}{%
-         family={Klein},
-         familyi={K\bibinitperiod},
-         given={Michael\bibnamedelima A},
-         giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
+  \entry{Genay2004}{misc}{}{}
+    \name{author}{2}{}{%
+      {{hash=GH}{%
+         family={Genay},
+         familyi={G\bibinitperiod},
+         given={Hesna},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=HDR}{%
+         family={Halcomb},
+         familyi={H\bibinitperiod},
+         given={Darrin\bibnamedelima R},
+         giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod},
       }}%
     }
-    \list{publisher}{1}{%
-      {JSTOR}%
+    \list{language}{1}{%
+      {en}%
     }
-    \strng{namehash}{KMA1}
-    \strng{fullhash}{KMA1}
+    \strng{namehash}{GHHDR1}
+    \strng{fullhash}{GHHDR1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{1971}
+    \field{labelyear}{2004}
     \field{labeldatesource}{}
-    \field{sortinit}{K}
-    \field{sortinithash}{K}
-    \verb{doi}
-    \verb 10.2307/1991279
-    \endverb
-    \field{pages}{205}
-    \field{title}{{A theory of the banking firm}}
-    \verb{url}
-    \verb https://www.jstor.org/stable/1991279
-    \endverb
-    \field{volume}{3}
-    \verb{file}
-    \verb All-Papers/K/Klein-1971-A-theory-of-the-banking-firm.pdf
-    \endverb
-    \field{journaltitle}{Journal of Money, Credit and Banking}
-    \field{month}{05}
-    \field{year}{1971}
-  \endentry
-
-  \entry{Monti1972}{article}{}{}
-    \name{author}{1}{}{%
-      {{hash=MM}{%
-         family={Monti},
-         familyi={M\bibinitperiod},
-         given={M},
-         giveni={M},
-      }}%
-    }
-    \list{publisher}{1}{%
-      {Amsterdam: North Holland}%
-    }
-    \strng{namehash}{MM1}
-    \strng{fullhash}{MM1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{labelyear}{1972}
-    \field{labeldatesource}{}
-    \field{sortinit}{M}
-    \field{sortinithash}{M}
-    \field{title}{{Deposits, Credit and Interest Rate Determination under
-  Alternative Bank Objectives. Szego, GP \& Shell, K. Edition. Mathematical
-  Methods in Investment …}}
-    \verb{url}
-    \verb https://scholar.google.com/citations?user=FtjxNk4AAAAJ&hl=en&oi=sra
-    \endverb
-    \field{year}{1972}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+  \field{howpublished}{\url{https://www.chicagofed.org/publications/chicago-fed-letter/2004/november-208}}
+    \field{note}{Accessed: 2025-8-4}
+    \field{title}{{Rising Interest Rates, Bank Loans and Deposits - Federal
+  Reserve Bank of Chicago}}
+    \field{month}{11}
+    \field{year}{2004}
   \endentry
 
   \entry{Sabelhaus2010}{article}{}{}
