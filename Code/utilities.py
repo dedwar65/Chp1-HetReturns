@@ -165,6 +165,47 @@ def get_lorenz_shares(data, weights=None, percentiles=None, presorted=False):
 
     return lorenz_out
 
+def plot_lorenz_from_data(assets, weights, labels, percentiles=None, title=None, output_dir=None):
+    """
+    Plot Lorenz curves for up to three different asset series on the same graph,
+    saving as 'lorenz_only.png' in the specified output_dir or alongside this module.
+    """
+    import matplotlib.pyplot as plt
+
+    if len(assets) != len(labels) or len(assets) > 3:
+        raise ValueError("Provide up to 3 asset series and matching labels.")
+    if percentiles is None:
+        percentiles = np.linspace(0.001, 0.999, 15)
+    else:
+        percentiles = np.asarray(percentiles)
+
+    if output_dir is None:
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+    else:
+        base_dir = output_dir
+    os.makedirs(base_dir, exist_ok=True)
+
+    plt.figure(figsize=(5, 5))
+    plt.title(title if title else "Lorenz Curve Comparison")
+    plt.xlabel('Percentile of wealth')
+    plt.ylabel('Cumulative share of wealth')
+    plt.ylim([0, 1])
+
+    for asset, label in zip(assets, labels):
+        lorenz_vals = get_lorenz_shares(
+            np.asarray(asset), np.asarray(weights), percentiles=percentiles
+        )
+        plt.plot(percentiles, lorenz_vals, label=label)
+
+    # 45-degree reference line
+    plt.plot(percentiles, percentiles, '--k', label='45° Line')
+
+    # Place legend in best location to avoid overlap
+    plt.legend(loc='best')
+
+    filename = os.path.join(base_dir, 'lorenz_only.png')
+    plt.savefig(filename, dpi=300)
+    plt.show()
 
 
 
