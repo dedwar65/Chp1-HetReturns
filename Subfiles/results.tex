@@ -46,7 +46,7 @@ $$ \{\grave{R}, \nabla\} = \text{arg}\min_{R, \nabla} \bigg( \sum_{i=20, 40, 60,
 
   \par Since the model with heterogeneity (i.e. the R-dist model) has 7 estimated points for the uniform distribution, the implied, estimated points for $\varepsilon$ can be uniquely pineed down by the expression $$\varepsilon_i = \frac{R_i^d}{R^m - R_i^d} .$$
 
-  \par For the infinte horizon version of the model which matches 2004 SCF data on net worth, the 7 estimated points describing heterogeneous returns are $[0.9635, 0.9828, 1.0012, 1.0212, 1.0404, 1.0596, 1.0789]$. The corresponding 7 implied elasticities are given by $[7.3288, 8.7552, 10.7712, 13.8374, 19.0636, 29.9737, 66.8914]$.
+  \par For the infinte horizon version of the model which matches 2004 SCF data on net worth, the 7 estimated points describing heterogeneous returns are \texttt{[0.9635, 0.9828, 1.0012, 1.0212, 1.0404, 1.0596, 1.0789]}. The corresponding 7 implied elasticities are given by \texttt{[7.3288, 8.7552, 10.7712, 13.8374, 19.0636, 29.9737, 66.8914]}.
 
  
 \subsection{Incorporating life cycle dynamics into the model}
@@ -70,7 +70,7 @@ where $\textbf{p}_t = \psi_t \bar{\psi}_{es} \textbf{p}_{t-1}$ and $\bar{\psi}_{
   a_t &\geq& 0.
 \end{eqnarray*}
 
-\par The additional parameters necessary to calibrate the life cycle version of the model are given in table \ref{tab:calib2}.
+\par The additional parameters necessary to calibrate the life cycle version of the model are given in table \ref{tab:calib2}. The age-education dependent mean income levels come from \cite{Cagetti2003}. The permanent and transitory shock variances come from \cite{Sabelhaus2010}. The age-education dependent mortality rates come from \cite{Brown2007}.
 
 \input{../Tables/calibLC.tex}\unskip
 
@@ -91,7 +91,7 @@ where $\textbf{p}_t = \psi_t \bar{\psi}_{es} \textbf{p}_{t-1}$ and $\bar{\psi}_{
     \label{fig:LCUnif} 
   \end{figure}
 
-\par For the life cycle version of the model which matches 2004 SCF data on net worth, the 7 estimated points describing heterogeneous returns are $[0.9755, 0.9913, 1.0072, 1.0230, 1.0388, 1.0546, 1.0705]$. The corresponding 7 implied elasticities are given by $[8.1649, 9.5642, 11.4677, 14.2079, 18.4920, 26.1362, 43.6448]$.
+\par For the life cycle version of the model which matches 2004 SCF data on net worth, the 7 estimated points describing heterogeneous returns are \texttt{[0.9755, 0.9913, 1.0072, 1.0230, 1.0388, 1.0546, 1.0705]}. The corresponding 7 implied elasticities are given by \texttt{[8.1649, 9.5642, 11.4677, 14.2079, 18.4920, 26.1362, 43.6448]}.
 
 \subsection{Assessing model performance}
 

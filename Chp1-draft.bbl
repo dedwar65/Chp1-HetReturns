@@ -1210,74 +1210,6 @@
     \field{year}{2020}
   \endentry
 
-  \entry{PaulUlate2024}{article}{}{}
-    \name{author}{4}{}{%
-      {{hash=F}{%
-         family={{Federal Reserve Bank of San Francisco}},
-         familyi={F\bibinitperiod},
-      }}%
-      {{hash=PP}{%
-         family={Paul},
-         familyi={P\bibinitperiod},
-         given={Pascal},
-         giveni={P\bibinitperiod},
-      }}%
-      {{hash=UM}{%
-         family={Ulate},
-         familyi={U\bibinitperiod},
-         given={Mauricio},
-         giveni={M\bibinitperiod},
-      }}%
-      {{hash=F}{%
-         family={{Federal Reserve Bank of San Francisco}},
-         familyi={F\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{1}{%
-      {Federal Reserve Bank of San Francisco}%
-    }
-    \strng{namehash}{F+1}
-    \strng{fullhash}{FPPUMF1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{labelyear}{2024}
-    \field{labeldatesource}{}
-    \field{sortinit}{F}
-    \field{sortinithash}{F}
-    \field{abstract}{%
-    We develop a quantitative New Keynesian DSGE model to study the
-  introduction of a central bank digital currency (CBDC): government-backed
-  digital money available to retail consumers. At the heart of our model are
-  monopolistic banks with market power in deposit and loan markets. When a CBDC
-  is introduced, households benefit from an expansion of liquidity services and
-  higher deposit rates as bank deposit market power is curtailed. However,
-  deposits also flow out of the banking system and bank lending contracts. We
-  assess this welfare trade-off for a wide range of economies that differ in
-  their level of interest rates. We find substantial welfare gains from
-  introducing a CBDC with an optimal interest rate that can be approximated by
-  a simple rule of thumb: the maximum between 0\% and the policy rate minus
-  1\%.%
-    }
-    \verb{doi}
-    \verb 10.24148/wp2024-11
-    \endverb
-    \field{number}{11}
-    \field{pages}{01\bibrangedash 83}
-    \field{title}{{A macroeconomic model of central bank digital currency}}
-    \verb{url}
-    \verb http://dx.doi.org/10.24148/wp2024-11
-    \endverb
-    \field{volume}{2024}
-    \verb{file}
-    \verb All-Papers/F/Federal-Reserve-Bank-of-San-Francisco...-2024-A-macroeco
-    \verb nomic-model-of-central-bank-digital-currency.pdf
-    \endverb
-    \field{journaltitle}{Federal Reserve Bank of San Francisco, Working Paper
-  Series}
-    \field{month}{04}
-    \field{year}{2024}
-  \endentry
-
   \entry{mf1957}{book}{}{}
     \name{author}{1}{}{%
       {{hash=FM}{%
@@ -1396,6 +1328,40 @@
     \field{year}{2016}
   \endentry
 
+  \entry{Genay2004}{misc}{}{}
+    \name{author}{2}{}{%
+      {{hash=GH}{%
+         family={Genay},
+         familyi={G\bibinitperiod},
+         given={Hesna},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=HDR}{%
+         family={Halcomb},
+         familyi={H\bibinitperiod},
+         given={Darrin\bibnamedelima R},
+         giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {en}%
+    }
+    \strng{namehash}{GHHDR1}
+    \strng{fullhash}{GHHDR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2004}
+    \field{labeldatesource}{}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+  \field{howpublished}{\url{https://www.chicagofed.org/publications/chicago-fed-letter/2004/november-208}}
+    \field{note}{Accessed: 2025-8-4}
+    \field{title}{{Rising Interest Rates, Bank Loans and Deposits - Federal
+  Reserve Bank of Chicago}}
+    \field{month}{11}
+    \field{year}{2004}
+  \endentry
+
   \entry{Guler2022}{misc}{}{}
     \name{author}{3}{}{%
       {{hash=GB}{%
@@ -1437,95 +1403,6 @@
     \verb and-aggregate-consumption-dynamics.pdf
     \endverb
     \field{year}{2022}
-  \endentry
-
-  \entry{Guvenen2011}{report}{}{}
-    \name{author}{1}{}{%
-      {{hash=GF}{%
-         family={Guvenen},
-         familyi={G\bibinitperiod},
-         given={Fatih},
-         giveni={F\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{GF1}
-    \strng{fullhash}{GF1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{labelyear}{2011}
-    \field{labeldatesource}{}
-    \field{sortinit}{G}
-    \field{sortinithash}{G}
-    \field{abstract}{%
-    This article reviews macroeconomic models with heterogeneous households. A
-  key question for the relevance of these models concerns the degree to which
-  markets are complete. This is because the existence of complete markets
-  imposes restrictions on (i) how much heterogeneity matters for aggregate
-  phenomena and (ii) the types of cross-sectional distributions that can be
-  obtained. The degree of market incompleteness, in turn, depends on two
-  factors: (i) the richness of insurance opportunities provided by the economic
-  environment and (ii) the nature and magnitude of idiosyncratic risks to be
-  insured. First, I review a broad collection of empirical evidence--from
-  econometric tests of \&quot;full insurance,\&quot; to quantitative and
-  empirical analyses of the permanent income (\&quot;self-insurance\&quot;)
-  model that examine how it fits the facts about life cycle allocations, to
-  studies that try to directly measure where economies place between these two
-  benchmarks (\&quot;partial insurance\&quot;). The empirical evidence I survey
-  reveals significant uncertainty in the profession regarding the magnitudes of
-  idiosyncratic risks as well as whether or not these risks have increased
-  since the 1970s. An important difficulty stems from the fact that inequality
-  often arises from a mixture of idiosyncratic risk and fixed (or predictable)
-  heterogeneity, making the two challenging to disentangle. I also discuss
-  applications of incomplete markets models to trends in wealth, consumption,
-  and earnings inequality both over the life cycle and over time, where this
-  challenge is evident. Third, I discuss \&quot;approximate\&quot;
-  aggregation--the finding that some incomplete markets models generate
-  aggregate implications very similar to representative-agent models. What
-  approximate aggregation does and does not imply is illustrated through
-  several examples. Finally, I discuss some computational issues relevant for
-  solving and calibrating such models and I provide a simple yet fully
-  parallelizable%
-    }
-    \field{number}{17622}
-    \field{title}{{Macroeconomics With Heterogeneity: A Practical Guide}}
-    \verb{url}
-    \verb https://ideas.repec.org/p/nbr/nberwo/17622.html
-    \endverb
-    \list{institution}{1}{%
-      {National Bureau of Economic Research, Inc}%
-    }
-    \field{type}{NBER Working Papers}
-    \field{month}{11}
-    \field{year}{2011}
-  \endentry
-
-  \entry{Genay2004}{misc}{}{}
-    \name{author}{1}{}{%
-      {{hash=HGDRH}{%
-         family={Hesna\bibnamedelima Genay},
-         familyi={H\bibinitperiod\bibinitdelim G\bibinitperiod},
-         given={Darrin R\bibnamedelima Halcomb},
-         giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim
-  H\bibinitperiod},
-      }}%
-    }
-    \list{language}{1}{%
-      {en}%
-    }
-    \strng{namehash}{HGDRH1}
-    \strng{fullhash}{HGDRH1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{labelyear}{2004}
-    \field{labeldatesource}{}
-    \field{sortinit}{H}
-    \field{sortinithash}{H}
-  \field{howpublished}{\url{https://www.chicagofed.org/publications/chicago-fed-letter/2004/november-208}}
-    \field{note}{Accessed: 2025-8-4}
-    \field{title}{{Rising Interest Rates, Bank Loans and Deposits - Federal
-  Reserve Bank of Chicago}}
-    \field{month}{11}
-    \field{year}{2004}
   \endentry
 
   \entry{mh1993}{article}{}{}
@@ -1711,69 +1588,6 @@
     \field{journaltitle}{Stat. J. IAOS}
     \field{month}{03}
     \field{year}{2017}
-  \endentry
-
-  \entry{Krueger2016}{unpublished}{}{}
-    \name{author}{3}{}{%
-      {{hash=KD}{%
-         family={Krueger},
-         familyi={K\bibinitperiod},
-         given={Dirk},
-         giveni={D\bibinitperiod},
-      }}%
-      {{hash=MK}{%
-         family={Mitman},
-         familyi={M\bibinitperiod},
-         given={Kurt},
-         giveni={K\bibinitperiod},
-      }}%
-      {{hash=PF}{%
-         family={Perri},
-         familyi={P\bibinitperiod},
-         given={Fabrizio},
-         giveni={F\bibinitperiod},
-      }}%
-    }
-    \keyw{BufferStockTheory.bib}
-    \strng{namehash}{KDMKPF1}
-    \strng{fullhash}{KDMKPF1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{labelyear}{2016}
-    \field{labeldatesource}{}
-    \field{sortinit}{K}
-    \field{sortinithash}{K}
-    \field{abstract}{%
-    The goal of this chapter is to study how, and by how much, household
-  income, wealth, and preference heterogeneity amplify and propagate a
-  macroeconomic shock. We focus on the U.S. Great Recession of 2007-2009 and
-  proceed in two steps. First, using data from the Panel Study of Income
-  Dynamics, we document the patterns of household income, consumption and
-  wealth inequality before and during the Great Recession. We then investigate
-  how households in different segments of the wealth distribution were affected
-  by income declines, and how they changed their expenditures differentially
-  during the aggregate downturn. Motivated by this evidence, we study several
-  variants of a standard heterogeneous household model with aggregate shocks
-  and an endogenous cross-sectional wealth distribution. Our key finding is
-  that wealth inequality can significantly amplify the impact of an aggregate
-  shock, and it does so if the distribution features a sufficiently large
-  fraction of households with very little net worth that sharply increase their
-  saving (i.e. they are not hand-to mouth) as the recession hits. We document
-  that both these features are observed in the PSID. We also investigate the
-  role that social insurance policies, such as unemployment insurance, play in
-  shaping the cross-sectional income and wealth distribution, and through it,
-  the dynamics of business cycles.%
-    }
-    \field{title}{{Macroeconomics and Household Heterogeneity}}
-    \verb{url}
-    \verb http://www.nber.org/papers/w22319
-    \endverb
-    \verb{file}
-    \verb All-Papers/K/Krueger-et-al.-2016-Macroeconomics-and-Household-Heterog
-    \verb eneity.pdf
-    \endverb
-    \field{month}{06}
-    \field{year}{2016}
   \endentry
 
   \entry{ks1998}{article}{}{}
@@ -1984,48 +1798,129 @@
     \field{year}{2025}
   \endentry
 
-  \entry{jpjsledj2022}{report}{}{}
-    \name{author}{4}{}{%
-      {{hash=PJA}{%
-         family={Parker},
+  \entry{Paul2024}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=PP}{%
+         family={Paul},
          familyi={P\bibinitperiod},
-         given={Jonathan\bibnamedelima A},
-         giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod},
+         given={Pascal},
+         giveni={P\bibinitperiod},
       }}%
-      {{hash=SJ}{%
-         family={Schild},
-         familyi={S\bibinitperiod},
-         given={Jake},
-         giveni={J\bibinitperiod},
-      }}%
-      {{hash=EL}{%
-         family={Erhard},
-         familyi={E\bibinitperiod},
-         given={Laura},
-         giveni={L\bibinitperiod},
-      }}%
-      {{hash=JD}{%
-         family={Johnson},
-         familyi={J\bibinitperiod},
-         given={David},
-         giveni={D\bibinitperiod},
+      {{hash=UM}{%
+         family={Ulate},
+         familyi={U\bibinitperiod},
+         given={Mauricio},
+         giveni={M\bibinitperiod},
       }}%
     }
-    \strng{namehash}{PJA+1}
-    \strng{fullhash}{PJASJELJD1}
+    \list{publisher}{1}{%
+      {Federal Reserve Bank of San Francisco}%
+    }
+    \strng{namehash}{PPUM1}
+    \strng{fullhash}{PPUM1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2022}
+    \field{labelyear}{2024}
     \field{labeldatesource}{}
     \field{sortinit}{P}
     \field{sortinithash}{P}
-    \field{title}{Economic Impact Payments and Household Spending During the
-  Pandemic}
-    \list{institution}{1}{%
-      {National Bureau of Economic Research}%
+    \field{abstract}{%
+    We develop a quantitative New Keynesian DSGE model to study the
+  introduction of a central bank digital currency (CBDC): government-backed
+  digital money available to retail consumers. At the heart of our model are
+  monopolistic banks with market power in deposit and loan markets. When a CBDC
+  is introduced, households benefit from an expansion of liquidity services and
+  higher deposit rates as bank deposit market power is curtailed. However,
+  deposits also flow out of the banking system and bank lending contracts. We
+  assess this welfare trade-off for a wide range of economies that differ in
+  their level of interest rates. We find substantial welfare gains from
+  introducing a CBDC with an optimal interest rate that can be approximated by
+  a simple rule of thumb: the maximum between 0\% and the policy rate minus
+  1\%.%
     }
-    \field{type}{techreport}
-    \field{year}{2022}
+    \verb{doi}
+    \verb 10.24148/wp2024-11
+    \endverb
+    \field{number}{11}
+    \field{pages}{01\bibrangedash 83}
+    \field{title}{{A macroeconomic model of central bank digital currency}}
+    \verb{url}
+    \verb https://www.frbsf.org/research-and-insights/publications/working-pape
+    \verb rs/2024/04/macroeconomic-model-of-central-bank-digital-currency/
+    \endverb
+    \field{volume}{2024}
+    \verb{file}
+    \verb All-Papers/P/Paul-and-Ulate-2024-A-macroeconomic-model-of-central-ban
+    \verb k-digital-currency.pdf
+    \endverb
+    \field{journaltitle}{Federal Reserve Bank of San Francisco, Working Paper
+  Series}
+    \field{month}{04}
+    \field{year}{2024}
+  \endentry
+
+  \entry{Sabelhaus2010}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=SJ}{%
+         family={Sabelhaus},
+         familyi={S\bibinitperiod},
+         given={John},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=SJ}{%
+         family={Song},
+         familyi={S\bibinitperiod},
+         given={Jae},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \keyw{Labor earnings; Earnings volatility; Great moderation}
+    \strng{namehash}{SJSJ1}
+    \strng{fullhash}{SJSJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2010}
+    \field{labeldatesource}{}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{abstract}{%
+    Between 1980 and the early 1990s the variability of labor earnings growth
+  rates across the prime-age working population fell significantly. This
+  decline and timing are consistent with other macro and micro observations
+  about growth variability that are collectively referred to as the ``Great
+  Moderation.'' The variability of earnings growth is negatively correlated
+  with age at any point in time, and the U.S. working age population got older
+  during this period because the Baby Boom was aging. However, the decrease in
+  variability was roughly uniform across all age groups, so population aging is
+  not the source of the overall decline. The variance of log changes also
+  declined at multi-year frequencies in such a way as to suggest that both
+  permanent and transitory components of earnings shocks became more moderate.
+  A simple identification strategy for separating age and cohort effects shows
+  a very intuitive pattern of permanent and transitory shocks over the life
+  cycle, and confirms that a shift over time in the stochastic process occurred
+  even after controlling for age effects.%
+    }
+    \verb{doi}
+    \verb 10.1016/j.jmoneco.2010.04.003
+    \endverb
+    \field{issn}{0304-3932}
+    \field{number}{4}
+    \field{pages}{391\bibrangedash 403}
+    \field{title}{{The great moderation in micro labor earnings}}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/S0304393210000358
+    \endverb
+    \field{volume}{57}
+    \verb{file}
+    \verb All-Papers/S/Sabelhaus-and-Song-2010-The-great-moderation-in-micro-la
+    \verb bor-earnings.pdf
+    \endverb
+    \field{journaltitle}{J. Monet. Econ.}
+    \field{month}{05}
+    \field{year}{2010}
   \endentry
 
   \entry{sz16}{report}{}{}

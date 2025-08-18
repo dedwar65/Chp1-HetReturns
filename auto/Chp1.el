@@ -111,7 +111,7 @@
     "Monti1972"
     "Klein1971"
     "Fillat2018"
-    "PaulUlate2024"
+    "Paul2024"
     "Menzio2025"
     "Drechsler2017"
     "Cetorelli2011"

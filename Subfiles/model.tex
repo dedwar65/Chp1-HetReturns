@@ -8,13 +8,13 @@
 
 \par There are a continuum of banks, identical in all respects other than the elasticity of the level of deposits to changes in the market interest rate.
 
-\par The model is static in that, I assume that the bank chooses a deposit rate to offer to its clientele base at the start of the time horizon. This decision, as wel will see, thus depends soley on the market interest rate and the bank's given elasticity. Additionally, a given bank cannot take actions to increase the number of depositors at their given institution \footnote{For example, compare a bank in a suburb area of Montana (local) versus a bank near downtown Houston, Texas (globally integrated).}.
+\par The model is static in that, I assume that the bank chooses a deposit rate to offer to its clientele base at the start of the time horizon. Therefore, this decision depends soley on the market interest rate and the bank's given elasticity. Additionally, a given bank cannot take actions to increase the number of depositors at their given institution \footnote{For example, compare a bank in a suburb area of Montana (local) versus a bank near downtown Houston, Texas (globally integrated).}.
 
 \par Lastly, in this simple version of the model, I assume that households do not endogenously choose which banks to do business with. Clearly, this would lead us towards the literature on costly human capital acquisition and financial literacy. Instead, I assume that at the outset banks are assigned to a household at birth with some probability. The household is \say{stuck} with this bank assignment until death. In this way, the banking sector merely replaces the assignment of idiosyncratic rates of returns over the time horizon in the standard model. 
 
 \subsubsection{Decision problem for banks accepting foreign deposits}
 
-\par The sole distinction between banks in this model is the sensitivity of their level of deposits to changes in the market interest rate, which we will index by $\varepsilon_i$. This will be the source of returns heterogeneity in the model. To see this, I follow a similar, but simplified description of the decision problem for banks which can be found in \cite{PaulUlate2024}.
+\par The sole distinction between banks in this model is the sensitivity of their level of deposits to changes in the market interest rate, which we will index by $\varepsilon_i$. This will be the source of returns heterogeneity in the model. To see this, I follow a similar, but simplified description of the decision problem for banks which can be found in \cite{Paul2024}.
 
  \par Let $R^m$ be the market rate of return, $R^d$ be the rate of return offered on deposits by a  bank, and $S(R^d, R^m)$ be the level of deposits held at a given bank.
 
@@ -28,7 +28,7 @@
 S(R^d, R^m) = A \left( \frac{R^d}{R^m} \right)^{\varepsilon}
 \]
 
-\par Importantly, the first order condition implies that the optimal deposit rate for the $i$-th bank is given by $$ R_i^d = \frac{\varepsilon_i}{1+\varepsilon_i} R^m  $$. This is crucial for the model in that, so long as we calibrate the model for a particular value of $R^m$, estimating a uniform distribution of returns using the simulated method of moments will imply a corresponding distribution of elasticities (the one that minimizes the distance between simulated and lorenz wealth moments). In this way, the 7 discretized points capturing 7 different deposit rates offered corresponds to 7 different bank types, which result in varying elasticities among 7 different bank types in the model. From the expression above, we see that banks with higher values of $\varepsilon_i$  must set $R_i^d$ closer to $R^m$.
+\par Importantly, the first order condition implies that the optimal deposit rate for the $i$-th bank is given by $$ R_i^d = \frac{\varepsilon_i}{1+\varepsilon_i} R^m  $$. This is crucial for the model in that, so long as we calibrate the model for a particular value of $R^m$, estimating a uniform distribution of returns using the simulated method of moments will imply a corresponding distribution of elasticities (the one that minimizes the distance between simulated and lorenz wealth moments). In this way, the 7 discretized points capture 7 different deposit rates offered, which result in varying elasticities among 7 different bank types in the model. From the expression above, we see that banks with higher values of $\varepsilon_i$  must set $R_i^d$ closer to $R^m$.
 
 \subsection{Households}
 
