@@ -584,6 +584,77 @@
     \field{year}{2004}
   \endentry
 
+  \entry{Guvenen2023}{article}{}{}
+    \name{author}{5}{}{%
+      {{hash=GF}{%
+         family={Guvenen},
+         familyi={G\bibinitperiod},
+         given={Fatih},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=KG}{%
+         family={Kambourov},
+         familyi={K\bibinitperiod},
+         given={Gueorgui},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=KB}{%
+         family={Kuruscu},
+         familyi={K\bibinitperiod},
+         given={Burhan},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=OS}{%
+         family={Ocampo},
+         familyi={O\bibinitperiod},
+         given={Sergio},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=CD}{%
+         family={Chen},
+         familyi={C\bibinitperiod},
+         given={Daphne},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Oxford Academic}%
+    }
+    \strng{namehash}{GF+1}
+    \strng{fullhash}{GFKGKBOSCD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2023}
+    \field{labeldatesource}{}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{abstract}{%
+    Abstract. How does wealth taxation differ from capital income taxation?
+  When the return on investment is equal across individuals, a well-known
+  result is that t%
+    }
+    \verb{doi}
+    \verb 10.1093/qje/qjac047
+    \endverb
+    \field{issn}{0033-5533}
+    \field{number}{2}
+    \field{pages}{835\bibrangedash 894}
+    \field{title}{{Use It or Lose It: Efficiency and Redistributional Effects
+  of Wealth Taxation}}
+    \verb{url}
+    \verb https://academic.oup.com/qje/article-pdf/138/2/835/49730065/qjac047.p
+    \verb df
+    \endverb
+    \field{volume}{138}
+    \verb{file}
+    \verb All-Papers/G/Guvenen-et-al.-2023-Use-It-or-Lose-It-Efficiency-and-Red
+    \verb istributional-Effects-of-Wealth-Taxation.pdf
+    \endverb
+    \field{journaltitle}{Q. J. Econ.}
+    \field{month}{04}
+    \field{year}{2023}
+  \endentry
+
   \entry{Sabelhaus2010}{article}{}{}
     \name{author}{2}{}{%
       {{hash=SJ}{%

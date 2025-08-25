@@ -99,7 +99,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Brief history on wealth inequality}
-\cite{jbab18} offers a useful survey of lit on modeling wealth inequality
+\cite{jbab18} offer a useful survey of lit on modeling wealth inequality
 \begin{enumerate}
 \item Observable skewness in wealth holdings $\rightarrow$ assume distributional properties
 \item Use distribution of income to explain distribution of wealth
@@ -116,8 +116,8 @@ $\implies$ an interest in wealth inequality and its determinants may naturally l
 \begin{frame}{Outline}
 \begin{enumerate}
 \item Empirical evidence of heterogeneous returns
-\item Model of saving with heterogeneous returns
-\item Structural estimation of model to match wealth data
+\item Model
+\item Structural estimation to match wealth data
 \end{enumerate}
 
 \vspace{2.5mm}
@@ -313,7 +313,7 @@ Choose profiles $\{c_{t_n}\}_{n=0}^{\infty}$ that satisfy
   &\text{s.t.}& \\
   a_t &=& m_t - c_t(m_t), \\
   k_{t+1} &=& \frac{a_t}{\cancel{D}\psi_{t+1}}, \\
-  m_{t+1} &=& (\daleth + r^d_t)k_{t+1} + \xi_{t+1}, \\
+  m_{t+1} &=& (1 - \delta + r^d_t)k_{t+1} + \xi_{t+1}, \\
   a_t &\geq& 0.
 \end{eqnarray*}
 
@@ -349,11 +349,11 @@ Simulated method of moments (SMM) estimation for $R$ using 2004 SCF wealth data.
 %\vspace{5mm}
   \begin{enumerate}
   \item No ex-ante heterogeneity: $R$\textit{-point} model
-  \par Estimate a common rate of return across households by finding the $\grave{R}$ which matches the capital-to-output ratio $(\frac{K}{Y} = 3)$.
+  \par Estimate a common rate of return across households by finding the \say{center} of the distribution  which matches the capital-to-output ratio $(\frac{K}{Y} = 3)$.
   \vspace{2.5mm}
 
   \item Ex-ante heterogeneity: $R$\textit{-dist} model
-  \par Estimate  a \textbf{Uniform distribution} of returns across households by finding the $\grave{R}$,$\nabla$ which match empirical Lorenz targets, given $\frac{K}{Y}$.
+  \par Estimate  a \textbf{Uniform distribution} of returns across households by finding the \say{center} and \say{spread} of the distribution which allows the model to match empirical Lorenz targets, given $\frac{K}{Y}$.
   \end{enumerate}
   
   \centering
@@ -531,11 +531,10 @@ Estimated returns & Implied elasticities & Estimated returns & Implied elasticit
 \subsection{Concluding Remarks}
 
 
-\begin{frame}{Conclusion}
+\begin{frame}{Work to be done}
   \begin{itemize}
-\item 
-\item 
-\item 
+\item Better empirical moments from \cite{aflgdmlp20} to compare results to
+\item Implications of wealth tax vs capital income tax when het. returns are present \cite{Guvenen2023}
 \end{itemize}
 \end{frame}
 
