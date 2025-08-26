@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.16)  25 AUG 2025 16:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.16)  26 AUG 2025 06:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1388,17 +1388,17 @@ Package pdftex.def Info: Figures/PYrrDistNetWorthPlot.png  used on input line 4
 [19
 
 ]
-<Figures/LCrrPointNetWorthPlot.png, id=924, 361.35pt x 361.35pt>
+<Figures/LCrrPointNetWorthPlot.png, id=922, 361.35pt x 361.35pt>
 File: Figures/LCrrPointNetWorthPlot.png Graphic file (type png)
 <use Figures/LCrrPointNetWorthPlot.png>
 Package pdftex.def Info: Figures/LCrrPointNetWorthPlot.png  used on input line 
-454.
+450.
 (pdftex.def)             Requested size: 173.56186pt x 173.56181pt.
-<Figures/LCrrDistNetWorthPlot.png, id=925, 361.35pt x 361.35pt>
+<Figures/LCrrDistNetWorthPlot.png, id=923, 361.35pt x 361.35pt>
 File: Figures/LCrrDistNetWorthPlot.png Graphic file (type png)
 <use Figures/LCrrDistNetWorthPlot.png>
 Package pdftex.def Info: Figures/LCrrDistNetWorthPlot.png  used on input line 4
-54.
+50.
 (pdftex.def)             Requested size: 173.56186pt x 173.56181pt.
 
 
@@ -1409,17 +1409,17 @@ Package pdftex.def Info: Figures/LCrrDistNetWorthPlot.png  used on input line 4
 [21
 
 ]
-<Tables/Emp_Lorenz_10yr_LCrrDistNetWorth.png, id=1004, 578.16pt x 180.675pt>
+<Tables/Emp_Lorenz_10yr_LCrrDistNetWorth.png, id=1002, 578.16pt x 180.675pt>
 File: Tables/Emp_Lorenz_10yr_LCrrDistNetWorth.png Graphic file (type png)
 <use Tables/Emp_Lorenz_10yr_LCrrDistNetWorth.png>
 Package pdftex.def Info: Tables/Emp_Lorenz_10yr_LCrrDistNetWorth.png  used on i
-nput line 497.
+nput line 493.
 (pdftex.def)             Requested size: 277.70004pt x 86.7809pt.
-<Tables/Sim_Lorenz_10yr_LCrrDistNetWorth.png, id=1005, 578.16pt x 180.675pt>
+<Tables/Sim_Lorenz_10yr_LCrrDistNetWorth.png, id=1003, 578.16pt x 180.675pt>
 File: Tables/Sim_Lorenz_10yr_LCrrDistNetWorth.png Graphic file (type png)
 <use Tables/Sim_Lorenz_10yr_LCrrDistNetWorth.png>
 Package pdftex.def Info: Tables/Sim_Lorenz_10yr_LCrrDistNetWorth.png  used on i
-nput line 497.
+nput line 493.
 (pdftex.def)             Requested size: 277.70004pt x 86.7809pt.
 
 
@@ -1437,7 +1437,7 @@ DistNetWorth.png>]
 ]
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10.95> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 564.
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 560.
 
 
 
@@ -1495,10 +1495,10 @@ Package logreq Info: Writing requests to 'Chp1-presentation.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32462 strings out of 467816
- 638756 string characters out of 5432252
- 1394555 words of memory out of 5000000
- 60403 multiletter control sequences out of 15000+600000
+ 32461 strings out of 467816
+ 638745 string characters out of 5432252
+ 1394521 words of memory out of 5000000
+ 60402 multiletter control sequences out of 15000+600000
  642804 words of font info for 97 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,20n,123p,1888b,1811s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1527,10 +1527,10 @@ ve/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive
 texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2024/t
 exmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/local/texlive/2
 024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Chp1-presentation.pdf (31 pages, 985751 bytes).
+Output written on Chp1-presentation.pdf (31 pages, 985349 bytes).
 PDF statistics:
- 1505 PDF objects out of 1728 (max. 8388607)
- 1195 compressed objects within 12 object streams
+ 1504 PDF objects out of 1728 (max. 8388607)
+ 1194 compressed objects within 12 object streams
  96 named destinations out of 1000 (max. 500000)
  227 words of extra memory for PDF output out of 10000 (max. 10000000)
 
