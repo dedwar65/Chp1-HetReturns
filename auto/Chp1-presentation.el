@@ -13,7 +13,7 @@
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "latex2e"
-    "Tables/calibPY"
+    "Tables/calibPYeduced"
     "Tables/calibLC"
     "beamer"
     "beamer10"
@@ -26,7 +26,8 @@
     "caption"
     "booktabs"
     "adjustbox"
-    "amssymb")
+    "amssymb"
+    "xcolor")
    (LaTeX-add-bibliographies
     "Chp1"))
  :latex)

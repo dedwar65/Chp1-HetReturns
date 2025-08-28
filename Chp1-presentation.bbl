@@ -21,16 +21,39 @@
 \providecommand{\noopsort}[1]{} \providecommand{\singleletter}[1]{#1}
 }
 
-  \entry{d'Avernas2024}{misc}{}{}
-    \name{author}{1}{}{%
+  \entry{dAvernas2024}{misc}{}{}
+    \name{author}{5}{}{%
       {{hash=A}{%
-         family={{Adrien d'Avernas, Andrea L. Eisfeldt, Can Huang, Richard
-  Stanton, Nancy Wallace}},
+         family={{Adrien d'Avernas}},
          familyi={A\bibinitperiod},
       }}%
+      {{hash=EAL}{%
+         family={Eisfeldt},
+         familyi={E\bibinitperiod},
+         given={Andrea\bibnamedelima L},
+         giveni={A\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+      {{hash=HC}{%
+         family={Huang},
+         familyi={H\bibinitperiod},
+         given={Can},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=SR}{%
+         family={Stanton},
+         familyi={S\bibinitperiod},
+         given={Richard},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=WN}{%
+         family={Wallace},
+         familyi={W\bibinitperiod},
+         given={Nancy},
+         giveni={N\bibinitperiod},
+      }}%
     }
-    \strng{namehash}{A1}
-    \strng{fullhash}{A1}
+    \strng{namehash}{A+1}
+    \strng{fullhash}{AEALHCSRWN1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{labelyear}{2024}
@@ -42,8 +65,8 @@
     \verb https://www.fdic.gov/system/files/2024-09/wallace-paper-091224.pdf
     \endverb
     \verb{file}
-    \verb All-Papers/A/Adrien-d'Avernas,-Andrea-L.-Eisfeldt,...-2024-The-Deposi
-    \verb t-Business-at-Large-vs.-Small-Banks.pdf
+    \verb All-Papers/A/Adrien-d'Avernas-et-al.-2024-The-Deposit-Business-at-Lar
+    \verb ge-vs.-Small-Banks.pdf
     \endverb
     \field{month}{08}
     \field{year}{2024}
@@ -188,221 +211,6 @@
     \endverb
     \field{journaltitle}{J. Bus. Econ. Stat.}
     \field{year}{2003}
-  \endentry
-
-  \entry{Carroll1992}{article}{}{}
-    \name{author}{1}{}{%
-      {{hash=CCD}{%
-         family={Carroll},
-         familyi={C\bibinitperiod},
-         given={Christopher\bibnamedelima D},
-         giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{CCD1}
-    \strng{fullhash}{CCD1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{labelyear}{1992}
-    \field{labeldatesource}{}
-    \field{sortinit}{C}
-    \field{sortinithash}{C}
-    \field{issn}{0007-2303}
-    \field{number}{2}
-    \field{pages}{61\bibrangedash 156}
-    \field{title}{{The Buffer-Stock Theory of Saving: Some Macroeconomic
-  Evidence}}
-    \field{volume}{1992}
-    \field{journaltitle}{Brookings Pap. Econ. Act.}
-    \field{annotation}{%
-    https://www.econ2.jhu.edu/people/ccarroll/BufferStockBPEA.pdf%
-    }
-    \field{year}{1992}
-  \endentry
-
-  \entry{Carroll2015}{article}{}{}
-    \name{author}{3}{}{%
-      {{hash=CCD}{%
-         family={Carroll},
-         familyi={C\bibinitperiod},
-         given={Christopher\bibnamedelima D},
-         giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod},
-      }}%
-      {{hash=SJ}{%
-         family={Slacalek},
-         familyi={S\bibinitperiod},
-         given={Jiri},
-         giveni={J\bibinitperiod},
-      }}%
-      {{hash=TK}{%
-         family={Tokuoka},
-         familyi={T\bibinitperiod},
-         given={Kiichi},
-         giveni={K\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{1}{%
-      {Elsevier}%
-    }
-    \keyw{Household income process; Wealth inequality; Household heterogeneity}
-    \strng{namehash}{CCDSJTK1}
-    \strng{fullhash}{CCDSJTK1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{labelyear}{2015}
-    \field{labeldatesource}{}
-    \field{sortinit}{C}
-    \field{sortinithash}{C}
-    \field{abstract}{%
-    We modify the widely-used Krusell and Smith (1998) model (KS) to
-  accommodate an income process with permanent and transitory components.
-  Appropriately calibrated permanent shocks help explain a substantial part of
-  the empirical wealth heterogeneity unexplained in the baseline KS model.%
-    }
-    \verb{doi}
-    \verb 10.1016/j.econlet.2015.04.021
-    \endverb
-    \field{issn}{0165-1765}
-    \field{pages}{97\bibrangedash 100}
-    \field{title}{{Buffer-stock saving in a Krusell--Smith world}}
-    \verb{url}
-    \verb https://www.sciencedirect.com/science/article/pii/S016517651500172X
-    \endverb
-    \field{volume}{132}
-    \verb{file}
-    \verb All-Papers/C/Carroll-et-al.-2015-Buffer-stock-saving-in-a-Krusell–S
-    \verb mith-world.pdf
-    \endverb
-    \field{journaltitle}{Econ. Lett.}
-    \field{month}{07}
-    \field{year}{2015}
-  \endentry
-
-  \entry{Debacker2013}{article}{}{}
-    \name{author}{5}{}{%
-      {{hash=DJ}{%
-         family={Debacker},
-         familyi={D\bibinitperiod},
-         given={Jason},
-         giveni={J\bibinitperiod},
-      }}%
-      {{hash=HB}{%
-         family={Heim},
-         familyi={H\bibinitperiod},
-         given={Bradley},
-         giveni={B\bibinitperiod},
-      }}%
-      {{hash=PV}{%
-         family={Panousi},
-         familyi={P\bibinitperiod},
-         given={Vasia},
-         giveni={V\bibinitperiod},
-      }}%
-      {{hash=RS}{%
-         family={Ramnath},
-         familyi={R\bibinitperiod},
-         given={Shanthi},
-         giveni={S\bibinitperiod},
-      }}%
-      {{hash=VI}{%
-         family={Vidangos},
-         familyi={V\bibinitperiod},
-         given={Ivan},
-         giveni={I\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{1}{%
-      {Brookings Institution Press}%
-    }
-    \strng{namehash}{DJ+1}
-    \strng{fullhash}{DJHBPVRSVI1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{labelyear}{2013}
-    \field{labeldatesource}{}
-    \field{sortinit}{D}
-    \field{sortinithash}{D}
-    \field{abstract}{%
-    [We use a new, large, and confidential panel of tax returns to study the
-  persistent-versus-transitory nature of rising inequality in male labor
-  earnings and in total household income, both before and after taxes, in the
-  United States over the period 1987---2009. We apply various statistical
-  decomposition methods that allow for different ways of characterizing
-  persistent and transitory income components. For male labor earnings, we find
-  that the entire increase in cross-sectional inequality over our sample period
-  was driven by an increase in the dispersion of the persistent component of
-  earnings. For total household income, we find that most of the increase in
-  inequality reflects an increase in the dispersion of the persistent income
-  component, but the transitory component also appears to have played some
-  role. We also show that the tax system partly mitigated the increase in
-  income inequality, but not sufficiently to alter its broadly increasing trend
-  over the period.]%
-    }
-    \field{issn}{0007-2303, 1533-4465}
-    \field{pages}{67\bibrangedash 122}
-    \field{title}{{Rising Inequality: Transitory or Persistent? New Evidence
-  from a Panel of U.S. Tax Returns}}
-    \verb{url}
-    \verb http://www.jstor.org/stable/23594863
-    \endverb
-    \field{journaltitle}{Brookings Pap. Econ. Act.}
-    \field{year}{2013}
-  \endentry
-
-  \entry{Den_Haan2010}{article}{}{}
-    \name{author}{3}{}{%
-      {{hash=DHWJ}{%
-         family={Den\bibnamedelima Haan},
-         familyi={D\bibinitperiod\bibinitdelim H\bibinitperiod},
-         given={Wouter\bibnamedelima J},
-         giveni={W\bibinitperiod\bibinitdelim J\bibinitperiod},
-      }}%
-      {{hash=JKL}{%
-         family={Judd},
-         familyi={J\bibinitperiod},
-         given={Kenneth\bibnamedelima L},
-         giveni={K\bibinitperiod\bibinitdelim L\bibinitperiod},
-      }}%
-      {{hash=JM}{%
-         family={Juillard},
-         familyi={J\bibinitperiod},
-         given={Michel},
-         giveni={M\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{1}{%
-      {Elsevier}%
-    }
-    \keyw{Numerical solutions; Simulations; Approximations}
-    \strng{namehash}{DHWJJKLJM1}
-    \strng{fullhash}{DHWJJKLJM1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{labelyear}{2010}
-    \field{labeldatesource}{}
-    \field{sortinit}{D}
-    \field{sortinithash}{D}
-    \field{abstract}{%
-    This paper describes the first model considered in the computational suite
-  project that compares different numerical algorithms. It is an incomplete
-  markets economy with a continuum of agents and an inequality (borrowing)
-  constraint.%
-    }
-    \verb{doi}
-    \verb 10.1016/j.jedc.2009.07.001
-    \endverb
-    \field{issn}{0165-1889}
-    \field{number}{1}
-    \field{pages}{1\bibrangedash 3}
-    \field{title}{{Computational suite of models with heterogeneous agents:
-  Incomplete markets and aggregate uncertainty}}
-    \verb{url}
-    \verb https://www.sciencedirect.com/science/article/pii/S0165188909001286
-    \endverb
-    \field{volume}{34}
-    \field{journaltitle}{J. Econ. Dyn. Control}
-    \field{month}{01}
-    \field{year}{2010}
   \endentry
 
   \entry{Drechsler2017}{article}{}{}
@@ -653,70 +461,6 @@
     \field{journaltitle}{Q. J. Econ.}
     \field{month}{04}
     \field{year}{2023}
-  \endentry
-
-  \entry{Sabelhaus2010}{article}{}{}
-    \name{author}{2}{}{%
-      {{hash=SJ}{%
-         family={Sabelhaus},
-         familyi={S\bibinitperiod},
-         given={John},
-         giveni={J\bibinitperiod},
-      }}%
-      {{hash=SJ}{%
-         family={Song},
-         familyi={S\bibinitperiod},
-         given={Jae},
-         giveni={J\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{1}{%
-      {Elsevier}%
-    }
-    \keyw{Labor earnings; Earnings volatility; Great moderation}
-    \strng{namehash}{SJSJ1}
-    \strng{fullhash}{SJSJ1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{labelyear}{2010}
-    \field{labeldatesource}{}
-    \field{sortinit}{S}
-    \field{sortinithash}{S}
-    \field{abstract}{%
-    Between 1980 and the early 1990s the variability of labor earnings growth
-  rates across the prime-age working population fell significantly. This
-  decline and timing are consistent with other macro and micro observations
-  about growth variability that are collectively referred to as the ``Great
-  Moderation.'' The variability of earnings growth is negatively correlated
-  with age at any point in time, and the U.S. working age population got older
-  during this period because the Baby Boom was aging. However, the decrease in
-  variability was roughly uniform across all age groups, so population aging is
-  not the source of the overall decline. The variance of log changes also
-  declined at multi-year frequencies in such a way as to suggest that both
-  permanent and transitory components of earnings shocks became more moderate.
-  A simple identification strategy for separating age and cohort effects shows
-  a very intuitive pattern of permanent and transitory shocks over the life
-  cycle, and confirms that a shift over time in the stochastic process occurred
-  even after controlling for age effects.%
-    }
-    \verb{doi}
-    \verb 10.1016/j.jmoneco.2010.04.003
-    \endverb
-    \field{issn}{0304-3932}
-    \field{number}{4}
-    \field{pages}{391\bibrangedash 403}
-    \field{title}{{The great moderation in micro labor earnings}}
-    \verb{url}
-    \verb https://www.sciencedirect.com/science/article/pii/S0304393210000358
-    \endverb
-    \field{volume}{57}
-    \verb{file}
-    \verb All-Papers/S/Sabelhaus-and-Song-2010-The-great-moderation-in-micro-la
-    \verb bor-earnings.pdf
-    \endverb
-    \field{journaltitle}{J. Monet. Econ.}
-    \field{month}{05}
-    \field{year}{2010}
   \endentry
 
   \entry{Sarkisyan2021}{article}{}{}

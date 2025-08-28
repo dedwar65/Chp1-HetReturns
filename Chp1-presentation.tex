@@ -27,6 +27,8 @@
 \usepackage{booktabs}
 \usepackage{adjustbox}
 \usepackage{amssymb}
+\usepackage{xcolor}
+
 
 
 % Title slide
@@ -44,74 +46,39 @@
 %%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 
-%\begin{frame}{A two-way street between macro and inequality \parencite{Ahn2017} :}
-
-
-%Empirically, fiscal policy (i.e. stimulus checks) and aggregate shocks can have differential effects across households.
-
-%\begin{itemize}
-%\item Macro matters for inequality
-%\end{itemize}
-%\vspace{2.5mm}
-
-%Representative agent models have a difficult time matching empirical estimates of macro variables (MPC and the wealth distribution).
-
-%\begin{itemize}
-%\item Inequality matters for macro
-%\end{itemize}
-
-%Incorporating \textit{heterogeneity across households} can help focus on this second issue.
-
-%\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%
-
-
-%\subsection{Literature Review}
-
-%%%%%%%%%%%%%%%%%%%%%%%
-%\begin{frame}{Key insights from het. agent macro}
-
-  %  \begin{itemize}
-   % \item Uninsurable, idiosyncratic risk to income and movements in aggregate productivity \parencite{ks1998}
-    % \item Ex-ante heterogeneity in the time preference of households \parencite{cstw2017}
-   % \item Classifying models with ex-ante and ex-post heterogeneity \parencite{gkgv22}
-   % \end{itemize}
-    
-   % Income uncertainty helps. So does time preference heterogeneity.
-
-   % \vspace{10mm}
-   % \textbf{Q:} \textit{What other parameters relevant to consumption-saving decisions may be plausibly different across households ex-ante? Do they help better match the wealth distribution?}
-
-%\end{frame}
-%%%%%%%%%%%%%%%%%%
-
-%\begin{frame}{Incorporating estimates of heterogeneous returns}
-
- %  \small
- %  \begin{enumerate}
- %   \item Comprehensive, administrative tax data in Norway from 2004 to 2015  \parencite{aflgdmlp20}
-  %  \item Documents heterogeneous returns in PSID and structural estimation of a model with skill endowments \parencite{Daminato2024}
- %   \end{enumerate}
-    
-  %  Like time preference het., I find that return het. does well with matching wealth distribution.
-
-%\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{frame}{Brief history on wealth inequality}
-\cite{jbab18} offer a useful survey of lit on modeling wealth inequality
+  \cite{jbab18} offer a useful survey of lit
+
+  \vspace{2.5mm}
 \begin{enumerate}
 \item Observable skewness in wealth holdings $\rightarrow$ assume distributional properties
 \item Use distribution of income to explain distribution of wealth
-\item Describe the process of accumulating wealth over the life cycle (i.e. dynamics of optimal consumption-saving behavior)
+\item Describe the dynamics of optimal consumption-saving behavior
 \end{enumerate}
 
 \vspace{2.5mm}
-$\implies$ an interest in wealth inequality and its determinants may naturally lead one towards heterogeneous agent macro modeling.
+an interest in wealth inequality $\rightarrow$ heterogeneous agent macro modeling.
 
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Measured heterogeneity in returns}
+
+ \begin{figure}
+    \includegraphics[height=.6\textheight]{Figures/Fagereng2020Tab3.png}
+    \captionsetup{font=scriptsize}
+    \caption{Distribution of returns in narrowly defined asset classes from \cite{aflgdmlp20}.}
+  \end{figure}
+
+ % \begin{itemize}
+ % \item Technical: Savings grow across periods through the interest rate
+ % \item Empirical: Returns are positively correlated with wealth
+  %  \end{itemize}
+
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Outline}
 \begin{enumerate}
@@ -121,7 +88,7 @@ $\implies$ an interest in wealth inequality and its determinants may naturally l
 \end{enumerate}
 
 \vspace{2.5mm}
-Key finding: The life-cycle model with different returns for households generates a realistic amount of skewness in the distribution of wealth.
+\textit{Life-cycle model with het. returns generates a reasonably skewned distribution.}
 
 
 \end{frame}
@@ -144,13 +111,13 @@ Key finding: The life-cycle model with different returns for households generate
    \begin{columns}
      \column{0.5\textwidth}
      \small
-     Following optimal portfolio choice theory from Merton (1969) and Samuelson (1969)
+     From optimal portfolio choice theory...
     \centering
 
     \begin{itemize}
-    \item Optimal share in the risky asset is given by
+    \item Optimal share in the risky asset is
     $$ \alpha_{it}^{m} = \frac{\mathbb{E}(r_{t}^{m} - r_{t}^{s})}{\gamma_i \sigma^{2}_{t}}.$$
-    \item Individual \textit{realized} return to financial assets can be written as
+    \item Individual \textit{realized} return is
     $$ r_{it}^{f} = r_{t}^{s} + \alpha_{it}^{m} (r_{t}^{m} - r_{t}^{s}). $$
     \end{itemize}
 
@@ -174,7 +141,7 @@ Key finding: The life-cycle model with different returns for households generate
     \centering
 
     \begin{itemize}
-    \item Step 1: linear regression for the return to net worth using panel
+    \item Step 1: panel regression on returns
     $$ r^{n}_{it} = X^{'}_{it} \beta + u_{it}. $$
     \item Step 2: Add fixed effects
     $$ u_{it} = f_{i} + e_{it}. $$
@@ -195,95 +162,6 @@ Key finding: The life-cycle model with different returns for households generate
 %%%%%%%%%%%%%%%%
 
 \section{Model}
-\subsection{Banks}
-\begin{frame}{Potential sources of return heterogeneity}
-  \begin{itemize}
-  \item Entrpreneurship - \say{high levels of capital, low MPK}
-  \item Financial literacy - closer, but generally aimed at risky assets
-    \end{itemize}
-
-    \vspace{2.5mm}
-    We know that there is much variation in the banking sector regarding rates offered on deposit accounts. Is there a mechanism we can exploit?
-    
-  \end{frame}
-
-  %%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}{Mechanism}
-
-\begin{itemize}
-    \item \say{Transmission channel of monetary policy} by  \cite{Drechsler2017}
-      \begin{itemize}
-      \item Sensitivity of bank deposits to market interest rate changes
-      \end{itemize}
-      \end{itemize}
-  
- \begin{itemize}
-  \item $\Delta$ in market rate $\rightarrow$ variation in $\Delta$ in deposits held at banks
-    \begin{itemize}
-  \item \cite{Sarkisyan2021} - globally integrated vs local banks
-  \item \cite{d'Avernas2024} - small vs large banks
-    \end{itemize}
-  \end{itemize}
-
-  \vspace{2.5mm}
-  $\implies$ variation in deposit rates offered across banks
-  
-\end{frame}
-
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%5
-\begin{frame}[label=bankmodel]{A simple model of bank heterogeneity}
-
-\par Let $R^m$ be the market rate of return, $R^d$ be the rate of return offered on deposits by a  bank, and $S(R^d, R^m)$ be the level of deposits held at a given bank.
-
-\par Banks solve:
-\[
-\max (R^m - R^d) \cdot S(R^d, R^m)
-\]
-
-\par subject to:
-\[
-S(R^d, R^m) = A \left( \frac{R^d}{R^m} \right)^{\varepsilon}
-\]
-
-\vspace{1em}
-\hyperlink{epsilonslide}{\beamerbutton{Show interpretation of $\varepsilon$}}
-
-\end{frame}
-
-\begin{frame}[label=epsilonslide]{Interpreting the Elasticity Parameter $\varepsilon$}
-
-\small
-\par In this setting, the parameter $\varepsilon$ has a clear interpretation as the elasticity of deposits to changes in the market interest rate. It can be shown that:
-
-\[
--\varepsilon = \frac{\partial S(\cdot)}{\partial R^m} \cdot \frac{R^m}{S(\cdot)}
-\]
-
-\vspace{1em}
-\hyperlink{bankmodel}{\beamerbutton{Back to model}}
-
-\vspace{1em}
-\hyperlink{focslide}{\beamerbutton{First order condition}}
-
-\end{frame}
-
-\begin{frame}[label=focslide]{Bank's optimal choice of  $R^d$}
-
-\small
-\par  The first order condition for the bank's optimization problem implies that:
-
-\[
-R^d  = \frac{\varepsilon}{1+ \varepsilon} R^m 
-\]
-
-\vspace{1em}
-\hyperlink{bankmodel}{\beamerbutton{Back to model}}
-
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%
-
-  
 \subsection{Households}
 
 \small
@@ -307,17 +185,18 @@ R^d  = \frac{\varepsilon}{1+ \varepsilon} R^m
 \footnotesize
 \begin{frame}{(Normalized) Optimization problem}
 
-Choose profiles $\{c_{t_n}\}_{n=0}^{\infty}$ that satisfy
+Choose consumption profile $\{c_{t_n}\}_{n=0}^{\infty}$ that maximizes
  \begin{eqnarray*}
   v(m_t) &=& \max_{c_t} u(c_t(m_t)) + \beta \cancel{D} \mathbb{E}_{t}[\psi_{t+1}^{1-\rho}v(m_{t+1})] \\
   &\text{s.t.}& \\
-  a_t &=& m_t - c_t(m_t), \\
-  k_{t+1} &=& \frac{a_t}{\cancel{D}\psi_{t+1}}, \\
-  m_{t+1} &=& (1 - \delta + r^d_t)k_{t+1} + \xi_{t+1}, \\
-  a_t &\geq& 0.
-\end{eqnarray*}
+  \underbrace{a_t}_{\text{assets today}} &=& m_t - c_t(m_t), \\
+  \underbrace{k_{t+1}}_{\text{capital tomorrow}} &=& \frac{a_t}{\cancel{D}\psi_{t+1}}, \\
+  \underbrace{m_{t+1}}_{\text{market resources tomorrow}} &=& \underbrace{(1 - \delta + \textcolor{red}{r_t})k_{t+1}}_{\text{bank balances}} + \underbrace{\xi_{t+1}}_{\text{perm. inc. unit scaled by trans. shock}}. \\
+ \end{eqnarray*}
 
-Production function $$Y = Z K^{\alpha} (\ell L)^{1-\alpha}$$
+ 
+
+%Production function $$Y = Z K^{\alpha} (\ell L)^{1-\alpha}$$
 
 \end{frame}
 %%%%%%%%%%%%%%%%%
@@ -328,8 +207,8 @@ Production function $$Y = Z K^{\alpha} (\ell L)^{1-\alpha}$$
 \vfill
 \begin{table}
   \centering
-  \scriptsize  % or \tiny, \footnotesize as needed
-  \input{Tables/calibPY.tex}
+  %\scriptsize  % or \tiny, \footnotesize as needed
+  \input{Tables/calibPYeduced.tex}
 \end{table}
 \vfill
 \end{frame}
@@ -341,21 +220,24 @@ Production function $$Y = Z K^{\alpha} (\ell L)^{1-\alpha}$$
 
 \begin{frame}{Estimation procedure}
 
-%\vspace{2.5mm}
-%Goal: Find $R$ value(s) such that the simulated distribution of wealth best matches \textit{moments} of the household wealth data from the 2004 Survey of Consumer Finances (SCF).
 
 Simulated method of moments (SMM) estimation for $R$ using 2004 SCF wealth data.
 
-%\vspace{5mm}
+
   \begin{enumerate}
   \item No ex-ante heterogeneity: $R$\textit{-point} model
-  \par Estimate a common rate of return across households by finding the \say{center} of the distribution  which matches the capital-to-output ratio $(\frac{K}{Y} = 3)$.
+    \par Estimate a common rate of return:
+
+    \par  \say{Center} so the model  matches the capital-to-output ratio $(\frac{K}{Y} = 3)$.
   \vspace{2.5mm}
 
   \item Ex-ante heterogeneity: $R$\textit{-dist} model
-  \par Estimate  a \textbf{Uniform distribution} of returns across households by finding the \say{center} and \say{spread} of the distribution which allows the model to match empirical Lorenz targets, given $\frac{K}{Y}$.
+    \par Estimate  a \textbf{Uniform distribution} of returns:
+
+    \par \say{Center} and \say{spread} so the model matches SCF Lorenz targets, given $\frac{K}{Y}$.
   \end{enumerate}
-  
+
+   \vspace{2.5mm}
   \centering
   \small
   \begin{tabular}{|c|c|}
@@ -371,25 +253,7 @@ Net worth percentile & Cumulative net worth \\
 
 
 \end{frame}
-%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Estimation procedure}
-
-Simulated method of moments (SMM) estimation for $R$ using 2004 SCF wealth data.
-
-%\vspace{5mm}
-\begin{enumerate}
-  \setcounter{enumi}{2} 
-\item Implied distribution of elasticities $\epsilon$
-  \par The solution to the bank's optimization problem implies
-  \begin{align}
-    \varepsilon = \frac{R^d}{R^m - R^d}
-  \end{align}
-
-  \par Thus, so long as the market interest rate is given, the SMM procedure can be used to uniquely pin down a distribution of elasticites which describes banking heterogeneity.
-  \end{enumerate}
-
-\end{frame}
 %%%%%%%%%%%%%%%%%
 
 \section{Results}
@@ -493,6 +357,123 @@ LC-Dist & 0.023  &  0.009  \\
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%
+
+\subsection{Banks}
+\begin{frame}{Potential sources of return heterogeneity}
+  \begin{itemize}
+  \item Entrpreneurship - \say{high levels of capital, low MPK}
+  \item Financial literacy - closer, but generally aimed at risky assets
+    \end{itemize}
+
+    \vspace{2.5mm}
+    Remember, there is het. returns even when holding only safe assets.  
+
+     \vspace{2.5mm}
+     \par Business Insider - \say{Average Bank Account Interest rates}
+     \begin{itemize}
+     \item \textit{On average, interest-bearing checking accounts earn $0.07\%$ APY.}
+       \item However, many checking accounts exist whiuch offer up to 3.3\% APY.
+  \end{itemize}
+
+   \vspace{2.5mm}
+     \par Is there a mechanism we can exploit?
+  \end{frame}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Mechanism}
+
+\begin{itemize}
+    \item \say{Transmission channel of monetary policy} by  \cite{Drechsler2017}
+      \begin{itemize}
+      \item Sensitivity of bank deposits to market interest rate changes
+      \end{itemize}
+      \end{itemize}
+  
+ \begin{itemize}
+  \item $\Delta$ in market rate $\rightarrow$ variation in $\Delta$ in deposits held at banks
+    \begin{itemize}
+  \item \cite{Sarkisyan2021} - globally integrated vs local banks
+  \item \cite{dAvernas2024} - small vs large banks
+    \end{itemize}
+  \end{itemize}
+
+  \vspace{2.5mm}
+  $\implies$ variation in deposit rates offered across banks
+  
+\end{frame}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%5
+\begin{frame}[label=bankmodel]{A simple model of bank heterogeneity}
+
+\par Let $R^m$ be the market rate of return, $R^d$ be the rate of return offered on deposits by a  bank, and $S(R^d, R^m)$ be the level of deposits held at a given bank.
+
+ \vspace{2.5mm}
+\par Banks solve:
+\[
+\max (R^m - R^d) \cdot S(R^d, R^m)
+\]
+
+\par subject to:
+\[
+S(R^d, R^m) = A \left( \frac{R^d}{R^m} \right)^{\varepsilon}
+\]
+
+\vspace{1em}
+\hyperlink{epsilonslide}{\beamerbutton{Show interpretation of $\varepsilon$}}
+
+\end{frame}
+
+\begin{frame}[label=epsilonslide]{Interpreting the Elasticity Parameter $\varepsilon$}
+
+\small
+\par So $\varepsilon$ has a clear interpretation as the elasticity of deposits to changes in the market interest rate:
+
+\[
+-\varepsilon = \frac{\partial S(\cdot)}{\partial R^m} \cdot \frac{R^m}{S(\cdot)}
+\]
+
+\vspace{1em}
+\hyperlink{bankmodel}{\beamerbutton{Back to model}}
+
+\vspace{1em}
+\hyperlink{focslide}{\beamerbutton{First order condition}}
+
+\end{frame}
+
+\begin{frame}[label=focslide]{Bank's optimal choice of  $R^d$}
+
+\small
+\par  The first order condition for the bank's optimization problem implies that:
+
+\[
+R^d  = \frac{\varepsilon}{1+ \varepsilon} R^m 
+\]
+
+\vspace{1em}
+\hyperlink{bankmodel}{\beamerbutton{Back to model}}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Estimation procedure}
+
+Simulated method of moments (SMM) estimation for $R$ using 2004 SCF wealth data.
+
+%\vspace{5mm}
+\begin{enumerate}
+  \setcounter{enumi}{2} 
+\item Implied distribution of elasticities $\epsilon$
+  \par The solution to the bank's optimization problem implies
+  \begin{align}
+    \varepsilon = \frac{R^d}{R^m - R^d}
+  \end{align}
+
+  \par $\implies$ SMM procedure pins down a dist. of elasticites describing banking heterogeneity.
+  \end{enumerate}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Model performance: implied elasticites}
 

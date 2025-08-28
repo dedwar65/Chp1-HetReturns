@@ -1,8 +1,8 @@
 \beamer@sectionintoc {1}{Introduction}{2}{0}{1}
-\beamer@subsectionintoc {1}{1}{Heterogeneous Returns in the Data}{5}{0}{1}
-\beamer@sectionintoc {2}{Model}{7}{0}{2}
-\beamer@subsectionintoc {2}{1}{Banks}{7}{0}{2}
-\beamer@subsectionintoc {2}{2}{Households}{12}{0}{2}
-\beamer@subsectionintoc {2}{3}{Simulation}{14}{0}{2}
-\beamer@sectionintoc {3}{Results}{17}{0}{3}
-\beamer@subsectionintoc {3}{1}{Concluding Remarks}{24}{0}{3}
+\beamer@subsectionintoc {1}{1}{Heterogeneous Returns in the Data}{6}{0}{1}
+\beamer@sectionintoc {2}{Model}{8}{0}{2}
+\beamer@subsectionintoc {2}{1}{Households}{8}{0}{2}
+\beamer@subsectionintoc {2}{2}{Simulation}{10}{0}{2}
+\beamer@sectionintoc {3}{Results}{12}{0}{3}
+\beamer@subsectionintoc {3}{1}{Banks}{18}{0}{3}
+\beamer@subsectionintoc {3}{2}{Concluding Remarks}{25}{0}{3}

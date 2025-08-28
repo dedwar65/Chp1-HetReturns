@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.16)  26 AUG 2025 06:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.16)  28 AUG 2025 18:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1081,24 +1081,24 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
  (./Chp1-presentation.aux)
 \openout1 = `Chp1-presentation.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1156,64 +1156,64 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 38.
+Package hyperref Info: Link coloring OFF on input line 40.
 
 (./Chp1-presentation.out) (./Chp1-presentation.out)
 \@outlinefile=\write6
 \openout6 = `Chp1-presentation.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 38.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 40.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 38.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 40.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 38.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 38.
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 40.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 40.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 38.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 40.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 38.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 38.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 40.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 40.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 38.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 40.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 38.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 38.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 40.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 40.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 38.
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 40.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 38.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 38.
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 40.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 40.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 38.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 40.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 38.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 40.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 38.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 40.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 38.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 40.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/cmr/b/n on input line 38.
+(Font)                  OT1/cmss/b/n --> OT1/cmr/b/n on input line 40.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/cmss/b/n on input line 38.
+(Font)                  OT1/cmss/b/n --> OT1/cmss/b/n on input line 40.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 38.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 40.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 38.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 40.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/b/n on input line 38.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 38.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/b/n on input line 40.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 40.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
-(Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 3
-8.
+(Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 4
+0.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/b/it --> OT1/mathkerncmss/m/sl on input line 3
-8.
+(Font)                  OT1/cmss/b/it --> OT1/mathkerncmss/m/sl on input line 4
+0.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
-ut line 38.
+ut line 40.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/translator/translator-basic-dicti
 onary-English.dict
@@ -1263,8 +1263,8 @@ Package biblatex Warning: BibTeX reported the following issues
 (biblatex)                - Invalid format of field 'month'.
 
 )
-Package biblatex Info: Reference section=0 on input line 38.
-Package biblatex Info: Reference segment=0 on input line 38.
+Package biblatex Info: Reference section=0 on input line 40.
+Package biblatex Info: Reference segment=0 on input line 40.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
  (./Chp1-presentation.nav)
@@ -1272,20 +1272,20 @@ Package caption Info: End \AtBeginDocument code.
 [1{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 112
-.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 62.
+
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 112
-.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 62.
+
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on inp
-ut line 112.
+ut line 62.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/ma
@@ -1295,38 +1295,44 @@ thkerncmss.
 [2
 
 ]
+<Figures/Fagereng2020Tab3.png, id=169, 834.61812pt x 421.07312pt>
+File: Figures/Fagereng2020Tab3.png Graphic file (type png)
+<use Figures/Fagereng2020Tab3.png>
+Package pdftex.def Info: Figures/Fagereng2020Tab3.png  used on input line 80.
+(pdftex.def)             Requested size: 269.50294pt x 135.96947pt.
+
 
 [3
 
-]
+ <./Figures/Fagereng2020Tab3.png>]
 
 [4
 
 ]
-<Figures/Fagereng2020Fig1.png, id=242, 748.29562pt x 466.24188pt>
-File: Figures/Fagereng2020Fig1.png Graphic file (type png)
-<use Figures/Fagereng2020Fig1.png>
-Package pdftex.def Info: Figures/Fagereng2020Fig1.png  used on input line 166.
-(pdftex.def)             Requested size: 173.56186pt x 108.13689pt.
-
 
 [5
 
- <./Figures/Fagereng2020Fig1.png>]
-<Figures/Fagereng2020Fig8.png, id=289, 771.38188pt x 498.86375pt>
-File: Figures/Fagereng2020Fig8.png Graphic file (type png)
-<use Figures/Fagereng2020Fig8.png>
-Package pdftex.def Info: Figures/Fagereng2020Fig8.png  used on input line 194.
-(pdftex.def)             Requested size: 173.56186pt x 112.2395pt.
+]
+<Figures/Fagereng2020Fig1.png, id=286, 748.29562pt x 466.24188pt>
+File: Figures/Fagereng2020Fig1.png Graphic file (type png)
+<use Figures/Fagereng2020Fig1.png>
+Package pdftex.def Info: Figures/Fagereng2020Fig1.png  used on input line 133.
+(pdftex.def)             Requested size: 173.56186pt x 108.13689pt.
 
 
 [6
 
- <./Figures/Fagereng2020Fig8.png>]
+ <./Figures/Fagereng2020Fig1.png>]
+<Figures/Fagereng2020Fig8.png, id=331, 771.38188pt x 498.86375pt>
+File: Figures/Fagereng2020Fig8.png Graphic file (type png)
+<use Figures/Fagereng2020Fig8.png>
+Package pdftex.def Info: Figures/Fagereng2020Fig8.png  used on input line 161.
+(pdftex.def)             Requested size: 173.56186pt x 112.2395pt.
+
 
 [7
 
-]
+ <./Figures/Fagereng2020Fig8.png>]
 
 [8
 
@@ -1334,7 +1340,7 @@ Package pdftex.def Info: Figures/Fagereng2020Fig8.png  used on input line 194.
 
 [9
 
-]
+] (./Tables/calibPYeduced.tex)
 
 [10
 
@@ -1343,90 +1349,90 @@ Package pdftex.def Info: Figures/Fagereng2020Fig8.png  used on input line 194.
 [11
 
 ]
+<Figures/PYrrPointNetWorthPlot.png, id=544, 361.35pt x 361.35pt>
+File: Figures/PYrrPointNetWorthPlot.png Graphic file (type png)
+<use Figures/PYrrPointNetWorthPlot.png>
+Package pdftex.def Info: Figures/PYrrPointNetWorthPlot.png  used on input line 
+274.
+(pdftex.def)             Requested size: 173.56186pt x 173.56181pt.
+<Figures/PYrrDistNetWorthPlot.png, id=545, 361.35pt x 361.35pt>
+File: Figures/PYrrDistNetWorthPlot.png Graphic file (type png)
+<use Figures/PYrrDistNetWorthPlot.png>
+Package pdftex.def Info: Figures/PYrrDistNetWorthPlot.png  used on input line 2
+74.
+(pdftex.def)             Requested size: 173.56186pt x 173.56181pt.
+
 
 [12
 
-]
+ <./Figures/PYrrPointNetWorthPlot.png> <./Figures/PYrrDistNetWorthPlot.png>]
 
 [13
 
-] (./Tables/calibPY.tex)
+] (./Tables/calibLC.tex)
 
 [14
 
 ]
+<Figures/LCrrPointNetWorthPlot.png, id=677, 361.35pt x 361.35pt>
+File: Figures/LCrrPointNetWorthPlot.png Graphic file (type png)
+<use Figures/LCrrPointNetWorthPlot.png>
+Package pdftex.def Info: Figures/LCrrPointNetWorthPlot.png  used on input line 
+314.
+(pdftex.def)             Requested size: 173.56186pt x 173.56181pt.
+<Figures/LCrrDistNetWorthPlot.png, id=678, 361.35pt x 361.35pt>
+File: Figures/LCrrDistNetWorthPlot.png Graphic file (type png)
+<use Figures/LCrrDistNetWorthPlot.png>
+Package pdftex.def Info: Figures/LCrrDistNetWorthPlot.png  used on input line 3
+14.
+(pdftex.def)             Requested size: 173.56186pt x 173.56181pt.
+
 
 [15
 
-]
+ <./Figures/LCrrPointNetWorthPlot.png> <./Figures/LCrrDistNetWorthPlot.png>]
 
 [16
 
 ]
-<Figures/PYrrPointNetWorthPlot.png, id=797, 361.35pt x 361.35pt>
-File: Figures/PYrrPointNetWorthPlot.png Graphic file (type png)
-<use Figures/PYrrPointNetWorthPlot.png>
-Package pdftex.def Info: Figures/PYrrPointNetWorthPlot.png  used on input line 
-410.
-(pdftex.def)             Requested size: 173.56186pt x 173.56181pt.
-<Figures/PYrrDistNetWorthPlot.png, id=798, 361.35pt x 361.35pt>
-File: Figures/PYrrDistNetWorthPlot.png Graphic file (type png)
-<use Figures/PYrrDistNetWorthPlot.png>
-Package pdftex.def Info: Figures/PYrrDistNetWorthPlot.png  used on input line 4
-10.
-(pdftex.def)             Requested size: 173.56186pt x 173.56181pt.
+<Tables/Emp_Lorenz_10yr_LCrrDistNetWorth.png, id=760, 578.16pt x 180.675pt>
+File: Tables/Emp_Lorenz_10yr_LCrrDistNetWorth.png Graphic file (type png)
+<use Tables/Emp_Lorenz_10yr_LCrrDistNetWorth.png>
+Package pdftex.def Info: Tables/Emp_Lorenz_10yr_LCrrDistNetWorth.png  used on i
+nput line 357.
+(pdftex.def)             Requested size: 277.70004pt x 86.7809pt.
+<Tables/Sim_Lorenz_10yr_LCrrDistNetWorth.png, id=761, 578.16pt x 180.675pt>
+File: Tables/Sim_Lorenz_10yr_LCrrDistNetWorth.png Graphic file (type png)
+<use Tables/Sim_Lorenz_10yr_LCrrDistNetWorth.png>
+Package pdftex.def Info: Tables/Sim_Lorenz_10yr_LCrrDistNetWorth.png  used on i
+nput line 357.
+(pdftex.def)             Requested size: 277.70004pt x 86.7809pt.
 
 
 [17
 
- <./Figures/PYrrPointNetWorthPlot.png> <./Figures/PYrrDistNetWorthPlot.png>]
+ <./Tables/Emp_Lorenz_10yr_LCrrDistNetWorth.png> <./Tables/Sim_Lorenz_10yr_LCrr
+DistNetWorth.png>]
 
 [18
 
-] (./Tables/calibLC.tex)
+]
 
 [19
 
 ]
-<Figures/LCrrPointNetWorthPlot.png, id=922, 361.35pt x 361.35pt>
-File: Figures/LCrrPointNetWorthPlot.png Graphic file (type png)
-<use Figures/LCrrPointNetWorthPlot.png>
-Package pdftex.def Info: Figures/LCrrPointNetWorthPlot.png  used on input line 
-450.
-(pdftex.def)             Requested size: 173.56186pt x 173.56181pt.
-<Figures/LCrrDistNetWorthPlot.png, id=923, 361.35pt x 361.35pt>
-File: Figures/LCrrDistNetWorthPlot.png Graphic file (type png)
-<use Figures/LCrrDistNetWorthPlot.png>
-Package pdftex.def Info: Figures/LCrrDistNetWorthPlot.png  used on input line 4
-50.
-(pdftex.def)             Requested size: 173.56186pt x 173.56181pt.
-
 
 [20
 
- <./Figures/LCrrPointNetWorthPlot.png> <./Figures/LCrrDistNetWorthPlot.png>]
+]
 
 [21
 
 ]
-<Tables/Emp_Lorenz_10yr_LCrrDistNetWorth.png, id=1002, 578.16pt x 180.675pt>
-File: Tables/Emp_Lorenz_10yr_LCrrDistNetWorth.png Graphic file (type png)
-<use Tables/Emp_Lorenz_10yr_LCrrDistNetWorth.png>
-Package pdftex.def Info: Tables/Emp_Lorenz_10yr_LCrrDistNetWorth.png  used on i
-nput line 493.
-(pdftex.def)             Requested size: 277.70004pt x 86.7809pt.
-<Tables/Sim_Lorenz_10yr_LCrrDistNetWorth.png, id=1003, 578.16pt x 180.675pt>
-File: Tables/Sim_Lorenz_10yr_LCrrDistNetWorth.png Graphic file (type png)
-<use Tables/Sim_Lorenz_10yr_LCrrDistNetWorth.png>
-Package pdftex.def Info: Tables/Sim_Lorenz_10yr_LCrrDistNetWorth.png  used on i
-nput line 493.
-(pdftex.def)             Requested size: 277.70004pt x 86.7809pt.
-
 
 [22
 
- <./Tables/Emp_Lorenz_10yr_LCrrDistNetWorth.png> <./Tables/Sim_Lorenz_10yr_LCrr
-DistNetWorth.png>]
+]
 
 [23
 
@@ -1436,19 +1442,18 @@ DistNetWorth.png>]
 
 ]
 
-LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10.95> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 560.
-
-
-
 [25
 
- </usr/local/texlive/2024/texmf-dist/tex/latex/beamer/beamericonarticle.pdf>]
+]
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10.95> not available
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 541.
+
+
 
 [26
 
-
-]
+ </usr/local/texlive/2024/texmf-dist/tex/latex/beamer/beamericonarticle.pdf>]
 
 [27
 
@@ -1456,21 +1461,6 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10.95> not available
 ]
 
 [28
-
-
-]
-
-[29
-
-
-]
-
-[30
-
-
-]
-
-[31
 
 
 ]
@@ -1489,48 +1479,48 @@ LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-11>
  ***********
 Package rerunfilecheck Info: File `Chp1-presentation.out' has not changed.
-(rerunfilecheck)             Checksum: 6CF0BCA37E38250390FAB2432402F0FC;1025.
+(rerunfilecheck)             Checksum: DA67363227AD60A5C68FA538F52C8089;1025.
 Package logreq Info: Writing requests to 'Chp1-presentation.run.xml'.
 \openout1 = `Chp1-presentation.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32461 strings out of 467816
- 638745 string characters out of 5432252
- 1394521 words of memory out of 5000000
- 60402 multiletter control sequences out of 15000+600000
+ 32411 strings out of 467816
+ 637547 string characters out of 5432252
+ 1389920 words of memory out of 5000000
+ 60363 multiletter control sequences out of 15000+600000
  642804 words of font info for 97 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,20n,123p,1888b,1811s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pf
 b></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
-></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
-/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></u
-sr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr
-/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/l
-ocal/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/lo
-cal/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/loc
-al/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local
-/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/t
-exlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/
-texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/
-texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/local/
-texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/local/t
-exlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/local/te
-xlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/tex
-live/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texli
-ve/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive
-/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2
-024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/202
-4/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2024/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2024/t
-exmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/local/texlive/2
-024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Chp1-presentation.pdf (31 pages, 985349 bytes).
+></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.
+pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.p
+fb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pf
+b></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb>
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></
+usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></us
+r/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr
+/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/
+local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/lo
+cal/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/loca
+l/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/loc
+al/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/loc
+al/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/loc
+al/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/loca
+l/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/local
+/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/
+texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/te
+xlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texl
+ive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texliv
+e/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/
+2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2
+024/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/local/texl
+ive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Chp1-presentation.pdf (28 pages, 1149143 bytes).
 PDF statistics:
- 1504 PDF objects out of 1728 (max. 8388607)
- 1194 compressed objects within 12 object streams
- 96 named destinations out of 1000 (max. 500000)
- 227 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1391 PDF objects out of 1440 (max. 8388607)
+ 1077 compressed objects within 11 object streams
+ 85 named destinations out of 1000 (max. 500000)
+ 232 words of extra memory for PDF output out of 10000 (max. 10000000)
 
