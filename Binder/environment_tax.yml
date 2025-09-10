@@ -1,17 +1,18 @@
 name: hetret_taxes
 channels:
-  - defaults
   - conda-forge
+  - defaults
 dependencies:
   - python=3.10
-  - requests
-  - pandas
-  - jupyter
-  - matplotlib
-  - scipy
-  - numpy
-  - numba
-  - seaborn
   - pip
+  - git
+  - numpy>=1.23
+  - scipy>=1.9
+  - pandas>=1.5
+  - matplotlib>=3.6
+  - pyyaml
+  - ipykernel
+  - setuptools
+  - wheel
   - pip:
-      - git+https://github.com/econ-ark/HARK@master
+      - git+https://github.com/econ-ark/HARK@0.16.1

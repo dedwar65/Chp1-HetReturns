@@ -1,0 +1,11 @@
+Tag: LCrrDistNetWorthtax_2004
+Aggregate Income (GDP): 4636284.722130
+Target Tax Revenue (1% of GDP): 46362.847221
+Aggregate Wealth: 12646930.868954
+Aggregate Capital Income: 350728.661762
+Wealth tax rate: 0.003632
+Capital income tax rate: 0.130943
+Percentiles: [np.float64(0.2), np.float64(0.4), np.float64(0.6), np.float64(0.8)]
+Lorenz (Original): [0.007178, 0.033171, 0.095163, 0.254784]
+Lorenz (Wealth tax): [0.007415, 0.034345, 0.097638, 0.256712]
+Lorenz (Capital income tax): [0.008591, 0.039171, 0.109058, 0.275285]

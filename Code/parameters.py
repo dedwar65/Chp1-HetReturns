@@ -165,7 +165,7 @@ death_age = BaseParamDict['death_age']
 
 # Compute base mortality rates for the specified age range
 base_liv_prb = parse_ssa_life_table(
-        female=True, cross_sec=True, year=2019, min_age=birth_age, max_age=death_age - 1
+        female=True, cross_sec=True, year=2004, min_age=birth_age, max_age=death_age - 1
     )
 
 # Import adjustments for education and apply them to the base mortality rates
@@ -188,7 +188,7 @@ for j in range(death_age - birth_age):
 
 # Here define the population of agents for the simulation
 if LifeCycle:
-    adjust_infl_to = 2019
+    adjust_infl_to = 2004
     income_calib = Cagetti_income
 
     # Define fractions of education types
