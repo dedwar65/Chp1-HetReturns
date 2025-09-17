@@ -13,7 +13,7 @@ from utilities_taxes import (extract_income_distribution,
 
 # Import SCF Lorenz data from parameters.py
 from parameters import (emp_lorenz, MyPopulation, LifeCycle,
-                        HetTypeCount, DstnType, DstnParamMapping, BaseTypeCount, tag)
+                        HetTypeCount, DstnType, DstnParamMapping, BaseTypeCount, tag, TargetPercentiles)
 
 # Specify the center and spread from a previous successful estimation.py run
 # You can find these values in the Results directory
@@ -48,32 +48,36 @@ aggregate_wealth_once = float(np.dot(WealthDstn, WeightDstn))
 
 # Step 2: Find tax rates that generate the target revenue
 print("\nFinding wealth tax rate...")
-# Compute aggregate wealth once
-aggregate_wealth = np.dot(WealthDstn, WeightDstn)
-print(f"Aggregate Wealth: {aggregate_wealth:,.2f}")
+# Build taxable base by excluding non-positive wealth and using same indices for weights
+_taxable_indices = np.where(WealthDstn > 0)[0]
+_taxable_wealth_dstn = WealthDstn[_taxable_indices]
+_taxable_weight_dstn = WeightDstn[_taxable_indices]
 
-# Find wealth tax rate directly
-wealth_tax_rate = GDP_target / aggregate_wealth
+# Taxable wealth base
+taxable_aggregate_wealth = float(np.dot(_taxable_wealth_dstn, _taxable_weight_dstn))
+print(f"Aggregate Wealth (all): {aggregate_wealth_once:,.2f}")
+print(f"Taxable Aggregate Wealth (>0): {taxable_aggregate_wealth:,.2f}")
+
+# Wealth tax rate from taxable base
+wealth_tax_rate = GDP_target / taxable_aggregate_wealth if taxable_aggregate_wealth > 0 else 0.0
 print(f"Wealth tax rate: {wealth_tax_rate:.6f}")
 
 print("\nFinding capital income tax rate...")
-# Compute aggregate capital income once (following exact pattern from calculate_capital_income_tax_revenue)
+# Compute per-entry interest rate array and taxable base using explicit conditions
 HetTypeCount = len(interest_rates)
 BaseTypeCount = len(WealthDstn) // HetTypeCount
+r_arr = np.array([interest_rates[(j // BaseTypeCount) % HetTypeCount] for j in range(len(WealthDstn))])
 
-capital_income = np.zeros_like(WealthDstn)
-for j in range(len(WealthDstn)):
-    # Map agent index to heterogeneous type
-    i = j // BaseTypeCount % HetTypeCount
-    interest_rate = interest_rates[i]
-    # Capital income = wealth * max(interest_rate - 1, 0)
-    capital_income[j] = WealthDstn[j] * max(interest_rate - 1, 0)
+_capital_taxable_mask = (WealthDstn > 0) & (r_arr > 1.0)
+_capital_taxable_wealth = WealthDstn[_capital_taxable_mask]
+_capital_taxable_weights = WeightDstn[_capital_taxable_mask]
+_capital_taxable_returns = (r_arr[_capital_taxable_mask] - 1.0)
 
-aggregate_capital_income = np.dot(capital_income, WeightDstn)
-print(f"Aggregate Capital Income: {aggregate_capital_income:,.2f}")
+aggregate_capital_income = float(np.dot(_capital_taxable_wealth * _capital_taxable_returns, _capital_taxable_weights))
+print(f"Taxable Aggregate Capital Income (wealth>0 and r>1): {aggregate_capital_income:,.2f}")
 
-# Find capital income tax rate directly
-capital_income_tax_rate = GDP_target / aggregate_capital_income
+# Capital income tax rate from taxable base
+capital_income_tax_rate = GDP_target / aggregate_capital_income if aggregate_capital_income > 0 else 0.0
 print(f"Capital income tax rate: {capital_income_tax_rate:.6f}")
 
 # Step 3: Create two new populations with taxes applied
@@ -82,29 +86,17 @@ print("\nCreating taxed populations...")
 # Create wealth tax population
 MyPopulation_WT = []
 for agent in MyPopulation:
-    # Create a copy of the agent
     agent_copy = deepcopy(agent)
-
-    # Get the original Rfree values and rename to RfreeFull
     RfreeFull = agent_copy.Rfree
-
-    # Apply wealth tax constructor
     agent_copy.Rfree = make_Rfree_with_wealth_tax(RfreeFull, wealth_tax_rate, agent_copy.T_cycle)
-
     MyPopulation_WT.append(agent_copy)
 
 # Create capital income tax population
 MyPopulation_CIT = []
 for agent in MyPopulation:
-    # Create a copy of the agent
     agent_copy = deepcopy(agent)
-
-    # Get the original Rfree values and rename to RfreeFull
     RfreeFull = agent_copy.Rfree
-
-    # Apply capital income tax constructor
     agent_copy.Rfree = make_Rfree_with_capital_income_tax(RfreeFull, capital_income_tax_rate, agent_copy.T_cycle)
-
     MyPopulation_CIT.append(agent_copy)
 
 print(f"Created {len(MyPopulation_WT)} agents with wealth tax")
@@ -122,16 +114,13 @@ print(f"Average Rfree (capital income tax): {avg_Rfree_cit:.6f}")
 # Solve and simulate taxed populations to ensure histories reflect modified returns
 for pop_name, pop in [("WT", MyPopulation_WT), ("CIT", MyPopulation_CIT)]:
     for ag in pop:
-        # track vars for legacy simulate to populate history
         if not hasattr(ag, 'track_vars') or ('aLvl' not in ag.track_vars):
             ag.track_vars = ['aLvl','pLvl','WeightFac']
         ag.solve()
-        # Use legacy simulation API to populate .history as used below
         try:
             ag.initialize_sim()
             ag.simulate()
         except Exception:
-            # Fallback to modern API if needed
             try:
                 ag.initialize_sim()
                 ag.simulate()
@@ -144,14 +133,9 @@ def extract_wealth_distribution(population):
     Extract wealth, income, and weight arrays from a population.
     Uses the same pattern as estimation.py lines 150-159.
     """
-    # Simulate the population first (like estimation.py does)
     from HARK.parallel import multi_thread_commands
     multi_thread_commands(population, ["solve()", "initialize_sim()", "simulate()"], num_jobs=1)
 
-    """
-    Extract wealth, income, and weight arrays from a population.
-    Uses the same pattern as in estimation.py lines 150-159.
-    """
     if LifeCycle:
         IndWealthArray = np.concatenate([this_type.history['aLvl'].flatten() for this_type in population])
         IndProdArray = np.concatenate([this_type.history['pLvl'].flatten() for this_type in population])
@@ -166,13 +150,8 @@ def extract_wealth_distribution(population):
 # Extract distributions for each population
 print("\nExtracting wealth distributions...")
 
-# Original population (no tax)
 WealthArray_Original, ProdArray_Original, WeightArray_Original = extract_wealth_distribution(MyPopulation)
-
-# Wealth tax population
 WealthArray_WT, ProdArray_WT, WeightArray_WT = extract_wealth_distribution(MyPopulation_WT)
-
-# Capital income tax population
 WealthArray_CIT, ProdArray_CIT, WeightArray_CIT = extract_wealth_distribution(MyPopulation_CIT)
 
 print(f"Original population wealth array length: {len(WealthArray_Original)}")
@@ -185,8 +164,7 @@ print(f"Wealth tax population average wealth: {np.average(WealthArray_WT, weight
 print(f"Capital income tax population average wealth: {np.average(WealthArray_CIT, weights=WeightArray_CIT):.2f}")
 
 # Compute Lorenz shares for each simulated wealth distribution
-from parameters_taxes import TargetPercentiles as _TargetPercentiles
-pctiles = np.array(_TargetPercentiles, dtype=float)
+pctiles = np.array(TargetPercentiles, dtype=float)
 Lorenz_orig = get_lorenz_shares(WealthArray_Original, WeightArray_Original, percentiles=pctiles)
 Lorenz_wt = get_lorenz_shares(WealthArray_WT, WeightArray_WT, percentiles=pctiles)
 Lorenz_cit = get_lorenz_shares(WealthArray_CIT, WeightArray_CIT, percentiles=pctiles)
@@ -205,7 +183,7 @@ tax_analysis_results = {
     'wealth_tax_rate': wealth_tax_rate,
     'capital_income_tax_rate': capital_income_tax_rate,
     'GDP_target': GDP_target,
-    'SCF_lorenz': emp_lorenz,  # Add SCF data
+    'SCF_lorenz': emp_lorenz,
     'original': {
         'wealth': WealthArray_Original,
         'income': ProdArray_Original,
@@ -235,8 +213,9 @@ _results_lines = []
 _results_lines.append(f"Tag: {tag}\n")
 _results_lines.append(f"Aggregate Income (GDP): {GDP:.6f}\n")
 _results_lines.append(f"Target Tax Revenue (1% of GDP): {GDP_target:.6f}\n")
-_results_lines.append(f"Aggregate Wealth: {aggregate_wealth_once:.6f}\n")
-_results_lines.append(f"Aggregate Capital Income: {aggregate_capital_income:.6f}\n")
+_results_lines.append(f"Aggregate Wealth (all): {aggregate_wealth_once:.6f}\n")
+_results_lines.append(f"Taxable Aggregate Wealth (>0): {taxable_aggregate_wealth:.6f}\n")
+_results_lines.append(f"Taxable Aggregate Capital Income: {aggregate_capital_income:.6f}\n")
 _results_lines.append(f"Wealth tax rate: {wealth_tax_rate:.6f}\n")
 _results_lines.append(f"Capital income tax rate: {capital_income_tax_rate:.6f}\n")
 _results_lines.append(f"Percentiles: {list(pctiles)}\n")

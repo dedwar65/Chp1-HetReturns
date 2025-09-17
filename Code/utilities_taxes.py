@@ -25,10 +25,10 @@ def make_Rfree_with_wealth_tax(RfreeFull, WealthTaxRate, T_cycle):
         Rfree = RfreeFull[0]  # Get scalar value from list
     else:
         Rfree = RfreeFull
-    
+
     # Apply wealth tax: Rfree_new = Rfree - WealthTaxRate
     Rfree_new = Rfree - WealthTaxRate
-    
+
     # Return as list for T_cycle compatibility
     return [Rfree_new] * T_cycle
 
@@ -40,11 +40,11 @@ def make_Rfree_with_capital_income_tax(RfreeFull, CapitalTaxRate, T_cycle):
         Rfree = RfreeFull[0]  # Get scalar value from list
     else:
         Rfree = RfreeFull
-    
+
     # Apply capital income tax: Rfree_new = 1 + (Rfree - 1) * (1 - CapitalTaxRate)
     # This taxes only the capital income portion (Rfree - 1)
     Rfree_new = 1 + (Rfree - 1) * (1 - CapitalTaxRate)
-    
+
     # Return as list for T_cycle compatibility
     return [Rfree_new] * T_cycle
 
@@ -62,27 +62,47 @@ def save_lorenz_side_by_side_from_results(results_dict, tag, percentiles):
     wealth_tax_lorenz = results_dict['wealth_tax']['lorenz']
     capital_income_tax_lorenz = results_dict['capital_income_tax']['lorenz']
 
+    # Ensure arrays are numpy arrays
+    percentiles = np.asarray(percentiles, dtype=float)
+    SCF_lorenz = np.asarray(SCF_lorenz, dtype=float)
+    original_lorenz = np.asarray(original_lorenz, dtype=float)
+    wealth_tax_lorenz = np.asarray(wealth_tax_lorenz, dtype=float)
+    capital_income_tax_lorenz = np.asarray(capital_income_tax_lorenz, dtype=float)
+
+    # Augment with endpoints to span [0,1]
+    x_plot = np.concatenate(([0.0], percentiles, [1.0]))
+    SCF_plot = np.concatenate(([0.0], SCF_lorenz, [1.0]))
+    orig_plot = np.concatenate(([0.0], original_lorenz, [1.0]))
+    wt_plot = np.concatenate(([0.0], wealth_tax_lorenz, [1.0]))
+    cit_plot = np.concatenate(([0.0], capital_income_tax_lorenz, [1.0]))
+
     # Left plot: Wealth Tax
-    ax1.plot(percentiles, SCF_lorenz, 'k-', linewidth=2, label='SCF Data')
-    ax1.plot(percentiles, original_lorenz, 'b--', linewidth=2, label='Original Model')
-    ax1.plot(percentiles, wealth_tax_lorenz, 'r:', linewidth=2, label='Wealth Tax')
-    ax1.plot(percentiles, percentiles, 'k:', alpha=0.5, label='45° Line')
-    ax1.set_xlabel('Cumulative Population Share')
-    ax1.set_ylabel('Cumulative Wealth Share')
+    ax1.plot(x_plot, SCF_plot, 'k-', linewidth=2, label='SCF')
+    ax1.plot(x_plot, orig_plot, 'b--', linewidth=2, label='Model (Original)')
+    ax1.plot(x_plot, wt_plot, 'r:', linewidth=2, label='Model (Wealth tax)')
+    ax1.plot([0, 1], [0, 1], 'k:', alpha=0.5, label='45 Degree')
+    ax1.set_xlabel('Percentile of net worth')
+    ax1.set_ylabel('Cumulative share of wealth')
     ax1.set_title('Wealth Tax')
-    ax1.legend(loc='upper left')
+    ax1.set_xlim(0, 1)
+    ax1.set_ylim(0, 1)
+    ax1.set_aspect('equal', adjustable='box')
     ax1.grid(True, alpha=0.3)
+    ax1.legend(loc=2)
 
     # Right plot: Capital Income Tax
-    ax2.plot(percentiles, SCF_lorenz, 'k-', linewidth=2, label='SCF Data')
-    ax2.plot(percentiles, original_lorenz, 'b--', linewidth=2, label='Original Model')
-    ax2.plot(percentiles, capital_income_tax_lorenz, 'g:', linewidth=2, label='Capital Income Tax')
-    ax2.plot(percentiles, percentiles, 'k:', alpha=0.5, label='45° Line')
-    ax2.set_xlabel('Cumulative Population Share')
-    ax2.set_ylabel('Cumulative Wealth Share')
+    ax2.plot(x_plot, SCF_plot, 'k-', linewidth=2, label='SCF')
+    ax2.plot(x_plot, orig_plot, 'b--', linewidth=2, label='Model (Original)')
+    ax2.plot(x_plot, cit_plot, 'g:', linewidth=2, label='Model (Capital income tax)')
+    ax2.plot([0, 1], [0, 1], 'k:', alpha=0.5, label='45 Degree')
+    ax2.set_xlabel('Percentile of net worth')
+    ax2.set_ylabel('Cumulative share of wealth')
     ax2.set_title('Capital Income Tax')
-    ax2.legend(loc='upper left')
+    ax2.set_xlim(0, 1)
+    ax2.set_ylim(0, 1)
+    ax2.set_aspect('equal', adjustable='box')
     ax2.grid(True, alpha=0.3)
+    ax2.legend(loc=2)
 
     # Save the figure
     import os

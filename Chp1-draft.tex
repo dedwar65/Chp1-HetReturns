@@ -4,6 +4,15 @@
 \usepackage{footnote}
 \usepackage{lipsum}
 
+\usepackage{float}
+\usepackage[section]{placeins}
+\usepackage{afterpage}
+\usepackage{caption,subcaption}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\floatpagefraction}{0.8}
+
+
 \input{Subfiles/packages}
 
 \title{Wealth Inequality and Heterogeneous Deposit Rates in the Banking Sector}
@@ -29,16 +38,24 @@
 %main paper begins here
 \subfile{Subfiles/intro}
 \subfile{Subfiles/litrev}
-\subfile{Subfiles/mechanism}
 \subfile{Subfiles/model}
 \subfile{Subfiles/results}
+\FloatBarrier
+
+\subfile{Subfiles/taxation}
+\FloatBarrier
+
+\subfile{Subfiles/mechanism}
 \clearpage
 \subfile{Subfiles/conclusion}
 
 \printbibliography
 
+\FloatBarrier
+\clearpage
 \appendix
 \subfile{Subfiles/appendix}
+
 
 
 \end{document}

@@ -1,0 +1,31 @@
+\onlyinsubfile{\setcounter{section}{4}}
+\section{Wealth v.s. Capital income tax}
+\notinsubfile{\label{sec:Tax}}
+
+\par It is well known in the literature that the interesting setting to compare the effects of a tax on wealth versus one on capital income is when heterogeneous returns are present. \cite{Guvenen2023} documents that, when individuals earn different returns on their assets, a capital income tax will place a larger burden on those more efficient with their capital. On the other hand, the wealth tax will shift the burden towards those who are unproductive with their capital. This redistributive effect of the wealth tax leads to higher aggregate productivity, output, and ultimately larger welfare gains than the capital income tax. Following a similar line of reasoning, in this setting we can consider the quantitative effects of applying each of the tax schemes on distribution of wealth when heterogeneous returns are present.
+
+\par Suppose we begin in an economy where the distribution of returns is the one needed to best match wealth moments measured in the data. The question then is, what happens to the distribution of wealth if a revenue equivalent tax rate is applied to every household? It is clear that a capital income tax will decrease wealth inequality, since households that earn any capital income will see a tax but those with zero or negative returns will see a capital tax of zero. This will lead to less wealthy households holding a higher share of the aggregate wealth than when the capital tax is not present. The effects of the wealth tax are less obvious, since all households hold some wealth and thus will be taxed accordingly. 
+
+\par In this setting, the wealth tax enters the household budget constraint in the following way:
+\[
+m_{t+1} \;=\; \big(1 + r_t - \tau_w\big)\,k_{t+1} + \xi_{t+1}.
+\]. Similarly, for the capital income tax, we have
+\[
+m_{t+1} \;=\; \big(1 + (1-\tau_{ci})\,r_t\big)\,k_{t+1} + \xi_{t+1}.
+\]. I compute aggregate income as GDP in this setting, and then find the wealth tax rate and the capital tax rate which would raise tax revenues which are equal to 1\% of GDP. I do this for the estimated distribution of returns both for the infinite horizon and the life cycle setting.
+
+\par From there, I apply the tax schemes to each households and find the resulting wealth distributions for both cases. The wealth moments can be easily compared before and after each of the policies were implemented. Below are the results of applying each of the tax schemes in the infinite horizon \ref{tab:taxPY} version of the model. 
+\input{../Tables/taxresultsPY.tex}\unskip
+
+\par Applying the tax schemes in both cases increases the share of the wealth held at each of the chosen percentiles. This makes sense, as such a tax should redistribute extreme levels of wealth towards lower rungs of the distribution. However, the effect is mininal in the case of the flat wealth tax, and especially pronounced for the capital income tax. This is in line with wha tthe literature regarding the effects of these two policies when heterogeneous returns are present: if the capital income tax places a burden on the \textit{most productive} households regarding use of capital, then it should lead to less wealth inequality since those households contribute most to the skewness in the distribution.
+
+\par Next, I apply the tax schemes in the life cycle \ref{tab:taxLC} version of the model. A similar result arises here, where the capital income tax has a larger effect on reducing wealth inequality than the wealth tax which raises the same level of tax revenue does. From the table, the effects in the life-cycle model are less pronounced than they are for the infinite horizon case. 
+
+
+\input{../Tables/taxresultsLC.tex}\unskip
+
+
+
+
+
+

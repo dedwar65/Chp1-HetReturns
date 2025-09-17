@@ -1,4 +1,4 @@
-
+\onlyinsubfile{\setcounter{section}{3}}
 \section{Results}\notinsubfile{\label{sec:results}}
 %\setcounter{page}{0}\pagenumbering{arabic}
 
@@ -38,16 +38,6 @@ $$ \{\grave{R}, \nabla\} = \text{arg}\min_{R, \nabla} \bigg( \sum_{i=20, 40, 60,
     \label{fig:PYUnif} 
 \end{figure}
 
- \subsubsection{The implied distribution of bank heterogeneity}
-
-  \par I've estimated the distribution of returns which matches the wealth moments. As mentioned earlier, I can use this and the assumptions regarding the bank's decision problem to back out an implied distribution of $\varepsilon$. This will describe how the banks differ in the sensitivity of their deposit levels to changes in the market interest rate. Both in our simplified setting, and in the transmission channel empirically documented by \cite{Drechsler2017}, differences in these sensitivities ultimately leads to differences in the deposit rates offered across banks.  
-
-  \par First, I assume that the aggregate production function is Cobb-douglas, so that the marginal product of capital can be written as $\alpha \frac{Y}{K}$. With the calibrated values  $\delta = .025$, $\alpha = .36$, and the capital to output ratio $3$, this setting has an effective interest rate of $R^m = 1.095$ which can be used as the market interest rate.
-
-  \par Since the model with heterogeneity (i.e. the R-dist model) has 7 estimated points for the uniform distribution, the implied, estimated points for $\varepsilon$ can be uniquely pineed down by the expression $$\varepsilon_i = \frac{R_i^d}{R^m - R_i^d} .$$
-
-  \par For the infinte horizon version of the model which matches 2004 SCF data on net worth, the 7 estimated points describing heterogeneous returns are \texttt{[0.9635, 0.9828, 1.0012, 1.0212, 1.0404, 1.0596, 1.0789]}. The corresponding 7 implied elasticities are given by \texttt{[7.3288, 8.7552, 10.7712, 13.8374, 19.0636, 29.9737, 66.8914]}.
-
  
 \subsection{Incorporating life cycle dynamics into the model}
 
@@ -66,7 +56,7 @@ where $\textbf{p}_t = \psi_t \bar{\psi}_{es} \textbf{p}_{t-1}$ and $\bar{\psi}_{
   &\text{s.t.}& \\
   a_t &=& m_t - c_t, \\
   k_{t+1} &=& \frac{a_t}{\psi_{t+1}}, \\
-  m_{t+1} &=& (\daleth + r_t)k_{t+1} + \xi_{t+1}, \\
+  m_{t+1} &=& (1 + r_t)k_{t+1} + \xi_{t+1}, \\
   a_t &\geq& 0.
 \end{eqnarray*}
 
@@ -91,31 +81,12 @@ where $\textbf{p}_t = \psi_t \bar{\psi}_{es} \textbf{p}_{t-1}$ and $\bar{\psi}_{
     \label{fig:LCUnif} 
   \end{figure}
 
-\par For the life cycle version of the model which matches 2004 SCF data on net worth, the 7 estimated points describing heterogeneous returns are \texttt{[0.9755, 0.9913, 1.0072, 1.0230, 1.0388, 1.0546, 1.0705]}. The corresponding 7 implied elasticities are given by \texttt{[8.1649, 9.5642, 11.4677, 14.2079, 18.4920, 26.1362, 43.6448]}.
-
-\subsection{Assessing model performance}
-
-\par The results presented thus far are encouraging for a number of reasons. First, these results are inline with a common finding in the heterogeneous agent literature, which is that a single source of ex-ante heterogeneity, even when there is only a single, riskless asset available to partially insure against uncertain labor income, is enough to drastically improve the models ability to generate a reasonably skewed wealth distribution. Second, I am also able to match moments similar to those in \cite{cstw2017}, which this model is a close analog of.
-
-\par Although these are reasons to be encouraged by these results, they also suggest that assessing the model's performance only by how well it matches wealth moments is insufficient. To that end, I return to the literature on bank deposit sensitivities to changes in the federal funds rate. As we will see, the implied distribution of elasticities from my estimation method can be directly compared to those empirical estimatese, and how well they match can be used to assess my model. Additionally, I include wealth shares by age cohort as an additional set of untargeted moments for a similar assessment.  
-
-\subsubsection{Interpreting the implied distribution of elasticities}
-
-\par The usefulness in choosing a functional form for the level of deposits at a given bank as $S(\cdot) = A \left( \frac{R^d}{R^m} \right)^{\varepsilon}$ is that the parameter $\varepsilon$ has a clear interpretation as the elasticity of deposits to changes in the market interest rate. It can be shown that:
-
-\[
--\varepsilon = \frac{\partial \ln S(\cdot)}{\partial \ln R^m}. 
-\]
-
-\par So, the elasticity parameter tells us how a percentage change in the market interest rate changes the level of deposit, in percent terms. This allows us to directly compare the implied elasticities following the SMM procedure to the emepirical evidence on the transmission channel described by \cite{Drechsler2017} regarding the relationship between the Fed funds rate and the level of deposits at banks. For example, \cite{Genay2004} finds that a $1\%$ change in the Fed funds rate leads to about a  $3\%$ to  $4\%$ change in the level of deposits, depending on the size of the bank.
-
-\par The amount of returns heterogeneity required to match wealth inequality using only safe assets (i.e. bank deposits) will lead to vastly overstated elasticities for the resulting banking sector. This is not surprising. If bank wish to attract depositors in the face of an increasing Fed funds rate, they will need to offer a higher rate on deposits, regardless of the size of the bank. This suggests that there will be less variation in the optimal deposit rates offered across the banking sector. The banks which do not offer competitive deposit rates will likely find that their depositors switch to other safe investment technologies like money market funds. Since my model doesn't not match any moments regarding the number of banks in the economy, nor does it model returns heterogeneity by allowing for the choice between safe assets, it isn't too surprising that the elasticity of deposits to changes in the market interest rate is not well matched in this setting. That said, the ability of the model to back out a distribution of elasticities under the given assumptions is still useful. 
-
-\subsubsection{Untargeted moments}
+\FloatBarrier
+\subsection{Untargeted moments}
 
 \par It is well-documented in the literature on heterogeneous agent modeling that, adding a source of (ex-ante) heterogeneous beyond the addition of labor income uncertainty to the representative agent framework will allow the simulated distribution of wealth to match moments of the empirical wealth distribution particularly well. So, although it is useful to see that the model with heterogeneous returns does a good job of matching the given lorenz targets, we need another way to assess the model's performance.
 
-\par For this reason, I include age-dependent wealth moments from the same wave of the SCF to serve as untargeted moments~\ref{fig:EmpLorenzTar}. These can be found in the following table~\ref{fig:EmpLorenzTar}.
+\par For this reason, I include age-dependent wealth moments from the same wave of the SCF to serve as untargeted moments~\ref{fig:EmpLorenzTar}. These can be found in the following table.
 
 \begin{figure}[h]
 \centering
@@ -124,7 +95,7 @@ where $\textbf{p}_t = \psi_t \bar{\psi}_{es} \textbf{p}_{t-1}$ and $\bar{\psi}_{
 \label{fig:EmpLorenzTar}
 \end{figure}
 
-\par The next two tables present the simulated version of the untargeted moments for the model without heterogeneity~\ref{fig:SimLorenzTarPoint}, and then with heterogeneity~\ref{fig:SimLorenzTarDist}. As you can see from the tables~\ref{fig:SimLorenzTarPoint} and~\ref{fig:SimLorenzTarDist} below, the age-dependent Lorenz targets that arise from the model again fit the data much better when returns heterogeneity is present versus when it is absent.
+\par The next two tables present the simulated version of the untargeted moments for the model without heterogeneity~\ref{fig:SimLorenzTarPoint}, and then with heterogeneity~\ref{fig:SimLorenzTarDist}. As you can see from the tables below, the age-dependent Lorenz targets that arise from the model again fit the data much better when returns heterogeneity is present versus when it is absent.
 
 \begin{figure}[htbp]
 \centering

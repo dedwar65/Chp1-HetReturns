@@ -1,4 +1,4 @@
-\onlyinsubfile{\setcounter{section}{2}}
+\onlyinsubfile{\setcounter{section}{5}}
 \section{Mechanism for returns heterogeneity}
 \notinsubfile{\label{sec:Mechanism}}
 
@@ -18,6 +18,63 @@
 
 \par It is well documented in the U.S. empirically that the level of deposits at a given bank will change due to exogenous changes in the Fed funds rate. \cite{Drechsler2017} propose a clear transmissions channel for monetary policy: changes in the Fed funds rate may lead banks to widen the interest spread they charge on deposits, which causes deposits to flee the bank. The authors find a strong, negative relationship between changes in the federal funds rate and the growth rate of deposits. Furthermore, they also note that a 100 basis point increase in the Fed funds rate leads to a higher deposit outflow in bank branches in more concentrated markets relative to those in less concentrated markets.\footnote{Branches in \say{more concentrated markets} refers to banks which operate in local deposit markets where a few banks hold large market shares.}
 
-\par With this in mind, variation in the strength of this transmission channel across banks can be viewed as a potential source of heterogeneity in the banking sector, as certain market characteristics would make the level of deposits offered by some banks less sensitive to changes in federal funds rate than other banks. For example, \cite{Sarkisyan2021} make a distinction between \textit{local} and \textit{globally integrated} banks, and show that \say{global banks lose much more deposits relative to local banks in response to unexpected changed in the federal funds rate}. \cite{d'Avernas2024} show a similar finding regarding heterogeneity in deposit rates, but for larger vs smaller banks.
+\par With this in mind, variation in the strength of this transmission channel across banks can be viewed as a potential source of heterogeneity in the banking sector, as certain market characteristics would make the level of deposits offered by some banks less sensitive to changes in federal funds rate than other banks. For example, \cite{Sarkisyan2021} make a distinction between \textit{local} and \textit{globally integrated} banks, and show that \say{global banks lose much more deposits relative to local banks in response to unexpected changed in the federal funds rate}. \cite{dAvernas2024} show a similar finding regarding heterogeneity in deposit rates, but for larger vs smaller banks.
 
 \par With this in mind, the next step is to extend the standard HA model describing household consumption-saving decisions by explicitly modeling a banking sector. In this setting, banks will each solve a similar profit-maximization problem regarding accepting deposits at an offered deposit rate and holding reserves which earn the market interest rate. The key distinction between banks in the model will be how sensitive the level of deposits are to changes in the market interest rate, which is in line with the mentioned empirical evidence. From here, it will be clear how heterogeneity in returns may arise for households which are otherwise the same.
+
+\subsection{Model of heterogeneous deposit rates}
+
+\par Here I present a small, open economy with banks and households as the optimizing agents in the model. This will be a partial equilibrium analysis since the world interest rate is being taken as given. That said, I present a simple framework for describing the optimal behavior for banks setting deposit rates. By assuming that there is a cobb-douglas aggregate production function, I will find the marginal product of capital (less depreciation) that is consistent with the capital to output ratio from the model which matches its empirical counterpart. This effective interest rate will be considered the world or \say{market} interest rate and will be used along with the estimated distribution of heterogeneous returns to back out esetimated values for elasticites of foreign deposits to the deposit rates for each of the banks in the model.  
+
+\subsubsection{Assumptions regarding the banking sector}
+
+\par There are a continuum of banks, identical in all respects other than the elasticity of the level of deposits to changes in the market interest rate.
+
+\par The model is static in that, I assume that the bank chooses a deposit rate to offer to its clientele base at the start of the time horizon. Therefore, this decision depends soley on the market interest rate and the bank's given elasticity. Additionally, a given bank cannot take actions to increase the number of depositors at their given institution \footnote{For example, compare a bank in a suburb area of Montana (local) versus a bank near downtown Houston, Texas (globally integrated).}.
+
+\par Lastly, in this simple version of the model, I assume that households do not endogenously choose which banks to do business with. Clearly, this would lead us towards the literature on costly human capital acquisition and financial literacy. Instead, I assume that at the outset banks are assigned to a household at birth with some probability. The household is \say{stuck} with this bank assignment until death. In this way, the banking sector merely replaces the assignment of idiosyncratic rates of returns over the time horizon in the standard model. 
+
+\subsubsection{Decision problem for banks accepting deposits}
+
+\par The sole distinction between banks in this model is the sensitivity of their level of deposits to changes in the market interest rate, which we will index by $\varepsilon_i$. This will be the source of returns heterogeneity in the model. To see this, I follow a similar, but simplified description of the decision problem for banks which can be found in \cite{Paul2024}.
+
+ \par Let $R^m$ be the market rate of return, $R^d$ be the rate of return offered on deposits by a  bank, and $S(R^d, R^m)$ be the level of deposits held at a given bank.
+
+\par Banks solve:
+\[
+\max (R^m - R^d) \cdot S(R^d, R^m)
+\]
+
+\par subject to:
+\[
+S(R^d, R^m) = A \left( \frac{R^d}{R^m} \right)^{\varepsilon}
+\]
+
+\par Importantly, the first order condition implies that the optimal deposit rate for the $i$-th bank is given by $$ R_i^d = \frac{\varepsilon_i}{1+\varepsilon_i} R^m  $$. This is crucial for the model in that, so long as we calibrate the model for a particular value of $R^m$, estimating a uniform distribution of returns using the simulated method of moments will imply a corresponding distribution of elasticities (the one that minimizes the distance between simulated and lorenz wealth moments). In this way, the 7 discretized points capture 7 different deposit rates offered, which result in varying elasticities among 7 different bank types in the model. From the expression above, we see that banks with higher values of $\varepsilon_i$  must set $R_i^d$ closer to $R^m$.
+
+ \subsection{The implied distribution of bank heterogeneity}
+
+  \par I've estimated the distribution of returns which matches the wealth moments. As mentioned earlier, I can use this and the assumptions regarding the bank's decision problem to back out an implied distribution of $\varepsilon$. This will describe how the banks differ in the sensitivity of their deposit levels to changes in the market interest rate. Both in our simplified setting, and in the transmission channel empirically documented by \cite{Drechsler2017}, differences in these sensitivities ultimately leads to differences in the deposit rates offered across banks.  
+
+  \par First, I assume that the aggregate production function is Cobb-douglas, so that the marginal product of capital can be written as $\alpha \frac{Y}{K}$. With the calibrated values  $\delta = .025$, $\alpha = .36$, and the capital to output ratio $3$, this setting has an effective interest rate of $R^m = 1.095$ which can be used as the market interest rate.
+
+  \par Since the model with heterogeneity (i.e. the R-dist model) has 7 estimated points for the uniform distribution, the implied, estimated points for $\varepsilon$ can be uniquely pineed down by the expression $$\varepsilon_i = \frac{R_i^d}{R^m - R_i^d} .$$
+
+  \par For the infinte horizon version of the model which matches 2004 SCF data on net worth, the 7 estimated points describing heterogeneous returns are \texttt{[0.9635, 0.9828, 1.0012, 1.0212, 1.0404, 1.0596, 1.0789]}. The corresponding 7 implied elasticities are given by \texttt{[7.3288, 8.7552, 10.7712, 13.8374, 19.0636, 29.9737, 66.8914]}.
+
+  \par For the life cycle version of the model which matches 2004 SCF data on net worth, the 7 estimated points describing heterogeneous returns are \texttt{[0.9755, 0.9913, 1.0072, 1.0230, 1.0388, 1.0546, 1.0705]}. The corresponding 7 implied elasticities are given by \texttt{[8.1649, 9.5642, 11.4677, 14.2079, 18.4920, 26.1362, 43.6448]}.
+
+
+  \subsubsection{Interpreting the implied distribution of elasticities}
+
+    \par Another way to assess the model's performance is to return to the literature on bank deposit sensitivities to changes in the federal funds rate. As we will see, the implied distribution of elasticities from my estimation method can be directly compared to those empirical estimatese, and how well they match can be used to assess my model. Additionally, I include wealth shares by age cohort as an additional set of untargeted moments for a similar assessment.  
+
+\par The usefulness in choosing a functional form for the level of deposits at a given bank as $S(\cdot) = A \left( \frac{R^d}{R^m} \right)^{\varepsilon}$ is that the parameter $\varepsilon$ has a clear interpretation as the elasticity of deposits to changes in the market interest rate. It can be shown that:
+
+\[
+-\varepsilon = \frac{\partial \ln S(\cdot)}{\partial \ln R^m}. 
+\]
+
+\par So, the elasticity parameter tells us how a percentage change in the market interest rate changes the level of deposit, in percent terms. This allows us to directly compare the implied elasticities following the SMM procedure to the emepirical evidence on the transmission channel described by \cite{Drechsler2017} regarding the relationship between the Fed funds rate and the level of deposits at banks. For example, \cite{Genay2004} finds that a $1\%$ change in the Fed funds rate leads to about a  $3\%$ to  $4\%$ change in the level of deposits, depending on the size of the bank.
+
+\par The amount of returns heterogeneity required to match wealth inequality using only safe assets (i.e. bank deposits) will lead to vastly overstated elasticities for the resulting banking sector. This is not surprising. If bank wish to attract depositors in the face of an increasing Fed funds rate, they will need to offer a higher rate on deposits, regardless of the size of the bank. This suggests that there will be less variation in the optimal deposit rates offered across the banking sector. The banks which do not offer competitive deposit rates will likely find that their depositors switch to other safe investment technologies like money market funds. Since my model doesn't not match any moments regarding the number of banks in the economy, nor does it model returns heterogeneity by allowing for the choice between safe assets, it isn't too surprising that the elasticity of deposits to changes in the market interest rate is not well matched in this setting. That said, the ability of the model to back out a distribution of elasticities under the given assumptions is still useful. 

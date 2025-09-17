@@ -1,0 +1,27 @@
+% required in preamble:
+% \usepackage{booktabs}
+% \usepackage{graphicx}   % for \resizebox
+% \usepackage{hyperref}   % for \hypertarget (optional if you already use it)
+
+\hypertarget{taxLC}{}
+\begin{table}[H]
+  \centering
+  \resizebox{0.7\textwidth}{!}{%
+    \begin{tabular}{@{} l c c c c @{}}
+      \toprule
+      % top row: empty left cell + spanning header for the four Lorenz columns
+      \multicolumn{1}{c}{} & \multicolumn{4}{c}{Lorenz points} \\
+      \midrule
+      % second header row: the four percent columns
+      Tax scheme & 20\% & 40\% & 60\% & 80\% \\
+      \midrule
+      % data rows: first column uses shortstack to produce two-line entry where desired
+      None & .7\%  & 3.2\%  & 9.4\%  & 25.2\%  \\[6pt]
+      \shortstack[l]{Wealth \\$\tau_w = \text{.36\%}$} & .73\%  & 3.4\%  & 9.7\%  & 25.6\%  \\[6pt]
+      \shortstack[l]{Capital income \\$\tau_{ci} = \text{7.1\%}$} & .79\%  & 3.6\%  & 10.3\%  & 26.6\%  \\
+      \bottomrule
+    \end{tabular}%
+  }
+  \caption{Tax policies in the life cycle setting.}
+  \label{tab:taxLC}
+\end{table}
