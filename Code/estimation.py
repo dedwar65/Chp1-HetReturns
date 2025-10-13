@@ -25,16 +25,16 @@ from HARK.ConsumptionSaving.ConsIndShockModel import IndShockConsumerType
 _orig_calc_limiting   = IndShockConsumerType.calc_limiting_values
 _orig_describe       = IndShockConsumerType.describe_parameters
 
-# 1) Patch calc_limiting_values so it never does `list * float`
+# 1) Patch calc_limiting_values to handle edge cases
 def _patched_calc_limiting(self, *args, **kwargs):
-    saved = None
-    if isinstance(self.DiscFac, list) and len(self.DiscFac) == 1:
-        saved = self.DiscFac
-        self.DiscFac = float(saved[0])
-    out = _orig_calc_limiting(self, *args, **kwargs)
-    if saved is not None:
-        self.DiscFac = saved
-    return out
+    # For infinite horizon, DiscFac should already be scalar
+    # Just ensure Rfree and LivPrb lists contain floats
+    for attr in ['Rfree', 'LivPrb']:
+        val = getattr(self, attr, None)
+        if val is not None and isinstance(val, list) and len(val) >= 1:
+            setattr(self, attr, [float(val[0])])
+
+    return _orig_calc_limiting(self, *args, **kwargs)
 
 # 2) Patch describe_parameters to swallow any TypeError from formatting a list
 def _patched_describe(self, *args, **kwargs):
@@ -46,6 +46,9 @@ def _patched_describe(self, *args, **kwargs):
 # 3) Install the patches
 IndShockConsumerType.calc_limiting_values   = _patched_calc_limiting
 IndShockConsumerType.describe_parameters    = _patched_describe
+
+# Simple memoization cache for inner-loop KY evaluations
+_ky_cache = {}
 
 def updateHetParamValues(center, spread):
     '''
@@ -76,42 +79,49 @@ def updateHetParamValues(center, spread):
 
     for agent in MyPopulation:
         T = agent.T_cycle
-        is_infinite = getattr(agent, "infinite_horizon", False)
+        is_infinite = (agent.cycles == 0)  # Infinite horizon if cycles == 0
 
         for attr in ['Rfree', 'DiscFac', 'LivPrb', 'PermGroFac']:
             val = getattr(agent, attr)
 
-            # Fix parameter shape depending on horizon type
-            if is_infinite:
-                # Infinite horizon: must be scalar
-                if isinstance(val, list):
-                    if len(val) == 1:
-                        val = float(val[0])
-                    else:
-                        raise ValueError(f"{attr} must be scalar (not list of len={len(val)}).")
-                elif isinstance(val, np.ndarray):
-                    if val.size == 1:
-                        val = float(val.item())
-                    else:
-                        raise ValueError(f"{attr} ndarray must have size 1.")
+            # Normalize to appropriate format
+            if isinstance(val, (int, float, np.floating)):
+                val = float(val)
+            elif isinstance(val, np.ndarray):
+                if val.size == 1:
+                    val = float(val.item())
+                else:
+                    val = [float(v) for v in val.tolist()]
+            elif isinstance(val, list):
+                if len(val) == 1:
+                    val = float(val[0])
+                else:
+                    val = [float(v) for v in val]
             else:
-                # Lifecycle: must be list of length T
+                raise TypeError(f"{attr} is of unsupported type {type(val)}.")
+
+            # For infinite horizon: DiscFac stays scalar, others become single-element lists
+            if is_infinite:
+                if attr == 'DiscFac':
+                    # DiscFac must be scalar for infinite horizon
+                    if isinstance(val, list):
+                        val = float(val[0]) if len(val) == 1 else val[0]
+                else:
+                    # Rfree, LivPrb, PermGroFac must be single-element lists
+                    if not isinstance(val, list):
+                        val = [float(val)]
+            else:
+                # For lifecycle models, expand to full length
                 if isinstance(val, (int, float, np.floating)):
                     val = [float(val)] * T
-                elif isinstance(val, np.ndarray):
-                    val = val.tolist()
-                elif isinstance(val, list):
-                    if len(val) == 1:
-                        val = [float(val[0])] * T
-                    elif len(val) != T:
-                        raise ValueError(f"{attr} list length {len(val)} != T_cycle {T}")
-                else:
-                    raise TypeError(f"{attr} is of unsupported type {type(val)}.")
+                elif isinstance(val, list) and len(val) == 1 and T > 1:
+                    val = [float(val[0])] * T
 
             # ✅ Always assign back the cleaned-up value
             setattr(agent, attr, val)
 
-        # Add time-varying fields for lifecycle agents
+        # Add time-varying fields for lifecycle agents ONLY
+        # This is the key optimization: skip expensive update() for infinite horizon
         if not is_infinite:
             agent.time_vary = ['Rfree', 'DiscFac', 'LivPrb', 'PermGroFac',
                            'IncShkDstn', 'PermShkStd', 'TranShkStd']
@@ -151,7 +161,9 @@ def getDistributionsFromHetParamValues(center, spread):
         if missing:
             raise RuntimeError(f"Agent {i} still missing {missing}")
 
-    multi_thread_commands(MyPopulation,['solve()','initialize_sim()','simulate()'], num_jobs=1)
+    # Use HARK's joblib-based parallelization (process-safe)
+    multi_thread_commands(MyPopulation, ['solve()', 'initialize_sim()', 'simulate()'], num_jobs=4)
+
     if LifeCycle:
         IndWealthArray = np.concatenate([this_type.history['aLvl'].flatten() for this_type in MyPopulation])
         IndProdArray = np.concatenate([this_type.history['pLvl'].flatten() for this_type in MyPopulation])
@@ -304,10 +316,16 @@ def compute_MPC_statistics(center, spread, n_groups=10):
 
 # Intermediate functions needed for the estimation
 def calc_KY_diff(center, spread):
+    # Memoize by (center, spread)
+    key = (float(center), float(spread))
+    if key in _ky_cache:
+        return _ky_cache[key]
+
     WealthDstn, ProdDstn, WeightDstn, MPCDstn = getDistributionsFromHetParamValues(center, spread)
     sim_KY_ratio = calc_KY_Sim(WealthDstn, ProdDstn, WeightDstn)
     diff = emp_KY_ratio - sim_KY_ratio
-    print(center,diff)
+    _ky_cache[key] = diff
+    print(center, diff)
     return diff
 
 def calc_Lorenz_dist(center, spread):
@@ -322,8 +340,8 @@ def calc_Lorenz_dist_at_Target_KY(spread):
     data.
     '''
     print(f"function calc_Lorenz_dist_at_Target_KY Now trying spread = {spread}...")
-    opt_center = root_scalar(calc_KY_diff, args=spread, method="brenth", bracket=center_range,
-                xtol=10 ** (-6)).root
+    opt_center = root_scalar(calc_KY_diff, args=spread, method="toms748", bracket=center_range,
+                xtol=1e-3, maxiter=20).root  # Very relaxed tolerance, low iteration limit
     dist = calc_Lorenz_dist(opt_center, spread)
     params.opt_center = opt_center
     print(f"Lorenz distance found = {dist}")
@@ -335,8 +353,8 @@ def find_center_by_matching_target_KY(spread=0.):
     Finds the center value such that, with no heterogeneity (spread=0), the simulated
     KY ratio is equal to its empirical counterpart.
     """
-    result = root_scalar(calc_KY_diff, args=spread, method="brenth", bracket=center_range,
-                xtol=10 ** (-6))
+    result = root_scalar(calc_KY_diff, args=spread, method="toms748", bracket=center_range,
+                xtol=1e-3, maxiter=20)  # Very relaxed tolerance, low iteration limit
     params.lorenz_distance = calc_Lorenz_dist(result.root, spread)
     params.opt_center = result.root
     params.opt_spread = spread
@@ -348,7 +366,7 @@ def min_Lorenz_dist_at_Target_KY():
     target KY ratio is acheived.
     '''
     result = minimize_scalar(calc_Lorenz_dist_at_Target_KY, bracket=spread_range,
-                                 tol=1e-4)
+                                 options={'maxiter': 15})  # Low iteration limit
     params.opt_spread = result.x
     params.lorenz_distance = result
     return result
@@ -674,7 +692,7 @@ def compute_simulated_lorenz_by_age_bins(center, spread, percentiles, bin_size=1
         Lorenz shares by age bins with columns for age_bin and lorenz percentiles
     '''
     updateHetParamValues(center, spread)
-    multi_thread_commands(MyPopulation, ['solve()', 'initialize_sim()', 'simulate()'], num_jobs=1)
+    multi_thread_commands(MyPopulation, ['solve()', 'initialize_sim()', 'simulate()'], num_jobs=4)
 
     # Define age bins based on bin_size
     if bin_size == 5:

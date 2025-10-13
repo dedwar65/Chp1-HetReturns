@@ -1,0 +1,69 @@
+Estimate is center=1.0208824843018096, spread=0.06735914736792557
+Distribution type: Uniform
+Conversion is mean=1.020882, std_dev=0.038890
+Lorenz distance is  message: 
+          Optimization terminated successfully;
+          The returned value satisfies the termination criteria
+          (using xtol = 0.0001 )
+ success: True
+     fun: 0.0005006209698696367
+       x: 0.06735914736792557
+     nit: 9
+    nfev: 14
+Discretized HetParam values: [np.float64(0.9631460722721591), np.float64(0.9823915429487092), np.float64(1.0016370136252595), np.float64(1.0208824843018096), np.float64(1.0401279549783597), np.float64(1.0593734256549099), np.float64(1.07861889633146)]
+Simulated K/Y ratio at optimum: 2.9987
+
+Simulated Wealth Distribution (share held by each group):
+  Bottom 20%     : 0.004827
+  20-40%         : 0.018927
+  40-60%         : 0.042570
+  60-80%         : 0.095719
+  80-95%         : 0.247537
+  Top 5%         : 0.590420
+
+Empirical Wealth Distribution (share held by each group):
+  Bottom 20%     : -0.001819
+  20-40%         : 0.011329
+  40-60%         : 0.043564
+  60-80%         : 0.117838
+  80-95%         : 0.254645
+  Top 5%         : 0.574442
+
+==================================================
+MPC Statistics:
+==================================================
+Average MPC for all consumers: 0.271183
+
+Average MPC by Wealth-to-Income Ratio:
+  0-10th percentile             : 0.708394
+  10-20th percentile            : 0.435852
+  20-30th percentile            : 0.369419
+  30-40th percentile            : 0.304215
+  40-50th percentile            : 0.252513
+  50-60th percentile            : 0.214390
+  60-70th percentile            : 0.170649
+  70-80th percentile            : 0.117314
+  80-90th percentile            : 0.073975
+  90-100th percentile           : 0.065112
+
+Average MPC by Income Level:
+  0-10th percentile             : 0.246439
+  10-20th percentile            : 0.249560
+  20-30th percentile            : 0.253276
+  30-40th percentile            : 0.261473
+  40-50th percentile            : 0.284784
+  50-60th percentile            : 0.284226
+  60-70th percentile            : 0.301597
+  70-80th percentile            : 0.281974
+  80-90th percentile            : 0.281623
+  90-100th percentile           : 0.266882
+
+==================================================
+Wealth Distribution by Age Cohort (Cumulative Lorenz Shares):
+==================================================
+
+25-30:
+  20th percentile: 0.004828
+  40th percentile: 0.023756
+  60th percentile: 0.066329
+  80th percentile: 0.162055

@@ -23,8 +23,8 @@ from parameters import (emp_lorenz, MyPopulation, LifeCycle,
 #spread = 0.06728339598564156
 
 #LC
-center = 1.02299795492603
-spread=0.05538760051509333
+#center = 1.02299795492603
+#spread=0.05538760051509333
 
 print(f"Using center: {center}, spread: {spread}")
 print(f"SCF Lorenz data: {emp_lorenz}")

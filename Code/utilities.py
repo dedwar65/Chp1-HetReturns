@@ -28,6 +28,13 @@ class AltIndShockConsumerType(IndShockConsumerType):
         if self.cycles == 0:  # Use core simulation method if infinite horizon
             IndShockConsumerType.sim_one_period(self)
             self.state_now["WeightFac"] = self.PopGroFac ** (-self.t_age)
+
+            # Compute MPC for infinite horizon models
+            mNrmNow = self.state_now["mNrm"]
+            cFuncNow = self.solution[0].cFunc  # Infinite horizon has single solution
+            cNrmNow, MPCnow = cFuncNow.eval_with_derivative(mNrmNow)
+            self.state_now["MPC"] = MPCnow
+
             return
 
         # If lifecycle, first deal with moving from last period's values to this period

@@ -4,7 +4,7 @@ PermGroFac: [1.0]
 PermGroFacAgg: 1.0
 BoroCnstArt: 0.0
 CubicBool: False
-vFuncBool: False
+vFuncBool: True
 PermShkStd: [0.1206]
 PermShkCount: 5
 TranShkStd: [0.4]

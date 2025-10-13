@@ -25,7 +25,7 @@ MyAgentType = AltIndShockConsumerType
 script_dir = os.path.dirname(os.path.abspath(__file__))
 data_location = os.path.join(script_dir, '../Data/')
 specs_location = os.path.join(script_dir, '../Specifications/')
-SpecificationFilename = 'PYrrPointtNetWorth.yaml'
+SpecificationFilename = 'LCrrDistNetWorth.yaml'
 
 with open(specs_location + SpecificationFilename, 'r') as f:
     spec_raw = f.read()
@@ -305,19 +305,6 @@ else:
 MyPopulation = []
 for n in range(HetTypeCount):
     MyPopulation += deepcopy(BasePopulation)
-
-# ─── DIAGNOSTIC: Verify all MyPopulation agents have proper list lengths ─────
-for i, ag in enumerate(MyPopulation):
-    print(f"\nAgent {i} of {len(MyPopulation)} (type: {type(ag).__name__}, T_cycle={ag.T_cycle}):")
-    for key in ['Rfree', 'DiscFac', 'PermGroFac', 'LivPrb', 'PermShkStd', 'TranShkStd']:
-        val = getattr(ag, key, None)
-        if val is None:
-            print(f"  {key}: MISSING")
-        elif isinstance(val, (list, tuple)):
-            print(f"  {key}: list length {len(val)}")
-        else:
-            print(f"  {key}: SCALAR → needs wrapping")
-# ─────────────────────────────────────────────────────────────────────────────
 
 # Store optimal parameters here
 opt_center = None
