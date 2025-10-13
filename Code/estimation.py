@@ -7,7 +7,7 @@ import parameters as params
 from HARK.parallel import multi_thread_commands
 from HARK.utilities import plot_funcs
 from IPython.core.getipython import get_ipython
-from parameters import (BaseTypeCount, DstnParamMapping, DstnType, HetParam,
+from parameters import (BaseTypeCount, DstnParamMapping, DstnType, DstnTypeName, HetParam,
                         HetTypeCount, LifeCycle, MyPopulation,
                         TargetPercentiles, center_range, emp_KY_ratio,
                         emp_lorenz, income_data, model, spread_range, tag,
@@ -121,9 +121,11 @@ def updateHetParamValues(center, spread):
 
 def getDistributionsFromHetParamValues(center, spread):
     '''
-    Generate a 1D array of wealth and income levels representing the overall population distribution
-    of wealth given the center and spread of the ex ante heterogeneous parameter.
+    Generate 1D arrays of wealth, income, weights, and MPC representing the overall
+    population distribution given the center and spread of the ex ante heterogeneous parameter.
 
+    Parameters
+    ----------
     center : float
         Measure of centrality for this distribution.
     spread : float
@@ -134,10 +136,12 @@ def getDistributionsFromHetParamValues(center, spread):
     IndWealthArray : np.array
         Idiosyncratic wealth holdings for the entire population.
     IndProdArray : np.array
-        Idiosyncratic productivity for the entire population.
+        Idiosyncratic productivity (permanent income) for the entire population.
     IndWeightArray : np.array
         Idiosyncratic agent weights for the entire population, based on cumulative
         survival probability and population growth factor.
+    IndMPCArray : np.array
+        Marginal propensity to consume for the entire population.
     '''
     updateHetParamValues(center, spread)
 
@@ -152,11 +156,13 @@ def getDistributionsFromHetParamValues(center, spread):
         IndWealthArray = np.concatenate([this_type.history['aLvl'].flatten() for this_type in MyPopulation])
         IndProdArray = np.concatenate([this_type.history['pLvl'].flatten() for this_type in MyPopulation])
         IndWeightArray = np.concatenate([this_type.history['WeightFac'].flatten() for this_type in MyPopulation])
+        IndMPCArray = np.concatenate([this_type.history['MPC'].flatten() for this_type in MyPopulation])
     else:
         IndWealthArray = np.concatenate([this_type.state_now['aLvl'] for this_type in MyPopulation])
         IndProdArray = np.concatenate([this_type.state_now['pLvl'] for this_type in MyPopulation])
         IndWeightArray = np.concatenate([this_type.state_now['WeightFac'] for this_type in MyPopulation])
-    return IndWealthArray, IndProdArray, IndWeightArray
+        IndMPCArray = np.concatenate([this_type.state_now['MPC'] for this_type in MyPopulation])
+    return IndWealthArray, IndProdArray, IndWeightArray, IndMPCArray
 
 # Functions to calculate simulated moments
 def calc_KY_Sim(WealthDstn, ProdDstn, WeightDstn):
@@ -167,16 +173,145 @@ def calc_Lorenz_Sim(WealthDstn, WeightDstn):
     LorenzValuesSim = get_lorenz_shares(WealthDstn, weights=WeightDstn, percentiles=TargetPercentiles)
     return LorenzValuesSim
 
+def calc_MPC_by_groups(MPC_array, Wealth_array, Income_array, Weight_array, n_groups=10):
+    '''
+    Calculate average MPC by wealth-to-income ratio groups and by income groups.
+
+    Parameters
+    ----------
+    MPC_array : np.array
+        MPC values for all agents
+    Wealth_array : np.array
+        Wealth levels (aLvl) for all agents
+    Income_array : np.array
+        Income levels (pLvl) for all agents
+    Weight_array : np.array
+        Statistical weights for all agents
+    n_groups : int
+        Number of groups (10 for deciles, 5 for quintiles)
+
+    Returns
+    -------
+    MPC_overall : float
+        Overall weighted average MPC
+    MPC_by_WY : np.array
+        Average MPC for each W/Y group (bottom to top)
+    MPC_by_income : np.array
+        Average MPC for each income group (bottom to top)
+    '''
+    # Filter out any invalid values
+    valid_idx = (np.isfinite(MPC_array) & np.isfinite(Wealth_array) &
+                 np.isfinite(Income_array) & (Weight_array > 0) & (Income_array > 0))
+    MPC = MPC_array[valid_idx]
+    Wealth = Wealth_array[valid_idx]
+    Income = Income_array[valid_idx]
+    Weights = Weight_array[valid_idx]
+
+    # Normalize weights
+    Weights = Weights / np.sum(Weights)
+
+    # Overall average MPC
+    MPC_overall = np.dot(MPC, Weights)
+
+    # Wealth-to-income ratio
+    WealthToIncome = Wealth / Income
+
+    # Percentile boundaries
+    percentiles = np.linspace(0, 100, n_groups + 1)
+
+    # MPC by W/Y groups (bottom to top)
+    MPC_by_WY = np.zeros(n_groups)
+    cutoffs_WY = np.percentile(WealthToIncome, percentiles)
+
+    for i in range(n_groups):
+        if i == 0:
+            mask = WealthToIncome <= cutoffs_WY[i+1]
+        elif i == n_groups - 1:
+            mask = WealthToIncome > cutoffs_WY[i]
+        else:
+            mask = (WealthToIncome > cutoffs_WY[i]) & (WealthToIncome <= cutoffs_WY[i+1])
+
+        if np.sum(Weights[mask]) > 0:
+            group_w = Weights[mask] / np.sum(Weights[mask])
+            MPC_by_WY[i] = np.dot(MPC[mask], group_w)
+        else:
+            MPC_by_WY[i] = np.nan
+
+    # MPC by income groups (bottom to top)
+    MPC_by_income = np.zeros(n_groups)
+    cutoffs_income = np.percentile(Income, percentiles)
+
+    for i in range(n_groups):
+        if i == 0:
+            mask = Income <= cutoffs_income[i+1]
+        elif i == n_groups - 1:
+            mask = Income > cutoffs_income[i]
+        else:
+            mask = (Income > cutoffs_income[i]) & (Income <= cutoffs_income[i+1])
+
+        if np.sum(Weights[mask]) > 0:
+            group_w = Weights[mask] / np.sum(Weights[mask])
+            MPC_by_income[i] = np.dot(MPC[mask], group_w)
+        else:
+            MPC_by_income[i] = np.nan
+
+    return MPC_overall, MPC_by_WY, MPC_by_income
+
+
+def compute_MPC_statistics(center, spread, n_groups=10):
+    '''
+    Compute MPC statistics at given center and spread parameters.
+
+    Parameters
+    ----------
+    center : float
+        Center parameter value
+    spread : float
+        Spread parameter value
+    n_groups : int
+        Number of groups (10 for deciles, 5 for quintiles)
+
+    Returns
+    -------
+    mpc_stats : dict
+        Dictionary containing MPC statistics and group labels
+    '''
+    # Get distributions
+    IndWealthArray, IndProdArray, IndWeightArray, IndMPCArray = getDistributionsFromHetParamValues(center, spread)
+
+    # Calculate MPC statistics
+    MPC_overall, MPC_by_WY, MPC_by_income = calc_MPC_by_groups(
+        IndMPCArray, IndWealthArray, IndProdArray, IndWeightArray, n_groups=n_groups
+    )
+
+    # Create group labels
+    if n_groups == 10:
+        group_labels = [f'{i*10}-{(i+1)*10}th percentile' for i in range(10)]
+    elif n_groups == 5:
+        group_labels = ['Bottom 20%', '20-40%', '40-60%', '60-80%', 'Top 20%']
+    else:
+        group_labels = [f'Group {i+1}' for i in range(n_groups)]
+
+    mpc_stats = {
+        'MPC_overall': MPC_overall,
+        'MPC_by_WY': MPC_by_WY,
+        'MPC_by_income': MPC_by_income,
+        'n_groups': n_groups,
+        'group_labels': group_labels
+    }
+
+    return mpc_stats
+
 # Intermediate functions needed for the estimation
 def calc_KY_diff(center, spread):
-    WealthDstn, ProdDstn, WeightDstn = getDistributionsFromHetParamValues(center, spread)
+    WealthDstn, ProdDstn, WeightDstn, MPCDstn = getDistributionsFromHetParamValues(center, spread)
     sim_KY_ratio = calc_KY_Sim(WealthDstn, ProdDstn, WeightDstn)
     diff = emp_KY_ratio - sim_KY_ratio
     print(center,diff)
     return diff
 
 def calc_Lorenz_dist(center, spread):
-    WealthDstn, ProdDstn, WeightDstn = getDistributionsFromHetParamValues(center, spread)
+    WealthDstn, ProdDstn, WeightDstn, MPCDstn = getDistributionsFromHetParamValues(center, spread)
     sim_lorenz = calc_Lorenz_Sim(WealthDstn, WeightDstn)
     dist = np.sum((sim_lorenz - emp_lorenz)**2)
     return dist
@@ -226,15 +361,126 @@ def get_final_simulated_lorenz(center, spread):
     Returns the simulated Lorenz points at the given center and spread,
     for comparison to the empirical Lorenz targets (untargeted by age).
     '''
-    WealthDstn, _, WeightDstn = getDistributionsFromHetParamValues(center, spread)
+    WealthDstn, ProdDstn, WeightDstn, MPCDstn = getDistributionsFromHetParamValues(center, spread)
     return get_lorenz_shares(WealthDstn, weights=WeightDstn, percentiles=TargetPercentiles)
+
+def get_group_shares(data, weights, percentiles):
+    '''
+    Calculate the share of total wealth held by each group defined by percentile boundaries.
+    Unlike get_lorenz_shares which returns cumulative shares, this returns the share
+    held BY each group.
+
+    Parameters
+    ----------
+    data : numpy.array
+        A 1D array of wealth data.
+    weights : numpy.array
+        A weighting vector for the data.
+    percentiles : list of float
+        Percentile boundaries defining groups. E.g., [0.2, 0.4, 0.6, 0.8, 0.95] creates
+        groups: 0-20%, 20-40%, 40-60%, 60-80%, 80-95%, 95-100%
+
+    Returns
+    -------
+    group_shares : numpy.array
+        Share of total wealth held by each group (sums to 1.0)
+    '''
+    if weights is None:
+        weights = np.ones(data.size)
+
+    # Sort data and weights by wealth
+    order = np.argsort(data)
+    data_sorted = data[order]
+    weights_sorted = weights[order]
+
+    # Cumulative distribution (by population)
+    cum_dist = np.cumsum(weights_sorted) / np.sum(weights_sorted)
+
+    # Weighted wealth by observation
+    weighted_wealth = data_sorted * weights_sorted
+    total_wealth = np.sum(weighted_wealth)
+
+    # Find indices corresponding to percentile boundaries
+    percentile_indices = [np.searchsorted(cum_dist, p) for p in percentiles]
+
+    # Calculate share held by each group
+    group_shares = []
+    prev_idx = 0
+
+    for idx in percentile_indices:
+        group_wealth = np.sum(weighted_wealth[prev_idx:idx])
+        group_shares.append(group_wealth / total_wealth)
+        prev_idx = idx
+
+    # Add final group (above last percentile to 100%)
+    final_group_wealth = np.sum(weighted_wealth[prev_idx:])
+    group_shares.append(final_group_wealth / total_wealth)
+
+    return np.array(group_shares)
+
+def get_wealth_shares_by_groups(center, spread):
+    '''
+    Returns the share of wealth held by each group (not cumulative).
+    Groups: Bottom 20%, 20-40%, 40-60%, 60-80%, 80-95%, Top 5%
+
+    Parameters
+    ----------
+    center : float
+        Center parameter value
+    spread : float
+        Spread parameter value
+
+    Returns
+    -------
+    group_shares : numpy.array
+        Share of total wealth held by each group
+    group_labels : list of str
+        Labels for each group
+    '''
+    # Get wealth distribution
+    WealthDstn, ProdDstn, WeightDstn, MPCDstn = getDistributionsFromHetParamValues(center, spread)
+
+    # Define percentile boundaries
+    percentiles = [0.2, 0.4, 0.6, 0.8, 0.95]
+
+    # Calculate group shares directly
+    group_shares = get_group_shares(WealthDstn, WeightDstn, percentiles)
+
+    # Create labels
+    group_labels = ["Bottom 20%", "20-40%", "40-60%", "60-80%", "80-95%", "Top 5%"]
+
+    return group_shares, group_labels
+
+def get_empirical_wealth_shares_by_groups():
+    '''
+    Returns the empirical share of wealth held by each group (not cumulative).
+    Uses the wealth_data and weights_data from parameters (already filtered by year).
+    Groups: Bottom 20%, 20-40%, 40-60%, 60-80%, 80-95%, Top 5%
+
+    Returns
+    -------
+    group_shares : numpy.array
+        Share of total wealth held by each group
+    group_labels : list of str
+        Labels for each group
+    '''
+    # Define percentile boundaries
+    percentiles = [0.2, 0.4, 0.6, 0.8, 0.95]
+
+    # Calculate group shares directly from empirical data
+    group_shares = get_group_shares(wealth_data, weights_data, percentiles)
+
+    # Create labels
+    group_labels = ["Bottom 20%", "20-40%", "40-60%", "60-80%", "80-95%", "Top 5%"]
+
+    return group_shares, group_labels
 
 def get_final_KY_ratio(center, spread):
     """
     Returns the simulated aggregate K/Y (wealth–to–income) ratio
     at the given center and spread.
     """
-    WealthDstn, ProdDstn, WeightDstn = getDistributionsFromHetParamValues(center, spread)
+    WealthDstn, ProdDstn, WeightDstn, MPCDstn = getDistributionsFromHetParamValues(center, spread)
     return calc_KY_Sim(WealthDstn, ProdDstn, WeightDstn)
 
 def get_discretized_het_params(center, spread):
@@ -249,21 +495,101 @@ def get_discretized_het_params(center, spread):
 script_dir = os.path.dirname(os.path.abspath(__file__))
 results_location = os.path.join(script_dir, '../Results/')
 
-def show_statistics(tag, center, spread, dist):
+def show_statistics(tag, center, spread, dist, mpc_stats=None, age_lorenz_df=None):
     """
     Calculates statistics post estimation of interest to the end-user that can be used to
     quickly assess a given instance of the structural estimation.
+
+    Parameters
+    ----------
+    tag : str
+        Model tag for file naming
+    center : float
+        Estimated center parameter
+    spread : float
+        Estimated spread parameter
+    dist : float
+        Lorenz distance
+    mpc_stats : dict, optional
+        Dictionary with MPC statistics (if computed)
+    age_lorenz_df : pd.DataFrame, optional
+        DataFrame with age-binned Lorenz shares
     """
     het_pts = get_discretized_het_params(center, spread)
+
+    # Calculate mean and std based on distribution type
+    if DstnTypeName == 'Uniform':
+        # For Uniform[a, b] where a = center-spread, b = center+spread
+        dist_mean = center
+        dist_std = spread / np.sqrt(3)  # std = (b-a)/sqrt(12) = 2*spread/sqrt(12)
+    elif DstnTypeName == 'Lognormal':
+        # For Lognormal(μ, σ) where μ = ln(center) - 0.5*spread², σ = spread
+        # Mean = exp(μ + σ²/2) = center (by construction)
+        # Std = center * sqrt(exp(σ²) - 1)
+        dist_mean = center
+        dist_std = center * np.sqrt(np.exp(spread**2) - 1)
+    else:
+        # Fallback for unknown distribution types
+        dist_mean = center
+        dist_std = spread
 
     # Create a list of strings to concatenate
     results_list = [
         f"Estimate is center={center}, spread={spread}\n",
-        f"Conversion is mean={.5 * ((center - spread) + (center + spread))}, std_dev={(1/12) * ((center + spread) - (center - spread))}\n",
+        f"Distribution type: {DstnTypeName}\n",
+        f"Conversion is mean={dist_mean:.6f}, std_dev={dist_std:.6f}\n",
         f"Lorenz distance is {dist}\n",
         f"Discretized HetParam values: {het_pts}\n",
-        ##Add more summary stats here##
     ]
+
+    # Compute and add simulated K/Y ratio
+    sim_KY = get_final_KY_ratio(center, spread)
+    results_list.append(f"Simulated K/Y ratio at optimum: {sim_KY:.4f}\n")
+
+    # Add wealth distribution by groups
+    group_shares, group_labels = get_wealth_shares_by_groups(center, spread)
+    results_list.append(f"\nSimulated Wealth Distribution (share held by each group):\n")
+    for label, share in zip(group_labels, group_shares):
+        results_list.append(f"  {label:15s}: {share:.6f}\n")
+
+    # Add empirical wealth distribution by groups
+    emp_group_shares, emp_group_labels = get_empirical_wealth_shares_by_groups()
+    results_list.append(f"\nEmpirical Wealth Distribution (share held by each group):\n")
+    for label, share in zip(emp_group_labels, emp_group_shares):
+        results_list.append(f"  {label:15s}: {share:.6f}\n")
+
+    # Add MPC statistics if provided
+    if mpc_stats is not None:
+        results_list.append(f"\n{'='*50}\n")
+        results_list.append(f"MPC Statistics:\n")
+        results_list.append(f"{'='*50}\n")
+        results_list.append(f"Average MPC for all consumers: {mpc_stats['MPC_overall']:.6f}\n\n")
+
+        n_groups = mpc_stats['n_groups']
+        group_labels = mpc_stats['group_labels']
+
+        results_list.append(f"Average MPC by Wealth-to-Income Ratio:\n")
+        for i in range(n_groups):
+            results_list.append(f"  {group_labels[i]:30s}: {mpc_stats['MPC_by_WY'][i]:.6f}\n")
+
+        results_list.append(f"\nAverage MPC by Income Level:\n")
+        for i in range(n_groups):
+            results_list.append(f"  {group_labels[i]:30s}: {mpc_stats['MPC_by_income'][i]:.6f}\n")
+
+    # Add age-binned Lorenz shares if provided
+    if age_lorenz_df is not None and not age_lorenz_df.empty:
+        results_list.append(f"\n{'='*50}\n")
+        results_list.append(f"Wealth Distribution by Age Cohort (Cumulative Lorenz Shares):\n")
+        results_list.append(f"{'='*50}\n")
+
+        # Format as table
+        for _, row in age_lorenz_df.iterrows():
+            age_bin = row['age_bin']
+            results_list.append(f"\n{age_bin}:\n")
+            for col in age_lorenz_df.columns:
+                if col.startswith('lorenz_'):
+                    percentile = col.replace('lorenz_', '')
+                    results_list.append(f"  {percentile}th percentile: {row[col]:.6f}\n")
 
     # Concatenate the list into a single string
     results_string = "".join(results_list)
@@ -289,8 +615,8 @@ def graph_lorenz(center, spread):
     SCF_lorenz = get_lorenz_shares(wealth_data, weights_data, percentiles=pctiles)
 
     # Construct the Lorenz curves from the simulated model
-    WealthDstn, ProdDstn, WeightDstn = getDistributionsFromHetParamValues(center, spread)
-    Sim_lorenz= get_lorenz_shares(WealthDstn, WeightDstn, percentiles=pctiles)
+    WealthDstn, ProdDstn, WeightDstn, MPCDstn = getDistributionsFromHetParamValues(center, spread)
+    Sim_lorenz = get_lorenz_shares(WealthDstn, WeightDstn, percentiles=pctiles)
 
     # Plot
     plt.figure(figsize=(5, 5))
@@ -325,11 +651,9 @@ def graph_lorenz(center, spread):
         # Give OS time to make the plot (it only draws when main thread is sleeping)
         plt.pause(2)
 
-def compute_simulated_lorenz_by_age_bins(center, spread, percentiles):
+def compute_simulated_lorenz_by_age_bins(center, spread, percentiles, bin_size=10):
     '''
-    Computes Lorenz shares from simulation grouped by:
-    - 5-year bins: 25–30, 30–35, ..., 65–70
-    - Mixed bins: 25–30, 30–40, 40–50, ..., 60–70
+    Computes Lorenz shares from simulation grouped by age bins.
 
     Parameters
     ----------
@@ -339,26 +663,31 @@ def compute_simulated_lorenz_by_age_bins(center, spread, percentiles):
         Optimal spread from estimation.
     percentiles : list of float
         Percentiles to compute Lorenz shares at.
+    bin_size : int, optional
+        Size of age bins in years. Default is 10.
+        - 5: creates 5-year bins (25-30, 30-35, 35-40, ..., 65-70)
+        - 10: creates 10-year bins (25-30, 30-40, 40-50, 50-60, 60-70)
 
     Returns
     -------
-    df_5yr : pd.DataFrame of Lorenz shares by 5-year bins
-    df_10yr : pd.DataFrame of Lorenz shares by hybrid 10-year bins
+    df : pd.DataFrame
+        Lorenz shares by age bins with columns for age_bin and lorenz percentiles
     '''
     updateHetParamValues(center, spread)
     multi_thread_commands(MyPopulation, ['solve()', 'initialize_sim()', 'simulate()'], num_jobs=1)
 
-    # Define age bins
-    age_bins_5yr = np.arange(25, 75 + 1, 5)
-    labels_5yr = [f"{i}-{i+5}" for i in age_bins_5yr[:-1]]
+    # Define age bins based on bin_size
+    if bin_size == 5:
+        age_bins = np.arange(25, 75 + 1, 5)
+        labels = [f"{i}-{i+5}" for i in age_bins[:-1]]
+    elif bin_size == 10:
+        age_bins = [25, 30, 40, 50, 60, 70]
+        labels = ["25-30", "30-40", "40-50", "50-60", "60-70"]
+    else:
+        raise ValueError(f"bin_size must be 5 or 10, got {bin_size}")
 
-    age_bins_10yr = [25, 30, 40, 50, 60, 70]
-    labels_10yr = ["25-30", "30-40", "40-50", "50-60", "60-70"]
-
-    binning = {
-        '5yr': {'bins': age_bins_5yr, 'labels': labels_5yr, 'results': {}},
-        '10yr': {'bins': age_bins_10yr, 'labels': labels_10yr, 'results': {}}
-    }
+    # Collect wealth and weights by age bin
+    bin_results = {}
 
     if LifeCycle:
         for this_type in MyPopulation:
@@ -371,44 +700,40 @@ def compute_simulated_lorenz_by_age_bins(center, spread, percentiles):
                 if age < 25 or age >= 70:
                     continue  # Ensure only ages 25 through 69 are used
 
-                for key in binning:
-                    bin_def = binning[key]
-                    bin_label = pd.cut(
-                        [age],
-                        bins=bin_def['bins'],
-                        labels=bin_def['labels'],
-                        right=False,
-                        include_lowest=True
-                    )[0]
-                    if bin_label not in bin_def['results']:
-                        bin_def['results'][bin_label] = {'wealth': [], 'weights': []}
-                    bin_def['results'][bin_label]['wealth'].append(aLvl_hist[t, :])
-                    bin_def['results'][bin_label]['weights'].append(wFac_hist[t, :])
+                bin_label = pd.cut(
+                    [age],
+                    bins=age_bins,
+                    labels=labels,
+                    right=False,
+                    include_lowest=True
+                )[0]
+
+                if bin_label not in bin_results:
+                    bin_results[bin_label] = {'wealth': [], 'weights': []}
+                bin_results[bin_label]['wealth'].append(aLvl_hist[t, :])
+                bin_results[bin_label]['weights'].append(wFac_hist[t, :])
     else:
+        # For infinite horizon, just use first bin
         aLvl = np.concatenate([t.state_now['aLvl'] for t in MyPopulation])
         wFac = np.concatenate([t.state_now['WeightFac'] for t in MyPopulation])
-        for key in binning:
-            bin_label = binning[key]['labels'][0]
-            binning[key]['results'][bin_label] = {'wealth': [aLvl], 'weights': [wFac]}
+        bin_label = labels[0]
+        bin_results[bin_label] = {'wealth': [aLvl], 'weights': [wFac]}
 
-    def compute_df(bin_def):
-        rows = []
-        for bin_label, data in bin_def['results'].items():
-            vals = np.concatenate(data['wealth'])
-            wts = np.concatenate(data['weights'])
-            shares = get_lorenz_shares(vals, wts, percentiles)
-            row = {'age_bin': bin_label}
-            for p, s in zip(percentiles, shares):
-                row[f'lorenz_{int(p*100)}'] = s
-            rows.append(row)
-        df = pd.DataFrame(rows)
-        df = df[df['age_bin'].notna()]  # Drop any NaN-labeled bins
-        return df
+    # Compute Lorenz shares for each bin
+    rows = []
+    for bin_label, data in bin_results.items():
+        vals = np.concatenate(data['wealth'])
+        wts = np.concatenate(data['weights'])
+        shares = get_lorenz_shares(vals, wts, percentiles)
+        row = {'age_bin': bin_label}
+        for p, s in zip(percentiles, shares):
+            row[f'lorenz_{int(p*100)}'] = s
+        rows.append(row)
 
-    df_5yr = compute_df(binning['5yr'])
-    df_10yr = compute_df(binning['10yr'])
+    df = pd.DataFrame(rows)
+    df = df[df['age_bin'].notna()]  # Drop any NaN-labeled bins
 
-    return df_5yr, df_10yr
+    return df
 
 def rename_lorenz_columns(df):
     """
@@ -487,76 +812,35 @@ def estimation():
     opt_spread = params.opt_spread
     lorenz_dist = params.lorenz_distance
 
-    show_statistics(tag, opt_center, opt_spread, lorenz_dist)
-    graph_lorenz(opt_center, opt_spread)
+    # Compute MPC statistics (use deciles by default, can make this configurable via yaml)
+    n_groups = 10  # Or: n_groups = yaml_params.get('mpc_groups', 10) if you want it in yaml
+    mpc_stats = compute_MPC_statistics(opt_center, opt_spread, n_groups=n_groups)
 
-    # 2. NEW: Compute simulated Lorenz shares by age bins
-    df_sim_lorenz_5yr, df_sim_lorenz_10yr = compute_simulated_lorenz_by_age_bins(
+    # Compute simulated Lorenz shares by age bins (10-year bins by default)
+    df_sim_lorenz = compute_simulated_lorenz_by_age_bins(
         center=opt_center,
         spread=opt_spread,
-        percentiles=TargetPercentiles
+        percentiles=TargetPercentiles,
+        bin_size=10
     )
 
-    print("\nSimulated Lorenz Shares by 5-Year Age Bin:")
-    print(df_sim_lorenz_5yr)
+    show_statistics(tag, opt_center, opt_spread, lorenz_dist, mpc_stats=mpc_stats, age_lorenz_df=df_sim_lorenz)
+    graph_lorenz(opt_center, opt_spread)
 
-    print("\nSimulated Lorenz Shares by 10-Year Age Bin:")
-    print(df_sim_lorenz_10yr)
-
-    # 2.1 Also print the final simulated Lorenz shares at optimal parameters (used in estimation)
-    final_sim_lorenz = get_final_simulated_lorenz(opt_center, opt_spread)
-
-    print("\nEmpirical vs. Simulated Lorenz Shares at Optimal Parameters:")
-    for p, sim_val, emp_val in zip(TargetPercentiles, final_sim_lorenz, emp_lorenz):
-        print(f"  P{int(p*100)}% — Sim: {sim_val:.6f} | Emp: {emp_val:.6f}")
-
-    # 2.2 Export simulated and empirical lorenz shares to an excel file
-
-    results_file = os.path.join(results_location, f"Lorenz_by_age_{tag}.xlsx")
-    with pd.ExcelWriter(results_file, engine='xlsxwriter') as writer:
-        df_sim_lorenz_5yr.to_excel(writer, sheet_name='Sim_5yr', index=False)
-        df_sim_lorenz_10yr.to_excel(writer, sheet_name='Sim_10yr', index=False)
-        params.emp_lorenz_5yr.to_excel(writer, sheet_name='Emp_5yr', index=False)
-        params.emp_lorenz_10yr.to_excel(writer, sheet_name='Emp_10yr', index=False)
-
-    print(f"\nExported Lorenz shares by age to: {results_file}")
-
-    # 2.3 Save Lorenz tables as individual PNGs for presentation
+    # 2.1 Save Lorenz tables as individual PNGs for presentation
     save_lorenz_table_png(
-        rename_lorenz_columns(df_sim_lorenz_5yr),
-        title="Simulated Lorenz Shares (5-Year)",
-        filename=f"Sim_Lorenz_5yr_{tag}.png",
-        decimals=4
-    )
-
-    save_lorenz_table_png(
-        rename_lorenz_columns(df_sim_lorenz_10yr),
-        title="Simulated Lorenz Shares (10-Year)",
-        filename=f"Sim_Lorenz_10yr_{tag}.png",
-        decimals=4
-    )
-
-    save_lorenz_table_png(
-        rename_lorenz_columns(params.emp_lorenz_5yr),
-        title="Empirical Lorenz Shares (5-Year)",
-        filename=f"Emp_Lorenz_5yr_{tag}.png",
+        rename_lorenz_columns(df_sim_lorenz),
+        title="Simulated Lorenz Shares by Age",
+        filename=f"Sim_Lorenz_by_age_{tag}.png",
         decimals=4
     )
 
     save_lorenz_table_png(
         rename_lorenz_columns(params.emp_lorenz_10yr),
-        title="Empirical Lorenz Shares (10-Year)",
-        filename=f"Emp_Lorenz_10yr_{tag}.png",
+        title="Empirical Lorenz Shares by Age",
+        filename=f"Emp_Lorenz_by_age_{tag}.png",
         decimals=4
     )
-
-    # 3a) Show the aggregate K/Y ratio at the optimum
-    sim_KY = get_final_KY_ratio(opt_center, opt_spread)
-    print(f"Simulated K/Y ratio at optimum: {sim_KY:.4f}")
-
-    # 3b) Show the 7 underlying agent‐type parameter values
-    het_pts = get_discretized_het_params(opt_center, opt_spread)
-    print("Discretized HetParam values:", het_pts)
 
 
 if __name__ == '__main__':

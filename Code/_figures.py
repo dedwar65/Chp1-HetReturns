@@ -15,12 +15,12 @@ def presentation_graphs(center_point, spread_point, center_dist, spread_dist):
     SCF_lorenz = get_lorenz_shares(wealth_data, weights_data, percentiles=pctiles)
 
     # Construct the Lorenz curves from the simulated model
-    WealthDstn_point, ProdDstn_point, WeightDstn_point = getDistributionsFromHetParamValues(center_point, spread_point)
+    WealthDstn_point, ProdDstn_point, WeightDstn_point, MPCDstn_point = getDistributionsFromHetParamValues(center_point, spread_point)
     Sim_lorenz_point = get_lorenz_shares(WealthDstn_point, WeightDstn_point, percentiles=pctiles)
     print(Sim_lorenz_point)
 
     # Construct the Lorenz curves from the simulated model
-    WealthDstn_dist, ProdDstn_dist, WeightDstn_dist = getDistributionsFromHetParamValues(center_dist, spread_dist)
+    WealthDstn_dist, ProdDstn_dist, WeightDstn_dist, MPCDstn_dist = getDistributionsFromHetParamValues(center_dist, spread_dist)
     Sim_lorenz_dist = get_lorenz_shares(WealthDstn_dist, WeightDstn_dist, percentiles=pctiles)
     print(Sim_lorenz_dist)
 

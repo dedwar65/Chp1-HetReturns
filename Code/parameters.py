@@ -19,11 +19,6 @@ from HARK.Calibration.SCF.WealthIncomeDist.SCFDistTools import \
 from HARK.distributions import Lognormal, Uniform
 from utilities import (AltIndShockConsumerType, calcEmpMoments,
                        get_lorenz_shares)
-import pandas as pd
-import numpy as np
-import os
-import re
-from pathlib import Path
 
 MyAgentType = AltIndShockConsumerType
 
@@ -39,11 +34,11 @@ yaml_params = yaml.safe_load(spec_raw)
 print('Loading a specification called ' + yaml_params['description'])
 
 #tag = yaml_params['tag']
-tag = f"{yaml_params['tag']}_{yaml_params['year']}"
+# Add distribution type abbreviation to tag for better file organization
+dstn_abbrev = {'Uniform': 'Unif', 'Lognormal': 'Lognorm'}
+tag = f"{dstn_abbrev.get(yaml_params['DstnType'], yaml_params['DstnType'])}_{yaml_params['tag']}_{yaml_params['year']}"
 model = yaml_params["model"]
 print(tag)
-
-model = yaml_params["model"]
 
 # Choose basic specification parameters
 HetParam = yaml_params['HetParam']
@@ -151,7 +146,7 @@ with open(specs_location + base_param_filename + '.yaml', 'r') as f:
     f.close()
 BaseParamDict = {
     "BaseAgentCount" : TotalAgentCount,
-    "track_vars": ['aLvl','pLvl','WeightFac']
+    "track_vars": ['aLvl','pLvl','WeightFac','MPC']
 }
 BaseParamDict.update(yaml.safe_load(init_raw)) # Later, add conditions to include other agent types
 

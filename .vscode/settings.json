@@ -20,5 +20,8 @@
     "python.analysis.completeFunctionParens": true,
     "vsintellicode.sql.completionsEnabled": false,
     "githubIssues.issueBranchTitle": "feature/${issueNumber}_${sanitizedIssueTitle}",
-    "errorLens.messageEnabled": false
+    "errorLens.messageEnabled": false,
+    "stata-mcp.stataPath": "/Applications/Stata/StataSE.app/Contents/MacOS/StataSE",
+    "stata-mcp.stataEdition": "se",
+    "stata-mcp.port": 4001
 }

@@ -13,7 +13,7 @@ def extract_income_distribution(center, spread):
     """
     Extract income and wealth distributions from the population.
     """
-    WealthDstn, ProdDstn, WeightDstn = getDistributionsFromHetParamValues(center, spread)
+    WealthDstn, ProdDstn, WeightDstn, MPCDstn = getDistributionsFromHetParamValues(center, spread)
     GDP = np.dot(ProdDstn, WeightDstn)
     return GDP, WealthDstn, ProdDstn, WeightDstn
 
