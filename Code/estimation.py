@@ -827,18 +827,11 @@ def estimation():
     show_statistics(tag, opt_center, opt_spread, lorenz_dist, mpc_stats=mpc_stats, age_lorenz_df=df_sim_lorenz)
     graph_lorenz(opt_center, opt_spread)
 
-    # 2.1 Save Lorenz tables as individual PNGs for presentation
+    # Save simulated Lorenz table as PNG for presentation
     save_lorenz_table_png(
         rename_lorenz_columns(df_sim_lorenz),
         title="Simulated Lorenz Shares by Age",
         filename=f"Sim_Lorenz_by_age_{tag}.png",
-        decimals=4
-    )
-
-    save_lorenz_table_png(
-        rename_lorenz_columns(params.emp_lorenz_10yr),
-        title="Empirical Lorenz Shares by Age",
-        filename=f"Emp_Lorenz_by_age_{tag}.png",
         decimals=4
     )
 

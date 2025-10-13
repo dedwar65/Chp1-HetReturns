@@ -25,7 +25,7 @@ MyAgentType = AltIndShockConsumerType
 script_dir = os.path.dirname(os.path.abspath(__file__))
 data_location = os.path.join(script_dir, '../Data/')
 specs_location = os.path.join(script_dir, '../Specifications/')
-SpecificationFilename = 'PYrrDistNetWorth.yaml'
+SpecificationFilename = 'PYrrPointtNetWorth.yaml'
 
 with open(specs_location + SpecificationFilename, 'r') as f:
     spec_raw = f.read()
@@ -87,11 +87,7 @@ print(eff_R)
 # Restrict df_age_binned to match simulation: ages 25–70 only
 df_age_binned = df_year[(df_year['age'] >= 25) & (df_year['age'] <= 70)].copy()
 
-# Age bin specifications
-age_bins_5 = np.arange(25, 75, 5)
-age_labels_5 = [f"{i}-{i+5}" for i in age_bins_5[:-1]]
-df_age_binned['age_bin_5yr'] = pd.cut(df_age_binned['age'], bins=age_bins_5, labels=age_labels_5, right=False)
-
+# Age bin specifications (10-year bins only)
 age_bins_10 = [25, 30, 40, 50, 60, 70]
 age_labels_10 = ["25-30", "30-40", "40-50", "50-60", "60-70"]
 df_age_binned['age_bin_10yr'] = pd.cut(df_age_binned['age'], bins=age_bins_10, labels=age_labels_10, right=False)
@@ -109,22 +105,58 @@ def compute_lorenz_by_group(df, value_col, weight_col, group_cols, percentiles):
         rows.append(row)
     return pd.DataFrame(rows)
 
-emp_lorenz_5yr = compute_lorenz_by_group(
-    df_age_binned, value_col=wealth_col, weight_col=weight_col,
-    group_cols=['age_bin_5yr'], percentiles=TargetPercentiles
-)
-
 emp_lorenz_10yr = compute_lorenz_by_group(
     df_age_binned, value_col=wealth_col, weight_col=weight_col,
     group_cols=['age_bin_10yr'], percentiles=TargetPercentiles
 )
 
-# Optional: print for verification
-print("\nEmpirical Lorenz Shares by 5-Year Age Bin (Untargeted):")
-print(emp_lorenz_5yr)
+# Save empirical Lorenz by age as PNG (year-based filename, gets overwritten each run)
+import matplotlib.pyplot as plt
 
-print("\nEmpirical Lorenz Shares by 10-Year Age Bin (Untargeted):")
-print(emp_lorenz_10yr)
+def rename_lorenz_columns(df):
+    """Renames Lorenz output columns for presentation."""
+    df = df.reset_index(drop=True)
+    rename_map = {
+        'age_bin': 'age',
+        'age_bin_10yr': 'age',
+        'lorenz_20': '20th',
+        'lorenz_40': '40th',
+        'lorenz_60': '60th',
+        'lorenz_80': '80th'
+    }
+    return df.rename(columns=rename_map)
+
+def save_lorenz_table_png_simple(df, title, filename):
+    """Save a Lorenz DataFrame as a PNG image."""
+    df_rounded = df.copy()
+    for col in df_rounded.select_dtypes(include=[np.number]).columns:
+        df_rounded[col] = df_rounded[col].round(4)
+
+    fig, ax = plt.subplots(figsize=(8, 2.5))
+    ax.axis('tight')
+    ax.axis('off')
+    ax.set_title(title, fontweight="bold", pad=10)
+
+    table = ax.table(cellText=df_rounded.values,
+                     colLabels=df_rounded.columns,
+                     rowLabels=df_rounded.index if df_rounded.index.name else None,
+                     loc='center')
+    table.scale(1.0, 1.3)
+
+    tables_dir = os.path.join(script_dir, '../Tables/')
+    os.makedirs(tables_dir, exist_ok=True)
+    out_path = os.path.join(tables_dir, filename)
+    plt.tight_layout()
+    plt.savefig(out_path, dpi=300)
+    plt.close()
+    print(f"Saved empirical Lorenz PNG table to: {out_path}")
+
+# Save empirical table with year-based name (will be overwritten each run, same year = same data)
+save_lorenz_table_png_simple(
+    rename_lorenz_columns(emp_lorenz_10yr),
+    title=f"Empirical Lorenz Shares by Age ({year})",
+    filename=f"Emp_Lorenz_by_age_{year}.png"
+)
 
 
 # Define a mapping from (center,spread) to the actual parameters of the distribution.
