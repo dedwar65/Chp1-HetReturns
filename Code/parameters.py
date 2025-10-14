@@ -294,20 +294,4 @@ if LifeCycle:
     HighschType = MyAgentType(**hs_dict)
     CollegeType = MyAgentType(**college_dict)
     BaseTypeCount = 3
-    BasePopulation = [DropoutType, HighschType, CollegeType]
-
-else:
-    IHbaseType = MyAgentType(**BaseParamDict)
-    BaseTypeCount = 1
-    BasePopulation = [IHbaseType]
-
-# Set the agent population
-MyPopulation = []
-for n in range(HetTypeCount):
-    MyPopulation += deepcopy(BasePopulation)
-
-# Store optimal parameters here
-opt_center = None
-opt_spread = None
-lorenz_distance = None
-
+    BasePo

@@ -9,7 +9,11 @@ from utilities_taxes import (getDistributionsFromHetParamValues)
 from utilities_taxes import (extract_income_distribution,
                             make_Rfree_with_wealth_tax,
                             make_Rfree_with_capital_income_tax,
-                            save_lorenz_side_by_side_from_results)
+                            save_lorenz_side_by_side_from_results,
+                            require_vfunc,
+                            compute_newborn_EV_per_agent,
+                            compute_population_newborn_welfare,
+                            consumption_equivalent_delta)
 
 # Import SCF Lorenz data from parameters.py
 from parameters import (emp_lorenz, MyPopulation, LifeCycle,
@@ -25,6 +29,13 @@ from parameters import (emp_lorenz, MyPopulation, LifeCycle,
 #LC
 #center = 1.02299795492603
 #spread=0.05538760051509333
+
+# Optional fallback: uncomment to import optimal center/spread from parameters
+# from parameters import opt_center as _opt_center, opt_spread as _opt_spread
+# center = _opt_center
+# spread = _opt_spread
+# if (center is None) or (spread is None):
+#     raise RuntimeError("center/spread are not set. Run estimation.py to populate parameters.opt_center/opt_spread or set them manually here.")
 
 print(f"Using center: {center}, spread: {spread}")
 print(f"SCF Lorenz data: {emp_lorenz}")
@@ -63,10 +74,31 @@ wealth_tax_rate = GDP_target / taxable_aggregate_wealth if taxable_aggregate_wea
 print(f"Wealth tax rate: {wealth_tax_rate:.6f}")
 
 print("\nFinding capital income tax rate...")
-# Compute per-entry interest rate array and taxable base using explicit conditions
-HetTypeCount = len(interest_rates)
-BaseTypeCount = len(WealthDstn) // HetTypeCount
-r_arr = np.array([interest_rates[(j // BaseTypeCount) % HetTypeCount] for j in range(len(WealthDstn))])
+# Compute per-observation interest rate array aligned with WealthDstn/WeightDstn
+# Uses the same concatenation order used to build those arrays in estimation.py
+r_blocks = []
+for ag in MyPopulation:
+    if LifeCycle:
+        # history arrays shape: (T, N)
+        a_hist = getattr(ag.history, 'get', None)
+        # Fall back to attributes directly for safety
+        aLvl_hist = ag.history['aLvl']
+        T, N = aLvl_hist.shape
+        if isinstance(ag.Rfree, list):
+            r_by_age = [float(ag.Rfree[t]) for t in range(T)]
+        else:
+            r_by_age = [float(ag.Rfree)] * T
+        r_block = np.repeat(r_by_age, N)  # length T*N, matches flatten order
+    else:
+        # state_now arrays length: N
+        N = ag.state_now['aLvl'].size
+        if isinstance(ag.Rfree, list):
+            r_val = float(ag.Rfree[0])
+        else:
+            r_val = float(ag.Rfree)
+        r_block = np.full(N, r_val)
+    r_blocks.append(r_block)
+r_arr = np.concatenate(r_blocks)
 
 _capital_taxable_mask = (WealthDstn > 0) & (r_arr > 1.0)
 _capital_taxable_wealth = WealthDstn[_capital_taxable_mask]
@@ -235,3 +267,77 @@ try:
 except Exception as e:
     print(f"Lorenz figure save failed: {e}")
 print("You can now use these arrays to compute wealth distributions and Lorenz shares.")
+
+# ===================== Newborn welfare computation and outputs =====================
+
+# Build return-type weights from discretization
+het_weights = dstn.pmv
+
+# Validate value function availability for baseline agents (fail fast if missing)
+for ag in MyPopulation:
+    try:
+        require_vfunc(ag)
+    except RuntimeError as e:
+        raise
+
+# Compute per-type EVs and aggregates under each regime
+W_orig_vec, W_orig_pmv, W_orig_counts = compute_population_newborn_welfare(MyPopulation, het_weights, BaseTypeCount)
+W_wt_vec,   W_wt_pmv,   W_wt_counts   = compute_population_newborn_welfare(MyPopulation_WT, het_weights, BaseTypeCount)
+W_cit_vec,  W_cit_pmv,  W_cit_counts  = compute_population_newborn_welfare(MyPopulation_CIT, het_weights, BaseTypeCount)
+
+# Retrieve CRRA
+rho = float(MyPopulation[0].CRRA)
+
+# Aggregate CE comparisons (both weighting modes)
+CE_WT_vs_CIT_pmv    = consumption_equivalent_delta(W_wt_pmv,  W_cit_pmv,  rho)
+CE_WT_vs_ORG_pmv    = consumption_equivalent_delta(W_wt_pmv,  W_orig_pmv, rho)
+CE_CIT_vs_ORG_pmv   = consumption_equivalent_delta(W_cit_pmv, W_orig_pmv, rho)
+
+CE_WT_vs_CIT_counts = consumption_equivalent_delta(W_wt_counts,  W_cit_counts,  rho)
+CE_WT_vs_ORG_counts = consumption_equivalent_delta(W_wt_counts,  W_orig_counts, rho)
+CE_CIT_vs_ORG_counts= consumption_equivalent_delta(W_cit_counts, W_orig_counts, rho)
+
+# Per-type CE comparisons (WT vs CIT)
+CE_per_type_WT_vs_CIT = [consumption_equivalent_delta(W_wt_vec[i], W_cit_vec[i], rho) for i in range(len(W_orig_vec))]
+
+# Save welfare results to Results_taxes/{tag}_welfare.txt
+_welfare_path = os.path.join(_results_dir, f"{tag}_welfare.txt")
+_wl = []
+_wl.append(f"Tag: {tag}\n")
+_wl.append(f"CRRA (rho): {rho:.6f}\n")
+_wl.append(f"Wealth tax rate: {wealth_tax_rate:.6f}\n")
+_wl.append(f"Capital income tax rate: {capital_income_tax_rate:.6f}\n\n")
+
+_wl.append("Per-type newborn EVs (Original):\n")
+_wl.append(f"{[float(x) for x in np.round(W_orig_vec, 8)]}\n")
+_wl.append("Per-type newborn EVs (Wealth tax):\n")
+_wl.append(f"{[float(x) for x in np.round(W_wt_vec, 8)]}\n")
+_wl.append("Per-type newborn EVs (Capital income tax):\n")
+_wl.append(f"{[float(x) for x in np.round(W_cit_vec, 8)]}\n\n")
+
+_wl.append("Aggregate newborn welfare (pmv weights):\n")
+_wl.append(f"Original: {W_orig_pmv:.8f}\n")
+_wl.append(f"Wealth tax: {W_wt_pmv:.8f}\n")
+_wl.append(f"Capital income tax: {W_cit_pmv:.8f}\n\n")
+
+_wl.append("Aggregate newborn welfare (AgentCount shares):\n")
+_wl.append(f"Original: {W_orig_counts:.8f}\n")
+_wl.append(f"Wealth tax: {W_wt_counts:.8f}\n")
+_wl.append(f"Capital income tax: {W_cit_counts:.8f}\n\n")
+
+_wl.append("Consumption-equivalent (pmv weights), Δ (e.g., 0.07 = +7%):\n")
+_wl.append(f"WT vs CIT: {CE_WT_vs_CIT_pmv:.8f}\n")
+_wl.append(f"WT vs Original: {CE_WT_vs_ORG_pmv:.8f}\n")
+_wl.append(f"CIT vs Original: {CE_CIT_vs_ORG_pmv:.8f}\n\n")
+
+_wl.append("Consumption-equivalent (AgentCount shares), Δ:\n")
+_wl.append(f"WT vs CIT: {CE_WT_vs_CIT_counts:.8f}\n")
+_wl.append(f"WT vs Original: {CE_WT_vs_ORG_counts:.8f}\n")
+_wl.append(f"CIT vs Original: {CE_CIT_vs_ORG_counts:.8f}\n\n")
+
+_wl.append("Per-type consumption-equivalent WT vs CIT, Δ by return type (low→high):\n")
+_wl.append(f"{[float(x) for x in np.round(CE_per_type_WT_vs_CIT, 8)]}\n")
+
+with open(_welfare_path, 'w', encoding='utf-8') as _wf:
+    _wf.writelines(_wl)
+print(f"Saved newborn welfare results to: {_welfare_path}")

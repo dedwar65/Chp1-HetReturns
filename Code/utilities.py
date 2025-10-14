@@ -20,6 +20,37 @@ class AltIndShockConsumerType(IndShockConsumerType):
     def __repr__(self):
         return ('AltIndShockConsumerType with Rfree=' + str(self.Rfree) + ' and DiscFac=' + str(self.DiscFac))
 
+    def solve(self, *args, **kwargs):
+        """
+        Workaround for CRRA=1.0 with vFuncBool=True in HARK.
+
+        HARK's solve_one_period_ConsIndShock has expressions of form:
+            MPC ** (-CRRA / (1 - CRRA))
+        which are undefined at CRRA=1 and can overflow near it.
+
+        For log utility (CRRA=1), the limit is 0 when 0 < MPC < 1.
+        We use CRRA = 1.01 (slightly above 1) to make the exponent negative and finite:
+            -1.01 / (1 - 1.01) = -1.01 / (-0.01) = 101
+        This ensures 0 < MPC < 1 gives MPC^101 ≈ 0 (correct limit) without overflow.
+        """
+        crra_original = self.CRRA
+        crra_adjusted = False
+
+        # If CRRA is exactly 1.0, shift slightly ABOVE 1 to get negative denominator
+        # This makes exponent positive but bounded: ~100 instead of ~1000+
+        if isinstance(crra_original, (int, float)) and abs(crra_original - 1.0) < 1e-12:
+            self.CRRA = 1.01  # Chosen to give exponent ≈ 101, safe for all 0 < MPC < 1
+            crra_adjusted = True
+
+        try:
+            result = super().solve(*args, **kwargs)
+        finally:
+            # Always restore original value
+            if crra_adjusted:
+                self.CRRA = crra_original
+
+        return result
+
     def sim_one_period(self):
         """
         Overwrite the core simulation routine with a simplified special one, but

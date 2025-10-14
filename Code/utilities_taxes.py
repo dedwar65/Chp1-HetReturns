@@ -111,4 +111,4 @@ def save_lorenz_side_by_side_from_results(results_dict, tag, percentiles):
     plt.savefig(filename, dpi=300, bbox_inches='tight')
     plt.close()
     print(f"Lorenz comparison plot saved to {filename}")
-    return filename
+    return 
