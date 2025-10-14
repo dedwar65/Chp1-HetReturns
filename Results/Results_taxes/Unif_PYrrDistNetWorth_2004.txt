@@ -1,0 +1,13 @@
+Tag: Unif_PYrrDistNetWorth_2004
+Aggregate Income (GDP): 69797.389201
+Target Tax Revenue (1% of GDP): 697.973892
+Aggregate Wealth (all): 207690.789887
+Taxable Aggregate Wealth (>0): 207690.789887
+Taxable Aggregate Capital Income: 13924.877566
+Wealth tax rate: 0.003361
+Capital income tax rate: 0.050124
+Percentiles: [np.float64(0.2), np.float64(0.4), np.float64(0.6), np.float64(0.8)]
+Lorenz (Original): [0.004775, 0.023688, 0.065815, 0.160203]
+Lorenz (Wealth tax): [0.005324, 0.027398, 0.076679, 0.184268]
+Lorenz (Capital income tax): [0.005779, 0.029235, 0.081366, 0.19446]
+Lorenz (SCF Data): [-0.001818, 0.009516, 0.053096, 0.170918]

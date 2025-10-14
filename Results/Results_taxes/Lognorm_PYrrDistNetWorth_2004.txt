@@ -1,0 +1,13 @@
+Tag: Lognorm_PYrrDistNetWorth_2004
+Aggregate Income (GDP): 69756.923863
+Target Tax Revenue (1% of GDP): 697.569239
+Aggregate Wealth (all): 204740.239899
+Taxable Aggregate Wealth (>0): 204740.239899
+Taxable Aggregate Capital Income: 13651.753014
+Wealth tax rate: 0.003407
+Capital income tax rate: 0.051097
+Percentiles: [np.float64(0.2), np.float64(0.4), np.float64(0.6), np.float64(0.8)]
+Lorenz (Original): [0.006278, 0.028559, 0.075092, 0.167781]
+Lorenz (Wealth tax): [0.006979, 0.032454, 0.086157, 0.193298]
+Lorenz (Capital income tax): [0.007584, 0.034787, 0.091877, 0.205044]
+Lorenz (SCF Data): [-0.001818, 0.009516, 0.053096, 0.170918]

@@ -1,0 +1,39 @@
+Tag: Unif_PYrrDistNetWorth_2004
+CRRA (rho): 1.000000
+Wealth tax rate: 0.003361
+Capital income tax rate: 0.050124
+
+Per-type newborn EVs (Original):
+[-1486.19722592, -1525.25842738, -1593.96645355, -1591.69642422, -1589.56279684, -1587.89826177, -1586.12399127]
+Per-type newborn EVs (Wealth tax):
+[-1486.54815206, -1515.68497886, -1594.26336726, -1592.0561405, -1589.54974017, -1588.20265942, -1586.42594775]
+Per-type newborn EVs (Capital income tax):
+[-1486.19722592, -1525.25842738, -1593.96645355, -1591.79336939, -1589.57449052, -1588.16410413, -1586.48242517]
+
+Aggregate newborn welfare (pmv weights):
+Original: -1565.81479728
+Wealth tax: -1564.67585514
+Capital income tax: -1565.91949944
+
+Aggregate newborn welfare (AgentCount shares):
+Original: -1565.81479728
+Wealth tax: -1564.67585514
+Capital income tax: -1565.91949944
+
+Consumption-equivalent (pmv weights), Δ (e.g., 0.07 = +7%):
+WT vs CIT: -0.07558272
+WT vs Original: -0.06944593
+CIT vs Original: 0.00663856
+
+Consumption-equivalent (AgentCount shares), Δ:
+WT vs CIT: -0.07558272
+WT vs Original: -0.06944593
+CIT vs Original: 0.00663856
+
+Per-type consumption-equivalent WT vs CIT, Δ by return type (low→high):
+[0.0224244, -0.4539207, 0.01894051, 0.01674438, -0.00156287, 0.00243946, -0.00356271]
+
+Per-type returns (baseline, WT, CIT) by return type (low→high):
+Baseline R: [0.9575471238037304, 0.9777992940720832, 0.998051464340436, 1.0183036346087888, 1.0385558048771415, 1.0588079751454944, 1.0790601454138473]
+Wealth tax R: [0.9541864842087572, 0.97443865447711, 0.9946908247454628, 1.0149429950138156, 1.0351951652821683, 1.0554473355505212, 1.075699505818874]
+Capital income tax R: [0.9575471238037304, 0.9777992940720832, 0.998051464340436, 1.0173861788520122, 1.0366232244963736, 1.0558602701407351, 1.0750973157850967]
