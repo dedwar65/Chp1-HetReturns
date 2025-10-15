@@ -1,13 +1,13 @@
 Tag: Unif_LCrrDistNetWorth_2004
 Aggregate Income (GDP): 4636284.722130
 Target Tax Revenue (1% of GDP): 46362.847221
-Aggregate Wealth (all): 14131713.938996
-Taxable Aggregate Wealth (>0): 14131713.938996
-Taxable Aggregate Capital Income: 922984.448161
-Wealth tax rate: 0.003281
-Capital income tax rate: 0.050231
+Aggregate Wealth (all): 14049272.807946
+Taxable Aggregate Wealth (>0): 14049272.807946
+Taxable Aggregate Capital Income: 913579.605442
+Wealth tax rate: 0.003300
+Capital income tax rate: 0.050749
 Percentiles: [np.float64(0.2), np.float64(0.4), np.float64(0.6), np.float64(0.8)]
-Lorenz (Original): [0.0034, 0.017717, 0.054494, 0.16989]
-Lorenz (Wealth tax): [0.003517, 0.018467, 0.056393, 0.171463]
-Lorenz (Capital income tax): [0.003718, 0.019345, 0.059027, 0.178574]
+Lorenz (Original): [0.003379, 0.017682, 0.054458, 0.169821]
+Lorenz (Wealth tax): [0.003496, 0.018443, 0.056394, 0.171437]
+Lorenz (Capital income tax): [0.0037, 0.019334, 0.059063, 0.178623]
 Lorenz (SCF Data): [-0.001818, 0.009516, 0.053096, 0.170918]

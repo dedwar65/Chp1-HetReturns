@@ -1,17 +1,17 @@
-Estimate is center=1.0601367918142597, spread=0.0
+Estimate is center=1.0602402176127366, spread=0.0
 Distribution type: Uniform
-Conversion is mean=1.060137, std_dev=0.000000
-Lorenz distance is 0.1492582185871935
-Discretized HetParam values: [np.float64(1.0601367918142597)]
-Simulated K/Y ratio at optimum: 3.0000
+Conversion is mean=1.060240, std_dev=0.000000
+Lorenz distance is 0.1522774032585476
+Discretized HetParam values: [np.float64(1.0602402176127366)]
+Simulated K/Y ratio at optimum: 3.0392
 
 Simulated Wealth Distribution (share held by each group):
-  Bottom 20%     : 0.030719
-  20-40%         : 0.085584
-  40-60%         : 0.141238
-  60-80%         : 0.221373
-  80-95%         : 0.286256
-  Top 5%         : 0.234830
+  Bottom 20%     : 0.030463
+  20-40%         : 0.085440
+  40-60%         : 0.142271
+  60-80%         : 0.224158
+  80-95%         : 0.285083
+  Top 5%         : 0.232585
 
 Empirical Wealth Distribution (share held by each group):
   Bottom 20%     : -0.001819
@@ -24,38 +24,38 @@ Empirical Wealth Distribution (share held by each group):
 ==================================================
 MPC Statistics:
 ==================================================
-Average MPC for all consumers: 0.112603
+Average MPC for all consumers: 0.112911
 
 Average MPC by Wealth-to-Income Ratio:
-  0-10th percentile             : 0.361328
-  10-20th percentile            : 0.148180
-  20-30th percentile            : 0.104402
-  30-40th percentile            : 0.086334
-  40-50th percentile            : 0.078020
-  50-60th percentile            : 0.073535
-  60-70th percentile            : 0.071167
-  70-80th percentile            : 0.069287
-  80-90th percentile            : 0.067904
-  90-100th percentile           : 0.065875
+  0-10th percentile             : 0.364255
+  10-20th percentile            : 0.148613
+  20-30th percentile            : 0.104436
+  30-40th percentile            : 0.086638
+  40-50th percentile            : 0.077941
+  50-60th percentile            : 0.073416
+  60-70th percentile            : 0.071035
+  70-80th percentile            : 0.069164
+  80-90th percentile            : 0.067761
+  90-100th percentile           : 0.065852
 
 Average MPC by Income Level:
-  0-10th percentile             : 0.068573
-  10-20th percentile            : 0.075663
-  20-30th percentile            : 0.085518
-  30-40th percentile            : 0.102219
-  40-50th percentile            : 0.128984
-  50-60th percentile            : 0.134968
-  60-70th percentile            : 0.163702
-  70-80th percentile            : 0.141968
-  80-90th percentile            : 0.124326
-  90-100th percentile           : 0.100093
+  0-10th percentile             : 0.068009
+  10-20th percentile            : 0.075550
+  20-30th percentile            : 0.088894
+  30-40th percentile            : 0.097074
+  40-50th percentile            : 0.132978
+  50-60th percentile            : 0.140477
+  60-70th percentile            : 0.157373
+  70-80th percentile            : 0.155079
+  80-90th percentile            : 0.117400
+  90-100th percentile           : 0.096277
 
 ==================================================
 Wealth Distribution by Age Cohort (Cumulative Lorenz Shares):
 ==================================================
 
 25-30:
-  20th percentile: 0.030750
-  40th percentile: 0.116359
-  60th percentile: 0.257628
-  80th percentile: 0.479056
+  20th percentile: 0.031232
+  40th percentile: 0.116885
+  60th percentile: 0.257455
+  80th percentile: 0.477569

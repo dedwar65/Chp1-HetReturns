@@ -1,12 +1,12 @@
 tag: PYrrDistNetWorth
 description: Perpetual youth rate of return estimation with heterogeneity
 HetParam: Rfree
-DstnType: Uniform
+DstnType: Lognormal
 HetTypeCount: 7
 LifeCycle: False
 AgentsPerType: 10000
 center_range: [0.925, 1.15]
-spread_range: [0.001, 0.03]
+spread_range: [0.0108, 0.02]
 TargetPercentiles: [0.2, 0.4, 0.6, 0.8]
 wealth_data_file: scf_processed_dc.csv
 year: 2004

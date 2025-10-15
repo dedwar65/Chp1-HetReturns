@@ -20,30 +20,6 @@ import HARK
 print("Using HARK from:", HARK.__file__)
 
 from HARK.ConsumptionSaving.ConsIndShockModel import IndShockConsumerType
-# Runtime patch: make CRRA==1 safe for vFunc construction by applying the log-utility limit
-try:
-    import inspect
-    import HARK.ConsumptionSaving.ConsIndShockModel as _CSM
-    _src = inspect.getsource(_CSM.solve_one_period_ConsIndShock)
-    # Replace the two exponent insertions with CRRA==1 limits (0.0)
-    _src_patched = _src
-    _src_patched = _src_patched.replace(
-        "MPCmaxNow ** (-CRRA / (1.0 - CRRA))",
-        "(0.0 if CRRA == 1.0 else MPCmaxNow ** (-CRRA / (1.0 - CRRA)))"
-    )
-    _src_patched = _src_patched.replace(
-        "MPCminNow ** (-CRRA / (1.0 - CRRA))",
-        "(0.0 if CRRA == 1.0 else MPCminNow ** (-CRRA / (1.0 - CRRA)))"
-    )
-    if _src_patched != _src:
-        # Define the patched function in the module namespace
-        _ns = {}
-        exec(_src_patched, _CSM.__dict__, _ns)
-        if 'solve_one_period_ConsIndShock' in _ns:
-            _CSM.solve_one_period_ConsIndShock = _ns['solve_one_period_ConsIndShock']
-except Exception as _e:
-    # Non-fatal: if patching fails, proceed with original; other guards handle errors
-    pass
 
 # Keep references to originals
 _orig_calc_limiting   = IndShockConsumerType.calc_limiting_values
@@ -72,31 +48,6 @@ def _patched_describe(self, *args, **kwargs):
 IndShockConsumerType.calc_limiting_values   = _patched_calc_limiting
 IndShockConsumerType.describe_parameters    = _patched_describe
 
-# 4) Patch solve to gracefully handle CRRA==1 with vFuncBool=True
-def _patched_solve(self, *args, **kwargs):
-    try:
-        return _orig_solve(self, *args, **kwargs)
-    except ZeroDivisionError:
-        # Use log-utility limit: nudge CRRA internally only for the solve
-        try:
-            crra_val = float(getattr(self, 'CRRA', None))
-        except Exception:
-            crra_val = None
-        if crra_val == 1.0 and getattr(self, 'vFuncBool', False):
-            had_attr = hasattr(self, '_CRRA_orig')
-            if not had_attr:
-                setattr(self, '_CRRA_orig', self.CRRA)
-            try:
-                self.CRRA = 1.0 + 1e-8  # log-utility limit, internal only
-                return _orig_solve(self, *args, **kwargs)
-            finally:
-                # Restore exactly 1.0 for calibration/reporting
-                self.CRRA = getattr(self, '_CRRA_orig', 1.0)
-                if not had_attr and hasattr(self, '_CRRA_orig'):
-                    delattr(self, '_CRRA_orig')
-        raise
-
-IndShockConsumerType.solve = _patched_solve
 
 # Simple memoization cache for inner-loop KY evaluations
 _ky_cache = {}
@@ -214,7 +165,7 @@ def getDistributionsFromHetParamValues(center, spread):
 
     # Use HARK's joblib-based parallelization (process-safe)
     # CRRA=1 workaround is now handled automatically in solve() method
-    multi_thread_commands(MyPopulation, ['solve()', 'initialize_sim()', 'simulate()'], num_jobs=4)
+    multi_thread_commands(MyPopulation, ['solve()', 'initialize_sim()', 'simulate()'], num_jobs=8)
 
     if LifeCycle:
         IndWealthArray = np.concatenate([this_type.history['aLvl'].flatten() for this_type in MyPopulation])
@@ -393,7 +344,7 @@ def calc_Lorenz_dist_at_Target_KY(spread):
     '''
     print(f"function calc_Lorenz_dist_at_Target_KY Now trying spread = {spread}...")
     opt_center = root_scalar(calc_KY_diff, args=spread, method="brentq", bracket=center_range,
-                xtol=1e-3, maxiter=20).root  # Very relaxed tolerance, low iteration limit
+                xtol=1e-6, maxiter=100).root
     dist = calc_Lorenz_dist(opt_center, spread)
     params.opt_center = opt_center
     print(f"Lorenz distance found = {dist}")
@@ -405,20 +356,34 @@ def find_center_by_matching_target_KY(spread=0.):
     Finds the center value such that, with no heterogeneity (spread=0), the simulated
     KY ratio is equal to its empirical counterpart.
     """
-    result = root_scalar(calc_KY_diff, args=spread, method="brentq", bracket=center_range,
-                xtol=1e-3, maxiter=20)  # Very relaxed tolerance, low iteration limit
-    params.lorenz_distance = calc_Lorenz_dist(result.root, spread)
-    params.opt_center = result.root
-    params.opt_spread = spread
-    return result
+    try:
+        result = root_scalar(calc_KY_diff, args=spread, method="brentq", bracket=center_range,
+                    xtol=1e-6, maxiter=100)
+        params.lorenz_distance = calc_Lorenz_dist(result.root, spread)
+        params.opt_center = result.root
+        params.opt_spread = spread
+        return result
+    except Exception as e:
+        print(f"Error in find_center_by_matching_target_KY for spread={spread}: {e}")
+        # Return a dummy result that indicates failure
+        class DummyResult:
+            def __init__(self):
+                self.converged = False
+                self.root = center_range[0]  # Use lower bound as fallback
+        return DummyResult()
 
 def min_Lorenz_dist_at_Target_KY():
     '''
     Finds the spread value such that the lorenz distance is minimized, given the
     target KY ratio is acheived.
     '''
-    result = minimize_scalar(calc_Lorenz_dist_at_Target_KY, bracket=spread_range,
-                                 options={'maxiter': 15})  # Low iteration limit
+    lo, hi = spread_range
+    result = minimize_scalar(
+        calc_Lorenz_dist_at_Target_KY,
+        bracket=(lo, hi),
+        method='brent',
+        options={'maxiter': 100}
+    )
     params.opt_spread = result.x
     params.lorenz_distance = result
     return result
@@ -745,7 +710,7 @@ def compute_simulated_lorenz_by_age_bins(center, spread, percentiles, bin_size=1
     '''
     updateHetParamValues(center, spread)
     # CRRA=1 workaround is now handled automatically in solve() method
-    multi_thread_commands(MyPopulation, ['solve()', 'initialize_sim()', 'simulate()'], num_jobs=4)
+    multi_thread_commands(MyPopulation, ['solve()', 'initialize_sim()', 'simulate()'], num_jobs=8)
 
     # Define age bins based on bin_size
     if bin_size == 5:

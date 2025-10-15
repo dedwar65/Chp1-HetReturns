@@ -1,13 +1,13 @@
 Tag: Lognorm_LCrrDistNetWorth_2004
 Aggregate Income (GDP): 4636170.555081
 Target Tax Revenue (1% of GDP): 46361.705551
-Aggregate Wealth (all): 14002655.704631
-Taxable Aggregate Wealth (>0): 14002655.704631
-Taxable Aggregate Capital Income: 926224.564129
-Wealth tax rate: 0.003311
-Capital income tax rate: 0.050054
+Aggregate Wealth (all): 14048240.298481
+Taxable Aggregate Wealth (>0): 14048240.298481
+Taxable Aggregate Capital Income: 933046.297591
+Wealth tax rate: 0.003300
+Capital income tax rate: 0.049689
 Percentiles: [np.float64(0.2), np.float64(0.4), np.float64(0.6), np.float64(0.8)]
-Lorenz (Original): [0.004302, 0.020906, 0.060793, 0.169496]
-Lorenz (Wealth tax): [0.004405, 0.021563, 0.06234, 0.170732]
-Lorenz (Capital income tax): [0.004675, 0.022716, 0.065641, 0.179454]
+Lorenz (Original): [0.0042, 0.020528, 0.05984, 0.167326]
+Lorenz (Wealth tax): [0.0043, 0.021181, 0.061389, 0.168583]
+Lorenz (Capital income tax): [0.004566, 0.022317, 0.064649, 0.177239]
 Lorenz (SCF Data): [-0.001818, 0.009516, 0.053096, 0.170918]

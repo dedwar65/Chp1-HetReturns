@@ -1,23 +1,25 @@
-Estimate is center=1.0012626349118519, spread=0.09623861461390619
+Estimate is center=1.0016316511395462, spread=0.09526504112325755
 Distribution type: Uniform
-Conversion is mean=1.001263, std_dev=0.055563
+Conversion is mean=1.001632, std_dev=0.055001
 Lorenz distance is  message: 
-          Maximum number of iterations exceeded
- success: False
-     fun: 9.89240908548468e-05
-       x: 0.09623861461390619
-     nit: 15
-    nfev: 20
-Discretized HetParam values: [np.float64(0.9187723938142179), np.float64(0.9462691408467626), np.float64(0.9737658878793072), np.float64(1.0012626349118519), np.float64(1.0287593819443965), np.float64(1.0562561289769412), np.float64(1.0837528760094857)]
-Simulated K/Y ratio at optimum: 3.0176
+          Optimization terminated successfully;
+          The returned value satisfies the termination criteria
+          (using xtol = 1.48e-08 )
+ success: True
+     fun: 9.829294225570682e-05
+       x: 0.09526504112325755
+     nit: 11
+    nfev: 16
+Discretized HetParam values: [np.float64(0.9199759016053255), np.float64(0.9471944847833991), np.float64(0.9744130679614726), np.float64(1.0016316511395462), np.float64(1.0288502343176198), np.float64(1.0560688174956934), np.float64(1.083287400673767)]
+Simulated K/Y ratio at optimum: 3.0000
 
 Simulated Wealth Distribution (share held by each group):
-  Bottom 20%     : 0.003415
-  20-40%         : 0.014295
+  Bottom 20%     : 0.003393
+  20-40%         : 0.014282
   40-60%         : 0.036561
-  60-80%         : 0.114907
-  80-95%         : 0.358101
-  Top 5%         : 0.472722
+  60-80%         : 0.114874
+  80-95%         : 0.358115
+  Top 5%         : 0.472774
 
 Empirical Wealth Distribution (share held by each group):
   Bottom 20%     : -0.001819
@@ -30,62 +32,62 @@ Empirical Wealth Distribution (share held by each group):
 ==================================================
 MPC Statistics:
 ==================================================
-Average MPC for all consumers: 0.277643
+Average MPC for all consumers: 0.278332
 
 Average MPC by Wealth-to-Income Ratio:
-  0-10th percentile             : 0.735741
-  10-20th percentile            : 0.466186
-  20-30th percentile            : 0.434026
-  30-40th percentile            : 0.358547
-  40-50th percentile            : 0.277057
-  50-60th percentile            : 0.203985
-  60-70th percentile            : 0.117591
-  70-80th percentile            : 0.077538
-  80-90th percentile            : 0.073210
-  90-100th percentile           : 0.087346
+  0-10th percentile             : 0.737631
+  10-20th percentile            : 0.467820
+  20-30th percentile            : 0.435019
+  30-40th percentile            : 0.359397
+  40-50th percentile            : 0.278068
+  50-60th percentile            : 0.204996
+  60-70th percentile            : 0.118457
+  70-80th percentile            : 0.077758
+  80-90th percentile            : 0.073197
+  90-100th percentile           : 0.087226
 
 Average MPC by Income Level:
-  0-10th percentile             : 0.286346
-  10-20th percentile            : 0.270103
-  20-30th percentile            : 0.267162
-  30-40th percentile            : 0.275020
-  40-50th percentile            : 0.301566
-  50-60th percentile            : 0.285929
-  60-70th percentile            : 0.281438
-  70-80th percentile            : 0.275537
-  80-90th percentile            : 0.271160
-  90-100th percentile           : 0.258419
+  0-10th percentile             : 0.287216
+  10-20th percentile            : 0.270870
+  20-30th percentile            : 0.267876
+  30-40th percentile            : 0.275707
+  40-50th percentile            : 0.302145
+  50-60th percentile            : 0.286583
+  60-70th percentile            : 0.282106
+  70-80th percentile            : 0.276255
+  80-90th percentile            : 0.271844
+  90-100th percentile           : 0.259071
 
 ==================================================
 Wealth Distribution by Age Cohort (Cumulative Lorenz Shares):
 ==================================================
 
 25-30:
-  20th percentile: 0.023136
-  40th percentile: 0.095523
-  60th percentile: 0.220909
-  80th percentile: 0.446482
+  20th percentile: 0.022901
+  40th percentile: 0.095089
+  60th percentile: 0.220310
+  80th percentile: 0.445808
 
 30-40:
-  20th percentile: 0.010125
-  40th percentile: 0.052230
-  60th percentile: 0.142703
-  80th percentile: 0.343912
+  20th percentile: 0.010021
+  40th percentile: 0.051981
+  60th percentile: 0.142265
+  80th percentile: 0.343205
 
 40-50:
-  20th percentile: 0.005747
-  40th percentile: 0.029436
-  60th percentile: 0.088228
-  80th percentile: 0.266670
+  20th percentile: 0.005700
+  40th percentile: 0.029315
+  60th percentile: 0.087957
+  80th percentile: 0.265990
 
 50-60:
-  20th percentile: 0.004418
-  40th percentile: 0.021660
-  60th percentile: 0.069680
-  80th percentile: 0.240329
+  20th percentile: 0.004396
+  40th percentile: 0.021595
+  60th percentile: 0.069480
+  80th percentile: 0.239748
 
 60-70:
-  20th percentile: 0.003888
-  40th percentile: 0.019555
-  60th percentile: 0.066233
-  80th percentile: 0.229491
+  20th percentile: 0.003884
+  40th percentile: 0.019548
+  60th percentile: 0.066186
+  80th percentile: 0.229240

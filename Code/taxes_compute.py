@@ -9,15 +9,7 @@ from utilities_taxes import (getDistributionsFromHetParamValues)
 from utilities_taxes import (extract_income_distribution,
                             make_Rfree_with_wealth_tax,
                             make_Rfree_with_capital_income_tax,
-                            save_lorenz_side_by_side_from_results,
-                            require_vfunc,
-                            compute_newborn_EV_per_agent,
-                            compute_newborn_EV_per_agent_lc,
-                            compute_population_newborn_welfare,
-                            consumption_equivalent_delta,
-                            consumption_equivalent_delta_log,
-                            ih_discount_sum,
-                            lc_discount_sum)
+                            save_lorenz_side_by_side_from_results)
 
 # Import SCF Lorenz data from parameters.py
 from parameters import (emp_lorenz, MyPopulation, LifeCycle,
@@ -28,24 +20,24 @@ from parameters import (emp_lorenz, MyPopulation, LifeCycle,
 
 #UNIFORM DIST
 #PY
-#center=1.0183036346087888
-#spread=0.07088259593923484
+#center=1.0203885136819602
+#spread=0.0683256880242527
 
 
 #LC
-center=1.0012626349118519
-spread=0.09623861461390619
+#center=1.0016316511395462
+#spread=0.09526504112325755
 
 
 #Lognormal DIST
 #PY
-#center = 1.027794207449135
-#spread = 0.03112001157177155
+#center=1.0269152972734659
+#spread=0.03168873649157252
 
 
 #LC
-#center=1.0094751606448389
-#spread=0.04710097282843928
+center=1.0094779502784657
+spread=0.047100563599260487
 
 
 
@@ -56,7 +48,7 @@ print(f"SCF Lorenz data: {emp_lorenz}")
 # This will update the population with the given center/spread and extract distributions
 GDP, WealthDstn, ProdDstn, WeightDstn = extract_income_distribution(center, spread)
 
-# Baseline Lorenz from first-pass arrays to match estimation output
+# Target percentiles for Lorenz
 pctiles = np.array(TargetPercentiles, dtype=float)
 Lorenz_orig = get_lorenz_shares(WealthDstn, WeightDstn, percentiles=pctiles)
 
@@ -242,7 +234,7 @@ for pop_name, pop in [("WT", MyPopulation_WT), ("CIT", MyPopulation_CIT)]:
             except Exception:
                 pass
 
-# Step 4: Extract wealth distributions for each case
+# Step 4: Extract wealth distributions for each case (simulate all regimes consistently)
 def extract_wealth_distribution(population):
     """
     Extract wealth, income, and weight arrays from a population.
@@ -263,22 +255,28 @@ def extract_wealth_distribution(population):
     return IndWealthArray, IndProdArray, IndWeightArray
 
 # Extract distributions for each population
-print("\nExtracting wealth distributions for taxed populations...")
+print("\nExtracting wealth distributions for baseline and taxed populations...")
+
+# Baseline: ensure baseline population is solved/simulated the same way
+WealthArray_BASE, ProdArray_BASE, WeightArray_BASE = extract_wealth_distribution(MyPopulation)
 
 WealthArray_WT, ProdArray_WT, WeightArray_WT = extract_wealth_distribution(MyPopulation_WT)
 WealthArray_CIT, ProdArray_CIT, WeightArray_CIT = extract_wealth_distribution(MyPopulation_CIT)
 
+print(f"Baseline population wealth array length: {len(WealthArray_BASE)}")
 print(f"Wealth tax population wealth array length: {len(WealthArray_WT)}")
 print(f"Capital income tax population wealth array length: {len(WealthArray_CIT)}")
 
 # Summary statistics
-print(f"\nOriginal population average wealth (first pass): {np.average(WealthDstn, weights=WeightDstn):.2f}")
+print(f"\nOriginal population average wealth (simulated): {np.average(WealthArray_BASE, weights=WeightArray_BASE):.2f}")
 print(f"Wealth tax population average wealth: {np.average(WealthArray_WT, weights=WeightArray_WT):.2f}")
 print(f"Capital income tax population average wealth: {np.average(WealthArray_CIT, weights=WeightArray_CIT):.2f}")
 
-# Compute Lorenz shares for taxed distributions (baseline from first pass already computed)
-Lorenz_wt = get_lorenz_shares(WealthArray_WT, WeightArray_WT, percentiles=pctiles)
-Lorenz_cit = get_lorenz_shares(WealthArray_CIT, WeightArray_CIT, percentiles=pctiles)
+# Compute Lorenz shares for all regimes from simulated arrays
+Lorenz_base = get_lorenz_shares(WealthArray_BASE, WeightArray_BASE, percentiles=pctiles)
+Lorenz_wt   = get_lorenz_shares(WealthArray_WT,   WeightArray_WT,   percentiles=pctiles)
+Lorenz_cit  = get_lorenz_shares(WealthArray_CIT,  WeightArray_CIT,  percentiles=pctiles)
+
 
 # Convert to plain floats for clean printing
 Lorenz_orig_list = [float(x) for x in np.round(Lorenz_orig, 6)]
@@ -288,6 +286,7 @@ print("Lorenz (Original):", Lorenz_orig_list)
 print("Lorenz (Wealth tax):", Lorenz_wt_list)
 print("Lorenz (Capital income tax):", Lorenz_cit_list)
 print("Lorenz (SCF Data):", [float(x) for x in np.round(emp_lorenz, 6)])
+
 
 # Store the arrays for later use with proper structure for plotting
 tax_analysis_results = {
@@ -347,72 +346,39 @@ except Exception as e:
     print(f"Lorenz figure save failed: {e}")
 print("You can now use these arrays to compute wealth distributions and Lorenz shares.")
 
-# ===================== Newborn welfare computation and outputs =====================
+# ===== Custom Value Function Welfare Analysis =====
+from value_functions import (
+    compute_value_function_bellman,
+    create_value_function_interpolator,
+    compute_newborn_EV_PY,
+    compute_population_welfare_custom,
+    ih_discount_sum_custom,
+    consumption_equivalent_delta_custom,
+    diagnose_agent_value_computation,
+    compute_value_functions_lc,
+    compute_newborn_EV_LC,
+    lc_discount_sum_custom
+)
 
-# Build return-type weights from discretization
+# Set up m_grid for value function computation
+m_grid = np.linspace(0.01, 20.0, 200)
+
+print("\nComputing welfare using custom value functions...")
 het_weights = dstn.pmv
 
-# Validate value function availability for baseline agents (fail fast if missing)
-for ag in MyPopulation:
-    try:
-        require_vfunc(ag)
-    except RuntimeError as e:
-        raise
+# Compute welfare for each regime (PY focus)
+W_orig_vec, W_orig_pmv, W_orig_counts = compute_population_welfare_custom(
+    MyPopulation, het_weights, BaseTypeCount, m_grid
+)
+W_wt_vec, W_wt_pmv, W_wt_counts = compute_population_welfare_custom(
+    MyPopulation_WT, het_weights, BaseTypeCount, m_grid
+)
+W_cit_vec, W_cit_pmv, W_cit_counts = compute_population_welfare_custom(
+    MyPopulation_CIT, het_weights, BaseTypeCount, m_grid
+)
 
-# Compute per-type EVs and aggregates under each regime
-W_orig_vec, W_orig_pmv, W_orig_counts = compute_population_newborn_welfare(MyPopulation, het_weights, BaseTypeCount)
-W_wt_vec,   W_wt_pmv,   W_wt_counts   = compute_population_newborn_welfare(MyPopulation_WT, het_weights, BaseTypeCount)
-W_cit_vec,  W_cit_pmv,  W_cit_counts  = compute_population_newborn_welfare(MyPopulation_CIT, het_weights, BaseTypeCount)
-
-# Retrieve CRRA
 rho = float(MyPopulation[0].CRRA)
 
-# Compute S for log-utility case; otherwise use standard CE
-if abs(rho - 1.0) < 1e-12:
-    # Per-type S from baseline agents (same beta, LivPrb across regimes)
-    S_per_type = []
-    for i in range(len(W_orig_vec)):
-        rep_ag = MyPopulation[i * BaseTypeCount]
-        S_per_type.append(ih_discount_sum(rep_ag))
-
-    # Aggregate S by pmv and by realized counts
-    import numpy as _np
-    S_pmv = float(_np.dot(_np.array(S_per_type), _np.array(het_weights)))
-
-    # Type counts from baseline population
-    type_counts = _np.array([
-        _np.sum([float(getattr(ag, 'AgentCount', 0.0)) for ag in MyPopulation[i*BaseTypeCount:(i+1)*BaseTypeCount]])
-        for i in range(len(W_orig_vec))
-    ], dtype=float)
-    S_counts = float(_np.dot(_np.array(S_per_type), (type_counts / type_counts.sum())))
-
-    # Aggregate CE comparisons (pmv and counts)
-    CE_WT_vs_CIT_pmv     = consumption_equivalent_delta_log(W_wt_pmv,  W_cit_pmv,  S_pmv)
-    CE_WT_vs_ORG_pmv     = consumption_equivalent_delta_log(W_wt_pmv,  W_orig_pmv, S_pmv)
-    CE_CIT_vs_ORG_pmv    = consumption_equivalent_delta_log(W_cit_pmv, W_orig_pmv, S_pmv)
-
-    CE_WT_vs_CIT_counts  = consumption_equivalent_delta_log(W_wt_counts,  W_cit_counts,  S_counts)
-    CE_WT_vs_ORG_counts  = consumption_equivalent_delta_log(W_wt_counts,  W_orig_counts, S_counts)
-    CE_CIT_vs_ORG_counts = consumption_equivalent_delta_log(W_cit_counts, W_orig_counts, S_counts)
-
-    # Per-type CE comparisons (WT vs CIT)
-    CE_per_type_WT_vs_CIT = [
-        consumption_equivalent_delta_log(W_wt_vec[i], W_cit_vec[i], S_per_type[i]) for i in range(len(W_orig_vec))
-    ]
-else:
-    # Aggregate CE comparisons (both weighting modes)
-    CE_WT_vs_CIT_pmv    = consumption_equivalent_delta(W_wt_pmv,  W_cit_pmv,  rho)
-    CE_WT_vs_ORG_pmv    = consumption_equivalent_delta(W_wt_pmv,  W_orig_pmv, rho)
-    CE_CIT_vs_ORG_pmv   = consumption_equivalent_delta(W_cit_pmv, W_orig_pmv, rho)
-
-    CE_WT_vs_CIT_counts = consumption_equivalent_delta(W_wt_counts,  W_cit_counts,  rho)
-    CE_WT_vs_ORG_counts = consumption_equivalent_delta(W_wt_counts,  W_orig_counts, rho)
-    CE_CIT_vs_ORG_counts= consumption_equivalent_delta(W_cit_counts, W_orig_counts, rho)
-
-    # Per-type CE comparisons (WT vs CIT)
-    CE_per_type_WT_vs_CIT = [consumption_equivalent_delta(W_wt_vec[i], W_cit_vec[i], rho) for i in range(len(W_orig_vec))]
-
-# Prepare welfare output file and header BEFORE any LC appends
 _welfare_path = os.path.join(_results_dir, f"{tag}_welfare.txt")
 _wl = []
 _wl.append(f"Tag: {tag}\n")
@@ -420,261 +386,34 @@ _wl.append(f"CRRA (rho): {rho:.6f}\n")
 _wl.append(f"Wealth tax rate: {wealth_tax_rate:.6f}\n")
 _wl.append(f"Capital income tax rate: {capital_income_tax_rate:.6f}\n\n")
 
-# ===================== Life-Cycle specific diagnostics and welfare (if LC) =====================
-if LifeCycle:
-    print("\n[LC] Education-group diagnostics and per-type returns")
-    edu_labels = ["NoHS", "HS", "College"]
+if abs(rho - 1.0) < 1e-12:
+    # Per-type S values and aggregates
+    S_per_type = [ih_discount_sum_custom(MyPopulation[i * BaseTypeCount])
+                  for i in range(len(W_orig_vec))]
+    import numpy as _np
+    S_pmv = float(_np.dot(_np.array(S_per_type), _np.array(het_weights)))
 
-    def _collect_type_r_by_edu(pop):
-        per_edu = {lab: [] for lab in edu_labels}
-        for i in range(HetTypeCount):
-            for j, lab in enumerate(edu_labels):
-                ag = pop[i * BaseTypeCount + j]
-                r = ag.Rfree
-                r_val = float(r[0]) if isinstance(r, list) else float(r)
-                per_edu[lab].append(r_val)
-        return per_edu
+    # CE comparisons (pmv)
+    CE_WT_vs_CIT_pmv = consumption_equivalent_delta_custom(W_wt_pmv, W_cit_pmv, rho, S_pmv)
+    CE_WT_vs_ORG_pmv = consumption_equivalent_delta_custom(W_wt_pmv, W_orig_pmv, rho, S_pmv)
+    CE_CIT_vs_ORG_pmv = consumption_equivalent_delta_custom(W_cit_pmv, W_orig_pmv, rho, S_pmv)
 
-    def _collect_agent_counts_by_edu(pop):
-        counts = {lab: 0.0 for lab in edu_labels}
-        for i in range(HetTypeCount):
-            for j, lab in enumerate(edu_labels):
-                ag = pop[i * BaseTypeCount + j]
-                counts[lab] += float(getattr(ag, 'AgentCount', 0.0))
-        total = sum(counts.values())
-        shares = {lab: (counts[lab] / total if total > 0 else float('nan')) for lab in edu_labels}
-        return counts, shares
+    # Per-type CE (WT vs CIT)
+    CE_per_type_WT_vs_CIT = [
+        consumption_equivalent_delta_custom(W_wt_vec[i], W_cit_vec[i], rho, S_per_type[i])
+        for i in range(len(W_orig_vec))
+    ]
+else:
+    CE_WT_vs_CIT_pmv = consumption_equivalent_delta_custom(W_wt_pmv, W_cit_pmv, rho)
+    CE_WT_vs_ORG_pmv = consumption_equivalent_delta_custom(W_wt_pmv, W_orig_pmv, rho)
+    CE_CIT_vs_ORG_pmv = consumption_equivalent_delta_custom(W_cit_pmv, W_orig_pmv, rho)
 
-    base_counts, base_shares = _collect_agent_counts_by_edu(MyPopulation)
-    print(f"[LC] AgentCount totals by education: {base_counts}")
-    print(f"[LC] AgentCount shares by education: {base_shares}")
+    # Per-type CE (WT vs CIT)
+    CE_per_type_WT_vs_CIT = [
+        consumption_equivalent_delta_custom(W_wt_vec[i], W_cit_vec[i], rho)
+        for i in range(len(W_orig_vec))
+    ]
 
-    base_r_by_edu = _collect_type_r_by_edu(MyPopulation)
-    wt_r_by_edu   = _collect_type_r_by_edu(MyPopulation_WT)
-    cit_r_by_edu  = _collect_type_r_by_edu(MyPopulation_CIT)
-
-    print("[LC] Baseline returns per education (7 types, low→high):")
-    for lab in edu_labels:
-        print(f"  {lab}: {base_r_by_edu[lab]}")
-    print("[LC] Wealth tax returns per education:")
-    for lab in edu_labels:
-        print(f"  {lab}: {wt_r_by_edu[lab]}")
-    print("[LC] Capital income tax returns per education:")
-    for lab in edu_labels:
-        print(f"  {lab}: {cit_r_by_edu[lab]}")
-
-    # Diagnostics: parameters used in LC newborn EV (per education)
-    print("\n[LC] Newborn EV parameter diagnostics (per education):")
-    for j, lab in enumerate(edu_labels):
-        rep_ag = MyPopulation[0 * BaseTypeCount + j]
-        # Period-0 R and G
-        R0 = float(rep_ag.Rfree[0] if isinstance(rep_ag.Rfree, list) else rep_ag.Rfree)
-        G0 = float(rep_ag.PermGroFac[0] if isinstance(rep_ag.PermGroFac, list) else rep_ag.PermGroFac)
-        # Shocks at t=0
-        dist0 = rep_ag.IncShkDstn[0]
-        probs0 = getattr(dist0, 'pmv', None)
-        atoms0 = getattr(dist0, 'atoms', None)
-        if probs0 is not None and atoms0 is not None:
-            psi0 = np.asarray(atoms0[0], dtype=float).flatten()
-            th0  = np.asarray(atoms0[1], dtype=float).flatten()
-            p0   = np.asarray(probs0, dtype=float).flatten()
-            p0   = p0 / np.sum(p0)
-            # Weighted means for diagnostics
-            psi_mean = float(np.dot(psi0, p0))
-            th_mean  = float(np.dot(th0,  p0))
-        else:
-            psi0 = th0 = p0 = None
-            psi_mean = th_mean = float('nan')
-        # Initial asset distribution (normalized)
-        a_init = getattr(rep_ag, 'aNrmInit', None)
-        if a_init is not None and hasattr(a_init, 'atoms') and hasattr(a_init, 'pmv'):
-            a_vals = np.asarray(a_init.atoms, dtype=float).flatten()
-            a_wts  = np.asarray(a_init.pmv,   dtype=float).flatten()
-            a_wts  = a_wts / np.sum(a_wts)
-            a_mean = float(np.dot(a_vals, a_wts))
-            a_min  = float(np.min(a_vals)) if a_vals.size > 0 else float('nan')
-            a_max  = float(np.max(a_vals)) if a_vals.size > 0 else float('nan')
-            a_len  = int(a_vals.size)
-        else:
-            a_mean = 0.0
-            a_min = a_max = 0.0
-            a_len = 1
-        print(f"  {lab}: R0={R0:.8f}, G0={G0:.8f}, a0_len={a_len}, a0_mean={a_mean:.8f}, a0_min={a_min:.8f}, a0_max={a_max:.8f}, psi_mean={psi_mean:.8f}, theta_mean={th_mean:.8f}")
-
-    # Additional diagnostics: initial distributions attached to agents
-    print("\n[LC] Initial distribution attachments (per education):")
-    for j, lab in enumerate(edu_labels):
-        ag = MyPopulation[0 * BaseTypeCount + j]
-        # aLvlInitDstn and pLvlInitDstn means if present
-        try:
-            aLvl = getattr(ag, 'aLvlInitDstn', None)
-            pLvl = getattr(ag, 'pLvlInitDstn', None)
-            if aLvl is not None and hasattr(aLvl, 'atoms') and hasattr(aLvl, 'pmv'):
-                a_atoms = np.asarray(aLvl.atoms, dtype=float).flatten()
-                a_pmv   = np.asarray(aLvl.pmv,   dtype=float).flatten()
-                a_pmv   = a_pmv / np.sum(a_pmv)
-                aLvl_mean = float(np.dot(a_atoms, a_pmv))
-            else:
-                aLvl_mean = float('nan')
-            if pLvl is not None and hasattr(pLvl, 'atoms') and hasattr(pLvl, 'pmv'):
-                p_atoms = np.asarray(pLvl.atoms, dtype=float).flatten()
-                p_pmv   = np.asarray(pLvl.pmv,   dtype=float).flatten()
-                p_pmv   = p_pmv / np.sum(p_pmv)
-                pLvl_mean = float(np.dot(p_atoms, p_pmv))
-            else:
-                pLvl_mean = float('nan')
-        except Exception:
-            aLvl_mean = pLvl_mean = float('nan')
-
-        # aNrmInit mean if present
-        try:
-            aNrm = getattr(ag, 'aNrmInit', None)
-            if aNrm is not None and hasattr(aNrm, 'atoms') and hasattr(aNrm, 'pmv'):
-                an_atoms = np.asarray(aNrm.atoms, dtype=float).flatten()
-                an_pmv   = np.asarray(aNrm.pmv,   dtype=float).flatten()
-                an_pmv   = an_pmv / np.sum(an_pmv)
-                aNrm_mean = float(np.dot(an_atoms, an_pmv))
-            else:
-                aNrm_mean = float('nan')
-        except Exception:
-            aNrm_mean = float('nan')
-
-        # History means at t=0
-        try:
-            aLvl0 = np.asarray(ag.history['aLvl'][0, :], dtype=float)
-            pLvl0 = np.asarray(ag.history['pLvl'][0, :], dtype=float)
-            hist_aLvl_mean = float(np.mean(aLvl0))
-            hist_pLvl_mean = float(np.mean(pLvl0))
-            hist_aNrm_mean = float(np.mean(aLvl0 / pLvl0))
-        except Exception:
-            hist_aLvl_mean = hist_pLvl_mean = hist_aNrm_mean = float('nan')
-
-        print(f"  {lab}: aLvlInit_mean={aLvl_mean:.8f}, pLvlInit_mean={pLvl_mean:.8f}, aNrmInit_mean={aNrm_mean:.8f}, hist_aLvl0_mean={hist_aLvl_mean:.8f}, hist_pLvl0_mean={hist_pLvl_mean:.8f}, hist_aNrm0_mean={hist_aNrm_mean:.8f}")
-
-    # Per-education per-type newborn EVs and WT vs CIT CE
-    def _evs_by_edu(pop):
-        evs = {lab: [] for lab in edu_labels}
-        for i in range(HetTypeCount):
-            for j, lab in enumerate(edu_labels):
-                ag = pop[i * BaseTypeCount + j]
-                require_vfunc(ag)
-                if LifeCycle:
-                    evs[lab].append(compute_newborn_EV_per_agent_lc(ag))
-                else:
-                    evs[lab].append(compute_newborn_EV_per_agent(ag))
-        return evs
-
-    ev_orig_by_edu = _evs_by_edu(MyPopulation)
-    ev_wt_by_edu   = _evs_by_edu(MyPopulation_WT)
-    ev_cit_by_edu  = _evs_by_edu(MyPopulation_CIT)
-
-    # Per-education S for log utility
-    if abs(rho - 1.0) < 1e-12:
-        S_by_edu = {}
-        for j, lab in enumerate(edu_labels):
-            # representative agent of this education at type 0
-            rep_ag = MyPopulation[0 * BaseTypeCount + j]
-            S_by_edu[lab] = lc_discount_sum(rep_ag)
-    else:
-        S_by_edu = None
-
-    # Per-education per-type CE (WT vs CIT only)
-    CE_by_edu = {lab: [] for lab in edu_labels}
-    for j, lab in enumerate(edu_labels):
-        for i in range(HetTypeCount):
-            if abs(rho - 1.0) < 1e-12:
-                CE_by_edu[lab].append(consumption_equivalent_delta_log(ev_wt_by_edu[lab][i], ev_cit_by_edu[lab][i], S_by_edu[lab]))
-            else:
-                CE_by_edu[lab].append(consumption_equivalent_delta(ev_wt_by_edu[lab][i], ev_cit_by_edu[lab][i], rho))
-
-    # Aggregates in LC across returns (pmv) and education (declared fractions vs counts)
-    # Declared fractions
-    from parameters import (year)
-    nohs_frac = 0.11
-    hs_frac = 0.54
-    college_frac = 0.35
-    edu_fracs = {"NoHS": nohs_frac, "HS": hs_frac, "College": college_frac}
-
-    # Aggregate EVs
-    def _agg_ev(evs_by_edu, weights_returns, weights_edu):
-        # average across returns per edu, then across edu by weights_edu
-        import numpy as _np
-        ev_edu = {lab: float(_np.dot(_np.array(evs_by_edu[lab], dtype=float), _np.array(weights_returns, dtype=float))) for lab in edu_labels}
-        W_pmv = float(sum(ev_edu[lab] * weights_edu[lab] for lab in edu_labels))
-        return ev_edu, W_pmv
-
-    # weights across returns
-    ret_weights = list(map(float, dstn.pmv))
-
-    ev_edu_orig, W_orig_pmv_lc = _agg_ev(ev_orig_by_edu, ret_weights, edu_fracs)
-    ev_edu_wt,   W_wt_pmv_lc   = _agg_ev(ev_wt_by_edu,   ret_weights, edu_fracs)
-    ev_edu_cit,  W_cit_pmv_lc  = _agg_ev(ev_cit_by_edu,  ret_weights, edu_fracs)
-
-    # AgentCount-weighted aggregates
-    base_counts, base_shares = _collect_agent_counts_by_edu(MyPopulation)
-    W_orig_counts_lc = float(sum(ev_edu_orig[lab] * base_shares[lab] for lab in edu_labels))
-    W_wt_counts_lc   = float(sum(ev_edu_wt[lab]   * base_shares[lab] for lab in edu_labels))
-    W_cit_counts_lc  = float(sum(ev_edu_cit[lab]  * base_shares[lab] for lab in edu_labels))
-
-    # Aggregate CE (pmv and counts)
-    if abs(rho - 1.0) < 1e-12:
-        # Aggregate S via same weights
-        S_pmv_lc    = float(sum(S_by_edu[lab] * edu_fracs[lab] for lab in edu_labels))
-        S_counts_lc = float(sum(S_by_edu[lab] * base_shares[lab] for lab in edu_labels))
-
-        CE_WT_vs_CIT_pmv_lc     = consumption_equivalent_delta_log(W_wt_pmv_lc,  W_cit_pmv_lc,  S_pmv_lc)
-        CE_WT_vs_ORG_pmv_lc     = consumption_equivalent_delta_log(W_wt_pmv_lc,  W_orig_pmv_lc, S_pmv_lc)
-        CE_CIT_vs_ORG_pmv_lc    = consumption_equivalent_delta_log(W_cit_pmv_lc, W_orig_pmv_lc, S_pmv_lc)
-
-        CE_WT_vs_CIT_counts_lc  = consumption_equivalent_delta_log(W_wt_counts_lc,  W_cit_counts_lc,  S_counts_lc)
-        CE_WT_vs_ORG_counts_lc  = consumption_equivalent_delta_log(W_wt_counts_lc,  W_orig_counts_lc, S_counts_lc)
-        CE_CIT_vs_ORG_counts_lc = consumption_equivalent_delta_log(W_cit_counts_lc, W_orig_counts_lc, S_counts_lc)
-    else:
-        CE_WT_vs_CIT_pmv_lc     = consumption_equivalent_delta(W_wt_pmv_lc,  W_cit_pmv_lc,  rho)
-        CE_WT_vs_ORG_pmv_lc     = consumption_equivalent_delta(W_wt_pmv_lc,  W_orig_pmv_lc, rho)
-        CE_CIT_vs_ORG_pmv_lc    = consumption_equivalent_delta(W_cit_pmv_lc, W_orig_pmv_lc, rho)
-
-        CE_WT_vs_CIT_counts_lc  = consumption_equivalent_delta(W_wt_counts_lc,  W_cit_counts_lc,  rho)
-        CE_WT_vs_ORG_counts_lc  = consumption_equivalent_delta(W_wt_counts_lc,  W_orig_counts_lc, rho)
-        CE_CIT_vs_ORG_counts_lc = consumption_equivalent_delta(W_cit_counts_lc, W_orig_counts_lc, rho)
-
-    # Append LC results to welfare file
-    _wl.append("\n[Life-Cycle] Per-education newborn EVs (Original):\n")
-    for lab in edu_labels:
-        _wl.append(f"{lab}: {[float(x) for x in np.round(ev_orig_by_edu[lab], 8)]}\n")
-    _wl.append("[Life-Cycle] Per-education newborn EVs (Wealth tax):\n")
-    for lab in edu_labels:
-        _wl.append(f"{lab}: {[float(x) for x in np.round(ev_wt_by_edu[lab], 8)]}\n")
-    _wl.append("[Life-Cycle] Per-education newborn EVs (Capital income tax):\n")
-    for lab in edu_labels:
-        _wl.append(f"{lab}: {[float(x) for x in np.round(ev_cit_by_edu[lab], 8)]}\n")
-
-    _wl.append("\n[Life-Cycle] Per-education CE (WT vs CIT), Δ by return type (low→high):\n")
-    for lab in edu_labels:
-        _wl.append(f"{lab}: {[float(x) for x in np.round(CE_by_edu[lab], 8)]}\n")
-
-    _wl.append("\n[Life-Cycle] Aggregate newborn welfare (pmv using declared edu fractions):\n")
-    _wl.append(f"Original: {W_orig_pmv_lc:.8f}\n")
-    _wl.append(f"Wealth tax: {W_wt_pmv_lc:.8f}\n")
-    _wl.append(f"Capital income tax: {W_cit_pmv_lc:.8f}\n")
-
-    _wl.append("[Life-Cycle] Aggregate newborn welfare (AgentCount shares):\n")
-    _wl.append(f"Original: {W_orig_counts_lc:.8f}\n")
-    _wl.append(f"Wealth tax: {W_wt_counts_lc:.8f}\n")
-    _wl.append(f"Capital income tax: {W_cit_counts_lc:.8f}\n")
-
-    _wl.append("\n[Life-Cycle] Aggregate CE (pmv), Δ:\n")
-    _wl.append(f"WT vs CIT: {CE_WT_vs_CIT_pmv_lc:.8f}\n")
-    _wl.append(f"WT vs Original: {CE_WT_vs_ORG_pmv_lc:.8f}\n")
-    _wl.append(f"CIT vs Original: {CE_CIT_vs_ORG_pmv_lc:.8f}\n")
-
-    _wl.append("[Life-Cycle] Aggregate CE (AgentCount shares), Δ:\n")
-    _wl.append(f"WT vs CIT: {CE_WT_vs_CIT_counts_lc:.8f}\n")
-    _wl.append(f"WT vs Original: {CE_WT_vs_ORG_counts_lc:.8f}\n")
-    _wl.append(f"CIT vs Original: {CE_CIT_vs_ORG_counts_lc:.8f}\n")
-
-# Save welfare results to Results_taxes/{tag}_welfare.txt
-# For PY (IH), append standard aggregates; for LC, skip (LC-specific section already written above)
 if not LifeCycle:
     _wl.append("Per-type newborn EVs (Original):\n")
     _wl.append(f"{[float(x) for x in np.round(W_orig_vec, 8)]}\n")
@@ -688,46 +427,180 @@ if not LifeCycle:
     _wl.append(f"Wealth tax: {W_wt_pmv:.8f}\n")
     _wl.append(f"Capital income tax: {W_cit_pmv:.8f}\n\n")
 
-    _wl.append("Aggregate newborn welfare (AgentCount shares):\n")
-    _wl.append(f"Original: {W_orig_counts:.8f}\n")
-    _wl.append(f"Wealth tax: {W_wt_counts:.8f}\n")
-    _wl.append(f"Capital income tax: {W_cit_counts:.8f}\n\n")
-
     _wl.append("Consumption-equivalent (pmv weights), Δ (e.g., 0.07 = +7%):\n")
     _wl.append(f"WT vs CIT: {CE_WT_vs_CIT_pmv:.8f}\n")
     _wl.append(f"WT vs Original: {CE_WT_vs_ORG_pmv:.8f}\n")
     _wl.append(f"CIT vs Original: {CE_CIT_vs_ORG_pmv:.8f}\n\n")
 
-    _wl.append("Consumption-equivalent (AgentCount shares), Δ:\n")
-    _wl.append(f"WT vs CIT: {CE_WT_vs_CIT_counts:.8f}\n")
-    _wl.append(f"WT vs Original: {CE_WT_vs_ORG_counts:.8f}\n")
-    _wl.append(f"CIT vs Original: {CE_CIT_vs_ORG_counts:.8f}\n\n")
-
     _wl.append("Per-type consumption-equivalent WT vs CIT, Δ by return type (low→high):\n")
     _wl.append(f"{[float(x) for x in np.round(CE_per_type_WT_vs_CIT, 8)]}\n")
-
-    # Also print baseline and taxed returns per type for interpretation
-    try:
-        _wl.append("\nPer-type returns (baseline, WT, CIT) by return type (low→high):\n")
-        # baseline returns from discretization atoms
-        baseline_R = list(map(float, interest_rates))
-        # taxed returns per type: apply the same policy rules used in helpers
-        def _wt_print(r):
-            return float(r - wealth_tax_rate)
-        def _cit_print(r):
-            r = float(r)
-            if r > 1.0:
-                return float(1.0 + (r - 1.0) * (1.0 - capital_income_tax_rate))
-            else:
-                return r
-        wt_R = [_wt_print(r) for r in baseline_R]
-        cit_R = [_cit_print(r) for r in baseline_R]
-        _wl.append(f"Baseline R: {baseline_R}\n")
-        _wl.append(f"Wealth tax R: {wt_R}\n")
-        _wl.append(f"Capital income tax R: {cit_R}\n")
-    except Exception:
-        pass
 
 with open(_welfare_path, 'w', encoding='utf-8') as _wf:
     _wf.writelines(_wl)
 print(f"Saved newborn welfare results to: {_welfare_path}")
+
+# ===== Diagnostics: Value function and EV checks =====
+try:
+    # Representative agent (lowest return type, first base type)
+    rep_indices = [0, BaseTypeCount, 2*BaseTypeCount]
+    regimes = [
+        ("Original", MyPopulation),
+        ("Wealth tax", MyPopulation_WT),
+        ("Capital income tax", MyPopulation_CIT)
+    ]
+
+    _diag_lines = []
+    _diag_lines.append("\n[Diagnostics] Value function and EV checks (representative agents)\n")
+    for name, pop in regimes:
+        idx = rep_indices[0]
+        ag = pop[idx]
+        diag = diagnose_agent_value_computation(ag, m_grid)
+        print(f"[Diagnostics] {name}: EV_newborn={diag['EV_newborn']:.6f}, V_min={diag['V_min']:.6f}, V_max={diag['V_max']:.6f}, V_mean={diag['V_mean']:.6f}")
+        _diag_lines.append(f"{name}: EV_newborn={diag['EV_newborn']:.8f}, V_min={diag['V_min']:.8f}, V_max={diag['V_max']:.8f}, V_mean={diag['V_mean']:.8f}\n")
+        _diag_lines.append(f"  Params: rho={diag['rho']:.6f}, beta={diag['beta']:.6f}, R={diag['R']:.6f}, Gamma={diag['Gamma']:.6f}, LivPrb={diag['LivPrb']:.6f}, psi_mean={diag['psi_mean']:.6f}, theta_mean={diag['theta_mean']:.6f}\n")
+        _diag_lines.append(f"  c(m) samples: {diag['c_samples']}\n")
+
+    if not LifeCycle:
+        with open(_welfare_path, 'a', encoding='utf-8') as _wf:
+            _wf.writelines(_diag_lines)
+        print("Diagnostics appended to welfare file.")
+except Exception as e:
+    print(f"Diagnostics failed: {e}")
+
+# ===== Life-Cycle Welfare (per education), if applicable =====
+if LifeCycle:
+    try:
+        edu_labels = ["NoHS", "HS", "College"]
+
+        def _evs_by_edu(pop):
+            evs = {lab: [] for lab in edu_labels}
+            for i in range(HetTypeCount):
+                for j, lab in enumerate(edu_labels):
+                    ag = pop[i * BaseTypeCount + j]
+                    V_funcs, _ = compute_value_functions_lc(ag, m_grid)
+                    evs[lab].append(compute_newborn_EV_LC(ag, V_funcs))
+            return evs
+
+        ev_orig_by_edu = _evs_by_edu(MyPopulation)
+        ev_wt_by_edu   = _evs_by_edu(MyPopulation_WT)
+        ev_cit_by_edu  = _evs_by_edu(MyPopulation_CIT)
+
+        ret_weights = list(map(float, dstn.pmv))
+        nohs_frac, hs_frac, college_frac = 0.11, 0.54, 0.35
+        edu_fracs = {"NoHS": nohs_frac, "HS": hs_frac, "College": college_frac}
+
+        import numpy as _np
+        def _agg_ev(evs_by_edu, weights_returns, weights_edu):
+            ev_edu = {lab: float(_np.dot(_np.array(evs_by_edu[lab], dtype=float), _np.array(weights_returns, dtype=float))) for lab in edu_labels}
+            W_pmv = float(sum(ev_edu[lab] * weights_edu[lab] for lab in edu_labels))
+            return ev_edu, W_pmv
+
+        ev_edu_orig, W_orig_pmv_lc = _agg_ev(ev_orig_by_edu, ret_weights, edu_fracs)
+        ev_edu_wt,   W_wt_pmv_lc   = _agg_ev(ev_wt_by_edu,   ret_weights, edu_fracs)
+        ev_edu_cit,  W_cit_pmv_lc  = _agg_ev(ev_cit_by_edu,  ret_weights, edu_fracs)
+
+        def _collect_agent_counts_by_edu(pop):
+            counts = {lab: 0.0 for lab in edu_labels}
+            for i in range(HetTypeCount):
+                for j, lab in enumerate(edu_labels):
+                    ag = pop[i * BaseTypeCount + j]
+                    counts[lab] += float(getattr(ag, 'AgentCount', 0.0))
+            total = sum(counts.values())
+            shares = {lab: (counts[lab] / total if total > 0 else float('nan')) for lab in edu_labels}
+            return counts, shares
+
+        base_counts, base_shares = _collect_agent_counts_by_edu(MyPopulation)
+        W_orig_counts_lc = float(sum(ev_edu_orig[lab] * base_shares[lab] for lab in edu_labels))
+        W_wt_counts_lc   = float(sum(ev_edu_wt[lab]   * base_shares[lab] for lab in edu_labels))
+        W_cit_counts_lc  = float(sum(ev_edu_cit[lab]  * base_shares[lab] for lab in edu_labels))
+
+        rho = float(MyPopulation[0].CRRA)
+        if abs(rho - 1.0) < 1e-12:
+            S_by_edu = {}
+            for j, lab in enumerate(edu_labels):
+                rep_ag = MyPopulation[0 * BaseTypeCount + j]
+                S_by_edu[lab] = lc_discount_sum_custom(rep_ag)
+            S_pmv_lc    = float(sum(S_by_edu[lab] * edu_fracs[lab] for lab in edu_labels))
+            CE_WT_vs_CIT_pmv_lc     = consumption_equivalent_delta_custom(W_wt_pmv_lc,  W_cit_pmv_lc,  rho, S_pmv_lc)
+            CE_WT_vs_ORG_pmv_lc     = consumption_equivalent_delta_custom(W_wt_pmv_lc,  W_orig_pmv_lc, rho, S_pmv_lc)
+            CE_CIT_vs_ORG_pmv_lc    = consumption_equivalent_delta_custom(W_cit_pmv_lc, W_orig_pmv_lc, rho, S_pmv_lc)
+            # Per-education per-type CE (WT vs CIT)
+            CE_by_edu = {lab: [] for lab in edu_labels}
+            for j, lab in enumerate(edu_labels):
+                for i in range(HetTypeCount):
+                    CE_by_edu[lab].append(
+                        consumption_equivalent_delta_custom(
+                            ev_wt_by_edu[lab][i], ev_cit_by_edu[lab][i], rho, S_by_edu[lab]
+                        )
+                    )
+        else:
+            CE_WT_vs_CIT_pmv_lc     = consumption_equivalent_delta_custom(W_wt_pmv_lc,  W_cit_pmv_lc,  rho)
+            CE_WT_vs_ORG_pmv_lc     = consumption_equivalent_delta_custom(W_wt_pmv_lc,  W_orig_pmv_lc, rho)
+            CE_CIT_vs_ORG_pmv_lc    = consumption_equivalent_delta_custom(W_cit_pmv_lc, W_orig_pmv_lc, rho)
+            # Per-education per-type CE (WT vs CIT)
+            CE_by_edu = {lab: [] for lab in edu_labels}
+            for j, lab in enumerate(edu_labels):
+                for i in range(HetTypeCount):
+                    CE_by_edu[lab].append(
+                        consumption_equivalent_delta_custom(
+                            ev_wt_by_edu[lab][i], ev_cit_by_edu[lab][i], rho
+                        )
+                    )
+
+        _wl_lc = []
+        _wl_lc.append("\n[Life-Cycle] Per-education newborn EVs (Original):\n")
+        for lab in edu_labels:
+            _wl_lc.append(f"{lab}: {[float(x) for x in np.round(ev_orig_by_edu[lab], 8)]}\n")
+        _wl_lc.append("[Life-Cycle] Per-education newborn EVs (Wealth tax):\n")
+        for lab in edu_labels:
+            _wl_lc.append(f"{lab}: {[float(x) for x in np.round(ev_wt_by_edu[lab], 8)]}\n")
+        _wl_lc.append("[Life-Cycle] Per-education newborn EVs (Capital income tax):\n")
+        for lab in edu_labels:
+            _wl_lc.append(f"{lab}: {[float(x) for x in np.round(ev_cit_by_edu[lab], 8)]}\n")
+
+        _wl_lc.append("\n[Life-Cycle] Aggregate newborn welfare (pmv using declared edu fractions):\n")
+        _wl_lc.append(f"Original: {W_orig_pmv_lc:.8f}\n")
+        _wl_lc.append(f"Wealth tax: {W_wt_pmv_lc:.8f}\n")
+        _wl_lc.append(f"Capital income tax: {W_cit_pmv_lc:.8f}\n")
+
+        _wl_lc.append("[Life-Cycle] Aggregate newborn welfare (AgentCount shares):\n")
+        _wl_lc.append(f"Original: {W_orig_counts_lc:.8f}\n")
+        _wl_lc.append(f"Wealth tax: {W_wt_counts_lc:.8f}\n")
+        _wl_lc.append(f"Capital income tax: {W_cit_counts_lc:.8f}\n")
+
+        _wl_lc.append("\n[Life-Cycle] Aggregate CE (pmv), Δ:\n")
+        _wl_lc.append(f"WT vs CIT: {CE_WT_vs_CIT_pmv_lc:.8f}\n")
+        _wl_lc.append(f"WT vs Original: {CE_WT_vs_ORG_pmv_lc:.8f}\n")
+        _wl_lc.append(f"CIT vs Original: {CE_CIT_vs_ORG_pmv_lc:.8f}\n")
+
+        # Append per-education per-type CE list (WT vs CIT)
+        _wl_lc.append("\n[Life-Cycle] Per-education per-type CE (WT vs CIT), Δ by return type (low→high):\n")
+        for lab in edu_labels:
+            _wl_lc.append(f"{lab}: {[float(x) for x in np.round(CE_by_edu[lab], 8)]}\n")
+
+        # Append per-education baseline and taxed returns by type (t=0)
+        def _collect_type_r_by_edu(pop):
+            per_edu = {lab: [] for lab in edu_labels}
+            for i in range(HetTypeCount):
+                for j, lab in enumerate(edu_labels):
+                    ag = pop[i * BaseTypeCount + j]
+                    r = ag.Rfree
+                    r_val = float(r[0]) if isinstance(r, list) else float(r)
+                    per_edu[lab].append(r_val)
+            return per_edu
+
+        base_r_by_edu = _collect_type_r_by_edu(MyPopulation)
+        wt_r_by_edu   = _collect_type_r_by_edu(MyPopulation_WT)
+        cit_r_by_edu  = _collect_type_r_by_edu(MyPopulation_CIT)
+
+        _wl_lc.append("\n[Life-Cycle] Per-education returns by type (t=0), low→high:\n")
+        for lab in edu_labels:
+            _wl_lc.append(f"{lab} Baseline R: {[float(x) for x in np.round(base_r_by_edu[lab], 8)]}\n")
+            _wl_lc.append(f"{lab} Wealth tax R: {[float(x) for x in np.round(wt_r_by_edu[lab], 8)]}\n")
+            _wl_lc.append(f"{lab} Capital income tax R: {[float(x) for x in np.round(cit_r_by_edu[lab], 8)]}\n")
+
+        with open(_welfare_path, 'a', encoding='utf-8') as _wf:
+            _wf.writelines(_wl_lc)
+        print("Life-cycle welfare section appended to welfare file.")
+    except Exception as e:
+        print(f"Life-cycle welfare failed: {e}")
