@@ -25,7 +25,7 @@ MyAgentType = AltIndShockConsumerType
 script_dir = os.path.dirname(os.path.abspath(__file__))
 data_location = os.path.join(script_dir, '../Data/')
 specs_location = os.path.join(script_dir, '../Specifications/')
-SpecificationFilename = 'PYrrDistNetWorth.yaml'
+SpecificationFilename = 'PYrrPointNetWorth.yaml'
 
 with open(specs_location + SpecificationFilename, 'r') as f:
     spec_raw = f.read()

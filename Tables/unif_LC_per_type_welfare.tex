@@ -1,9 +1,15 @@
-% Requires: \usepackage{booktabs,threeparttable,multirow}
+% Requires: \usepackage{booktabs, threeparttable, multirow, graphicx}
+
 \begin{table}[!htbp]
 \centering
 \caption{Per-Education Per-Type Welfare Gain and Baseline Return (WT vs CIT)}
 \label{tab:ce_per_type_wt_vs_cit_lc}
 \begin{threeparttable}
+
+% Body width locked to \linewidth for threeparttable's measurement:
+\begin{minipage}{\linewidth}
+\centering
+\resizebox{\linewidth}{!}{%
 \begin{tabular}{llccccccc}
 \toprule
 \multicolumn{2}{c}{} & \textbf{Type 1} & \textbf{Type 2} & \textbf{Type 3} & \textbf{Type 4} & \textbf{Type 5} & \textbf{Type 6} & \textbf{Type 7} \\
@@ -20,11 +26,20 @@
   & Baseline $R$ (gross)   & 0.9200 & 0.9472 & 0.9744 & 1.0016 & 1.0289 & 1.0561 & 1.0833 \\
   & CE $\Delta$ (WT vs CIT, \%) & 0.116\% & 0.142\% & 0.184\% & 0.267\% & 0.309\% & 0.098\% & -0.106\% \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+} % end resizebox
+\end{minipage}
+
 \begin{tablenotes}[flushleft]
 \footnotesize
-\item Notes: CE entries are consumption-equivalent welfare gains (pmv-weighted within type), expressed as percent. Positive values favor wealth taxation over capital income taxation for that return type. Baseline $R$ are pre-tax gross returns by type (low $\rightarrow$ high) at $t=0$.
+\item Notes: CE entries are consumption-equivalent welfare gains (pmv-weighted within type),\\
+  expressed as percent. Positive values favor wealth taxation over capital income taxation \\
+  for that return type. Baseline $R$ are pre-tax gross returns by type (low $\rightarrow$ high) at $t=0$.
 \end{tablenotes}
 \end{threeparttable}
 \end{table}
+
+
+
+
 

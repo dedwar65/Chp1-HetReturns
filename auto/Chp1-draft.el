@@ -20,7 +20,7 @@
     "Subfiles/results"
     "Subfiles/taxation"
     "Subfiles/mechanism"
-    "Subfiles/lognorm"
+    "Subfiles/lognormal_ret"
     "Subfiles/conclusion"
     "article"
     "art10"

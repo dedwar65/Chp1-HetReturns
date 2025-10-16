@@ -1,70 +1,36 @@
-\onlyinsubfile{\setcounter{section}{5}}
-\section{Extension: Estimating a lognormal distribution of returns}
+\onlyinsubfile{\setcounter{section}{6}}
+\section{Extension: Estimating a Lognormal distribution of returns}
 \notinsubfile{\label{sec:lognorm}}
 
 \par As I mentioned before, \cite{aflgdmlp20} document a persistent component to individual returns using the Norwegian population data. In fact, they include a graphic of the distribution of the estimated fixed effect in the return to net worth for individuals, which is clearly not uniformly distributed. For this reason, I rerun the estimation of my model under the assumption that returns are instead lognormally distributed across households. As we will see, the takeaways from my paper are robust to this change.
 
-\subsection{Infinite horizon}
+\subsubsection{Comparing the simulated wealth distributions}
 
-\par 
+\par Since the model without heterogeneous returns is the same regardless of the distributional assumptions, below I include a figure of the results for the infinite horizon and life cycle models with heterogeneous returns, lognormally distributed across households. 
 
 \begin{figure}[h]
     \centering
-    \begin{minipage}{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{../Figures/Lognorm_PYrrPointNetWorth_2004Plot.png}
-    \end{minipage}
-    \hfill
     \begin{minipage}{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{../Figures/Lognorm_PYrrDistNetWorth_2004Plot.png}
-    \end{minipage}
-    \caption{Comparison of R-Point and R-Dist Models .}
-    \label{fig:PYLognorm} 
-\end{figure}
-
-
-\par
-
-
-\par
-
-\subsection{Life cycle dynamics}
-
-\par 
-
-\begin{figure}[h]
-    \centering
-    \begin{minipage}{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{../Figures/Lognorm_LCrrPointNetWorth_2004Plot.png}
     \end{minipage}
     \hfill
     \begin{minipage}{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{../Figures/Lognorm_LCrrDistNetWorth_2004Plot.png}
     \end{minipage}
-    \caption{Comparison of R-Point and R-Dist Models in the Life-Cycle Setting.}
-    \label{fig:LCLognorm} 
+    \caption{Comparison of PY (left) vs LC (right) R-Dist Models.}
+    \label{fig:PYLCLognorm} 
 \end{figure}
 
-
-\par
-
-
-\subsubsection{Comparing the simulated wealth distributions}
-
-\par
+\par It is clear from the figure that the same pattern appears here: the life cycle setting is better at matching the observed wealth distribution than the infinite horizon setting, but they both match wealth moments especially well. Again, I include the table of those wealth moments for each of the models and the data below. 
 
 \input{Tables/Lognorm_PY_LC_wealth_distribution_compare.tex}
 
 
 \subsection{Untargeted moments}
 
-\par 
-
-
-\par
+\par In the infinite horizon case, the aggregate MPC is $25.7\%$. The aggregate MPC in the life-cycle setting is essentially the same: $26\%$. Below is the breakdown of average MPCs by wealth deciles for both settings. Again, the MPC's are higher in general in the life-cycle setting since it is able to match lower moments of the wealth distribution better. 
 
 \begin{figure}[htbp]
 \centering
@@ -73,13 +39,13 @@
 \end{figure}
 
 
-\par
+\par For the second set of untargeted moments, I include the cumulative wealth shares by age for this case of an estimated lognormal returns distribution. Again, these moments are closer to the empirical counterpart than the case with no heterogeneity. The best fits are for the wealth shares of older cohorts. 
 
-\begin{figure}[htbp]
+\begin{figure}[h]
 \centering
-\includegraphics[width=0.8\textwidth]{Tables/Sim_Lorenz_by_age_Lognorm_LCrrPointNetWorth_2004.png}
-\caption{Simulated Untargeted Moments without Heterogeneity (R-point).}
-\label{fig:SimLorenzTarPoint}
+\includegraphics[width=0.8\textwidth]{Tables/Emp_Lorenz_by_age_2004.png}
+\caption{Empirical Lorenz Curve Targets from the 2004 SCF.}
+\label{fig:EmpLorenzTar}
 \end{figure}
 
 \begin{figure}[htbp]
@@ -91,15 +57,23 @@
 
 \subsection{Tax implications}
 
-\par 
+\par I also consider the tax implications of the model in this setting. I begin with comparing the effects of each of the tax policies on wealth inequality for both the infinite horizon and the life-cycle cases. The same relationship holds here: each effect of the tax is small (since the policies are revenue-equivalent and only raise $1\%$ of aggregate labor income), but the capital income tax reduces wealth inequality more.
+
+\input{../Tables/lognormtaxresultsPY.tex}\unskip
+\input{../Tables/lognormtaxresultsLC.tex}\unskip
+
+\par For the welfare effects in this setting, I begin with the expected welfare gains from starting with the wealth tax and switching to the capital income tax. Again, a newborn who didn't know their type would prefer the capital income tax over the wealth tax: the lifetime value of the newborn under the capital income regime is higher. 
 
 \input{Tables/lognorm_tax_welfare.tex}
 
-\par
+\par A decomposition of these welfare effects can be done by return type for the infinite horizon case, and by education-return type in the life-cycle scenario. The pattern of results remains the same, where only the highest type in each case prefers the wealth tax over the capital income tax. A notable difference between th distributional assumptions is that, the estimated lognormal distribution requires less types with returns less than 1 thanthe uniform distribution did. Despite this, the welfare results remain robust. 
 
 \input{Tables/Lognorm_PY_per_type_welfare.tex}
 
 \input{Tables/Lognorm_LC_per_type_welfare.tex}
 
+\subsection{Mechanism for Bank Heterogeneity}
 
-\par
+  \par To match each exercise that was done when the estimated distribution was Uniform, I include a table which captures the estimated returns distribution which best matches 2004 SCF data on net worth and the corresponding implied elasticities for both the infinte horizon and life-cycle settings here as well.  
+
+  \input{Tables/lognorm_elasticities.tex} 

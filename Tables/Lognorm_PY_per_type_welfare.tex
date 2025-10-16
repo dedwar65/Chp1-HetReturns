@@ -1,9 +1,14 @@
-% Requires: \usepackage{booktabs,threeparttable}
+% Requires: \usepackage{booktabs, threeparttable, graphicx}
+
 \begin{table}[!htbp]
 \centering
 \caption{Per-Type Welfare Gain and Baseline Return (WT vs CIT, Lognormal Returns)}
 \label{tab:ce_per_type_wt_vs_cit_lognorm}
 \begin{threeparttable}
+
+\begin{minipage}{\linewidth}
+\centering
+\resizebox{\linewidth}{!}{%
 \begin{tabular}{lccccccc}
 \toprule
 & \textbf{Type 1} & \textbf{Type 2} & \textbf{Type 3} & \textbf{Type 4} & \textbf{Type 5} & \textbf{Type 6} & \textbf{Type 7} \\
@@ -11,10 +16,16 @@
 Baseline $R$ (gross) & 0.976 & 1.001 & 1.014 & 1.026 & 1.038 & 1.053 & 1.079 \\
 CE $\Delta$ (WT vs CIT, \%) & 0.267\% & 0.342\% & 0.329\% & 0.317\% & 0.308\% & 0.304\% & -0.326\% \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+} % end resizebox
+\end{minipage}
+
 \begin{tablenotes}[flushleft]
 \footnotesize
-\item Notes: CE entries are per-type consumption-equivalent welfare gains (pmv-weighted within type), expressed as percent. Positive values favor the wealth tax over the capital income tax for that return type. Baseline $R$ values are pre-tax gross returns (low $\rightarrow$ high) under the lognormal returns specification.
+\item Notes: CE entries are per-type consumption-equivalent welfare gains (pmv-weighted within \\
+  type), expressed as percent. Positive values favor the wealth tax over the capital income tax \\
+  for that return type. Baseline $R$ values are pre-tax gross returns (low $\rightarrow$ high)
+  under the \\ lognormal returns specification.
 \end{tablenotes}
 \end{threeparttable}
 \end{table}

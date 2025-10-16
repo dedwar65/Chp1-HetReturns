@@ -1,0 +1,24 @@
+% required in preamble:
+% \usepackage{booktabs}
+% \usepackage{graphicx}   % for \resizebox
+% \usepackage{hyperref}   % for \hypertarget (optional if you already use it)
+
+\hypertarget{taxPY_lognorm}{}
+\begin{table}[H]
+  \centering
+  \resizebox{0.7\textwidth}{!}{%
+    \begin{tabular}{@{} l c c c c @{}}
+      \toprule
+      \multicolumn{1}{c}{} & \multicolumn{4}{c}{Lorenz points} \\
+      \midrule
+      Tax scheme & 20\% & 40\% & 60\% & 80\% \\
+      \midrule
+      None & 0.60\% & 2.75\% & 7.27\% & 16.28\% \\[6pt]
+      \shortstack[l]{Wealth \\$\tau_w = \text{0.34\%}$} & 0.67\% & 3.14\% & 8.38\% & 18.86\% \\[6pt]
+      \shortstack[l]{Capital income \\$\tau_{ci} = \text{5.08\%}$} & 0.73\% & 3.37\% & 8.94\% & 20.02\% \\
+      \bottomrule
+    \end{tabular}%
+  }
+  \caption{Tax policies in the infinite horizon setting (lognormal returns across households).}
+  \label{tab:taxPY_lognorm}
+\end{table}

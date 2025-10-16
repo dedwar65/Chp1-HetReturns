@@ -1,0 +1,26 @@
+% required in preamble:
+% \usepackage{booktabs}
+% \usepackage{graphicx}   % for \resizebox
+% \usepackage{hyperref}   % for \hypertarget (optional if you already use it)
+
+\hypertarget{taxLC_lognorm}{}
+\begin{table}[H]
+  \centering
+  \resizebox{0.7\textwidth}{!}{%
+    \begin{tabular}{@{} l c c c c @{}}
+      \toprule
+      \multicolumn{1}{c}{} & \multicolumn{4}{c}{Lorenz points} \\
+      \midrule
+      Tax scheme & 20\% & 40\% & 60\% & 80\% \\
+      \midrule
+      None & 0.42\% & 2.05\% & 5.98\% & 16.73\% \\[6pt]
+      \shortstack[l]{Wealth \\$\tau_w = \text{0.33\%}$} 
+            & 0.43\% & 2.12\% & 6.14\% & 16.86\% \\[6pt]
+      \shortstack[l]{Capital income \\$\tau_{ci} = \text{4.97\%}$} 
+            & 0.46\% & 2.23\% & 6.46\% & 17.72\% \\
+      \bottomrule
+    \end{tabular}%
+  }
+  \caption{Tax policies in the life-cycle setting (lognormal returns across households).}
+  \label{tab:taxLC_lognorm}
+\end{table}

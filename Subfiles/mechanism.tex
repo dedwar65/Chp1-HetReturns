@@ -1,4 +1,4 @@
-\onlyinsubfile{\setcounter{section}{6}}
+\onlyinsubfile{\setcounter{section}{5}}
 \section{Mechanism for returns heterogeneity}
 \notinsubfile{\label{sec:Mechanism}}
 
@@ -50,7 +50,7 @@
 S(R^d, R^m) = A \left( \frac{R^d}{R^m} \right)^{\varepsilon}
 \]
 
-\par Importantly, the first order condition implies that the optimal deposit rate for the $i$-th bank is given by $$ R_i^d = \frac{\varepsilon_i}{1+\varepsilon_i} R^m  $$. This is crucial for the model in that, so long as we calibrate the model for a particular value of $R^m$, estimating a uniform distribution of returns using the simulated method of moments will imply a corresponding distribution of elasticities (the one that minimizes the distance between simulated and lorenz wealth moments). In this way, the 7 discretized points capture 7 different deposit rates offered, which result in varying elasticities among 7 different bank types in the model. From the expression above, we see that banks with higher values of $\varepsilon_i$  must set $R_i^d$ closer to $R^m$.
+\par Importantly, the first order condition implies that the optimal deposit rate for the $i$-th bank is given by $$ R_i^d = \frac{\varepsilon_i}{1+\varepsilon_i} R^m.  $$ This is crucial for the model in that, so long as we calibrate the model for a particular value of $R^m$, estimating a uniform distribution of returns using the simulated method of moments will imply a corresponding distribution of elasticities (the one that minimizes the distance between simulated and lorenz wealth moments). In this way, the 7 discretized points capture 7 different deposit rates offered, which result in varying elasticities among 7 different bank types in the model. From the expression above, we see that banks with higher values of $\varepsilon_i$  must set $R_i^d$ closer to $R^m$.
 
  \subsection{The implied distribution of bank heterogeneity}
 
@@ -60,14 +60,13 @@ S(R^d, R^m) = A \left( \frac{R^d}{R^m} \right)^{\varepsilon}
 
   \par Since the model with heterogeneity (i.e. the R-dist model) has 7 estimated points for the uniform distribution, the implied, estimated points for $\varepsilon$ can be uniquely pineed down by the expression $$\varepsilon_i = \frac{R_i^d}{R^m - R_i^d} .$$
 
-  \par For the infinte horizon version of the model which matches 2004 SCF data on net worth, the 7 estimated points describing heterogeneous returns are \texttt{[0.9635, 0.9828, 1.0012, 1.0212, 1.0404, 1.0596, 1.0789]}. The corresponding 7 implied elasticities are given by \texttt{[7.3288, 8.7552, 10.7712, 13.8374, 19.0636, 29.9737, 66.8914]}.
+  \par For the infinte horizon and life-cycle settings, the estimated returns distribution which best matches 2004 SCF data on net worth and the corresponding implied elasticities are given in the table below. 
 
-  \par For the life cycle version of the model which matches 2004 SCF data on net worth, the 7 estimated points describing heterogeneous returns are \texttt{[0.9755, 0.9913, 1.0072, 1.0230, 1.0388, 1.0546, 1.0705]}. The corresponding 7 implied elasticities are given by \texttt{[8.1649, 9.5642, 11.4677, 14.2079, 18.4920, 26.1362, 43.6448]}.
-
+  \input{Tables/unif_elasticities.tex} 
 
   \subsubsection{Interpreting the implied distribution of elasticities}
 
-    \par Another way to assess the model's performance is to return to the literature on bank deposit sensitivities to changes in the federal funds rate. As we will see, the implied distribution of elasticities from my estimation method can be directly compared to those empirical estimatese, and how well they match can be used to assess my model. Additionally, I include wealth shares by age cohort as an additional set of untargeted moments for a similar assessment.  
+    \par Another way to assess the model's performance is to return to the literature on bank deposit sensitivities to changes in the federal funds rate. As we will see, the implied distribution of elasticities from my estimation method can be directly compared to those empirical estimates, and how well they match can be used to assess my model. Additionally, I include wealth shares by age cohort as an additional set of untargeted moments for a similar assessment.  
 
 \par The usefulness in choosing a functional form for the level of deposits at a given bank as $S(\cdot) = A \left( \frac{R^d}{R^m} \right)^{\varepsilon}$ is that the parameter $\varepsilon$ has a clear interpretation as the elasticity of deposits to changes in the market interest rate. It can be shown that:
 
