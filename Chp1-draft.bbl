@@ -1528,6 +1528,44 @@
     \field{year}{1993}
   \endentry
 
+  \entry{tjlp14}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=JT}{%
+         family={Jappelli},
+         familyi={J\bibinitperiod},
+         given={Tullio},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=PL}{%
+         family={Pistaferri},
+         familyi={P\bibinitperiod},
+         given={Luigi},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{JTPL1}
+    \strng{fullhash}{JTPL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2014}
+    \field{labeldatesource}{}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \verb{doi}
+    \verb 10.1257/mac.6.4.107
+    \endverb
+    \field{number}{4}
+    \field{pages}{107\bibrangedash 36}
+    \field{title}{Fiscal Policy and MPC Heterogeneity}
+    \verb{url}
+    \verb https://www.aeaweb.org/articles?id=10.1257/mac.6.4.107
+    \endverb
+    \field{volume}{6}
+    \field{journaltitle}{American Economic Journal: Macroeconomics}
+    \field{year}{2014}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
   \entry{gkgv22}{report}{}{}
     \name{author}{2}{}{%
       {{hash=KG}{%

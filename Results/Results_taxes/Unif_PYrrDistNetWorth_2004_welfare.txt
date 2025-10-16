@@ -23,6 +23,11 @@ CIT vs Original: 0.00649930
 Per-type consumption-equivalent WT vs CIT, Δ by return type (low→high):
 [0.00231221, 0.00274285, 0.00335407, 0.00316847, 0.00302382, 0.00240442, -0.0031218]
 
+Per-type returns by return type (low→high):
+Baseline R: [0.96182364, 0.98134526, 1.00086689, 1.02038851, 1.03991014, 1.05943176, 1.07895339]
+Wealth tax R: [0.95849353, 0.97801516, 0.99753678, 1.01705841, 1.03658003, 1.05610166, 1.07562329]
+Capital income tax R: [0.96182364, 0.98134526, 1.00082381, 1.01937536, 1.0379269, 1.05647845, 1.07503]
+
 [Diagnostics] Value function and EV checks (representative agents)
 Original: EV_newborn=-1.82242473, V_min=-6.35483403, V_max=7.62873899, V_mean=3.46694138
   Params: rho=1.000000, beta=0.960596, R=0.961824, Gamma=1.000000, LivPrb=0.975233, psi_mean=1.000000, theta_mean=1.000000

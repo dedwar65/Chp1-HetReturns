@@ -20,8 +20,8 @@ from parameters import (emp_lorenz, MyPopulation, LifeCycle,
 
 #UNIFORM DIST
 #PY
-#center=1.0203885136819602
-#spread=0.0683256880242527
+center=1.0203885136819602
+spread=0.0683256880242527
 
 
 #LC
@@ -36,8 +36,8 @@ from parameters import (emp_lorenz, MyPopulation, LifeCycle,
 
 
 #LC
-center=1.0094779502784657
-spread=0.047100563599260487
+#center=1.0094779502784657
+#spread=0.047100563599260487
 
 
 
@@ -434,6 +434,11 @@ if not LifeCycle:
 
     _wl.append("Per-type consumption-equivalent WT vs CIT, Δ by return type (low→high):\n")
     _wl.append(f"{[float(x) for x in np.round(CE_per_type_WT_vs_CIT, 8)]}\n")
+
+    _wl.append("\nPer-type returns by return type (low→high):\n")
+    _wl.append(f"Baseline R: {[float(x) for x in np.round(baseline_R_types, 8)]}\n")
+    _wl.append(f"Wealth tax R: {[float(x) for x in np.round(wt_R_types, 8)]}\n")
+    _wl.append(f"Capital income tax R: {[float(x) for x in np.round(cit_R_types, 8)]}\n")
 
 with open(_welfare_path, 'w', encoding='utf-8') as _wf:
     _wf.writelines(_wl)

@@ -9,23 +9,40 @@
 \par In this setting, the wealth tax enters the household budget constraint in the following way:
 \[
 m_{t+1} \;=\; \big(1 + r_t - \tau_w\big)\,k_{t+1} + \xi_{t+1}.
-\]. Similarly, for the capital income tax, we have
+\] Similarly, for the capital income tax, we have
 \[
 m_{t+1} \;=\; \big(1 + (1-\tau_{ci})\,r_t\big)\,k_{t+1} + \xi_{t+1}.
-\]. I compute aggregate income as GDP in this setting, and then find the wealth tax rate and the capital tax rate which would raise tax revenues which are equal to 1\% of GDP. I do this for the estimated distribution of returns both for the infinite horizon and the life cycle setting.
+\] I compute aggregate income as GDP in this setting, and then find the wealth tax rate and the capital tax rate which would raise tax revenues which are equal to 1\% of GDP. I do this for the estimated distribution of returns both for the infinite horizon and the life cycle setting.
+
+\subsection{Effects on the wealth distribution}
 
 \par From there, I apply the tax schemes to each households and find the resulting wealth distributions for both cases. The wealth moments can be easily compared before and after each of the policies were implemented. Below are the results of applying each of the tax schemes in the infinite horizon \ref{tab:taxPY} version of the model. 
 \input{../Tables/taxresultsPY.tex}\unskip
 
-\par Applying the tax schemes in both cases increases the share of the wealth held at each of the chosen percentiles. This makes sense, as such a tax should redistribute extreme levels of wealth towards lower rungs of the distribution. However, the effect is mininal in the case of the flat wealth tax, and especially pronounced for the capital income tax. This is in line with wha tthe literature regarding the effects of these two policies when heterogeneous returns are present: if the capital income tax places a burden on the \textit{most productive} households regarding use of capital, then it should lead to less wealth inequality since those households contribute most to the skewness in the distribution.
+\par Applying the tax schemes in both cases increases the share of the wealth held at each of the chosen percentiles. This makes sense, as such a tax should redistribute extreme levels of wealth towards lower rungs of the distribution. Although the effect is mininal in both cases, the capital income tax has a more pronounced effect on reducing wealth inequality than the flat wealth tax. This is in line with wha tthe literature regarding the effects of these two policies when heterogeneous returns are present: if the capital income tax places a burden on the \textit{most productive} households regarding use of capital, then it should lead to less wealth inequality since those households contribute most to the skewness in the distribution.
 
 \par Next, I apply the tax schemes in the life cycle \ref{tab:taxLC} version of the model. A similar result arises here, where the capital income tax has a larger effect on reducing wealth inequality than the wealth tax which raises the same level of tax revenue does. From the table, the effects in the life-cycle model are less pronounced than they are for the infinite horizon case. 
 
-
 \input{../Tables/taxresultsLC.tex}\unskip
 
+\subsection{Welfare effects of the tax policies}
 
+\par As a further comparison of the two tax policies when heterogeneous returns are present, I follow a method similar to \cite{Guvenen2023} and compare newborns' lifetime utility in the setting where they start with a returns value from the estimated distribution which best matched the SCF wealth data. I consider a consumption-equivalent measure of welfare by computing the percentage change in consumption that would make a newborn (who didn't yet know their return type) indifferent from switching from the wealth tax to the capital income tax. Additionally, I decompose the effects of the policies by considering the consumption-equivalent measure of welfare for each of the estimated return types.
 
+\par To do this, I retain my calibrated value of $\rho =1$ sp that $u(c) = \log c$. In this case, the consumption-equivalent change $\Delta$ between wealth tax (WT) and capital income tax (CIT) is defined by equating the lifetime utilities. So, $$ 1 + \Delta = \exp( \frac{V^{WT} - V^{CIT}}{S}  )  $$ where $S = \sum_{t=0}^{\infty} (\beta \cdot \cancel{D})^{t}$, and $V^{j}$ is the lifetime value of a newborn under regime $j \in \{WT, CIT\}$. The parameter $\Delta$ tell us \textit{by what constant percentage change in consumption each period a newborn under the wealth tax regime would be as well off as in the capital income tax regime} (i.e. if $\Delta > 0$, then the newborn would be better off by switching to the capital income tax). 
+ 
+\par Below are the welfare effects of the tax policies for both the infinite horizon and life cycle settings. As a baseline for comparison, I also include the expected lifetime utility of the original regime with no tax policy present. 
 
+\input{Tables/unif_tax_welfare.tex}
 
+\par As you can see from the table, the original regime is preferred to both tax policies. This is expected: my model is a partial equilibrium analysis, so we don't get to see how households may benefit from the effect of the collected tax revenues on the economy. That said, notice that before households know their type, newborns would need to be compensated more under the wealth tax than under the capital income tax to be indifferent between the given tax regime and the regime with no tax! This point is reaffirmed by the fact that newborns under the wealth tax would also need to be compensated by $.2\%$ of their income to be indifferent between switching to the capital income tax regime. The point about this being a partial equilibrium analysis is subtle, but important. In particular, the \cite{Guvenen2023} paper cites that the wealth tax is the preferred policy by their own welfare analysis. The key difference is that the channel through which taxes can effect aggregate output, productivity, and consumption is not present in my model. In a sense, you can consider this welfare analysis as identifying which tax regime is costlier in terms of expected lifetime utility.
 
+\par Additionally, I decompose these welfare effects by considering which tax regime is preferred by each of the possible realized return types in the infinite horizon setting in the table below. 
+
+\input{Tables/unif_PY_per_type_welfare.tex}
+
+\par This decomposition explains why the expected welfare of the newborn was higher under the capital income tax than the wealth tax (and so the capital income tax was favored). Only the highest return type would have to pay some percentage of their consumption to be indifferent to switching to the capital income tax starting from the wealth tax! All other agents would require some compensation to reach this indifference. This is because, although many of the types receive some capital income, it is not enough for the capital income tax to be a large hit to their expected lifetime utility.
+
+\par The life-cycle setting features a similar phenonmenon and is provided below. Their we can decompose the effects further by comparing types within education groups.
+
+\input{Tables/unif_LC_per_type_welfare.tex}

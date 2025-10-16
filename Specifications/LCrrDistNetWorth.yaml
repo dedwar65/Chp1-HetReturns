@@ -1,7 +1,7 @@
 tag: LCrrDistNetWorth
 description: Lifecycle rate of return estimation with heterogeneity
 HetParam: Rfree
-DstnType: Lognormal
+DstnType: Uniform
 HetTypeCount: 7
 LifeCycle: True
 AgentsPerType: 10000

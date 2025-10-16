@@ -2,6 +2,7 @@
 \section{Results}\notinsubfile{\label{sec:results}}
 %\setcounter{page}{0}\pagenumbering{arabic}
 
+\subsection{The infinite horizon setting}
 \subsubsection{The model with no returns heterogeneity}
 
 \par To solve and simulate the model, I follow the calibration scheme captured in table \ref{tab:calib1}.
@@ -21,24 +22,28 @@ $$ \{\grave{R}, \nabla\} = \text{arg}\min_{R, \nabla} \bigg( \sum_{i=20, 40, 60,
 
 \par Note that $w_i$ and $\omega_i$ give the porportion of total aggregate net worth held by the top $i$ percent in the model and in the data, respectively.
 
-\par The estimation procedure finds this optimal values of $R = 1.0212$ and $\nabla = 0.06728$. These parameter values pin down the estimated uniform distribution. In the model, I've chosen to discretize that distribution to 7 chosen points. The performance of the estimation of both the R-point and R-dist models, measured by their ability to match the SCF data, is compared in figure \ref{fig:PYUnif}.
+\par The estimation procedure finds this optimal values of $R = 1.0204$ and $\nabla = 0.06833$. These parameter values pin down the estimated uniform distribution. In the model, I've chosen to discretize that distribution to 7 chosen points. The performance of the estimation of both the R-point and R-dist models, measured by their ability to match the SCF data, is compared in figure \ref{fig:PYUnif}.
 
 \begin{figure}[h]
     \centering
     \begin{minipage}{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{../Figures/PYrrPointNetWorthPlot.png}
+        \includegraphics[width=\textwidth]{../Figures/Unif_PYrrPointNetWorth_2004Plot.png}
     \end{minipage}
     \hfill
     \begin{minipage}{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{../Figures/PYrrDistNetWorthPlot.png}
+        \includegraphics[width=\textwidth]{../Figures/Unif_PYrrDistNetWorth_2004Plot.png}
     \end{minipage}
     \caption{Comparison of R-Point and R-Dist Models.}
     \label{fig:PYUnif} 
 \end{figure}
 
- 
+\par Additionally, here is a table compare the relevant moments of the empirical and simulated wealth distributions.
+
+\input{Tables/Unif_PY_wealth_distribution_compare}
+
+
 \subsection{Incorporating life cycle dynamics into the model}
 
 \par More realistic assumptions regarding the age and education level of households can have important implications for the income and mortality process of households. Here, I extend the model to incorporate these life cycle dynamics.
@@ -64,33 +69,63 @@ where $\textbf{p}_t = \psi_t \bar{\psi}_{es} \textbf{p}_{t-1}$ and $\bar{\psi}_{
 
 \input{../Tables/calibLC.tex}\unskip
 
-\par The estimation procedure finds this optimal value to be $R = 1.0414$ for the R-point model in this setting. The estimation procedure for the R-dist model in the life cycle setting finds optimal values of $R = 1.0343$ and $\nabla =0.03557$. Notice the improved performance of the estimation in matching the data displayed in figure \ref{fig:LCUnif}.
+\par The estimation procedure finds this optimal value to be $R = 1.0431$ for the R-point model in this setting. The estimation procedure for the R-dist model in the life cycle setting finds optimal values of $R = 1.002$ and $\nabla =0.0953$. Notice the improved performance of the estimation in matching the data displayed in figure \ref{fig:LCUnif}.
 
 \begin{figure}[h]
     \centering
     \begin{minipage}{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{../Figures/LCrrPointNetWorthPlot.png}
+        \includegraphics[width=\textwidth]{../Figures/Unif_LCrrPointNetWorth_2004Plot.png}
     \end{minipage}
     \hfill
     \begin{minipage}{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{../Figures/LCrrDistNetWorthPlot.png}
+        \includegraphics[width=\textwidth]{../Figures/Unif_LCrrDistNetWorth_2004Plot.png}
     \end{minipage}
     \caption{Comparison of R-Point and R-Dist Models in the Life-Cycle Setting.}
     \label{fig:LCUnif} 
   \end{figure}
 
+\par Additionally, here is a table compare the relevant moments of the empirical and simulated wealth distributions.
+
+\input{Tables/Unif_LC_wealth_distribution_compare.tex} 
+
+  
 \FloatBarrier
 \subsection{Untargeted moments}
 
-\par It is well-documented in the literature on heterogeneous agent modeling that, adding a source of (ex-ante) heterogeneity beyond the addition of labor income uncertainty to the representative agent framework will allow the simulated distribution of wealth to match moments of the empirical wealth distribution particularly well. So, although it is useful to see that the model with heterogeneous returns does a good job of matching the given lorenz targets, we need another way to assess the model's performance.
+\subsubsection{The marginal propensity to consume}
 
-\par For this reason, I include age-dependent wealth moments from the same wave of the SCF to serve as untargeted moments~\ref{fig:EmpLorenzTar}. These can be found in the following table.
+\par Naturally, adding a source of (ex-ante) heterogeneity beyond the addition of labor income uncertainty to the representative agent framework will allow the simulated distribution of wealth to match moments of the empirical wealth distribution particularly well. Although it is useful to see that the model with heterogeneous returns does a good job of matching the given lorenz targets, we need another way to assess the model's performance.
+
+\par It is well-documented in the literature on heterogeneous agent modeling that models with a precautionary savings motive will lead to a dispersion in the marginal propensity to consume (MPC) across households. This is a key feauture in why the HA framework is able to produce estimates of the aggregate MPC which are close to empirical measurements, like those measured in \cite{tjlp14}. \footnote{There the authors estimate an MPC of about 48\% and document signicantly larger MPCs for households with low cash-on-hand.}
+
+\par In the infinite horizon setting, we already see that the model with and without heterogeneity will have different implications for the aggregate MPC and its dispersion across households. Namely, the aggregate MPC when households earn the same return on their savings is $11.3\%$, while it is $27.5\%$ when heterogeneous returns are present. We decompose this by looking at average MPCs by wealth decile in the figure below.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\textwidth]{Tables/PY_MPC_by_WealthDecile_compare.png}
+\label{fig:PYMPCWealthDecileCompare}
+\end{figure}
+
+\par As you can see, MPCs are much higher in the case where households earn different returns. With heterogeneous returns, the model generates the observed extreme wealth concentration. Poor households are not just somewhat poorer—they're dramatically poorer, pushing them into the hand-to-mouth region where consumption tracks income almost one-for-one.
+
+\par Since the life cycle setting generates a more realistic distribution of wealth (even without heterogeneous returns), it is reasonable that MPCs are slightly higher here: an aggregate MPC of $12.6\%$ without heterogeneity and of $27.8\%$ with heterogeneous returns. That said, the stark difference between the model with and without heterogeneity remains present here as well.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\textwidth]{Tables/LC_MPC_by_WealthDecile_compare.png}
+\label{fig:LCMPCWealthDecileCompare}
+\end{figure}
+
+
+\subsubsection{Wealth shares by age cohort}
+
+\par  I also include age-dependent wealth moments from the same wave of the SCF to serve as another set of untargeted moments~\ref{fig:EmpLorenzTar}. These can be found in the following table.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.8\textwidth]{Tables/Emp_Lorenz_10yr_LCrrDistNetWorth.png}
+\includegraphics[width=0.8\textwidth]{Tables/Emp_Lorenz_by_age_2004.png}
 \caption{Empirical Lorenz Curve Targets from the 2004 SCF.}
 \label{fig:EmpLorenzTar}
 \end{figure}
@@ -99,21 +134,17 @@ where $\textbf{p}_t = \psi_t \bar{\psi}_{es} \textbf{p}_{t-1}$ and $\bar{\psi}_{
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.8\textwidth]{Tables/Sim_Lorenz_10yr_LCrrPointNetWorth.png}
+\includegraphics[width=0.8\textwidth]{Tables/Sim_Lorenz_by_age_Unif_LCrrPointNetWorth_2004.png}
 \caption{Simulated Untargeted Moments without Heterogeneity (R-point).}
 \label{fig:SimLorenzTarPoint}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.8\textwidth]{Tables/Sim_Lorenz_10yr_LCrrDistNetWorth.png}
+\includegraphics[width=0.8\textwidth]{Tables/Sim_Lorenz_by_age_Unif_LCrrDistNetWorth_2004.png}
 \caption{Simulated Untargeted Moments with Heterogeneity (R-dist).}
 \label{fig:SimLorenzTarDist}
 \end{figure}
-
-
-
-\par 
 
 
 
