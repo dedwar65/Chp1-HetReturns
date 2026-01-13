@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.16)  28 OCT 2025 17:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.16)  13 JAN 2026 15:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -797,14 +797,7 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
 \@quotelevel=\count474
 \@quotereset=\count475
 
-(./Chp1-draft.aux
-
-LaTeX Warning: Label `fig:EmpLorenzTar' multiply defined.
-
-
-LaTeX Warning: Label `fig:SimLorenzTarDist' multiply defined.
-
-)
+(./Chp1-draft.aux)
 \openout1 = `Chp1-draft.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
@@ -825,7 +818,8 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
 LaTeX Font Info:    ... okay on input line 27.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 27.
 LaTeX Font Info:    ... okay on input line 27.
- (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+
+(/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count476
 \scratchdimen=\dimen263
@@ -907,11 +901,6 @@ Package biblatex Warning: BibTeX reported the following issues
 (biblatex)                with 'ks1998':
 (biblatex)                - Invalid format of field 'month'.
 
-
-Package biblatex Warning: BibTeX reported the following issues
-(biblatex)                with 'sz16':
-(biblatex)                - Invalid format of field 'month'.
-
 )
 Package biblatex Info: Reference section=0 on input line 27.
 Package biblatex Info: Reference segment=0 on input line 27.
@@ -943,57 +932,57 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.15 
+l.17 
       [1]) (./Subfiles/litrev.tex
 
 [2]
 
 [3]
 
-[4]
+[4]) (./Subfiles/model.tex
 
-[5]) (./Subfiles/model.tex
+[5]
 
-[6]) (./Subfiles/results.tex (./Subfiles/../Tables/calibPY.tex
+[6]) (./Subfiles/results.tex
 
-[7])
+[7] (./Subfiles/../Tables/calibPY.tex)
 
 [8]
-<Subfiles/../Figures/Unif_PYrrPointNetWorth_2004Plot.png, id=302, 361.35pt x 36
+<Subfiles/../Figures/Unif_PYrrPointNetWorth_2004Plot.png, id=304, 361.35pt x 36
 1.35pt>
 File: Subfiles/../Figures/Unif_PYrrPointNetWorth_2004Plot.png Graphic file (typ
 e png)
 <use Subfiles/../Figures/Unif_PYrrPointNetWorth_2004Plot.png>
 Package pdftex.def Info: Subfiles/../Figures/Unif_PYrrPointNetWorth_2004Plot.pn
-g  used on input line 31.
+g  used on input line 34.
 (pdftex.def)             Requested size: 165.59853pt x 165.59996pt.
-<Subfiles/../Figures/Unif_PYrrDistNetWorth_2004Plot.png, id=304, 361.35pt x 361
+<Subfiles/../Figures/Unif_PYrrDistNetWorth_2004Plot.png, id=306, 361.35pt x 361
 .35pt>
 File: Subfiles/../Figures/Unif_PYrrDistNetWorth_2004Plot.png Graphic file (type
  png)
 <use Subfiles/../Figures/Unif_PYrrDistNetWorth_2004Plot.png>
 Package pdftex.def Info: Subfiles/../Figures/Unif_PYrrDistNetWorth_2004Plot.png
-  used on input line 36.
+  used on input line 39.
 (pdftex.def)             Requested size: 165.59853pt x 165.59996pt.
  (./Tables/Unif_PY_wealth_distribution_compare.tex)
 
 [9 <./Subfiles/../Figures/Unif_PYrrPointNetWorth_2004Plot.png> <./Subfiles/../F
 igures/Unif_PYrrDistNetWorth_2004Plot.png>] (./Subfiles/../Tables/calibLC.tex)
-<Subfiles/../Figures/Unif_LCrrPointNetWorth_2004Plot.png, id=318, 361.35pt x 36
+<Subfiles/../Figures/Unif_LCrrPointNetWorth_2004Plot.png, id=320, 361.35pt x 36
 1.35pt>
 File: Subfiles/../Figures/Unif_LCrrPointNetWorth_2004Plot.png Graphic file (typ
 e png)
 <use Subfiles/../Figures/Unif_LCrrPointNetWorth_2004Plot.png>
 Package pdftex.def Info: Subfiles/../Figures/Unif_LCrrPointNetWorth_2004Plot.pn
-g  used on input line 78.
+g  used on input line 81.
 (pdftex.def)             Requested size: 165.59853pt x 165.59996pt.
-<Subfiles/../Figures/Unif_LCrrDistNetWorth_2004Plot.png, id=319, 361.35pt x 361
+<Subfiles/../Figures/Unif_LCrrDistNetWorth_2004Plot.png, id=321, 361.35pt x 361
 .35pt>
 File: Subfiles/../Figures/Unif_LCrrDistNetWorth_2004Plot.png Graphic file (type
  png)
 <use Subfiles/../Figures/Unif_LCrrDistNetWorth_2004Plot.png>
 Package pdftex.def Info: Subfiles/../Figures/Unif_LCrrDistNetWorth_2004Plot.png
-  used on input line 83.
+  used on input line 86.
 (pdftex.def)             Requested size: 165.59853pt x 165.59996pt.
 
 
@@ -1002,46 +991,51 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 (./Tables/Unif_LC_wealth_distribution_compare.tex)
 
 [10]
-
-[11 <./Subfiles/../Figures/Unif_LCrrPointNetWorth_2004Plot.png> <./Subfiles/../
-Figures/Unif_LCrrDistNetWorth_2004Plot.png>]
-<Tables/PY_MPC_by_WealthDecile_compare.png, id=341, 505.89pt x 289.08pt>
+<Tables/PY_MPC_by_WealthDecile_compare.png, id=336, 505.89pt x 289.08pt>
 File: Tables/PY_MPC_by_WealthDecile_compare.png Graphic file (type png)
 <use Tables/PY_MPC_by_WealthDecile_compare.png>
 Package pdftex.def Info: Tables/PY_MPC_by_WealthDecile_compare.png  used on inp
-ut line 107.
+ut line 110.
 (pdftex.def)             Requested size: 276.00105pt x 157.71529pt.
-<Tables/LC_MPC_by_WealthDecile_compare.png, id=342, 505.89pt x 289.08pt>
+
+
+[11 <./Subfiles/../Figures/Unif_LCrrPointNetWorth_2004Plot.png> <./Subfiles/../
+Figures/Unif_LCrrDistNetWorth_2004Plot.png>]
+<Tables/LC_MPC_by_WealthDecile_compare.png, id=348, 505.89pt x 289.08pt>
 File: Tables/LC_MPC_by_WealthDecile_compare.png Graphic file (type png)
 <use Tables/LC_MPC_by_WealthDecile_compare.png>
 Package pdftex.def Info: Tables/LC_MPC_by_WealthDecile_compare.png  used on inp
-ut line 117.
+ut line 121.
 (pdftex.def)             Requested size: 276.00105pt x 157.71529pt.
+<Tables/Emp_Lorenz_by_age_2004.png, id=350, 578.16pt x 180.675pt>
+File: Tables/Emp_Lorenz_by_age_2004.png Graphic file (type png)
+<use Tables/Emp_Lorenz_by_age_2004.png>
+Package pdftex.def Info: Tables/Emp_Lorenz_by_age_2004.png  used on input line 
+133.
+(pdftex.def)             Requested size: 276.00105pt x 86.24883pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 
 
 [12 <./Tables/PY_MPC_by_WealthDecile_compare.png> <./Tables/LC_MPC_by_WealthDec
 ile_compare.png>]
-<Tables/Emp_Lorenz_by_age_2004.png, id=353, 578.16pt x 180.675pt>
-File: Tables/Emp_Lorenz_by_age_2004.png Graphic file (type png)
-<use Tables/Emp_Lorenz_by_age_2004.png>
-Package pdftex.def Info: Tables/Emp_Lorenz_by_age_2004.png  used on input line 
-128.
-(pdftex.def)             Requested size: 276.00105pt x 86.24883pt.
-<Tables/Sim_Lorenz_by_age_Unif_LCrrPointNetWorth_2004.png, id=356, 578.16pt x 1
+<Tables/Sim_Lorenz_by_age_Unif_LCrrPointNetWorth_2004.png, id=362, 578.16pt x 1
 80.675pt>
 File: Tables/Sim_Lorenz_by_age_Unif_LCrrPointNetWorth_2004.png Graphic file (ty
 pe png)
 <use Tables/Sim_Lorenz_by_age_Unif_LCrrPointNetWorth_2004.png>
 Package pdftex.def Info: Tables/Sim_Lorenz_by_age_Unif_LCrrPointNetWorth_2004.p
-ng  used on input line 137.
+ng  used on input line 142.
 (pdftex.def)             Requested size: 276.00105pt x 86.24883pt.
-<Tables/Sim_Lorenz_by_age_Unif_LCrrDistNetWorth_2004.png, id=357, 578.16pt x 18
+<Tables/Sim_Lorenz_by_age_Unif_LCrrDistNetWorth_2004.png, id=363, 578.16pt x 18
 0.675pt>
 File: Tables/Sim_Lorenz_by_age_Unif_LCrrDistNetWorth_2004.png Graphic file (typ
 e png)
 <use Tables/Sim_Lorenz_by_age_Unif_LCrrDistNetWorth_2004.png>
 Package pdftex.def Info: Tables/Sim_Lorenz_by_age_Unif_LCrrDistNetWorth_2004.pn
-g  used on input line 144.
+g  used on input line 149.
 (pdftex.def)             Requested size: 276.00105pt x 86.24883pt.
 ) (./Subfiles/taxation.tex
 
@@ -1051,19 +1045,24 @@ png>] (./Subfiles/../Tables/taxresultsPY.tex)
 
 [14] (./Subfiles/../Tables/taxresultsLC.tex)
 
-[15] (./Tables/unif_tax_welfare.tex)
-
-[16] (./Tables/unif_PY_per_type_welfare.tex
+[15] (./Tables/unif_tax_welfare.tex) (./Tables/unif_PY_per_type_welfare.tex
 Overfull \hbox (100.7987pt too wide) in paragraph at lines 9--31
  [] 
  []
 
-) (./Tables/unif_LC_per_type_welfare.tex
+)
+
+[16] (./Tables/unif_LC_per_type_welfare.tex
 Overfull \hbox (144.45766pt too wide) in paragraph at lines 8--40
  [] 
  []
 
 )) (./Subfiles/mechanism.tex
+Overfull \hbox (4.57474pt too wide) in paragraph at lines 2--2
+[]\T1/cmr/bx/n/14.4 Extension: Mech-a-nism for Re-turns Het-ero-gene-
+ []
+
+
 
 [17]
 
@@ -1077,15 +1076,21 @@ Overfull \hbox (26.31046pt too wide) in paragraph at lines 5--20
  []
 
 )
+Overfull \hbox (8.77838pt too wide) in paragraph at lines 81--82
+[]\T1/cmr/m/n/10 The elas-tic-ity pa-ram-e-ter there-fore in-di-cates how a one
+-percentage-point change
+ []
 
-[21])
+)
+
+[21]
 
 [22] (./Subfiles/lognormal_ret.tex
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 7.
 
-<Subfiles/../Figures/Lognorm_PYrrDistNetWorth_2004Plot.png, id=452, 361.35pt x 
+<Subfiles/../Figures/Lognorm_PYrrDistNetWorth_2004Plot.png, id=455, 361.35pt x 
 361.35pt>
 File: Subfiles/../Figures/Lognorm_PYrrDistNetWorth_2004Plot.png Graphic file (t
 ype png)
@@ -1093,7 +1098,7 @@ ype png)
 Package pdftex.def Info: Subfiles/../Figures/Lognorm_PYrrDistNetWorth_2004Plot.
 png  used on input line 15.
 (pdftex.def)             Requested size: 165.59853pt x 165.59996pt.
-<Subfiles/../Figures/Lognorm_LCrrDistNetWorth_2004Plot.png, id=453, 361.35pt x 
+<Subfiles/../Figures/Lognorm_LCrrDistNetWorth_2004Plot.png, id=456, 361.35pt x 
 361.35pt>
 File: Subfiles/../Figures/Lognorm_LCrrDistNetWorth_2004Plot.png Graphic file (t
 ype png)
@@ -1107,32 +1112,32 @@ png  used on input line 20.
 
  <./Subfiles/../Figures/Lognorm_PYrrDistNetWorth_2004Plot.png> <./Subfiles/../F
 igures/Lognorm_LCrrDistNetWorth_2004Plot.png>]
-<Tables/Lognorm_PY_LC_MPC_by_WealthDecile_compare.png, id=461, 505.89pt x 289.0
+<Tables/Lognorm_PY_LC_MPC_by_WealthDecile_compare.png, id=465, 505.89pt x 289.0
 8pt>
 File: Tables/Lognorm_PY_LC_MPC_by_WealthDecile_compare.png Graphic file (type p
 ng)
 <use Tables/Lognorm_PY_LC_MPC_by_WealthDecile_compare.png>
 Package pdftex.def Info: Tables/Lognorm_PY_LC_MPC_by_WealthDecile_compare.png  
-used on input line 37.
+used on input line 38.
 (pdftex.def)             Requested size: 276.00105pt x 157.71529pt.
 File: Tables/Emp_Lorenz_by_age_2004.png Graphic file (type png)
 <use Tables/Emp_Lorenz_by_age_2004.png>
 Package pdftex.def Info: Tables/Emp_Lorenz_by_age_2004.png  used on input line 
-46.
+48.
 (pdftex.def)             Requested size: 276.00105pt x 86.24883pt.
-<Tables/Sim_Lorenz_by_age_Lognorm_LCrrDistNetWorth_2004.png, id=462, 578.16pt x
+<Tables/Sim_Lorenz_by_age_Lognorm_LCrrDistNetWorth_2004.png, id=466, 578.16pt x
  180.675pt>
 File: Tables/Sim_Lorenz_by_age_Lognorm_LCrrDistNetWorth_2004.png Graphic file (
 type png)
 <use Tables/Sim_Lorenz_by_age_Lognorm_LCrrDistNetWorth_2004.png>
 Package pdftex.def Info: Tables/Sim_Lorenz_by_age_Lognorm_LCrrDistNetWorth_2004
-.png  used on input line 53.
+.png  used on input line 55.
 (pdftex.def)             Requested size: 276.00105pt x 86.24883pt.
 
-
-[24 <./Tables/Lognorm_PY_LC_MPC_by_WealthDecile_compare.png>]
 (./Subfiles/../Tables/lognormtaxresultsPY.tex)
 (./Subfiles/../Tables/lognormtaxresultsLC.tex)
+
+[24 <./Tables/Lognorm_PY_LC_MPC_by_WealthDecile_compare.png>]
 (./Tables/lognorm_tax_welfare.tex)
 
 [25 <./Tables/Sim_Lorenz_by_age_Lognorm_LCrrDistNetWorth_2004.png>]
@@ -1146,16 +1151,22 @@ Overfull \hbox (144.45766pt too wide) in paragraph at lines 8--41
  [] 
  []
 
-)
-
-[26] (./Tables/lognorm_elasticities.tex
+) (./Tables/lognorm_elasticities.tex
 Overfull \hbox (26.31046pt too wide) in paragraph at lines 5--20
  [][] 
  []
 
 )) (./Subfiles/conclusion.tex
 
+[26]
+
 [27])
+Overfull \hbox (9.06667pt too wide) in paragraph at lines 59--59
+\T1/cmr/m/n/10 equal-ity and Par-tial In-sur-ance''. In: \T1/cmr/m/it/10 Amer-i
+-can Eco-nomic Re-view \T1/cmr/m/n/10 98.5, pp. 1887^^U
+ []
+
+
 
 [28]
 Overfull \hbox (6.29083pt too wide) in paragraph at lines 59--59
@@ -1185,12 +1196,6 @@ Overfull \hbox (41.65488pt too wide) in paragraph at lines 59--59
  []
 
 
-Overfull \hbox (0.60034pt too wide) in paragraph at lines 59--59
-[][][]\T1/cmr/m/n/10 (Mar. 2017b). ``Lin-ing up: Sur-vey and ad-min-is-tra-tive
- data es-ti-mates of wealth
- []
-
-
 
 [30]
 
@@ -1204,24 +1209,20 @@ See the caption package documentation for explanation.
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-11>
  ***********
-
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package rerunfilecheck Info: File `Chp1-draft.out' has not changed.
-(rerunfilecheck)             Checksum: 86466BD227B07042A45CC4D5F948EEF4;8134.
+(rerunfilecheck)             Checksum: 389FECAF32BD2B10BD2B34513D5C10DA;8179.
 Package logreq Info: Writing requests to 'Chp1-draft.run.xml'.
 \openout1 = `Chp1-draft.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 25534 strings out of 467816
- 471931 string characters out of 5432252
- 1331251 words of memory out of 5000000
- 53559 multiletter control sequences out of 15000+600000
+ 25560 strings out of 467816
+ 472844 string characters out of 5432252
+ 1333621 words of memory out of 5000000
+ 53583 multiletter control sequences out of 15000+600000
  648618 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 80i,22n,82p,1907b,1644s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 80i,21n,82p,1907b,1646s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 ></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></
@@ -1253,10 +1254,10 @@ t/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2024/texmf-dist/
 fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2024/texmf-dist/fo
 nts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2024/texmf-dist/font
 s/type1/public/cm-super/sftt1000.pfb>
-Output written on Chp1-draft.pdf (32 pages, 1834755 bytes).
+Output written on Chp1-draft.pdf (32 pages, 1833533 bytes).
 PDF statistics:
- 794 PDF objects out of 1000 (max. 8388607)
- 663 compressed objects within 7 object streams
- 159 named destinations out of 1000 (max. 500000)
+ 798 PDF objects out of 1000 (max. 8388607)
+ 667 compressed objects within 7 object streams
+ 161 named destinations out of 1000 (max. 500000)
  338 words of extra memory for PDF output out of 10000 (max. 10000000)
 

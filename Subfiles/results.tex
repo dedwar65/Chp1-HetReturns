@@ -2,27 +2,30 @@
 \section{Results}\notinsubfile{\label{sec:results}}
 %\setcounter{page}{0}\pagenumbering{arabic}
 
+\par The estimation of the model proceeds in several steps. I begin by analyzing an infinite-horizon version of the model, in which households face uninsurable labor income risk and a borrowing constraint, and solve the consumption-saving problem using the endogenous grid method as implemented in \texttt{HARK}. When there is no heterogeneity in returns, I find the capital-to-output ratio necessary to match the capital-to-output target of $\frac{K}{Y} = 3$. Quantitative macroeconomic models calibrated to U.S.\ data commonly target an annual capital-to-output ratio in the range of roughly $2.5$ to $3.0$. For example, \cite{LeeLuettickeRavn2021} calibrate their heterogeneous-agent model with financial frictions to match a capital-output ratio of $2.5$, while \cite{Suen2012} targets an annual capital-output ratio of $3.0$ in a heterogeneous-agent model with preference heterogeneity.
+
+\par When heterogeneity is present, there is a candidate distribution of returns and I simulate a large population of households forward to obtain the stationary wealth distribution. The parameters governing the return distribution are then chosen via Simulated Method of Moments (SMM) to minimize the distance between simulated and empirical wealth shares from the Survey of Consumer Finances. Following existing literature, the 20th, 40th, 60th, and 80th percentiles of the wealth distribution from the 2004 wave of the survey are used as empirical targets.
+
+\par After establishing the results in the infinite-horizon setting, I extend the model to a life-cycle framework with age- and education-specific income profiles, mortality risk, and initial conditions. The model is then re-solved and re-estimated when heterogeneity is and is not present.
+
+
 \subsection{The infinite horizon setting}
 \subsubsection{The model with no returns heterogeneity}
 
-\par To solve and simulate the model, I follow the calibration scheme captured in table \ref{tab:calib1}.
+\par To solve and simulate the model, I follow the calibration scheme described in table \ref{tab:calib1}.
+
 \input{../Tables/calibPY.tex}\unskip
 
-\par The solution of the model with no heterogeneity in returns (the R-point model) is the one which finds the value for the rate of return $R$ which minimizes the distance between the simulated and empirical wealth shares at the 20th, 40th, 60th, and 80th percentiles. The empirical targets are computed using the 2004 SCF data on household wealth. The estimation procedure finds this optimal value to be $R = 1.0602$.
+\par The solution of the model with no heterogeneity in returns (the R-point model) is to find the value for the rate of return $R$ which minimizes the distance between the models capital-to-ouput ratio $\frac{K}{Y}$ and the calibrated $\frac{K}{Y}$ ratio value of $3$. The estimation procedure finds this optimal value to be $R = 1.0602$.
+
 
 \subsubsection{Incorporating heterogeneous returns}
 
-\par As noted above, recent studies by \cite{aflgdmlp20} and \cite{lblcps18} have not only estimated the rate of return on asset holdings but have also uncovered significant heterogeneity across households. With this in mind, the next estimation (the R-dist model) assumes the existence of multiple types of agents, each earning a distinct rate of return on their assets.
-
-\par I follow closely the procedure outlined by \cite{cstw2017}. Specifically, I assume that different types of households have a time preference factor drawn from a uniform distribution on the interval $(\grave{R} - \nabla, \grave{R} + \nabla)$, where $\nabla$ represents the level of dispersion. Afterward, the model is simulated to estimate the values of both $\grave{R}$ and $\nabla$ so that the model matches the inequality in the wealth distribution. To achieve this, the following minimization problem is solved:
+\par To estimate the model with heterogeneity in returns, I follow a procedure similar to the one outlined by \cite{cstw2017}. Specifically, I assume that different types of households have a time preference factor drawn from a uniform distribution over the interval $(\grave{R} - \nabla, \grave{R} + \nabla)$, where $\nabla$ represents the level of dispersion. I then simulate the model to estimate $\grave{R}$ and $\nabla$ so that the resulting wealth distribution aligns with the observed distribution in terms of inequality. Practically, I solve the following minimization problem:
 
 $$ \{\grave{R}, \nabla\} = \text{arg}\min_{R, \nabla} \bigg( \sum_{i=20, 40, 60, 80} (w_{i}(R, \nabla)-\omega_i )^{2} \bigg)^{\frac{1}{2}} $$
 
-\par subject to the constraint that the aggregate capital-to-output ratio in this model matches the calibrated value $5$. This is towards the upper bound on plausibly calibrated values for the capital-to-output ratio, as much of the literature chooses values between $2$ and  $3$.
-
-\par Note that $w_i$ and $\omega_i$ give the porportion of total aggregate net worth held by the top $i$ percent in the model and in the data, respectively.
-
-\par The estimation procedure finds this optimal values of $R = 1.0204$ and $\nabla = 0.06833$. These parameter values pin down the estimated uniform distribution. In the model, I've chosen to discretize that distribution to 7 chosen points. The performance of the estimation of both the R-point and R-dist models, measured by their ability to match the SCF data, is compared in figure \ref{fig:PYUnif}.
+\par subject to the constraint that the aggregate capital-to-output ratio in this model matches the calibrated value $3$. Note that $w_i$ and $\omega_i$ represent the porportion of total aggregate net worth held by the top $i$ percent in the model and in the data, respectively. The estimation procedure yields the optimal values of $R = 1.0204$ and $\nabla = 0.06833$ which pin down the estimated uniform distribution. The Lorenz curve associated with the wealth distribution from the model and the SCF data are compared in figure \ref{fig:PYUnif}.
 
 \begin{figure}[h]
     \centering
@@ -39,20 +42,20 @@ $$ \{\grave{R}, \nabla\} = \text{arg}\min_{R, \nabla} \bigg( \sum_{i=20, 40, 60,
     \label{fig:PYUnif} 
 \end{figure}
 
-\par Additionally, here is a table compare the relevant moments of the empirical and simulated wealth distributions.
+\par The 45 degree line represents perfect equality. Lorenz curves further away from this line represent more unequal distributions of wealth. As we can see from the figure, the Lorenz curve generate by allowing for heterogeneous returns does a much better job at matching the shape of the SCF wealth distribution than when everyone earns the same return. Additionally, the following table compares the relevant moments of the empirical and simulated wealth distributions.
 
 \input{Tables/Unif_PY_wealth_distribution_compare}
 
 
 \subsection{Incorporating life cycle dynamics into the model}
 
-\par More realistic assumptions regarding the age and education level of households can have important implications for the income and mortality process of households. Here, I extend the model to incorporate these life cycle dynamics.
+\par Assumptions about the age and education level of households can have important implications for the income and mortality process of households. Next I extend the model to incorporate these life-cycle dynamics.
 
-\par Households enter the economy at time $t$ aged 24 years old and are endowed with an education level $e \in \{D,HS,C\}$, and initial permanent income level $\textbf{p}_0$, and a capital stock $k_0$. The life cycle version of household income is given by:
+\par Households enter the economy at time $t$ aged 24 years old with an education level $e \in \{D,HS,C\}$, an initial permanent income level $\textbf{p}_0$, and a capital stock $k_0$. The life cycle version of household income is given by:
 
 $$ y_t = \xi_t \textbf{p}_t = (1 - \tau) \theta_t \textbf{p}_t, $$
 
-where $\textbf{p}_t = \psi_t \bar{\psi}_{es} \textbf{p}_{t-1}$ and $\bar{\psi}_{es}$ captures the age-education-specific average growth factor. Households that have lived for $s$ periods have permanent shocks drawn from a lognormal distribution with mean $1$ and variance $\sigma^{2}_{\psi s}$ and transitory shocks drawn from a lognormal distribution with mean $\frac{1}{\cancel{\mho}}$ and variance $\sigma^{2}_{\theta s}$ with probability $\cancel{\mho} = (1-\mho)$ and $\mu$ with probability $\mho$.
+where $\textbf{p}_t = \psi_t \bar{\psi}_{es} \textbf{p}_{t-1}$ and $\bar{\psi}_{es}$ captures the age-education-specific average growth factor. Households that have lived for $s$ periods have permanent shocks drawn from a lognormal distribution with a mean of $1$ and a variance of $\sigma^{2}_{\psi s}$ and transitory shocks drawn from a lognormal distribution with a mean of $\frac{1}{\cancel{\mho}}$ and a variance of $\sigma^{2}_{\theta s}$ with probability $\cancel{\mho} = (1-\mho)$ and $\mu$ with probability $\mho$.
 
 \par The normalized version of the age-education-specific consumption-saving problem for households is given by
 
@@ -65,11 +68,11 @@ where $\textbf{p}_t = \psi_t \bar{\psi}_{es} \textbf{p}_{t-1}$ and $\bar{\psi}_{
   a_t &\geq& 0.
 \end{eqnarray*}
 
-\par The additional parameters necessary to calibrate the life cycle version of the model are given in table \ref{tab:calib2}. The age-education dependent mean income levels come from \cite{Cagetti2003}. The permanent and transitory shock variances come from \cite{Sabelhaus2010}. The age-education dependent mortality rates come from \cite{Brown2007}.
+\par The additional parameters necessary to calibrate the life-cycle version of the model are given in table \ref{tab:calib2}. The age-education dependent mean income levels come from \cite{Cagetti2003}. The permanent and transitory shock variances come from \cite{Sabelhaus2010}. The age-education dependent mortality rates come from \cite{Brown2007}.
 
 \input{../Tables/calibLC.tex}\unskip
 
-\par The estimation procedure finds this optimal value to be $R = 1.0431$ for the R-point model in this setting. The estimation procedure for the R-dist model in the life cycle setting finds optimal values of $R = 1.002$ and $\nabla =0.0953$. Notice the improved performance of the estimation in matching the data displayed in figure \ref{fig:LCUnif}.
+\par The estimation yields an optimal value of $R = 1.0431$ for the R-point model in this setting. For the R-dist model in the life-cycle setting, $R = 1.002$ and $\nabla =0.0953$. Note the improved fit to the data, as illustrated in figure \ref{fig:LCUnif}.
 
 \begin{figure}[h]
     \centering
@@ -86,7 +89,7 @@ where $\textbf{p}_t = \psi_t \bar{\psi}_{es} \textbf{p}_{t-1}$ and $\bar{\psi}_{
     \label{fig:LCUnif} 
   \end{figure}
 
-\par Additionally, here is a table compare the relevant moments of the empirical and simulated wealth distributions.
+\par Table 4 compares the relevant moments of the empirical and simulated wealth distributions again, this time for the setting with life-cycle dynamics..
 
 \input{Tables/Unif_LC_wealth_distribution_compare.tex} 
 
@@ -94,34 +97,36 @@ where $\textbf{p}_t = \psi_t \bar{\psi}_{es} \textbf{p}_{t-1}$ and $\bar{\psi}_{
 \FloatBarrier
 \subsection{Untargeted moments}
 
+\par Introducing an additional source of (ex-ante) heterogeneity beyond labor income uncertainty into the representative agent framework allows the simulated distribution of wealth to better match moments of the empirical wealth distribution. But this is an expected result when allowing for an additional dimension of complexity in a model. So, although the model with heterogeneous returns does a good job of matching the given lorenz targets, we need another way to assess the model's performance.
+
 \subsubsection{The marginal propensity to consume}
 
-\par Naturally, adding a source of (ex-ante) heterogeneity beyond the addition of labor income uncertainty to the representative agent framework will allow the simulated distribution of wealth to match moments of the empirical wealth distribution particularly well. Although it is useful to see that the model with heterogeneous returns does a good job of matching the given lorenz targets, we need another way to assess the model's performance.
+\par The literature on heterogeneous agents consistently shows that models with a precautionary savings motive will lead to a dispersion in the marginal propensity to consume (MPC) across households. This feauture is key to why the HA framework is able to produce estimates of the aggregate MPC that are close to empirical measurements, such as those measured in \cite{tjlp14}. \footnote{\cite{tjlp14} estimate an MPC of about 48\% and document signicantly larger MPCs for households with low cash-on-hand.}
 
-\par It is well-documented in the literature on heterogeneous agent modeling that models with a precautionary savings motive will lead to a dispersion in the marginal propensity to consume (MPC) across households. This is a key feauture in why the HA framework is able to produce estimates of the aggregate MPC which are close to empirical measurements, like those measured in \cite{tjlp14}. \footnote{There the authors estimate an MPC of about 48\% and document signicantly larger MPCs for households with low cash-on-hand.}
-
-\par In the infinite horizon setting, we already see that the model with and without heterogeneity will have different implications for the aggregate MPC and its dispersion across households. Namely, the aggregate MPC when households earn the same return on their savings is $11.3\%$, while it is $27.5\%$ when heterogeneous returns are present. We decompose this by looking at average MPCs by wealth decile in the figure below.
+\par In the infinite horizon setting, introducing heterogeneity changes the model's implications for both the aggregate MPC and its dispersion across households. When all households earn the same return on their savings, the aggregate MPC is $11.3\%$, rising to $27.5\%$ when heterogeneous returns are introduced. We decompose this by looking at average MPCs by wealth decile in figure \ref{fig:PYMPCWealthDecileCompare}.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.8\textwidth]{Tables/PY_MPC_by_WealthDecile_compare.png}
+\caption{Infinite-horizon marginal propensities to consume.}
 \label{fig:PYMPCWealthDecileCompare}
 \end{figure}
 
-\par As you can see, MPCs are much higher in the case where households earn different returns. With heterogeneous returns, the model generates the observed extreme wealth concentration. Poor households are not just somewhat poorer—they're dramatically poorer, pushing them into the hand-to-mouth region where consumption tracks income almost one-for-one.
+\par As Figure 3 illustrates, MPCs are much higher when households earn different returns. When heterogeneous returns are present, the model replicates the extreme wealth concentration observed in the data. Poor households are not just somewhat poorer—they are dramatically poorer, pushing them into the hand-to-mouth region where consumption tracks income almost one-for-one.
 
-\par Since the life cycle setting generates a more realistic distribution of wealth (even without heterogeneous returns), it is reasonable that MPCs are slightly higher here: an aggregate MPC of $12.6\%$ without heterogeneity and of $27.8\%$ with heterogeneous returns. That said, the stark difference between the model with and without heterogeneity remains present here as well.
+\par Because incorporating life-cycle dynamics generates a more realistic distribution of wealth (even without heterogeneous returns), MPCs are slightly higher here: an aggregate MPC of $12.6\%$ without heterogeneity and $27.8\%$ with heterogeneous returns (see Figure \ref{fig:LCMPCWealthDecileCompare}). However, the stark difference between the model specifications with (orange line) and without heterogeneity (blue line in Figure 4) does persist.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.8\textwidth]{Tables/LC_MPC_by_WealthDecile_compare.png}
+\caption{Life-cycle marginal propensities to consume.}
 \label{fig:LCMPCWealthDecileCompare}
 \end{figure}
 
 
 \subsubsection{Wealth shares by age cohort}
 
-\par  I also include age-dependent wealth moments from the same wave of the SCF to serve as another set of untargeted moments~\ref{fig:EmpLorenzTar}. These can be found in the following table.
+\par Next, I include age-dependent wealth moments from the same wave of the SCF to serve as another set of untargeted moments in figure \ref{fig:EmpLorenzTar}. 
 
 \begin{figure}[h]
 \centering
@@ -130,7 +135,7 @@ where $\textbf{p}_t = \psi_t \bar{\psi}_{es} \textbf{p}_{t-1}$ and $\bar{\psi}_{
 \label{fig:EmpLorenzTar}
 \end{figure}
 
-\par The next two tables present the simulated version of the untargeted moments for the model without heterogeneity~\ref{fig:SimLorenzTarPoint}, and then with heterogeneity~\ref{fig:SimLorenzTarDist}. As you can see from the tables below, the age-dependent Lorenz targets that arise from the model again fit the data much better when returns heterogeneity is present versus when it is absent.
+\par Figures 6 and 7 present the simulated version of the untargeted moments for the model without heterogeneity \ref{fig:SimLorenzTarPoint}, and with heterogeneity \ref{fig:SimLorenzTarDist}. The age-dependent Lorenz targets that arise from the model again fit the data much better when returns heterogeneity is present versus when it is absent.
 
 \begin{figure}[htbp]
 \centering
@@ -145,6 +150,8 @@ where $\textbf{p}_t = \psi_t \bar{\psi}_{es} \textbf{p}_{t-1}$ and $\bar{\psi}_{
 \caption{Simulated Untargeted Moments with Heterogeneity (R-dist).}
 \label{fig:SimLorenzTarDist}
 \end{figure}
+
+\FloatBarrier
 
 
 

@@ -2,18 +2,19 @@
 \section{Model}
 \notinsubfile{\label{sec:Model}}
 
+\par The heterogeneous agent macro literature provides a class of models whose output is a distribution of wealth which can be easily compared to data on the wealth holdings across individuals in terms of moments. This section will introduce the model I solve and simulate computationally in order to do this particular comparison of wealth moments. 
 
 \subsection{Defining the stochastic income process}
-
-\par Each household's income $(y_t)$ during a given period depends on three main factors. The first factor is the aggregate wage rate $(W_t)$ that all households in the economy face. The second factor is the permanent income component $(p_t)$, which represents an agent's present discounted value of human wealth. Lastly, the transitory shock component $(\xi_t)$ reflects the potential risks that households may face in receiving their income payment during that period. Thus, household income can be expressed as the following:
+ 
+\par Each household's income $(y_t)$ during a given period depends on three main factors: aggregate wage rate $(W_t)$ that all households in the economy face, the permanent income component $(p_t)$, which represents an agent's present discounted value of human wealth, and the transitory shock component $(\xi_t)$ which reflects the potential risks that households may face in receiving their income payment during that period. Thus, household income can be expressed as:
 
 $$ y_t = p_t \xi_t W_t . $$
 
-\par The level of permanent income for each household is subject to a stochastic process. In line with \cite{mf1957}'s description of the labor income process, we assume that this process follows a geometric random walk, which can be expressed as:
+\par The level of permanent income for each household is subject to a stochastic process. In line with the labor income process described by \cite{mf1957}, I assume that this process follows a geometric random walk, which can be written as:
 
-$$ p_t = p_{t-1} \psi_{t}, $$
+$$ p_t = p_{t-1} \psi_{t}. $$
 
-\par The white noise permanent shock to income with a mean of one is represented by $\psi_t$, which is a significant component of household income. The probability of receiving income during a given period is determined by the transitory component, which is modeled to reflect the potential risks associated with becoming unemployed. Specifically, if the probability of becoming unemployed is $\mho$, the agent will receive unemployment insurance payments of $\mu > 0$. On the other hand, if the agent is employed, which occurs with a probability of $1 - \mho$, the model allows for tax payments $\tau_t$ to be collected as insurance for periods of unemployment. The transitory component is then represented as:
+\par The white noise permanent shock to income with a mean of one is represented by $\psi_t$, which is a significant component of household income. The probability of receiving income during a given period is determined by the transitory component, which is modeled to reflect the potential risks associated with becoming unemployed. Specifically, if the probability of becoming unemployed is $\mho$, the agent will receive unemployment insurance payments of $\mu > 0$. On the other hand, if the agent is employed, which occurs with a probability of $1 - \mho$, the model allows for tax payments $\tau_t$ to be collected as insurance for periods of unemployment. The transitory component is then written as:
 
 \begin{equation*}
 \xi_t =
@@ -23,16 +24,16 @@ $$ p_t = p_{t-1} \psi_{t}, $$
     \end{cases}
 \end{equation*}
 
-\par where $l$ is the time worked per agent and the parameter $\theta$ captures the white noise component of the transitory shock.
+where $l$ is the time worked per agent and the parameter $\theta$ captures the white noise component of the transitory shock.
 
 
 \subsection{Decision problem for households}
 
-\par This paragraph presents the baseline version of the household's optimization problem for consumption-savings decisions, assuming no ex-ante heterogeneity. In this case, each household aims to maximize its expected discounted utility of consumption $u(c) = \frac{c^{1-\rho}}{1-\rho}$ by solving the following:
+\par Next, I present the baseline version of the household's optimization problem for consumption-savings decisions, assuming no ex-ante heterogeneity. In this case, each household aims to maximize its expected discounted utility of consumption $u(c) = \frac{c^{1-\rho}}{1-\rho}$ by solving the following:
 
 $$ \max \mathbb{E}_t \sum_{n=0}^{\infty}(\cancel{D}\beta)^{n} u(c_{t+n}). $$
 
-\par It's worth noting that the setting described here follows a perpetual youth model of buffer stock savings, similar to the seminal work of \cite{ks1998}. To solve this problem, we use the bellman equation, which means that the sequence of consumption functions $\{c_{t+n}\}^{\infty}_{n=0}$ associated with a household's optimal choice over a lifetime must satisfy\footnote{Here, each of the relevant variables have been normalized by the level of permanent income ($c_t = \frac{C_t}{p_t}$, and so on). This is the standard state-space reduction of the problem for numerical tractibility.} 
+\par Note that this setting follows a perpetual youth model of buffer stock savings, similar to the seminal work of \cite{ks1998}. To solve this problem, I use the Bellman equation, which means that the sequence of consumption functions $\{c_{t+n}\}^{\infty}_{n=0}$ associated with a household's optimal choice over a lifetime must satisfy\footnote{Here, each of the relevant variables is normalized by the level of permanent income ($c_t = \frac{C_t}{p_t}$, and so on), following the standard state-space reduction of the problem for numerical tractibility.} 
 
 \begin{eqnarray*}
   v(m_t) &=& \max_{c_t} u(c_t(m_t)) + \beta \cancel{D} \mathbb{E}_{t}[\psi_{t+1}^{1-\rho}v(m_{t+1})] \\

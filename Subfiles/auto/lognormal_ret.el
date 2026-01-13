@@ -13,7 +13,7 @@
     "sec:lognorm"
     "fig:PYLCLognorm"
     "fig:LognormPYLCMPCCompare"
-    "fig:EmpLorenzTar"
-    "fig:SimLorenzTarDist"))
+    "fig:EmpLorenzTarLogn"
+    "fig:SimLorenzTarDistLogn"))
  :latex)
 
